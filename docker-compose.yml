@@ -1,0 +1,22 @@
+version: "2"
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./backend/data/mongo:/data/db
+  backend:
+    container_name: backend
+    restart: always
+    build: ./backend
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+    - "8081:8081"
