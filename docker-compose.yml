@@ -12,7 +12,7 @@ services:
     restart: always
     build: ./backend
     ports:
-      - "3000:3000"
+      - "4000:3000"
     links:
       - mongo
   mongo-express:
