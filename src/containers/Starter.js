@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import {
     ListGroup,
     ListGroupItem,
@@ -8,25 +7,37 @@ import {
 
 import * as roomsActions from "../store/rooms/actions";
 import * as roomsSelector from "../store/rooms/reducer";
-// import * as roomsSelector from "../store/rooms/reducer";
 
 class Starter extends Component {
-    goToRoom = (roomId) => () => {
-        this.props.dispatch(roomsActions.getRoom(roomId));
+    constructor(props) {
+        super(props);
+        this.goToRoom = this.goToRoom.bind(this);
     };
 
+    goToRoom(roomId) {
+        return () => this.props.dispatch(roomsActions.getRoom(roomId));
+    }
+
     render() {
-        return (<ListGroup>
-            {this.props.starters.map((item, id) => <ListGroupItem
-                tag="button"
-                key={id}
-                action
-                onClick={this.goToRoom(item).bind(this)}
-                active={this.props.room && this.props.room.roomId === item}
-            >
-                {item}
-            </ListGroupItem>)}
-        </ListGroup>);
+        const {
+            room,
+            starters,
+        } = this.props;
+        return (
+            <ListGroup>
+                {starters.map((item, id) => (
+                    <ListGroupItem
+                        tag="button"
+                        key={id}
+                        action
+                        onClick={this.goToRoom(item)}
+                        active={room && room.roomId === item}
+                    >
+                        {item}
+                    </ListGroupItem>
+                ))}
+            </ListGroup>
+        );
     }
 }
 
