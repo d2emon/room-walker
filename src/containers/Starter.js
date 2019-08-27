@@ -32,7 +32,7 @@ class Starter extends Component {
 
 function mapStateToProps(state) {
     return {
-        starters: [5, 185], // roomsSelector.getRoom(state)
+        starters: roomsSelector.getStarters(state),
         room: roomsSelector.getRoom(state)
     };
 }

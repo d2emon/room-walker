@@ -30,3 +30,7 @@ export function getRooms(state) {
 export function getRoom(state) {
     return state.rooms.room;
 }
+
+export function getStarters(state) {
+    return [5, 183];
+}
