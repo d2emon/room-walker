@@ -5,13 +5,13 @@ import {
     Col,
 } from 'reactstrap';
 // Components
-import Header from './components/Header';
+import Header from '../../components/Header';
 // Containers
-import Starter from './containers/Starter';
-import Compass from './containers/Compass';
-import Room from './containers/Room';
+import Starter from '../Starter';
+import Compass from '../Compass';
+import Room from '../Room';
 // Styles
-import './App.css';
+import './index.css';
 
 class App extends Component {
     render() {

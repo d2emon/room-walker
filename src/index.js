@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css';
 
-import App from './App';
+import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 
 import * as reducers from './store/reducers'
