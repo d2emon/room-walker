@@ -13,9 +13,10 @@ import * as reducers from './store/reducers';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-console.log(reducers);
-
-const store = createStore(combineReducers(reducers), applyMiddleware(thunk));
+const store = createStore(
+    combineReducers(reducers),
+    applyMiddleware(thunk),
+);
 
 ReactDOM.render(
     <Provider store={store}>

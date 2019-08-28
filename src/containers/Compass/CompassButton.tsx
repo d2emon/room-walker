@@ -3,16 +3,21 @@ import { connect } from 'react-redux';
 import {
     Button,
 } from 'reactstrap';
+import { Store } from '../../store/reducers';
 import * as roomsActions from "../../store/rooms/actions";
 
-export interface CompassButtonProps {
+// interface State {}
+interface OwnProps {
     exit: number,
     children?: React.ReactNode,
-    // Dispatch
+}
+class StateProps {}
+interface DispatchProps {
     getRoom: (roomId: number) => any,
 }
+type Props = OwnProps & StateProps & DispatchProps;
 
-function CompassButton(props: CompassButtonProps) {
+function CompassButton(props: Props) {
     const {
         children,
         exit,
@@ -31,11 +36,12 @@ function CompassButton(props: CompassButtonProps) {
     );
 }
 
-const mapStateToProps = (): object => ({});
-const mapDispatchToProps = {
+const mapStateToProps = (): StateProps => ({});
+// const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>, ownProps: OwnProps): DispatchProps
+const mapDispatchToProps: DispatchProps = {
     getRoom: roomsActions.getRoom
 };
-export default connect(
+export default connect<StateProps, DispatchProps, OwnProps, Store>(
     mapStateToProps,
     mapDispatchToProps,
 )(CompassButton);

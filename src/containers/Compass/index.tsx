@@ -13,11 +13,15 @@ import CompassButton from './CompassButton';
 import { Store } from '../../store/reducers';
 import * as roomsSelector from '../../store/rooms/reducer';
 
-export class CompassProps {
+// interface State {}
+interface OwnProps {}
+class StateProps {
     room: Room = new Room();
 }
+interface DispatchProps {}
+type Props = OwnProps & StateProps & DispatchProps;
 
-function Compass(props: CompassProps) {
+function Compass(props: Props) {
     const {
         room = new Room(),
     } = props;
@@ -59,10 +63,10 @@ function Compass(props: CompassProps) {
     );
 }
 
-const mapStateToProps = (state: Store): CompassProps => ({
-    room: roomsSelector.getRoom(state),
+const mapStateToProps = (states: Store): StateProps => ({
+    room: roomsSelector.getRoom(states),
 });
 
-export default connect(
+export default connect<StateProps, DispatchProps, OwnProps, Store>(
     mapStateToProps,
 )(Compass);
