@@ -5,26 +5,16 @@ import {
     Row,
     Col,
 } from 'reactstrap';
+import {
+    Room,
+    Exits,
+} from '../../types';
 import CompassButton from './CompassButton';
+import { Store } from '../../store/reducers';
 import * as roomsSelector from '../../store/rooms/reducer';
-
-export class Exits {
-    north: number = 0;
-    east: number = 0;
-    south: number = 0;
-    west: number = 0;
-    up: number = 0;
-    down: number = 0;
-}
-
-export class Room {
-    exits: Exits = new Exits();
-}
 
 export class CompassProps {
     room: Room = new Room();
-    // Dispatch
-    getRoom: ((roomId: number) => any) | undefined;
 }
 
 function Compass(props: CompassProps) {
@@ -69,11 +59,9 @@ function Compass(props: CompassProps) {
     );
 }
 
-function mapStateToProps(state: any) {
-    return {
-        room: roomsSelector.getRoom(state)
-    };
-}
+const mapStateToProps = (state: Store): CompassProps => ({
+    room: roomsSelector.getRoom(state),
+});
 
 export default connect(
     mapStateToProps,

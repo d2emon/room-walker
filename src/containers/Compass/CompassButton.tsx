@@ -31,7 +31,7 @@ function CompassButton(props: CompassButtonProps) {
     );
 }
 
-const mapStateToProps = () => ({});
+const mapStateToProps = (): object => ({});
 const mapDispatchToProps = {
     getRoom: roomsActions.getRoom
 };

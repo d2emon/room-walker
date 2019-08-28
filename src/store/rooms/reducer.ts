@@ -1,11 +1,12 @@
 import * as types from './actionTypes';
+import { RoomAction } from './actions';
 
-const initialState = {
-    rooms: undefined,
-    room: undefined,
-};
+export interface RoomState {
+    rooms?: any,
+    room?: any,
+}
 
-export default function reduce(state = initialState, action = {}) {
+export default (state: RoomState = {}, action: RoomAction): RoomState => {
     switch (action.type) {
         case types.ROOMS_FETCHED:
             return {
@@ -22,15 +23,7 @@ export default function reduce(state = initialState, action = {}) {
     }
 };
 
-// селекторы
-export function getRooms(state) {
-  return state.rooms.rooms;
-}
-
-export function getRoom(state) {
-    return state.rooms.room;
-}
-
-export function getStarters(state) {
-    return [5, 183];
-}
+// Selectors
+export const getRooms = (state: RoomState) => state.rooms.rooms;
+export const getRoom = (state: RoomState) => state.rooms.room;
+export const getStarters = () => [5, 183];
