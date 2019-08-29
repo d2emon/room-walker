@@ -7,6 +7,7 @@ import {
 // Components
 import Header from '../../components/Header';
 // Containers
+import MainStarter from '../Main/Starter';
 import Starter from '../Starter';
 import Compass from '../Compass';
 import Room from '../Room';
@@ -19,6 +20,9 @@ class App extends Component {
             <div className="App">
                 <Header />
                 <Container className="App-intro">
+                    <Row>
+                        <Col><MainStarter /></Col>
+                    </Row>
                     <Row>
                         <Col xs="2"><Starter /></Col>
                         <Col><Room /></Col>

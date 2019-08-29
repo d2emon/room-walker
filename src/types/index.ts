@@ -10,3 +10,8 @@ export class Exits {
 export class Room {
     exits: Exits = new Exits();
 }
+
+export class Alarm {
+    active: boolean = false;
+    timeout: number | null = 0;
+}

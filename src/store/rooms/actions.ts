@@ -1,7 +1,7 @@
-import {Action, AnyAction} from 'redux';
+import {Action} from 'redux';
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import * as types from './actionTypes';
-import { RoomState } from './reducer';
+import {RoomState} from './reducer';
 import RoomsService from '../../services/rooms';
 import {
     Room,
