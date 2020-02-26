@@ -3,6 +3,11 @@ import {ThunkAction, ThunkDispatch} from 'redux-thunk';
 import {Alarm} from '../../types';
 import {MainState} from './reducer';
 import * as types from './actionTypes';
+import {
+    readMessages,
+    startWalk,
+    TkAction,
+} from '../tk/actions';
 
 // Interfaces
 interface SetStarted {
@@ -37,11 +42,6 @@ interface SetInterrupt {
 }
 
 // TODO: Remove interfaces
-interface SetName {
-    type: types.SET_NAME,
-    name: string,
-}
-
 interface SetPrDue {
     type: types.SET_PR_DUE,
     prDue: boolean,
@@ -49,7 +49,7 @@ interface SetPrDue {
 
 // Types
 export type MainAction = SetStarted | SetFinished | SetTitle | SetActive | SetAlarm | SetInterrupt
-    | SetName | SetPrDue;
+    | SetPrDue;
 type Dispatch<A extends Action> = ThunkDispatch<MainState, any, A>;
 export type MainThunkAction<A extends Action> = ThunkAction<any, MainState, any, A>;
 
@@ -90,11 +90,6 @@ const setInterrupt = (interrupt: boolean): SetInterrupt => ({
 });
 
 // TODO: Remove actions
-const setName = (name: string): SetName => ({
-    type: types.SET_NAME,
-    name,
-});
-
 const setPrDue = (prDue: boolean): SetPrDue => ({
     type: types.SET_PR_DUE,
     prDue,
@@ -107,21 +102,18 @@ const loseme = () => Promise.resolve();
 const onTiming = () => Promise.resolve();
 const openworld = () => Promise.resolve();
 const pbfr = () => Promise.resolve();
-const rte = (name: string) => () => Promise.resolve();
-const talker = (name: string) => () => Promise.resolve();
 
 // Actions
 /*
 Two Phase Game System
 */
-export const start = (userId: number, name: string): MainThunkAction<MainAction> => (
-    dispatch: Dispatch<MainAction>,
+export const start = (userId: number, name: string): MainThunkAction<MainAction | TkAction> => (
+    dispatch: Dispatch<MainAction | TkAction>,
 ) => Promise.all([
         dispatch(setStarted(userId)),
-        dispatch(setName(name)),
         Promise.resolve(console.log(`GAME ENTRY: ${name}[${userId}]`)),
     ])
-    .then(() => dispatch(talker(name)));
+    .then(() => dispatch(startWalk(name)));
 
 // crapup
 export const finish = (message: string): MainThunkAction<Action> => (
@@ -155,7 +147,7 @@ export const wait = (): MainThunkAction<Action> => (
     .then(() => dispatch(setTimerAlarm(false)))
     .then(() => dispatch(openworld))
     .then(() => dispatch(setInterrupt(true)))
-    .then(() => dispatch(rte(getState().name || '')))
+    .then(() => dispatch(readMessages(getState().name || '')))
     .then(() => dispatch(setInterrupt(false)))
     .then(() => dispatch(onTiming))
     .then(() => dispatch(closeworld))

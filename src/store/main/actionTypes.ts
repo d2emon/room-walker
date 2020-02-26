@@ -18,8 +18,5 @@ export type SET_INTERRUPT = typeof SET_INTERRUPT;
 
 // TODO: Move It
 
-export const SET_NAME = 'SET_NAME';
-export type SET_NAME = typeof SET_NAME;
-
 export const SET_PR_DUE = 'SET_PR_DUE';
 export type SET_PR_DUE = typeof SET_PR_DUE;
