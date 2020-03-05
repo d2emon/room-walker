@@ -113,7 +113,8 @@ export const start = (userId: number, name: string): MainThunkAction<MainAction 
         dispatch(setStarted(userId)),
         Promise.resolve(console.log(`GAME ENTRY: ${name}[${userId}]`)),
     ])
-    .then(() => dispatch(startWalk(name)));
+    // .then(() => dispatch(startWalk(name)))
+    .then(() => {});
 
 // crapup
 export const finish = (message: string): MainThunkAction<Action> => (
@@ -147,12 +148,13 @@ export const wait = (): MainThunkAction<Action> => (
     .then(() => dispatch(setTimerAlarm(false)))
     .then(() => dispatch(openworld))
     .then(() => dispatch(setInterrupt(true)))
-    .then(() => dispatch(readMessages(getState().name || '')))
+    // .then(() => dispatch(readMessages(getState().name || '')))
     .then(() => dispatch(setInterrupt(false)))
     .then(() => dispatch(onTiming))
     .then(() => dispatch(closeworld))
     .then(() => dispatch(keyReprint))
-    .then(() => dispatch(setTimerAlarm(true)));
+    .then(() => dispatch(setTimerAlarm(true)))
+    .then(() => {});
 
 // sig_oops
 export const onError = (): MainThunkAction<Action> => (

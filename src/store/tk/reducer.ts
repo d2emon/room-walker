@@ -3,7 +3,7 @@ import * as types from './actionTypes';
 import {TkAction} from './actions';
 
 export interface TkState {
-    iSetup: number,
+    iSetup: number | boolean,
 
     messageId: number, // cms
     locationId: number, // curch

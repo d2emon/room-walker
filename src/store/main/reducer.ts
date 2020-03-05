@@ -75,11 +75,13 @@ export default (state: MainState = InitialState, action: MainAction): MainState 
                 interrupt: action.interrupt,
             };
         // TODO: Remove actions
+            /*
         case types.SET_NAME:
             return {
                 ...state,
                 name: action.name,
             };
+             */
         case types.SET_PR_DUE:
             return {
                 ...state,

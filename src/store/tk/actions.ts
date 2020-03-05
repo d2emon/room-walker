@@ -29,7 +29,7 @@ interface SetLocationId {
 
 interface SetISetup {
     type: types.SET_I_SETUP,
-    iSetup: number,
+    iSetup: boolean,
 }
 
 interface SetMode {
@@ -183,6 +183,7 @@ const sendmsg = (name: string): TkThunkAction<TkAction> => (
     getState: () => TkState,
 ) => {
     const prompts = ['>', '"', '*'];
+    /*
     return dispatch(pbfr)
         // Bottom
         .then(() => Promise.resolve(prompts[getState().convflg] || '?')
@@ -246,6 +247,7 @@ const sendmsg = (name: string): TkThunkAction<TkAction> => (
                 }
             })
         )
+     */
 };
 
 export const send2 = (block: Message): TkThunkAction<TkAction> => (
@@ -256,12 +258,14 @@ export const send2 = (block: Message): TkThunkAction<TkAction> => (
         .then((inpbk: number[]) => {
             const n = 2 * inpbk[1] - inpbk[0];
             inpbk[1]++;
+            /*
             return Promise.all([
                 dispatch(secWrite(unit, block, n, 128)),
                 dispatch(secWrite(unit, inpbk, 0, 64)),
             ])
                 .then(() => (n >= 199) ? dispatch(cleanup(inpbk)) : Promise.resolve())
                 .then(() => (n >= 199) ? dispatch(longwthr) : Promise.resolve());
+             */
 
         })
     );
@@ -388,6 +392,8 @@ const addPlayer = (name: string): TkThunkAction<TkAction> => (
  * No interruptions while you are busy dying
  * ABOUT 2 MINUTES OR SO
  */
+const sigAloff = () => Promise.resolve();
+
 export const loose = (name: string): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
     getState: () => TkState,
@@ -404,12 +410,14 @@ export const loose = (name: string): TkThunkAction<TkAction> => (
             0,
             `${name} has departed from AberMUDII\\n`,
         ))
+            .then(() => {})
         : Promise.resolve()
     )
     .then(() => dispatch(setpname(getState().playerId, '')))
     .then(() => dispatch(closeworld))
     .then(() => (!getState().zapped)
         ? dispatch(saveme)
+            .then(() => {})
         : Promise.resolve()
     )
     .then(() => dispatch(chksnp));
@@ -561,7 +569,7 @@ const endTurn = (name: string): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
     getState: () => TkState,
 ) => Promise.resolve(getState().rdQd && dispatch(readMessages(name)))
-    .then(() => dispatch(setRdQd(false)))
+    // .then(() => dispatch(setRdQd(false)))
     .then(() => dispatch(closeworld))
     .then(() => dispatch(pbfr));
 
@@ -598,7 +606,7 @@ long *inpbk;
 export const broad = (message: string): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
 ) => Promise.all([
-    dispatch(setRdQd(1)),
+    // dispatch(setRdQd(1)),
     dispatch(send2({
         code: -1,
         text: message.substr(0, 126),
