@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     Container,
     Row,
-    Col,
+    Col, Card,
 } from 'reactstrap';
 // Components
 import Header from '../../components/Header';
@@ -13,6 +13,7 @@ import Compass from '../Compass';
 import Room from '../Room';
 // Styles
 import './index.css';
+import Aber from "../Aber/Aber";
 
 class App extends Component {
     render() {
@@ -20,6 +21,9 @@ class App extends Component {
             <div className="App">
                 <Header />
                 <Container className="App-intro">
+                    <Card>
+                        <Aber />
+                    </Card>
                     <Row>
                         <Col><MainStarter /></Col>
                     </Row>
