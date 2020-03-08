@@ -163,7 +163,7 @@ class GameGo extends React.Component<Props, State> {
                     </Col>
                     <Col>
                         { this.showStartModal() }
-                        ((errorId === undefined)
+                        {((errorId === undefined)
                             ? (<MainWindow windowId={0}>
                                 <Controls />
                                 <Talker name={stateName} />
@@ -173,7 +173,7 @@ class GameGo extends React.Component<Props, State> {
                                 >
                                     Error: {errorId}
                                 </Alert>
-                        )
+                        )}
                     </Col>
                 </Row>)
             }
