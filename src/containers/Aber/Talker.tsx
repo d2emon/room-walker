@@ -1,4 +1,10 @@
 import * as React from 'react';
+import {
+    Card,
+    CardHeader,
+    CardTitle,
+    Container,
+} from 'reactstrap';
 
 interface Props {
     name: string,
@@ -11,13 +17,18 @@ class Talker extends React.Component<Props, State> {
     render() {
         const {
             children,
+            name,
         } = this.props;
-        return (<div>
-            Talker: { name }
-            <div>
+        return (<Card>
+            <CardHeader>
+                <CardTitle>
+                    Talker: { name }
+                </CardTitle>
+            </CardHeader>
+            <Container>
                 {children}
-            </div>
-        </div>);
+            </Container>
+        </Card>);
     }
 }
 

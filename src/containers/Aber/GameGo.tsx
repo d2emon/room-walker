@@ -1,66 +1,39 @@
 import * as React from 'react';
-import {connect} from "react-redux";
+import {connect} from 'react-redux';
 import {
     Alert,
-    Button,
     Card,
-    CardFooter,
-    CardText,
     Col,
-    Container,
-    Modal,
     Row,
 } from 'reactstrap';
+import MainWindow from './MainWindow';
+import Values from './Values';
+import Controls from './Controls';
+import Talker from './Talker';
+import WelcomeModal from './modals/WelcomeModal';
 import {Store} from '../../store/reducers';
-import * as loggerActions from "../../store/logger/actions";
-import MainWindow from "./MainWindow";
-import Values from "./Values";
-import Controls from "./Controls";
+import * as loggerActions from '../../store/logger/actions';
 
-interface TalkerProps {
-    name: string,
+interface ErrorMessageProps {
+    errorId?: number,
+    message?: string,
 }
 
-/*
-listfl(name)
-char *name;
-{
-    FILE *a;
-    char b[128];
-    a=openlock(name,"r+");
-    while(fgets(b,128,a)) printf("%s\n",b);
-    fcloselock(a);
-}
-
-char *getkbd(s,l)   *//* Getstr() with length limit and filter ctrl *//*
-char *s;
-int l;
-{
-    char c,f,n;
-    f=0;c=0;
-    while(c<l)
-    {
-        regec:n=getchar();
-        if ((n<' ')&&(n!='\n')) goto regec;
-        if (n=='\n') {s[c]=0;f=1;c=l-1;}
-        else
-            s[c]=n;
-        c++;
+const ErrorMessage = (props: ErrorMessageProps) => <Alert
+    color={props.errorId ? 'danger' : 'success'}
+>
+    { props.errorId
+        ? <strong>{props.errorId}:</strong>
+        : null
     }
-    if (f==0) {s[c]=0;while(getchar()!='\n');}
-    return(s);
-}
-*/
-
-const Talker = ({ name }: TalkerProps) => <div>
-    talker { name }
-</div>;
+    { props.message }
+</Alert>;
 
 interface StateProps {
+    errorId?: number,
     errorMessage?: string,
     stateName: string,
     userId: string,
-    errorId?: number,
 }
 
 interface DispatchProps {
@@ -75,7 +48,8 @@ interface GameGoProps {
 type Props = StateProps & DispatchProps & GameGoProps;
 
 interface State {
-    noArgs: boolean,
+    errorId?: number,
+    errorMessage?: string,
     hasStarted: boolean,
 }
 
@@ -83,32 +57,56 @@ class GameGo extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            noArgs: true,
+            errorId: undefined,
+            errorMessage: undefined,
             hasStarted: false,
         };
 
         this.closeStartModal = this.closeStartModal.bind(this);
+
+        this.start(props);
     }
 
-    static getDerivedStateFromProps(props: GameGoProps, currentState: State): State {
+    static getDerivedStateFromProps(props: Props, currentState: State): State {
         const {
             arg0,
             name,
+            errorId,
         } = props;
+        const noArgs = !arg0 || !name;
+        const errorMessage = props.errorMessage
+            || (noArgs && 'Args!')
+            || undefined;
         return {
             ...currentState,
-            noArgs: !arg0 || !name,
+            errorId: (errorId !== undefined)
+                ? errorId
+                : (errorMessage
+                    ? 0
+                    : undefined
+                ),
+            errorMessage,
         };
     }
 
-    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
+    start(props: Props) {
         const {
             userId,
             name,
             logReset,
-        } = this.props;
-        if (name !== prevProps.name) {
-            logReset(`GAME ENTRY: ${name}[${userId}]`);
+        } = props;
+        logReset(`GAME ENTRY: ${name}[${userId}]`);
+        this.setState({
+            hasStarted: false,
+        })
+    }
+
+    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
+        if (
+            (this.props.name !== prevProps.name)
+            || (this.props.userId !== prevProps.userId)
+        ) {
+            this.start(this.props);
         }
     }
 
@@ -118,65 +116,37 @@ class GameGo extends React.Component<Props, State> {
         });
     }
 
-    showStartModal() {
-        const {
-            hasStarted,
-        } = this.state;
-        return <Modal
-            isOpen={!hasStarted}
-        >
-            <Card>
-                <Container>
-                    <CardText>Entering Game ....</CardText>
-                    <CardFooter>
-                        <Button
-                            onClick={this.closeStartModal}
-                        >
-                            Ok
-                        </Button>
-                    </CardFooter>
-                </Container>
-            </Card>
-        </Modal>;
-    }
-
     render() {
         const {
-            errorMessage,
             stateName,
-            errorId,
         } = this.props;
         const {
-            noArgs,
+            hasStarted,
+            errorId,
+            errorMessage,
         } = this.state;
         return (<Card>
-            {errorMessage && <Card>
-                <hr />
-                <Alert>{ errorMessage }</Alert>
-                <hr />
-            </Card>}
-            {noArgs
-                ? (<h1>Args!</h1>)
-                : (<Row>
-                    <Col xs={4}>
-                        <Values />
-                    </Col>
-                    <Col>
-                        { this.showStartModal() }
-                        {((errorId === undefined)
-                            ? (<MainWindow windowId={0}>
-                                <Controls />
-                                <Talker name={stateName} />
-                            </MainWindow>)
-                            : <Alert
-                                    color="danger"
-                                >
-                                    Error: {errorId}
-                                </Alert>
-                        )}
-                    </Col>
-                </Row>)
-            }
+            <Controls />
+            <Row>
+                <Col xs={4}>
+                    <Values />
+                </Col>
+                <Col>
+                    <WelcomeModal
+                        show={!hasStarted}
+                        onClose={this.closeStartModal}
+                    />
+                    {(((errorId === undefined) && !errorMessage)
+                        ? (<MainWindow>
+                            <Talker name={stateName} />
+                        </MainWindow>)
+                        : <ErrorMessage
+                            errorId={errorId}
+                            message={errorMessage}
+                        />
+                    )}
+                </Col>
+            </Row>
         </Card>);
     }
 }

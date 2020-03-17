@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {
     Alert,
     Card,
-    CardHeader,
+    CardHeader, CardTitle,
     Container,
 } from 'reactstrap';
 import Keys from "./Keys";
@@ -11,14 +11,12 @@ import {Store} from '../../store/reducers';
 
 interface StateProps {
     name: string,
-    userId: string,
 }
 
 interface DispatchProps {
 }
 
 interface MainWindowProps {
-    windowId: number,
     children: React.ReactNode,
 }
 
@@ -31,22 +29,17 @@ class MainWindow extends React.Component<Props, State> {
     render() {
         const {
             children,
-            windowId,
             name,
-            userId,
         } = this.props;
         return (<Card>
             <CardHeader>
-                TTY: {windowId}
+                Hello {name}
             </CardHeader>
-            {(windowId === 4) && <Container>
-                initbbc();
-                initscr();
-                topscr();
-            </Container>}
-            <Alert>Hello {name}</Alert>
             <Container>
                 <Keys isSet={true}>
+                    <CardTitle>
+                        Hello {name}
+                    </CardTitle>
                     {children}
                 </Keys>
             </Container>
@@ -56,7 +49,6 @@ class MainWindow extends React.Component<Props, State> {
 
 const mapStateToProps = (store: Store): StateProps => ({
     name: store.mainWindow.name,
-    userId: store.mainWindow.userId,
 });
 
 const mapDispatchToProps: DispatchProps = {

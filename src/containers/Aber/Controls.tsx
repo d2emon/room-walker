@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Action} from 'redux';
 import {connect} from 'react-redux';
 import {
     Button,
@@ -10,9 +11,9 @@ import {
     Nav,
     Navbar,
 } from 'reactstrap';
-import {Store} from "../../store/reducers";
-import * as mainWindowActions from "../../store/mainWindow/actions";
-import {Action} from "redux";
+import GoodByeModal from './modals/GoodByeModal';
+import {Store} from '../../store/reducers';
+import * as mainWindowActions from '../../store/mainWindow/actions';
 
 interface StateProps {
     // errorId?: number,
@@ -32,6 +33,7 @@ interface ControlsProps {
 type Props = StateProps & DispatchProps & ControlsProps;
 
 interface State {
+    canExit: boolean,
     isExiting: boolean,
 }
 
@@ -40,15 +42,26 @@ class Controls extends React.Component<Props, State> {
         super(props);
 
         this.state = {
+            canExit: true,
             isExiting: false,
         };
 
-        this.closeExitModal = this.closeExitModal.bind(this);
+        this.onCloseExitModal = this.onCloseExitModal.bind(this);
         this.onError = this.onError.bind(this);
         this.onExit = this.onExit.bind(this);
     }
 
-    closeExitModal() {
+    static getDerivedStateFromProps(props: Props, currentState: State): State {
+        const {
+            inFight,
+        } = props;
+        return {
+            ...currentState,
+            canExit: !inFight,
+        };
+    }
+
+    onCloseExitModal() {
         this.setState({
             isExiting: false,
         });
@@ -62,37 +75,21 @@ class Controls extends React.Component<Props, State> {
         this.setState({
             isExiting: true,
         });
-        if (this.props.inFight) {
+        if (!this.state.canExit) {
             return;
         }
         this.props.onExit();
     }
 
-    showExitModal() {
+    render() {
         const {
             isExiting,
         } = this.state;
-        return <Modal
-            isOpen={isExiting}
-        >
-            <Card>
-                <Container>
-                    <CardText>^C</CardText>
-                    <CardFooter>
-                        <Button
-                            onClick={this.closeExitModal}
-                        >
-                            Ok
-                        </Button>
-                    </CardFooter>
-                </Container>
-            </Card>
-        </Modal>;
-    }
-
-    render() {
         return <Navbar>
-            { this.showExitModal() }
+            <GoodByeModal
+                show={isExiting}
+                onClose={this.onCloseExitModal}
+            />
             <Nav>
                 <Button onClick={this.onError}>SIGHUP</Button>
                 <Button onClick={this.onExit}>SIGINT</Button>
