@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Action} from "redux";
 import {connect} from "react-redux";
 import {
     Button,
@@ -9,14 +10,16 @@ import {
 import GameGo from './GameGo';
 import Logger from "./Logger";
 import {Store} from '../../store/reducers';
-import * as mainWindowActions from "../../store/mainWindow/actions";
+import * as mainWindowActions from '../../store/aber/mainWindow/thunks';
+import * as loggerActions from '../../store/aber/logger/thunks';
 
 interface StateProps {
     messages: string[],
 }
 
 interface DispatchProps {
-    startGame: (userId: string, title: string, name: string) => mainWindowActions.MainWindowAction,
+    onStart: (userId: string, title: string, name: string) => mainWindowActions.MainWindowThunkAction<Action>,
+    fetchMessages: () => loggerActions.LoggerThunkAction<Action>,
 }
 
 interface GameGoProps {
@@ -31,6 +34,7 @@ interface State {
     userId: string,
     arg0: string,
     name: string,
+    started: boolean,
 }
 
 class Aber extends React.Component<Props, State> {
@@ -40,6 +44,7 @@ class Aber extends React.Component<Props, State> {
             userId: 'User Id',
             arg0: 'Arg0',
             name: 'Name',
+            started: false,
         };
         this.onChangeUserId = this.onChangeUserId.bind(this);
         this.onChangeArg0 = this.onChangeArg0.bind(this);
@@ -47,25 +52,34 @@ class Aber extends React.Component<Props, State> {
         this.onReset = this.onReset.bind(this);
     }
 
-    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
+    componentDidMount(): void {
         this.onReset();
+    }
+
+    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
+        if (!this.state.started) {
+            this.onReset();
+        }
     }
 
     onChangeUserId(e: React.ChangeEvent<HTMLInputElement>) {
         this.setState({
             userId: e.currentTarget.value,
+            started: false,
         });
     }
 
     onChangeArg0(e: React.ChangeEvent<HTMLInputElement>) {
         this.setState({
             arg0: e.currentTarget.value,
+            started: false,
         })
     }
 
     onChangeName(e: React.ChangeEvent<HTMLInputElement>) {
         this.setState({
             name: e.currentTarget.value,
+            started: false,
         })
     }
 
@@ -75,7 +89,11 @@ class Aber extends React.Component<Props, State> {
             arg0,
             name,
         } = this.state;
-        this.props.startGame(userId, arg0, name);
+        this.props.onStart(userId, arg0, name);
+        this.props.fetchMessages();
+        this.setState({
+            started: true,
+        });
     }
 
     render() {
@@ -121,7 +139,8 @@ const mapStateToProps = (store: Store): StateProps => ({
 });
 
 const mapDispatchToProps: DispatchProps = {
-    startGame: mainWindowActions.startGame,
+    onStart: mainWindowActions.onStart,
+    fetchMessages: loggerActions.getMessages,
 };
 
 export default connect<StateProps, DispatchProps, GameGoProps, Store>(

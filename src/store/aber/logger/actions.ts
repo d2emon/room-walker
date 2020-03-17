@@ -4,7 +4,6 @@ import * as types from './actionTypes';
 // Interfaces
 interface LogReset extends Action {
     type: types.LOG_RESET,
-    message?: string,
 }
 
 interface LogMessage extends Action {
@@ -15,12 +14,12 @@ interface LogMessage extends Action {
 // Types
 export type LoggerAction = LogReset | LogMessage;
 
-export const logReset = (message: string): LogReset => ({
+export const logReset = (): LogReset => ({
     type: types.LOG_RESET,
-    message,
 });
 
-export const logMessage = (message: string): LogMessage => ({
+export const logMessage = (date: number, message: string): LogMessage => ({
     type: types.LOG_MESSAGE,
+    // date,
     message,
 });

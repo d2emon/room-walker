@@ -2,35 +2,39 @@ import * as types from './actionTypes';
 import {MainWindowAction} from './actions';
 
 export interface MainWindowState {
+    // Main Args
     userId: string,
     title: string,
     name: string,
+    // Errors
     errorId?: number,
     errorMessage?: string,
-    keysAreSet: boolean,
-    prDue: boolean,
-
-    active: boolean,
+    // Timer
     ignore: boolean,
     alarm: number,
+    // Internal
+    active: boolean,
+    interrupt: boolean,
+    // External
+    keysAreSet: boolean,
+    prDue: boolean,
+    inFight: boolean,
 }
 
 const InitialState: MainWindowState = {
     userId: '',
     title: '',
     name: '',
-    keysAreSet: true,
-    prDue: false,
 
-    active: false,
     ignore: false,
     alarm: 0,
-};
 
-const sigAlOff = {
     active: false,
-    ignore: true,
-    alarm: 2147487643,
+    interrupt: false,
+
+    keysAreSet: true,
+    prDue: false,
+    inFight: false,
 };
 
 export default (state: MainWindowState = InitialState, action: MainWindowAction): MainWindowState => {
@@ -42,27 +46,18 @@ export default (state: MainWindowState = InitialState, action: MainWindowAction)
                 title: action.title,
                 name: action.name,
             };
-        case types.SET_ERROR_MESSAGE:
-            // this.pbfr();
-            return {
-                ...state,
-                errorId: 0,
-                errorMessage: action.errorMessage,
-                keysAreSet: false,
-                prDue: false,
-            };
-        case types.SET_ERROR:
-            return {
-                ...state,
-                errorId: 255,
-                keysAreSet: false,
-            };
         case types.SET_ALARM_OFF:
             return {
                 ...state,
-                active: false,
-                alarm: 2147487643,
-                ignore: true,
+                active: action.value,
+                alarm: action.value ? 2 : 2147487643,
+                ignore: !action.value,
+            };
+        case types.SET_BLOCK:
+            return {
+                ...state,
+                alarm: (!action.value && state.active) ? 2 : state.alarm,
+                ignore: action.value,
             };
         case types.SET_KEYS_OFF:
             return {

@@ -12,7 +12,6 @@ import Controls from './Controls';
 import Talker from './Talker';
 import WelcomeModal from './modals/WelcomeModal';
 import {Store} from '../../store/reducers';
-import * as loggerActions from '../../store/logger/actions';
 
 interface ErrorMessageProps {
     errorId?: number,
@@ -37,7 +36,6 @@ interface StateProps {
 }
 
 interface DispatchProps {
-    logReset: (message: string) => loggerActions.LoggerAction,
 }
 
 interface GameGoProps {
@@ -93,12 +91,10 @@ class GameGo extends React.Component<Props, State> {
         const {
             userId,
             name,
-            logReset,
         } = props;
-        logReset(`GAME ENTRY: ${name}[${userId}]`);
         this.setState({
             hasStarted: false,
-        })
+        });
     }
 
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
@@ -159,9 +155,7 @@ const mapStateToProps = (store: Store): StateProps => ({
 });
 
 const mapDispatchToProps: DispatchProps = {
-    logReset: loggerActions.logReset,
 };
-
 
 export default connect(
     mapStateToProps,

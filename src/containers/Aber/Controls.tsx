@@ -3,17 +3,12 @@ import {Action} from 'redux';
 import {connect} from 'react-redux';
 import {
     Button,
-    Card,
-    CardFooter,
-    CardText,
-    Container,
-    Modal,
     Nav,
     Navbar,
 } from 'reactstrap';
 import GoodByeModal from './modals/GoodByeModal';
 import {Store} from '../../store/reducers';
-import * as mainWindowActions from '../../store/mainWindow/actions';
+import * as mainWindowActions from '../../store/aber/mainWindow/thunks';
 
 interface StateProps {
     // errorId?: number,

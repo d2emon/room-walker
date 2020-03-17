@@ -14,9 +14,7 @@ export default (state: LoggerState = InitialState, action: LoggerAction): Logger
         case types.LOG_RESET:
             return {
                 ...state,
-                messages: action.message
-                    ? [action.message]
-                    : [],
+                messages: [],
             };
         case types.LOG_MESSAGE:
             return {
