@@ -1,8 +1,9 @@
 import * as types from './actionTypes';
 import {LoggerAction} from './actions';
+import {Message} from '../../../services/logger';
 
 export type LoggerState = {
-    messages: string[]
+    messages: Message[]
 };
 
 const InitialState: LoggerState = {

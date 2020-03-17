@@ -18,13 +18,13 @@ import {
     setErrorMessage
 } from '../errors/actions';
 import {Store} from '../../reducers';
-import axios from "axios";
+import users from '../../../services/users';
 
 // Types
 type Dispatch<A extends Action> = ThunkDispatch<MainWindowAction, any, A>;
 export type MainWindowThunkAction<A extends Action> = ThunkAction<any, Store, any, A>;
 
-const looseMe = () => {
+const logOut = () => {
     console.log('loose me');
 };
 
@@ -35,13 +35,10 @@ export const onStart = (userId: string, title: string, name: string): MainWindow
     if (!userId || !title || !name) {
         dispatch(setErrorMessage('Args!'));
     } else {
-        axios.post(
-            'http://127.0.0.1:4001',
-            {
-                userId,
-                name,
-            },
-        )
+        users.setUser({
+            userId,
+            name,
+        })
             .then(() => dispatch(startGame(userId, title, name)))
     }
 };
@@ -50,7 +47,7 @@ export const onError = (): MainWindowThunkAction<MainWindowAction> => (
     dispatch: Dispatch<MainWindowAction>
 ) => {
     dispatch(setAlarm(false));
-    looseMe();
+    logOut();
     dispatch(setKeysOff(255));
 };
 
@@ -63,7 +60,7 @@ export const onExit = (): MainWindowThunkAction<MainWindowAction> => (
         return;
     }
     dispatch(setAlarm(false));
-    looseMe();
+    logOut();
     dispatch(setErrorMessage('Byeeeeeeeeee  ...........'));
 };
 

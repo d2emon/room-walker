@@ -71,4 +71,5 @@ export default (state: MainWindowState = InitialState, action: MainWindowAction)
 };
 
 // Selectors
-// export const getStarted = (state: GameGoState) => !!state.userId;
+export const canExit = (state: MainWindowState) => !state.inFight;
+export const timerIsOn = (state: MainWindowState) => !state.ignore;

@@ -1,5 +1,6 @@
 import {Action} from 'redux';
 import * as types from './actionTypes';
+import {Message} from '../../../services/logger';
 
 // Interfaces
 interface LogReset extends Action {
@@ -8,7 +9,7 @@ interface LogReset extends Action {
 
 interface LogMessage extends Action {
     type: types.LOG_MESSAGE,
-    message: string,
+    message: Message,
 }
 
 // Types
@@ -20,6 +21,8 @@ export const logReset = (): LogReset => ({
 
 export const logMessage = (date: number, message: string): LogMessage => ({
     type: types.LOG_MESSAGE,
-    // date,
-    message,
+    message: {
+        date,
+        message
+    },
 });

@@ -9,16 +9,17 @@ import {
 import GoodByeModal from './modals/GoodByeModal';
 import {Store} from '../../store/reducers';
 import * as mainWindowActions from '../../store/aber/mainWindow/thunks';
+import * as mainWindowSelector from '../../store/aber/mainWindow/reducer';
 
 interface StateProps {
-    // errorId?: number,
-    // prDue: boolean,
-    // keysAreSet: boolean,
+    canExit: boolean,
+    timerIsOn: boolean,
 }
 
 interface DispatchProps {
     onError: () => mainWindowActions.MainWindowThunkAction<Action>,
     onExit: () => mainWindowActions.MainWindowThunkAction<Action>,
+    onTimer: () => mainWindowActions.MainWindowThunkAction<Action>,
 }
 
 interface ControlsProps {
@@ -44,6 +45,7 @@ class Controls extends React.Component<Props, State> {
         this.onCloseExitModal = this.onCloseExitModal.bind(this);
         this.onError = this.onError.bind(this);
         this.onExit = this.onExit.bind(this);
+        this.onTimer = this.onTimer.bind(this);
     }
 
     static getDerivedStateFromProps(props: Props, currentState: State): State {
@@ -76,36 +78,86 @@ class Controls extends React.Component<Props, State> {
         this.props.onExit();
     }
 
+    onTimer() {
+        this.props.onTimer();
+    }
+
     render() {
         const {
             isExiting,
         } = this.state;
+        const {
+            canExit,
+            timerIsOn,
+        } = this.props;
         return <Navbar>
             <GoodByeModal
                 show={isExiting}
                 onClose={this.onCloseExitModal}
             />
             <Nav>
-                <Button onClick={this.onError}>SIGHUP</Button>
-                <Button onClick={this.onExit}>SIGINT</Button>
-                <Button onClick={this.onExit}>SIGTERM</Button>
-                <Button>SIGTSTP</Button>
-                <Button>SIGQUIT</Button>
-                <Button onClick={this.onError}>SIGCONT</Button>
+                <Button
+                    onClick={this.onError}
+                >
+                    SIGHUP
+                </Button>
+                <Button
+                    onClick={this.onExit}
+                    disabled={!canExit}
+                >
+                    SIGINT
+                </Button>
+                <Button
+                    onClick={this.onExit}
+                    disabled={!canExit}
+                >
+                    SIGTERM
+                </Button>
+                <Button
+                    disabled={true}
+                >
+                    SIGTSTP
+                </Button>
+                <Button
+                    disabled={true}
+                >
+                    SIGQUIT
+                </Button>
+                <Button
+                    onClick={this.onError}
+                >
+                    SIGCONT
+                </Button>
+                <Button
+                    onClick={this.onTimer}
+                    disabled={!timerIsOn}
+                >
+                    SIGALRT
+                </Button>
+                <Button
+                    onClick={this.onExit}
+                >
+                    Exit
+                </Button>
+                <Button
+                    onClick={this.onTimer}
+                >
+                    Alert
+                </Button>
             </Nav>
         </Navbar>;
     }
 }
 
 const mapStateToProps = (store: Store): StateProps => ({
-    // errorId: store.gameGo.errorId,
-    // keysAreSet: store.gameGo.keysAreSet,
-    // prDue: store.gameGo.prDue,
+    canExit: mainWindowSelector.canExit(store.mainWindow),
+    timerIsOn: mainWindowSelector.timerIsOn(store.mainWindow),
 });
 
 const mapDispatchToProps: DispatchProps = {
     onError: mainWindowActions.onError,
     onExit: mainWindowActions.onExit,
+    onTimer: mainWindowActions.onTimer,
 };
 
 export default connect(
