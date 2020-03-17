@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Action} from "redux";
-import {connect} from "react-redux";
+import {Action} from 'redux';
+import {connect} from 'react-redux';
 import {
     Button,
     Card,
@@ -8,13 +8,14 @@ import {
     Input,
 } from 'reactstrap';
 import GameGo from './GameGo';
-import Logger from "./Logger";
+import Logger from './Logger';
+import {Message} from '../../services/logger';
 import {Store} from '../../store/reducers';
 import * as mainWindowActions from '../../store/aber/mainWindow/thunks';
 import * as loggerActions from '../../store/aber/logger/thunks';
 
 interface StateProps {
-    messages: string[],
+    messages: Message[],
 }
 
 interface DispatchProps {

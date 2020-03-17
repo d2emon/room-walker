@@ -6,29 +6,45 @@ interface ResetEvents extends Action {
     type: types.RESET_EVENTS,
 }
 
+interface SetName extends Action {
+    type: types.SET_NAME,
+    name: string,
+}
+
+interface SetInSetup extends Action {
+    type: types.SET_IN_SETUP,
+}
+
 // Types
-export type TalkerAction = ResetEvents;
+export type TalkerAction = ResetEvents | SetName | SetInSetup;
 
 export const resetEvents = (): ResetEvents => ({
     type: types.RESET_EVENTS,
 });
 
-/*
+export const setName = (name: string): SetName => ({
+    type: types.SET_NAME,
+    name,
+});
 
- Data format for mud packets
+export const setInSetup = (): SetInSetup => ({
+    type: types.SET_IN_SETUP,
+});
 
- Sector 0
- [64 words]
- 0   Current first message pointer
- 1   Control Word
- Sectors 1-n  in pairs ie [128 words]
-
- [channel][controlword][text data]
-
- [controlword]
- 0 = Text
- - 1 = general request
-
+/**
+ * Data format for mud packets
+ *
+ * Sector 0
+ * [64 words]
+ * 0   Current first message pointer
+ * 1   Control Word
+ * Sectors 1-n  in pairs ie [128 words]
+ *
+ * [channel][controlword][text data]
+ *
+ * [controlword]
+ * 0 = Text
+ * - 1 = general request
  */
 
 /*
@@ -179,33 +195,6 @@ if(in_fight) in_fight-=1;
 FILE *fl_com;
 extern long findstart();
 extern long findend();
-
- rte(name)
- char *name;
-    {
-    extern long cms;
-    extern long vdes,tdes,rdes;
-    extern FILE *fl_com;
-    extern long debug_mode;
-    FILE *unit;
-    long too,ct,block[128];
-    unit=openworld();
-    fl_com=unit;
-    if (unit==NULL) crapup("AberMUD: FILE_ACCESS : Access failed\n");
-    if (cms== -1) cms=findend(unit);
-    too=findend(unit);
-    ct=cms;
-    while(ct<too)
-       {
-       readmsg(unit,block,ct);
-       mstoout(block,name);
-       ct++;
-       }
-    cms=ct;
-    update(name);
-    eorte();
-    rdes=0;tdes=0;vdes=0;
-    }
 
 FILE *openlock(file,perm)
 char *file;

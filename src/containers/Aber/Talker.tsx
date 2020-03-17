@@ -1,19 +1,22 @@
 import * as React from 'react';
+import {Action} from 'redux';
+import {connect} from 'react-redux';
 import {
-    Card,
+    Button,
+    Card, CardFooter,
     CardHeader,
     CardTitle,
     Container,
 } from 'reactstrap';
-import {connect} from "react-redux";
-import {Store} from "../../store/reducers";
-import * as talkerActions from "../../store/aber/talker/actions";
+import {Store} from '../../store/reducers';
+import * as talkerActions from '../../store/aber/talker/thunks';
 
 interface StateProps {
 }
 
 interface DispatchProps {
-    resetEvents: () => talkerActions.TalkerAction,
+    beforeStart: (name: string) => talkerActions.TalkerThunkAction<Action>,
+    nextTurn: (name: string) => talkerActions.TalkerThunkAction<Action>,
 }
 
 interface TalkerProps {
@@ -26,38 +29,23 @@ interface State {
 }
 
 class Talker extends React.Component<Props, State> {
-    nextTurn() {
-        const {
-            name,
-        } = this.props;
-        // pbfr();
-        // sendmsg(name);
-        // if (rd_qd) {
-        //     rte(name);
-        //     rd_qd = 0;
-        // }
-        // closeworld();
-        // pbfr();
+    constructor(props: Props) {
+        super(props);
+        this.state = {};
+
+        this.onNextTurn = this.onNextTurn.bind(this);
     }
 
     componentDidMount(): void {
-        // makebfr()
-        this.props.resetEvents();
-        // putmeon(name)
-
-        // openworld() || sendErrorMessage('Sorry AberMUD is currently unavailable')
-        // mynum < maxu || sendErrorMessage('Sorry AberMUD is full at the moment')
-        // globme = name
-        // rte(name)
-        // closeworld()
-
-        this.props.resetEvents();
-        // special('.g', name);
-        // iSetup = true;
+        this.props.beforeStart(this.props.name);
     }
 
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
-        this.nextTurn();
+        this.onNextTurn();
+    }
+
+    onNextTurn() {
+        this.props.nextTurn(this.props.name);
     }
 
     render() {
@@ -74,6 +62,13 @@ class Talker extends React.Component<Props, State> {
             <Container>
                 {children}
             </Container>
+            <CardFooter>
+                <Button
+                    onClick={this.onNextTurn}
+                >
+                    Ok
+                </Button>
+            </CardFooter>
         </Card>);
     }
 }
@@ -82,7 +77,8 @@ const mapStateToProps = (store: Store): StateProps => ({
 });
 
 const mapDispatchToProps: DispatchProps = {
-    resetEvents: talkerActions.resetEvents,
+    beforeStart: talkerActions.beforeStart,
+    nextTurn: talkerActions.nextTurn,
 };
 
 export default connect(

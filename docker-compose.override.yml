@@ -21,7 +21,6 @@ services:
       - ./backend/data/files:/usr/src/app/data/files
   backend:
     build: ./services/rooms-graph-server/
-    container_name: backend
     depends_on:
       - mongo
     links:
@@ -35,7 +34,6 @@ services:
       - ./dist:/usr/src/app/dist
   syslog:
     build: ./services/syslog/
-    container_name: syslog
     ports:
       - 4002:8080
     restart: always
@@ -44,7 +42,10 @@ services:
       - ./services/syslog/dist:/usr/src/app/dist
   auth:
     build: ./services/user/
-    container_name: auth
+    depends_on:
+      - syslog
+    links:
+      - syslog
     ports:
       - 4001:8080
     restart: always
@@ -53,11 +54,14 @@ services:
       - ./services/user/dist:/usr/src/app/dist
   frontend:
     build: .
-    container_name: frontend
     depends_on:
       - backend
+      - auth
+      - syslog
     links:
       - backend
+      - auth
+      - syslog
     ports:
       - 3000:3000
     restart: always

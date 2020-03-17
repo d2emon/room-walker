@@ -28,6 +28,16 @@ export default (state: TalkerState = InitialState, action: TalkerAction): Talker
                 ...state,
                 eventId: undefined,
             };
+        case types.SET_NAME:
+            return {
+                ...state,
+                name: action.name,
+            };
+        case types.SET_IN_SETUP:
+            return {
+                ...state,
+                inSetup: true,
+            };
         default:
             return state;
     }

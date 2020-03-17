@@ -2,9 +2,10 @@ import * as React from 'react';
 import {
     Card, CardText,
 } from 'reactstrap';
+import {Message} from '../../services/logger';
 
 export interface LoggerProps {
-    messages?: string[],
+    messages?: Message[],
 }
 
 const Logger = (props: LoggerProps): React.ReactElement => <Card>
