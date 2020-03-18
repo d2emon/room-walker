@@ -1,6 +1,5 @@
 import * as types from './actionTypes';
 import {TalkerAction} from './actions';
-import {setTitle} from "../mainWindow/actions";
 
 export const MODE_0 = 'MODE_0';
 export const MODE_1 = 'MODE_1';
@@ -17,12 +16,10 @@ type ConversationMode = typeof CONVERSATION_MODE_ACTION
 
 export interface TalkerState {
     inSetup: boolean,
-    eventId?: number,
     channelId: number,
     name: string,
     mode: Mode,
     conversationMode: ConversationMode,
-    forceEvents: boolean,
 
     // Other
     debugMode: boolean,
@@ -34,12 +31,10 @@ export interface TalkerState {
 
 const InitialState: TalkerState = {
     inSetup: false,
-    eventId: undefined,
     channelId: 0,
     name: '',
     mode: MODE_0,
     conversationMode: CONVERSATION_MODE_ACTION,
-    forceEvents: false,
 
     debugMode: false,
     isWizard: false,
@@ -50,16 +45,6 @@ const InitialState: TalkerState = {
 
 export default (state: TalkerState = InitialState, action: TalkerAction): TalkerState => {
     switch (action.type) {
-        case types.RESET_EVENTS:
-            return {
-                ...state,
-                eventId: undefined,
-            };
-        case types.SET_EVENT_ID:
-            return {
-                ...state,
-                eventId: action.eventId,
-            };
         case types.SET_NAME:
             return {
                 ...state,

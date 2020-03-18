@@ -2,15 +2,6 @@ import {Action} from 'redux';
 import * as types from './actionTypes';
 
 // Interfaces
-interface ResetEvents extends Action {
-    type: types.RESET_EVENTS,
-}
-
-interface SetEventId extends Action {
-    type: types.SET_EVENT_ID,
-    eventId: number,
-}
-
 interface SetName extends Action {
     type: types.SET_NAME,
     name: string,
@@ -20,21 +11,8 @@ interface SetInSetup extends Action {
     type: types.SET_IN_SETUP,
 }
 
-interface ForcedEvents extends Action {
-    type: types.FORCED_EVENTS,
-}
-
 // Types
-export type TalkerAction = ResetEvents | SetEventId | SetName | SetInSetup | ForcedEvents;
-
-export const resetEvents = (): ResetEvents => ({
-    type: types.RESET_EVENTS,
-});
-
-export const setEventId = (eventId: number): SetEventId => ({
-    type: types.SET_EVENT_ID,
-    eventId,
-});
+export type TalkerAction = SetName | SetInSetup;
 
 export const setName = (name: string): SetName => ({
     type: types.SET_NAME,
@@ -43,10 +21,6 @@ export const setName = (name: string): SetName => ({
 
 export const setInSetup = (): SetInSetup => ({
     type: types.SET_IN_SETUP,
-});
-
-export const forcedEvents = (): ForcedEvents => ({
-    type: types.FORCED_EVENTS,
 });
 
 /**

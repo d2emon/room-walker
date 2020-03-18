@@ -4,25 +4,28 @@ import {
     ThunkDispatch,
 } from 'redux-thunk';
 import {
-    forcedEvents,
-    resetEvents,
-    setEventId,
     setInSetup,
     setName,
     TalkerAction,
 } from './actions';
-import {Store} from '../../reducers';
-import Events, {Event} from '../../../services/events';
-import {setErrorMessage} from "../errors/actions";
 import {CONVERSATION_MODE_ACTION, CONVERSATION_MODE_SAY, CONVERSATION_MODE_TSS, MODE_1} from "./reducer";
+import {Store} from '../../reducers';
+import {setErrorMessage} from "../errors/actions";
+import {
+    forcedEvents,
+    resetEvents,
+    EventsAction,
+} from '../events/actions';
+import {processEvents} from '../events/thunks';
 
 // Types
 type Dispatch<A extends Action> = ThunkDispatch<TalkerAction, any, A>;
 export type TalkerThunkAction<A extends Action> = ThunkAction<any, Store, any, A>;
 
 const makebfr = () => Promise.resolve();
+const openworld = () => Promise.resolve();
 const pbfr = () => Promise.resolve();
-const closeworld = () => Promise.resolve();
+const findUserByName = (name: string): Promise<any> => Promise.resolve(null);
 const special = (action: string, name: string) => Promise.resolve();
 
 const setFromKeyboard = (work: string) => Promise.resolve(`[l]${work}[/l]`);
@@ -83,90 +86,37 @@ const onInput = (
 };
 
 const addUser = (
-    dispatch: Dispatch<TalkerAction>,
+    dispatch: Dispatch<TalkerAction | EventsAction>,
     name: string,
 ) => Promise.resolve()
+    .then(openworld)
+    .then(() => findUserByName(name))
+    .then(user => user && Promise.reject(new Error('You are already on the system - you may only be on once at a time')))
     .then(() => {
-        // openworld();
-    })
-    .then(() => {
+        const users: number[] = [];
         /*
-    if(fpbn(name)!= -1)
-       {
-       throw new Error("You are already on the system - you may only be on once at a time");
-       }
+        for (let userId = 0; userId < MAX_USER_ID; userId += 1) {
+            if (!pname(userId)) {
+                users.push(userId);
+            }
+        }
          */
-        /*
-    ct=0;
-    f=0;
-    while((f==0)&&(ct<maxu))
-       {
-       if (!strlen(pname(ct))) f=1;
-       else
-          ct++;
-       }
-         */
-        return 0;
+        return users;
     })
+    .then(users => users.length ? users[0] : Promise.reject(new Error('Sorry system is full at the moment')))
     .then((userId) => {
-        /*
-    if(ct==maxu)
-       {
-       throw new Error('Sorry AberMUD is full at the moment');
-       }
-    strcpy(pname(ct),name);
-    setploc(ct,curch);
-    setppos(ct,-1);
-    setplev(ct,1);
-    setpvis(ct,0);
-    setpstr(ct,-1);
-    setpwpn(ct,-1);
-    setpsex(ct,0);
-    mynum=ct;
-         */
+        // setpname(userId, name);
+        // setploc(userId, channelId);
+        // setppos(userId, undefined);
+        // setplev(userId, 1);
+        // setpvis(userId, 0);
+        // setpstr(userId, -1);
+        // setpwpn(userId, undefined);
+        // setpsex(userId, 0);
+        // setUserId(userId);
     })
     .then(() => dispatch(resetEvents()))
     .then(() => dispatch(setName(name)));
-
-const processEvents = (
-    dispatch: Dispatch<TalkerAction>,
-    name: string,
-    eventId?: number,
-    interrupt: boolean = false,
-): Promise<void> => {
-    const onProcessedEvents = () => Promise.resolve(interrupt);
-
-    /* Print appropriate stuff from data block */
-    const processEvent = (event: Event): Promise<void> => {
-        /*
-        if (debugMode) {
-            bprintf(`\n<${event.code}>`);
-        }
-        */
-        if (event.code < -3) {
-            // gamrcv(event)
-            return Promise.resolve();
-        } else {
-            // bprintf(event.payload);
-            return Promise.resolve();
-        }
-    };
-
-    return Events.getEvents(eventId)
-        .then((response) => Promise.all([
-            response.lastEventId,
-            response.events.map(processEvent),
-        ]))
-        .then(([lastEventId]) => dispatch(setEventId(lastEventId)))
-        .then(() => {
-            // update(name);
-        })
-        .then(onProcessedEvents)
-        .then(() => {
-            // rdes=0;tdes=0;vdes=0;
-        })
-        .then(closeworld);
-};
 
 export const onWait = (
     dispatch: Dispatch<TalkerAction>,
@@ -177,7 +127,7 @@ export const onWait = (
     });
 
 export const beforeStart = (name: string): TalkerThunkAction<TalkerAction> => (
-    dispatch: Dispatch<TalkerAction>,
+    dispatch: Dispatch<TalkerAction | EventsAction>,
     getState: () => Store,
 ) => makebfr()
     .then(() => addUser(dispatch, name))
@@ -188,7 +138,7 @@ export const beforeStart = (name: string): TalkerThunkAction<TalkerAction> => (
     .catch(e => setErrorMessage(e));
 
 export const nextTurn = (): TalkerThunkAction<TalkerAction> => (
-    dispatch: Dispatch<TalkerAction>,
+    dispatch: Dispatch<TalkerAction | EventsAction>,
     getState: () => Store,
 ) => Promise.resolve(getState().talker.keyBuff)
     .then(setFromKeyboard)
@@ -200,12 +150,3 @@ export const nextTurn = (): TalkerThunkAction<TalkerAction> => (
     )
     .then(() => dispatch(forcedEvents()))
     .then(pbfr);
-
-export const sendEvent = (event: Event): TalkerThunkAction<TalkerAction> => (
-    dispatch: Dispatch<TalkerAction>,
-    getState: () => Store,
-) => Events.postEvent(event)
-    .catch(() => {
-        // logOut();
-        // setErrorMessage('AberMUD: FILE_ACCESS : Access failed');
-    });

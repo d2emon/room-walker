@@ -3,6 +3,7 @@ import main, {MainState} from './main/reducer';
 import tk, {TkState} from './tk/reducer';
 
 import errors, {ErrorsState} from './aber/errors/reducer';
+import events, {EventsState} from './aber/events/reducer';
 import logger, {LoggerState} from './aber/logger/reducer';
 import mainWindow, {MainWindowState} from './aber/mainWindow/reducer';
 import talker, {TalkerState} from "./aber/talker/reducer";
@@ -13,6 +14,7 @@ export interface Store {
     tk: TkState,
 
     errors: ErrorsState,
+    events: EventsState,
     logger: LoggerState,
     mainWindow: MainWindowState,
     talker: TalkerState,
@@ -23,6 +25,7 @@ export {
     tk,
 
     errors,
+    events,
     logger,
     mainWindow,
     talker,
