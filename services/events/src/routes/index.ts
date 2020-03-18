@@ -9,4 +9,10 @@ router.get('/', (req, res) => Events
     .catch(error => res.status(500).json({ error }))
 );
 
+router.post('/', (req, res) => Events
+    .sendEvent(req.body.event)
+    .then(eventId => res.json({ eventId }))
+    .catch(error => res.status(500).json({ error }))
+);
+
 export default router;

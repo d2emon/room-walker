@@ -1,49 +1,71 @@
 import axios from 'axios';
 import config from '../config';
 
-interface Event {
+interface EventMeta {
+    firstEventId: number,
+    lastEventId: number,
 }
 
+interface EventResponse extends EventMeta {
+    eventId: number,
+}
+
+interface Event {
+    eventId?: number,
+}
+
+const getEventMeta = (): Promise<EventMeta> => axios.get(`${config.worldUrl}/events-meta`)
+    .then(response => response.data);
+const addEvent = (event: Event): Promise<EventResponse> => axios.post(`${config.worldUrl}/events`, event)
+    .then(response => response.data);
+const cleanUp = (): Promise<void> => axios.delete(`${config.worldUrl}/events`);
+
 const getEvent = (eventId: number): Promise<Event> => Promise.resolve({});
-/*
-     readmsg(channel,block,num)
-     long channel;
-     long *block;
-     int num;
-        {
-        long buff[64],actnum;
-        sec_read(channel,buff,0,64);
-        actnum=num*2-buff[0];
-        sec_read(channel,block,actnum,128);
+const revise = (cutoff: number) => Promise.resolve()
+    .then(() => {
+        const users = [];
+        for (let userId = 0; userId < 16; userId += 1) {
+            // if (!pname(userId) || ppos(userId) >= cutoff || ppos(userId) === -2) {
+            //     continue;
+            // }
+            users.push(userId);
         }
- */
+        return users;
+    })
+    .then(users => users.forEach((userId) => {
+        // broad(`${pname(userId)} has been timed out\n`);
+        // dumpstuff(userId, ploc(userId));
+        // setpname(userId, '');
+    }));
+const changeWeather = (): Promise<void> => Promise.resolve();
 
-export const getEvents = (eventId?: number): Promise<Event[]> => axios.get(
-    `${config.worldUrl}/events/data`,
-    { params: {
+const onTimeout = (timeout: number): Promise<void> => Promise.all([
+    cleanUp(),
+    revise(timeout),
+    changeWeather(),
+])
+    .then(() => null);
 
-    } }
-)
-    .then(response => response.data)
+export const getEvents = (eventId?: number): Promise<Event[]> => getEventMeta()
     .then((data) => {
         const {
-            firstEventId,
             lastEventId,
         } = data;
-        const startEventId = eventId || lastEventId;
         const promises = [];
-        for (let eventId = firstEventId; eventId < lastEventId; eventId++) {
-            promises.push(getEvent(eventId));
+        for (let currentEventId = eventId || lastEventId; currentEventId < lastEventId; currentEventId++) {
+            promises.push(getEvent(currentEventId));
         }
         return Promise.all(promises);
     })
-    /*
-    .then(events => events.forEach(event => processEvent(event, name)))
-    .then(() => {
-        // cms=ct;
-        // update(name);
-        // eorte();
-        // rdes=0;tdes=0;vdes=0;
+    .catch(() => Promise.reject(new Error('WORLD: FILE_ACCESS : Access failed')));
+
+export const sendEvent = (event: Event): Promise<number> => addEvent(event)
+    .then((data) => {
+        const promises = [];
+        if (data.eventId >= 199) {
+            return onTimeout(data.lastEventId - 50)
+                .then(() => data.eventId)
+        }
+        return data.eventId;
     })
-     */
     .catch(() => Promise.reject(new Error('WORLD: FILE_ACCESS : Access failed')));

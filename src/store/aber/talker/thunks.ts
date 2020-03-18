@@ -23,47 +23,45 @@ export type TalkerThunkAction<A extends Action> = ThunkAction<any, Store, any, A
 const makebfr = () => Promise.resolve();
 const pbfr = () => Promise.resolve();
 const closeworld = () => Promise.resolve();
+const special = (action: string, name: string) => Promise.resolve();
 
 const setFromKeyboard = (work: string) => Promise.resolve(`[l]${work}[/l]`);
 
 const onInput = (
     getState: () => Store,
 ) => {
-    const prepareInput = () => {
+    const prepareInput = (action: string): Promise<string> => new Promise((resolve) => {
         const {
-            keyBuff,
             conversationMode,
         } = getState().talker;
-        if (!keyBuff) {
-            return '';
+        if (!action) {
+            return resolve('');
         }
-        if ((conversationMode !== CONVERSATION_MODE_ACTION) && keyBuff === '**') {
+        if ((conversationMode !== CONVERSATION_MODE_ACTION) && action === '**') {
             // conversationMode = CONVERSATION_MODE_ACTION;
         }
-        if ((keyBuff !== '*') && (keyBuff[0] === '*')) {
-            return keyBuff.substr(1);
+        if ((action !== '*') && (action[0] === '*')) {
+            return resolve(action.substr(1));
         }
-
         if (conversationMode === CONVERSATION_MODE_SAY) {
-            return `say ${keyBuff}`;
+            return resolve(`say ${action}`);
         } else if (conversationMode === CONVERSATION_MODE_TSS) {
-            return `tss ${keyBuff}`;
+            return resolve(`tss ${action}`);
         } else {
-            return keyBuff;
+            return resolve(action);
         }
-    };
+    });
     const performAction = (action: string) => {
         if (getState().talker.mode === MODE_1) {
             // gamecom(action);
             return Promise.resolve();
         } else if (action && (action.toLowerCase() !== '.q')) {
-            // special(work, name);
-            return Promise.resolve();
+            return special(action, getState().talker.name);
         } else {
             return Promise.resolve();
         }
     };
-    return Promise.resolve(prepareInput())
+    return prepareInput(getState().talker.keyBuff)
         .then(performAction)
         .then(() => {
             /*
@@ -84,7 +82,10 @@ const onInput = (
         });
 };
 
-const addUser = (name: string) => Promise.resolve()
+const addUser = (
+    dispatch: Dispatch<TalkerAction>,
+    name: string,
+) => Promise.resolve()
     .then(() => {
         // openworld();
     })
@@ -123,7 +124,9 @@ const addUser = (name: string) => Promise.resolve()
     setpsex(ct,0);
     mynum=ct;
          */
-    });
+    })
+    .then(() => dispatch(resetEvents()))
+    .then(() => dispatch(setName(name)));
 
 const processEvents = (
     dispatch: Dispatch<TalkerAction>,
@@ -176,19 +179,13 @@ export const onWait = (
 export const beforeStart = (name: string): TalkerThunkAction<TalkerAction> => (
     dispatch: Dispatch<TalkerAction>,
     getState: () => Store,
-) => {
-    makebfr()
-        .then(() => dispatch(resetEvents()))
-        .then(() => addUser(name))
-        .then(() => dispatch(setName(name)))
-        .then(() => processEvents(dispatch, getState().talker.name, undefined))
-        .then(() => dispatch(resetEvents()))
-        .then(() => {
-            // special('.g', name);
-        })
-        .then(() => dispatch(setInSetup()))
-        .catch(e => setErrorMessage(e));
-};
+) => makebfr()
+    .then(() => addUser(dispatch, name))
+    .then(() => processEvents(dispatch, getState().talker.name, undefined))
+    .then(() => dispatch(resetEvents()))
+    .then(() => special('.g', getState().talker.name))
+    .then(() => dispatch(setInSetup()))
+    .catch(e => setErrorMessage(e));
 
 export const nextTurn = (): TalkerThunkAction<TalkerAction> => (
     dispatch: Dispatch<TalkerAction>,
@@ -203,3 +200,12 @@ export const nextTurn = (): TalkerThunkAction<TalkerAction> => (
     )
     .then(() => dispatch(forcedEvents()))
     .then(pbfr);
+
+export const sendEvent = (event: Event): TalkerThunkAction<TalkerAction> => (
+    dispatch: Dispatch<TalkerAction>,
+    getState: () => Store,
+) => Events.postEvent(event)
+    .catch(() => {
+        // logOut();
+        // setErrorMessage('AberMUD: FILE_ACCESS : Access failed');
+    });
