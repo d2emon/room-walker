@@ -10,11 +10,9 @@ export interface MainWindowState {
     errorId?: number,
     errorMessage?: string,
     // Timer
-    ignore: boolean,
-    alarm: number,
-    // Internal
     active: boolean,
-    interrupt: boolean,
+    alarm: number,
+    ignore: boolean,
     // External
     keysAreSet: boolean,
     prDue: boolean,
@@ -26,11 +24,9 @@ const InitialState: MainWindowState = {
     title: '',
     name: '',
 
-    ignore: false,
-    alarm: 0,
-
     active: false,
-    interrupt: false,
+    alarm: 0,
+    ignore: false,
 
     keysAreSet: true,
     prDue: false,
@@ -45,6 +41,11 @@ export default (state: MainWindowState = InitialState, action: MainWindowAction)
                 userId: action.userId,
                 title: action.title,
                 name: action.name,
+            };
+        case types.SET_TITLE:
+            return {
+                ...InitialState,
+                title: action.title,
             };
         case types.SET_ALARM_OFF:
             return {
@@ -73,3 +74,4 @@ export default (state: MainWindowState = InitialState, action: MainWindowAction)
 // Selectors
 export const canExit = (state: MainWindowState) => !state.inFight;
 export const timerIsOn = (state: MainWindowState) => !state.ignore;
+export const canOnTimer = (state: MainWindowState) => state.active && !state.ignore;

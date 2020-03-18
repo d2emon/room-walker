@@ -9,6 +9,11 @@ interface StartGame extends Action {
     name: string,
 }
 
+interface SetTitle extends Action {
+    type: types.SET_TITLE,
+    title: string,
+}
+
 interface SetAlarm extends Action {
     type: types.SET_ALARM_OFF,
     value: boolean,
@@ -25,13 +30,18 @@ interface SetKeysOff extends Action {
 }
 
 // Types
-export type MainWindowAction = StartGame | SetAlarm | SetBlock | SetKeysOff;
+export type MainWindowAction = StartGame | SetTitle | SetAlarm | SetBlock | SetKeysOff;
 
 export const startGame = (userId: string, title: string, name: string): StartGame => ({
     type: types.START_GAME,
     userId,
     title,
     name,
+});
+
+export const setTitle = (title: string): SetTitle => ({
+    type: types.SET_TITLE,
+    title,
 });
 
 export const setAlarm = (value: boolean): SetAlarm => ({

@@ -3,18 +3,24 @@ import {Action} from 'redux';
 import {connect} from 'react-redux';
 import {
     Button,
-    Card, CardFooter,
+    Card,
+    CardFooter,
     CardHeader,
     CardTitle,
     Container,
 } from 'reactstrap';
 import {Store} from '../../store/reducers';
+import {getPrompt} from '../../store/aber/talker/reducer';
+import * as mainWindowActions from '../../store/aber/mainWindow/thunks';
 import * as talkerActions from '../../store/aber/talker/thunks';
 
 interface StateProps {
+    prompt: string,
 }
 
 interface DispatchProps {
+    beforeInput: () => mainWindowActions.MainWindowThunkAction<Action>,
+    afterInput: () => mainWindowActions.MainWindowThunkAction<Action>,
     beforeStart: (name: string) => talkerActions.TalkerThunkAction<Action>,
     nextTurn: (name: string) => talkerActions.TalkerThunkAction<Action>,
 }
@@ -45,6 +51,8 @@ class Talker extends React.Component<Props, State> {
     }
 
     onNextTurn() {
+        this.props.beforeInput();
+        this.props.afterInput();
         this.props.nextTurn(this.props.name);
     }
 
@@ -52,6 +60,7 @@ class Talker extends React.Component<Props, State> {
         const {
             children,
             name,
+            prompt,
         } = this.props;
         return (<Card>
             <CardHeader>
@@ -63,6 +72,7 @@ class Talker extends React.Component<Props, State> {
                 {children}
             </Container>
             <CardFooter>
+                {{ prompt }} [80]
                 <Button
                     onClick={this.onNextTurn}
                 >
@@ -74,9 +84,13 @@ class Talker extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (store: Store): StateProps => ({
+    prompt: getPrompt(store.talker),
 });
 
 const mapDispatchToProps: DispatchProps = {
+    beforeInput: mainWindowActions.beforeInput,
+    afterInput: mainWindowActions.afterInput,
+
     beforeStart: talkerActions.beforeStart,
     nextTurn: talkerActions.nextTurn,
 };

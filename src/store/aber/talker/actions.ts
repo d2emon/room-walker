@@ -6,6 +6,11 @@ interface ResetEvents extends Action {
     type: types.RESET_EVENTS,
 }
 
+interface SetEventId extends Action {
+    type: types.SET_EVENT_ID,
+    eventId: number,
+}
+
 interface SetName extends Action {
     type: types.SET_NAME,
     name: string,
@@ -15,11 +20,20 @@ interface SetInSetup extends Action {
     type: types.SET_IN_SETUP,
 }
 
+interface ForcedEvents extends Action {
+    type: types.FORCED_EVENTS,
+}
+
 // Types
-export type TalkerAction = ResetEvents | SetName | SetInSetup;
+export type TalkerAction = ResetEvents | SetEventId | SetName | SetInSetup | ForcedEvents;
 
 export const resetEvents = (): ResetEvents => ({
     type: types.RESET_EVENTS,
+});
+
+export const setEventId = (eventId: number): SetEventId => ({
+    type: types.SET_EVENT_ID,
+    eventId,
 });
 
 export const setName = (name: string): SetName => ({
@@ -29,6 +43,10 @@ export const setName = (name: string): SetName => ({
 
 export const setInSetup = (): SetInSetup => ({
     type: types.SET_IN_SETUP,
+});
+
+export const forcedEvents = (): ForcedEvents => ({
+    type: types.FORCED_EVENTS,
 });
 
 /**
@@ -48,121 +66,6 @@ export const setInSetup = (): SetInSetup => ({
  */
 
 /*
- mstoout(block,name)
- long *block;char *name;
-    {
-    extern long debug_mode;
-    char luser[40];
-    char *x;
-    x=(char *)block;
-
- */
-    /* Print appropriate stuff from data block */
-/*
-    strcpy(luser,name);lowercase(luser);
-if(debug_mode)    bprintf("\n<%d>",block[1]);
-    if (block[1]<-3) sysctrl(block,luser);
-    else
-       bprintf("%s", (x+2*sizeof(long)));
-    }
-
-long gurum=0;
-long convflg=0;
-
-sendmsg(name)
- char *name;
-    {
-    extern long debug_mode;
-    extern char *sysbuf;
-    extern long curch,moni,mynum;
-    char prmpt[32];
-    long a;
-extern long tty;
-    char work[200];
-    long w2[35];
-    extern char key_buff[];
-    extern long convflg;
-    extern long my_lev;
-extern long my_str;
-extern long in_fight;
-extern long fighting;
-    extern long curmode;
-    l:pbfr();
-if(tty==4) btmscr();
-strcpy(prmpt,"\r");
-    if(pvis(mynum)) strcat(prmpt,"(");
-    if(debug_mode) strcat(prmpt,"#");
-    if(my_lev>9)strcat(prmpt,"----");
-    switch(convflg)
-       {
-       case 0:
-          strcat(prmpt,">");
-          break;
-       case 1:
-          strcat(prmpt,"\"");
-          break;
-       case 2:
-          strcat(prmpt,"*");
-          break;
-       default:
-          strcat(prmpt,"?");
-          }
-    if(pvis(mynum)) strcat(prmpt,")");
-    pbfr();
-    if(pvis(mynum)>9999) set_progname(0,"-csh");
-    else
-    sprintf(work,"   --}----- ABERMUD -----{--     Playing as %s",name);
-    if(pvis(mynum)==0) set_progname(0,work);
-    sig_alon();
-    key_input(prmpt,80);
-    sig_aloff();
-    strcpy(work,key_buff);
-if(tty==4) topscr();
-strcat(sysbuf,"\001l");
-strcat(sysbuf,work);
-strcat(sysbuf,"\n\001");
-openworld();
-rte(name);
-closeworld();
-    if((convflg)&&(!strcmp(work,"**")))
-       {
-       convflg=0;
-       goto l;
-       }
-    if(!strlen(work)) goto nadj;
-if((strcmp(work,"*"))&&(work[0]=='*')){(work[0]=32);goto nadj;}
-    if(convflg)
-       {
-       strcpy(w2,work);
-       if(convflg==1) sprintf(work,"say %s",w2);
-       else
-          sprintf(work,"tss %s",w2);
-       }
-    nadj:if(curmode==1) gamecom(work);
-    else
-       {
-       if(((strcmp(work,".Q"))&&(strcmp(work,".q")))&& (!!strlen(work)))
-          {
-          a=special(work,name);
-          }
-       }
-if(fighting>-1)
-{
-if(!strlen(pname(fighting)))
-{
-in_fight=0;
-fighting= -1;
-}
-if(ploc(fighting)!=curch)
-{
-in_fight=0;
-fighting= -1;
-}
-}
-if(in_fight) in_fight-=1;
-    return((!strcmp(work,".Q"))||(!strcmp(work,".q")));
-    }
-
  send2(block)
  long *block;
     {
@@ -180,68 +83,6 @@ if(in_fight) in_fight-=1;
     if (number>=199) cleanup(inpbk);
     if(number>=199) longwthr();
     }
-
- readmsg(channel,block,num)
- long channel;
- long *block;
- int num;
-    {
-    long buff[64],actnum;
-    sec_read(channel,buff,0,64);
-    actnum=num*2-buff[0];
-    sec_read(channel,block,actnum,128);
-    }
-
-FILE *fl_com;
-extern long findstart();
-extern long findend();
-
-FILE *openlock(file,perm)
-char *file;
-char *perm;
-    {
-    FILE *unit;
-    long ct;
-    extern int errno;
-    extern char globme[];
-    ct=0;
-   unit=fopen(file,perm);
-   if(unit==NULL) return(unit);
- */
-   /* NOTE: Always open with R or r+ or w */
-/*
-intr:if(flock(fileno(unit),LOCK_EX)== -1)
-		if(errno==EINTR) goto intr; *//* INTERRUPTED SYSTEM CALL CATCH *//*
-    switch(errno)
-    {
-    	case ENOSPC:crapup("PANIC exit device full\n");
-*/
-    	/*    	case ESTALE:;*/
-            /*
-    	case EHOSTDOWN:;
-    	case EHOSTUNREACH:crapup("PANIC exit access failure, NFS gone for a snooze");
-    }
-    return(unit);
-    }
-
-long findstart(unit)
- FILE *unit;
-    {
-    long bk[2];
-    sec_read(unit,bk,0,1);
-    return(bk[0]);
-    }
-
-long findend(unit)
- FILE *unit;
-    {
-    long bk[3];
-    sec_read(unit,bk,0,2);
-    return(bk[1]);
-    }
-
-
-long rd_qd=0;
 
  cleanup(inpbk)
  long *inpbk;
@@ -261,20 +102,9 @@ long rd_qd=0;
     revise(inpbk[0]);
     }
 
-
-
  special(string,name)
  char *string,*name;
     {
-    extern long curmode;
-    char ch,bk[128];
-    extern long curch,moni;
-    extern long mynum;
-    extern long my_str,my_lev,my_sco,my_sex;
-    FILE * ufl;
-    char xx[128];
-    char xy[128];
-    char us[32];
     strcpy(bk,string);
     lowercase(bk);
     ch= *bk;
@@ -298,10 +128,16 @@ long rd_qd=0;
           sprintf(xy,"\001s%s\001%s  has entered the game\n\001",name,name);
           sprintf(xx,"\001s%s\001[ %s  has entered the game ]\n\001",name,name);
           sendsys(name,name,-10113,curch,xx);
-          rte(name);
-          if(randperc()>50)trapch(-5);
-else{curch= -183;trapch(-183);}
-sendsys(name,name,-10000,curch,xy);
+          processEvents(name)
+            .then(() => {
+                if(randperc()>50) {
+                    curch= -5;
+                } else {
+                    curch= -183;
+                }
+                trapch(curch);
+                sendsys(name,name,-10000,curch,xy);
+            })
           break;
        default:
           printf("\nUnknown . option\n");
@@ -309,40 +145,16 @@ sendsys(name,name,-10000,curch,xy);
     return(1);
     }
 
-
-
-long dsdb=0;
-
-
-long moni=0;
-
  broad(mesg)
  char *mesg;
     {
-rd_qd=1;
+    dispatch(forceEvents())
 send2([
     null,
     -1,
     messg,
 ]);
 }
-
-tbroad(message)
-char *message;
-    {
-    broad(message);
-    }
-
- sysctrl(block,luser)
- long *block;
- char *luser;
-    {
-    gamrcv(block);
-    }
-long  bound=0;
-long  tmpimu=0;
-char  *echoback="*e";
-char  *tmpwiz=".";*//* Illegal name so natural immunes are ungettable! *//*
 
  split(block,nam1,nam2,work,luser)
  long *block;
@@ -377,42 +189,6 @@ extern long curch;
 
 long mynum=0;
 
- putmeon(name)
- char *name;
-    {
-    extern long mynum,curch;
-    extern long maxu;
-    long ct,f;
-    FILE *unit;
-    unit=openworld();
-    ct=0;
-    f=0;
-    if(fpbn(name)!= -1)
-       {
-       crapup("You are already on the system - you may only be on once at a time");
-       }
-    while((f==0)&&(ct<maxu))
-       {
-       if (!strlen(pname(ct))) f=1;
-       else
-          ct++;
-       }
-    if(ct==maxu)
-       {
-       mynum=maxu;
-       return;
-       }
-    strcpy(pname(ct),name);
-    setploc(ct,curch);
-    setppos(ct,-1);
-    setplev(ct,1);
-    setpvis(ct,0);
-    setpstr(ct,-1);
-    setpwpn(ct,-1);
-    setpsex(ct,0);
-    mynum=ct;
-    }
-
  loseme(name)
  char *name;
     {
@@ -432,26 +208,27 @@ sprintf(bk,"%s has departed from AberMUDII\n",globme);
 sendsys(globme,globme,-10113,0,bk);
 }
     pname(mynum)[0]=0;
-    	closeworld();
-if(!zapped) saveme();
-    	chksnp();
-    }
+    return closeworld()
+        .then(() => {
+            if(!zapped) saveme();
+            chksnp();
+    	});
+}
 
 long lasup=0;
 
  update(name)
  char *name;
     {
-    extern long mynum,cms;
     FILE *unit;
     long xp;
     extern long lasup;
-    xp=cms-lasup;
+    xp = getState().talker.eventId - lasup;
     if(xp<0) xp= -xp;
     if(xp<10) goto noup;
     unit=openworld();
-    setppos(mynum,cms);
-    lasup=cms;
+    setppos(mynum, getState().talker.eventId);
+    lasup = getState().talker.eventId;
     noup:;
     }
 
@@ -488,75 +265,59 @@ long lasup=0;
     extern long ail_blind;
     long ct;
     extern long my_lev;
-    closeworld();
-    if(ail_blind)
-    {
-    	bprintf("You are blind... you can't see a thing!\n");
-    }
-    if(my_lev>9) showname(room);
-    un1=openroom(room,"r");
-    if (un1!=NULL)
-    {
-xx1:   xxx=0;
-       lodex(un1);
-       	if(isdark())
-       	{
-          		fclose(un1);
-          		bprintf("It is dark\n");
-                        openworld();
-          		onlook();
-          		return;
-          	}
-       while(getstr(un1,str)!=0)
-          {
-          if(!strcmp(str,"#DIE"))
-             {
-             if(ail_blind) {rewind(un1);ail_blind=0;goto xx1;}
-             if(my_lev>9)bprintf("<DEATH ROOM>\n");
-             else
+    return closeworld()
+        .then(() => {
+                if(ail_blind)
                 {
-                loseme(globme);
-                crapup("bye bye.....\n");
+                    bprintf("You are blind... you can't see a thing!\n");
                 }
-             }
-          else
-{
-if(!strcmp(str,"#NOBR")) brmode=0;
-else
-             if((!ail_blind)&&(!xxx))bprintf("%s\n",str);
-          xxx=brmode;
-}
-          }
-       }
-    else
-       bprintf("\nYou are on channel %d\n",room);
-    fclose(un1);
-    openworld();
-    if(!ail_blind)
-    {
-	    lisobs();
-	    if(curmode==1) lispeople();
-    }
-    bprintf("\n");
-    onlook();
-    }
- loodrv()
-    {
-    extern long curch;
-    lookin(curch);
-    }
+                if(my_lev>9) showname(room);
+                un1=openroom(room,"r");
+                if (un1!=NULL)
+                {
+            xx1:   xxx=0;
+                   lodex(un1);
+                    if(isdark())
+                    {
+                            fclose(un1);
+                            bprintf("It is dark\n");
+                                    openworld();
+                            onlook();
+                            return;
+                        }
+                   while(getstr(un1,str)!=0)
+                      {
+                      if(!strcmp(str,"#DIE"))
+                         {
+                         if(ail_blind) {rewind(un1);ail_blind=0;goto xx1;}
+                         if(my_lev>9)bprintf("<DEATH ROOM>\n");
+                         else
+                            {
+                            loseme(globme);
+                            crapup("bye bye.....\n");
+                            }
+                         }
+                      else
+            {
+            if(!strcmp(str,"#NOBR")) brmode=0;
+            else
+                         if((!ail_blind)&&(!xxx))bprintf("%s\n",str);
+                      xxx=brmode;
+            }
+                      }
+                   }
+                else
+                   bprintf("\nYou are on channel %d\n",room);
+                fclose(un1);
+                openworld();
+                if(!ail_blind)
+                {
+                    lisobs();
+                    if(curmode==1) lispeople();
+                }
+                bprintf("\n");
+                onlook();
 
-userwrap()
-{
-extern char globme[];
-if(fpbns(globme)!= -1) {loseme();syslog("System Wrapup exorcised %s",globme);}
-}
-
-fcloselock(file)
-FILE *file;
-{
-	fflush(file);
-	flock(fileno(file),LOCK_UN);
-	fclose(file);
-}
+        });
+    }
  */

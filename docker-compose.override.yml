@@ -32,6 +32,22 @@ services:
       - ./src:/usr/src/app/src
       - ./node_modules:/usr/src/app/node_modules
       - ./dist:/usr/src/app/dist
+  world:
+    build: ./services/world/
+    ports:
+      - 5000:8080
+    restart: always
+    volumes:
+      - ./services/world/src:/usr/src/app/src
+      - ./services/world/dist:/usr/src/app/dist
+  events:
+    build: ./services/events/
+    ports:
+      - 4003:8080
+    restart: always
+    volumes:
+      - ./services/events/src:/usr/src/app/src
+      - ./services/events/dist:/usr/src/app/dist
   syslog:
     build: ./services/syslog/
     ports:
