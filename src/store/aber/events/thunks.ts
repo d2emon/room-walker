@@ -7,7 +7,7 @@ import {
     // forcedEvents,
     // resetEvents,
     setEventId,
-    EventsAction,
+    EventsAction, forcedEvents,
 } from './actions';
 import {Store} from '../../reducers';
 import Events, {Event} from '../../../services/events';
@@ -62,6 +62,19 @@ export const sendEvent = (event: Event): EventsThunkAction<EventsAction> => (
     dispatch: Dispatch<EventsAction>,
     getState: () => Store,
 ) => Events.postEvent(event)
+    .catch(() => {
+        // logOut();
+        // setErrorMessage('AberMUD: FILE_ACCESS : Access failed');
+    });
+
+export const broadcastMessage = (payload: string): EventsThunkAction<EventsAction> => (
+    dispatch: Dispatch<EventsAction>,
+    getState: () => Store,
+) => Events.postEvent({
+    code: -1,
+    payload,
+})
+    // .then(() => dispatch(forceEvents))
     .catch(() => {
         // logOut();
         // setErrorMessage('AberMUD: FILE_ACCESS : Access failed');

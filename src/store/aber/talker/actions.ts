@@ -40,137 +40,63 @@ export const setInSetup = (): SetInSetup => ({
  */
 
 /*
- special(string,name)
- char *string,*name;
-    {
-    strcpy(bk,string);
-    lowercase(bk);
-    ch= *bk;
-    if (ch!='.') return(0);
-    ch=bk[1];
-    switch(ch)
-       {
-       case 'g':
-          curmode=1;
-          curch= -5;
-          initme();
-          ufl=openworld();
-          setpstr(mynum,my_str);
-          setplev(mynum,my_lev);
- if(my_lev<10000) setpvis(mynum,0);
-    else setpvis(mynum,10000);
-          setpwpn(mynum,-1);
-          setpsexall(mynum,my_sex);
-          setphelping(mynum,-1);
-          cuserid(us);
-          sprintf(xy,"\001s%s\001%s  has entered the game\n\001",name,name);
-          sprintf(xx,"\001s%s\001[ %s  has entered the game ]\n\001",name,name);
-          sendsys(name,name,-10113,curch,xx);
-          processEvents(name)
-            .then(() => {
-                if(randperc()>50) {
-                    curch= -5;
-                } else {
-                    curch= -183;
-                }
-                trapch(curch);
-                sendsys(name,name,-10000,curch,xy);
-            })
-          break;
-       default:
-          printf("\nUnknown . option\n");
-          }
-    return(1);
-    }
+const trapch = (channelId: number) => openworld()
+    .then(() => {
+        setChannelId(channelId);
+        setplocation(userId, channelId);
+        return channelId;
+    })
+    .then(lookIn)
+*/
 
-const broad = (payload: string) => Events.postEvent(
-    {
-        code: -1,
-        payload,
-    },
-)
-    .then(() => dispatch(forceEvents()))
-    .catch(() => {
-        // logOut();
-        // setErrorMessage('AberMUD: FILE_ACCESS : Access failed');
-    });
-
- split(block,nam1,nam2,work,luser)
- long *block;
- char *nam1;
- char *nam2;
- char *work;
- char *luser;
-    {
-    long wkblock[128],a;
-    wkblock = block[2];
-    work = block[64];
-    a=scan(nam1,(char *)wkblock,0,"",".");
-    scan(nam2,(char *)wkblock,a+1,"",".");
-if((strncmp(nam1,"The ",4)==0)||(strncmp(nam1,"the ",4)==0))
-{
-if(!strcmp(lowercase(nam1+4),lowercase(luser))) return(1);
-}
-    return(!strcmp(lowercase(nam1),lowercase(luser)));
-    }
- trapch(chan)
- long chan;
-    {
-extern long curch;
-    extern long mynum;
-    FILE *unit;
-    extern long my_lev;
-    if(my_lev>9) goto ndie;
-    ndie:unit=openworld();
-    setploc(mynum,chan);
-    lookin(chan);
-    }
-
+/*
 long mynum=0;
+*/
 
- loseme(name)
- char *name;
-    {
-extern long mynum;
-extern long zapped;
-char bk[128];
-extern char globme[];
-FILE *unit;
-sig_aloff(); *//* No interruptions while you are busy dying */
-			/* ABOUT 2 MINUTES OR SO *//*
-i_setup=0;
-
-unit=openworld();
-    dumpitems();
-if(pvis(mynum)<10000) {
-sprintf(bk,"%s has departed from AberMUDII\n",globme);
-sendsys(globme,globme,-10113,0,bk);
-}
-    pname(mynum)[0]=0;
-    return closeworld()
+/*
+const logOut = (name: string) => {
+    // setSigAl(false);
+    // resetISetup();
+    return Promise.resolve()
+        .then(openworld)
         .then(() => {
-            if(!zapped) saveme();
-            chksnp();
-    	});
-}
+            dumpitems();
+            if (pvis(userId) < 10000) {
+                sendsys(
+                    name,
+                    name,
+                    -10113,
+                    0,
+                    `${name} has departed\n`,
+                );
+            }
+            setpname(userId, '');
+        })
+        .then(closeworld)
+        .then(() => zapped || saveme())
+        .then(chksnp);
+};
+*/
 
+/*
 long lasup=0;
+*/
 
- update(name)
- char *name;
-    {
-    FILE *unit;
-    long xp;
-    extern long lasup;
-    xp = getState().talker.eventId - lasup;
-    if(xp<0) xp= -xp;
-    if(xp<10) goto noup;
-    unit=openworld();
-    setppos(mynum, getState().talker.eventId);
-    lasup = getState().talker.eventId;
-    noup:;
-    }
+/*
+const update = (name: string) => {
+    const eventId = getState().events.eventId;
+    return (Math.abs(eventId - getState().events.lasup) < 10)
+        ? Promise.resolve()
+        : Promise.resolve()
+        .then(openworld)
+        .then(() => {
+            setppos(userId, eventId);
+            setLastUpdate(eventId);
+        });
+}
+*/
 
+/*
  lookin(room)
  long room; *//* Lords ???? *//*
     {

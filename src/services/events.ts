@@ -3,6 +3,7 @@ import axios from "axios";
 export interface Event {
     eventId?: number,
     code: number,
+    payload?: any,
 }
 
 export interface EventsResponse {

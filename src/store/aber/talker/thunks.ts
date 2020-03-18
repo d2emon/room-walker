@@ -26,11 +26,70 @@ const makebfr = () => Promise.resolve();
 const openworld = () => Promise.resolve();
 const pbfr = () => Promise.resolve();
 const findUserByName = (name: string): Promise<any> => Promise.resolve(null);
-const special = (action: string, name: string) => Promise.resolve();
 
 const setFromKeyboard = (work: string) => Promise.resolve(`[l]${work}[/l]`);
 
+const special = (
+    dispatch: Dispatch<TalkerAction>,
+    getState: () => Store,
+    action: string,
+) => {
+    const start = (name: string) => Promise.resolve()
+        .then(() => {
+            // mode = MODE_1;
+            // channelId = 5;
+            // initme();
+        })
+        .then(openworld)
+        .then(() => {
+            // setpstr(userId, myStr);
+            // setplev(userId, myLev);
+            // setpvis(userId, (myLev < 10000) ? 0 : 10000);
+            // setpwpn(userId, undefined);
+            // setpsexall(userId, mySex);
+            // setphelping(userId, undefined);
+            /*
+            sendsys(
+                name,
+                name,
+                -10113,
+                channelId,
+                ifSeePlayer(name, `[ ${name}  has entered the game ]\n`),
+            );
+             */
+        })
+        .then(() => processEvents(dispatch, name))
+        .then(() => {
+            // channelId = (randperc() > 50) ? -5 : -183;
+            // trapch(channelId);
+            /*
+            sendsys(
+                name,
+                name,
+                -10000,
+                channelId,
+                ifSeePlayer(name, `${name}  has entered the game\n`),
+            );
+             */
+        });
+
+    if (!action) {
+        return Promise.resolve();
+    }
+    if (action[0] !== '.') {
+        return Promise.resolve();
+    }
+
+    const code = action.substr(1).toLowerCase();
+    if (code === 'g') {
+        return start(getState().talker.name);
+    } else {
+        return Promise.reject(new Error('Unknown . option'));
+    }
+};
+
 const onInput = (
+    dispatch: Dispatch<TalkerAction>,
     getState: () => Store,
 ) => {
     const prepareInput = (action: string): Promise<string> => new Promise((resolve) => {
@@ -59,7 +118,7 @@ const onInput = (
             // gamecom(action);
             return Promise.resolve();
         } else if (action && (action.toLowerCase() !== '.q')) {
-            return special(action, getState().talker.name);
+            return special(dispatch, getState, action);
         } else {
             return Promise.resolve();
         }
@@ -121,9 +180,9 @@ const addUser = (
 export const onWait = (
     dispatch: Dispatch<TalkerAction>,
     getState: () => Store,
-) => processEvents(dispatch, getState().talker.name, getState().talker.eventId, true)
+) => processEvents(dispatch, getState().talker.name, getState().events.eventId, true)
     .then(() => {
-        // on_timing()
+        // onTiming()
     });
 
 export const beforeStart = (name: string): TalkerThunkAction<TalkerAction> => (
@@ -131,9 +190,8 @@ export const beforeStart = (name: string): TalkerThunkAction<TalkerAction> => (
     getState: () => Store,
 ) => makebfr()
     .then(() => addUser(dispatch, name))
-    .then(() => processEvents(dispatch, getState().talker.name, undefined))
-    .then(() => dispatch(resetEvents()))
-    .then(() => special('.g', getState().talker.name))
+    .then(() => processEvents(dispatch, getState().talker.name))
+    .then(() => special(dispatch, getState, '.g'))
     .then(() => dispatch(setInSetup()))
     .catch(e => setErrorMessage(e));
 
@@ -142,10 +200,10 @@ export const nextTurn = (): TalkerThunkAction<TalkerAction> => (
     getState: () => Store,
 ) => Promise.resolve(getState().talker.keyBuff)
     .then(setFromKeyboard)
-    .then(() => processEvents(dispatch, getState().talker.name, getState().talker.eventId))
-    .then(() => onInput(getState))
-    .then(() => getState().talker.forceEvents
-        ? processEvents(dispatch, getState().talker.name, getState().talker.eventId)
+    .then(() => processEvents(dispatch, getState().talker.name, getState().events.eventId))
+    .then(() => onInput(dispatch, getState))
+    .then(() => getState().events.forceEvents
+        ? processEvents(dispatch, getState().talker.name, getState().events.eventId)
         : undefined
     )
     .then(() => dispatch(forcedEvents()))
