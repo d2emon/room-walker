@@ -1,5 +1,6 @@
 import {Action} from 'redux';
 import * as types from './actionTypes';
+import {ActionMode} from './modes';
 
 // Interfaces
 interface SetName extends Action {
@@ -11,8 +12,21 @@ interface SetInSetup extends Action {
     type: types.SET_IN_SETUP,
 }
 
+interface SetMode extends Action {
+    type: types.SET_MODE,
+    actionMode: ActionMode,
+}
+
+interface SetLoggedIn extends Action {
+    type: types.SET_LOGGED_IN,
+}
+
+interface SetLoggedOut extends Action {
+    type: types.SET_LOGGED_OUT,
+}
+
 // Types
-export type TalkerAction = SetName | SetInSetup;
+export type TalkerAction = SetName | SetInSetup | SetMode | SetLoggedIn | SetLoggedOut;
 
 export const setName = (name: string): SetName => ({
     type: types.SET_NAME,
@@ -21,6 +35,19 @@ export const setName = (name: string): SetName => ({
 
 export const setInSetup = (): SetInSetup => ({
     type: types.SET_IN_SETUP,
+});
+
+export const setMode = (actionMode: ActionMode): SetMode => ({
+    type: types.SET_MODE,
+    actionMode,
+});
+
+export const setLoggedIn = (): SetLoggedIn => ({
+    type: types.SET_LOGGED_IN,
+});
+
+export const setLoggedOut = (): SetLoggedOut => ({
+    type: types.SET_LOGGED_OUT,
 });
 
 /**
@@ -54,28 +81,26 @@ long mynum=0;
 */
 
 /*
-const logOut = (name: string) => {
-    // setSigAl(false);
-    // resetISetup();
-    return Promise.resolve()
-        .then(openworld)
-        .then(() => {
-            dumpitems();
-            if (pvis(userId) < 10000) {
-                sendsys(
-                    name,
-                    name,
-                    -10113,
-                    0,
-                    `${name} has departed\n`,
-                );
-            }
-            setpname(userId, '');
-        })
-        .then(closeworld)
-        .then(() => zapped || saveme())
-        .then(chksnp);
-};
+const logOut = (name: string) => Promise.resolve()
+    .then(() => setSigAl(false))
+    .then(() => dispatch(setLoggedOut()))
+    .then(openworld)
+    .then(() => {
+        dumpitems();
+        if (pvis(userId) < 10000) {
+            sendsys(
+                name,
+                name,
+                -10113,
+                0,
+                `${name} has departed\n`,
+            );
+        }
+        setpname(userId, '');
+    })
+    .then(closeworld)
+    .then(() => zapped || saveme())
+    .then(chksnp);
 */
 
 /*
@@ -157,7 +182,9 @@ const update = (name: string) => {
                 if(!ail_blind)
                 {
                     lisobs();
-                    if(curmode==1) lispeople();
+                    if (getState().talker.actionMode === MODE_ACTION) {
+                        lispeople();
+                    }
                 }
                 bprintf("\n");
                 onlook();

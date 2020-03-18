@@ -1,24 +1,19 @@
 import * as types from './actionTypes';
 import {TalkerAction} from './actions';
-
-export const MODE_0 = 'MODE_0';
-export const MODE_1 = 'MODE_1';
-
-type Mode = typeof MODE_0 | typeof MODE_1;
-
-export const CONVERSATION_MODE_ACTION = 'CONVERSATION_MODE_ACTION';
-export const CONVERSATION_MODE_SAY = 'CONVERSATION_MODE_SAY';
-export const CONVERSATION_MODE_TSS = 'CONVERSATION_MODE_TSS';
-
-type ConversationMode = typeof CONVERSATION_MODE_ACTION
-    | typeof CONVERSATION_MODE_SAY
-    | typeof CONVERSATION_MODE_TSS;
+import {
+    ActionMode,
+    ConversationMode,
+    MODE_SPECIAL,
+    CONVERSATION_MODE_ACTION,
+    CONVERSATION_MODE_SAY,
+    CONVERSATION_MODE_TSS,
+} from './modes';
 
 export interface TalkerState {
-    inSetup: boolean,
+    loggedIn: boolean,
     channelId: number,
     name: string,
-    mode: Mode,
+    actionMode: ActionMode,
     conversationMode: ConversationMode,
 
     // Other
@@ -30,10 +25,10 @@ export interface TalkerState {
 }
 
 const InitialState: TalkerState = {
-    inSetup: false,
+    loggedIn: false,
     channelId: 0,
     name: '',
-    mode: MODE_0,
+    actionMode: MODE_SPECIAL,
     conversationMode: CONVERSATION_MODE_ACTION,
 
     debugMode: false,
@@ -53,7 +48,22 @@ export default (state: TalkerState = InitialState, action: TalkerAction): Talker
         case types.SET_IN_SETUP:
             return {
                 ...state,
-                inSetup: true,
+                loggedIn: true,
+            };
+        case types.SET_MODE:
+            return {
+                ...state,
+                actionMode: action.actionMode,
+            };
+        case types.SET_LOGGED_IN:
+            return {
+                ...state,
+                loggedIn: true,
+            };
+        case types.SET_LOGGED_OUT:
+            return {
+                ...state,
+                loggedIn: false,
             };
         default:
             return state;
