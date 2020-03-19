@@ -1,6 +1,9 @@
 import axios from 'axios';
 import config from '../config';
-import {User} from "./users";
+import {
+    updateUser,
+    User,
+} from "./users";
 
 export interface Event {
     eventId?: number,
@@ -17,6 +20,7 @@ interface PostEventResponse {
     eventId: number,
 }
 
+const receiveEvent = (event: Event): Promise<void> => Promise.resolve();
 const sendMessage = (message: string): Promise<void> => Promise.resolve();
 
 const getEvents = (eventId?: number): Promise<EventsResponse> => axios.get(
@@ -39,8 +43,7 @@ const postEvent = (event: Event): Promise<PostEventResponse> => axios.post(
 const processEvent = (event: Event): Promise<void> => Promise.resolve(false)
     .then(debugMode => debugMode && sendMessage(`\n<${event.code}>`))
     .then(() => ((event.code < -3)
-        ? // gamrcv(event)
-            Promise.resolve()
+        ? receiveEvent(event)
         : sendMessage(event.payload)
     ));
 
@@ -53,9 +56,7 @@ export const processEvents = (
 
     const onEvents = (lastEventId: number, events: Event[]) => Promise
         .all(events.map(processEvent))
-        .then(() => {
-            // update(user.character.name);
-        })
+        .then(() => updateUser(user, lastEventId))
         .then(onProcessedEvents)
         .then(() => {
             // rdes=0;tdes=0;vdes=0;
@@ -68,7 +69,4 @@ export const processEvents = (
 
 export const sendEvent = (event: Event): Promise<void> => postEvent(event)
     .then(() => null)
-    .catch(() => {
-        // logOut();
-        throw new Error('AberMUD: FILE_ACCESS : Access failed');
-    });
+    .catch(() => Promise.reject(new Error('AberMUD: FILE_ACCESS : Access failed')));

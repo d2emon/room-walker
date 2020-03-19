@@ -14,15 +14,6 @@ interface UpdateTitle extends Action {
     type: types.UPDATE_TITLE,
 }
 
-interface SetInSetup extends Action {
-    type: types.SET_IN_SETUP,
-}
-
-interface SetMode extends Action {
-    type: types.SET_MODE,
-    actionMode: ActionMode,
-}
-
 interface SetLoggedIn extends Action {
     type: types.SET_LOGGED_IN,
 }
@@ -32,7 +23,7 @@ interface SetLoggedOut extends Action {
 }
 
 // Types
-export type TalkerAction = SetUser | UpdateTitle | SetInSetup | SetMode | SetLoggedIn | SetLoggedOut;
+export type TalkerAction = SetUser | UpdateTitle | SetLoggedIn | SetLoggedOut;
 
 export const setUser = (characterId: number, name: string, title: string): SetUser => ({
     type: types.SET_USER,
@@ -43,15 +34,6 @@ export const setUser = (characterId: number, name: string, title: string): SetUs
 
 export const updateTitle = (): UpdateTitle => ({
     type: types.UPDATE_TITLE,
-});
-
-export const setInSetup = (): SetInSetup => ({
-    type: types.SET_IN_SETUP,
-});
-
-export const setMode = (actionMode: ActionMode): SetMode => ({
-    type: types.SET_MODE,
-    actionMode,
 });
 
 export const setLoggedIn = (): SetLoggedIn => ({
@@ -86,10 +68,6 @@ const trapch = (channelId: number) => openworld()
         return channelId;
     })
     .then(lookIn)
-*/
-
-/*
-long lasup=0;
 */
 
 /*

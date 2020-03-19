@@ -33,14 +33,13 @@ if( iscarrby( 32, mynum ) ) dorune(  ) ;
 if(phelping(mynum)!=-1) helpchkr();
     }
 
- chkfight( x )
-    {
-    extern long curch ;
-    extern long mynum ;
+chkfight( x ) {
     if( x<0 ) return ; *//* No such being *//*
 consid_move( x); *//* Maybe move it *//*
 if( !strlen( pname( x ) ) ) return ;
-if( ploc( x )!=curch ) return ;
+    if( ploc( x ) != getState().talker.channelId) {
+        return;
+    }
 if( pvis( mynum ) ) return ; *//* Im invis *//*
 if(randperc()>40) return;
 if( ( x==fpbns( "yeti" ) )&&( ohany( ( 1<<13 ) ) ) )
@@ -81,7 +80,6 @@ spraycom(  )
     char bk[ 128 ] ;
     extern long wordbuf[  ] ;
     extern long mynum ;
-    extern long curch ;
     b=vichere( &a ) ;
     if( b== -1 ) return ;
     if( brkword(  )== -1 )
@@ -174,9 +172,20 @@ sys_reset(  )
 
 dorune(  )
 {
+    const hitRune = () => {
+        if (randperc() < 9 * my_lev) {
+            return;
+        }
+        if (fpbns(pname(ct)) === -1) {
+            return;
+        }
+        bprintf("The runesword twists in your hands lashing out savagely\n");
+        hitplayer(ct,32);
+    };
+
     char bf[ 128 ] ;
     long ct ;
-    extern long mynum, my_lev, curch ;
+    extern long mynum, my_lev;
     extern long in_fight;
     if(in_fight) return;
     ct=0 ;
@@ -185,14 +194,12 @@ dorune(  )
         if( ct==mynum ){ct++ ;continue ;}
         if( !strlen( pname( ct ) ) ) {ct++ ;continue ;}
         if( plev( ct )>9 ) {ct++ ;continue ;}
-        if( ploc( ct )==curch ) goto hitrune ;
+        if (ploc(ct) === getState().talker.channelId) {
+            hitrune();
+        }
         ct++ ;
     }
     return ;
-    hitrune:if( randperc(  )<9*my_lev ) return ;
-    if( fpbns( pname( ct ) )== -1 ) return ;
-    bprintf( "The runesword twists in your hands lashing out savagely\n" ) ;
-    hitplayer(ct,32);
 }
 
 
@@ -202,13 +209,17 @@ pepdrop(  )
     long a, b ;
     extern char globme[];
     extern long mynum ;
-    extern long curch ;
-    sendsys( " ", " ", -10000, curch, "You start sneezing ATISCCHHOOOOOO!!!!\n" ) ;
-    if( ( !strlen( pname( 32 ) ) )||( ploc( 32 )!=curch ) )
-        return ;
-    */
-    /* Ok dragon and pepper time */
-    /*
+    sendsys(
+        undefined,
+        undefined,
+        -10000,
+        getState().talker.channelId,
+        'You start sneezing ATISCCHHOOOOOO!!!!\n',
+    );
+    if (!pname(32) || (ploc(32) !== getState().talker.channelId)) {
+        return;
+    }
+    // Ok dragon and pepper time
     if( ( iscarrby( 89, mynum ) )&&( ocarrf( 89 )==2 ) )
     {
 
@@ -234,27 +245,29 @@ pepdrop(  )
 
 dragget(  )
 {
-    extern long curch, my_lev ;
+    extern long my_lev ;
     long a, b ;
     long l ;
     if( my_lev>9 ) return( 0 ) ;
     l=fpbns( "dragon" ) ;
     if( l== -1 ) return( 0 ) ;
-    if( ploc( l )!=curch ) return( 0 ) ;
-    return( 1 ) ;
+    return ploc(l) === getState().talker.channelId;
 }
 
-helpchkr()
-{
-    extern long mynum;
-    extern long curch;
-    long x=phelping(mynum);
-    if(!getState().talker.loggedIn()) return;
-    if(!strlen(pname(x))) goto nhelp;
-    if(ploc(x)!=curch) goto nhelp;
-    return;
-    nhelp:bprintf("You can no longer help \001c%s\001\n",pname(x));
-    setphelping(mynum,-1);
-}
+const helpchkr = () => {
+    const noHelp = (helpingId) => {
+        bprintf(`You can no longer help ${showCharacter(pname(helpingId))}\n`);
+        setphelping(mynum, undefined);
+    };
+
+    const helpingId = phelping(mynum);
+    if (!getState().talker.loggedIn) {
+        return;
+    } else if (!pname(helpingId) || (ploc(helpingId) !== getState().talker.channelId)) {
+        return noHelp(helpingId);
+    } else {
+        return;
+    }
+};
 
  */

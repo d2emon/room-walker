@@ -25,9 +25,11 @@ export type TalkerThunkAction<A extends Action> = ThunkAction<any, Store, any, A
 const openworld = () => Promise.resolve();
 const closeworld = () => Promise.resolve();
 const pbfr = () => Promise.resolve();
+const dumpitems = () => Promise.resolve();
 const saveme = () => Promise.resolve();
 const chksnp = () => Promise.resolve();
 const onTiming = () => Promise.resolve();
+const removeCharacter = (characterId: number) => Promise.resolve();
 
 const setFromKeyboard = (work: string) => Promise.resolve(`[l]${work}[/l]`);
 
@@ -96,7 +98,7 @@ export const finishUser = (getState: () => Store) => Promise.resolve()
     .then(openworld)
     .then(() => getState().talker.name)
     .then(name => Promise.all([
-        // dumpitems(),
+        dumpitems(),
         getState().talker.isFullyInvisible && Users.sendEvent({
             sender: name,
             receiver: name,
@@ -104,29 +106,15 @@ export const finishUser = (getState: () => Store) => Promise.resolve()
             channelId: 0,
             payload: `${name} has departed\n`,
         }),
-        // setpname(userId, ''),
+        removeCharacter(getState().talker.characterId),
     ]))
     .then(closeworld)
     .then(() => Promise.all([
-        // zapped || saveme(),
+        getState().talker.zapped
+            ? Promise.resolve()
+            : saveme(),
         chksnp(),
     ]));
-
-const updateUser = (userId: string, eventId: number): Promise<void> => Promise.resolve(0)
-    // getState().events.eventId;
-    // getState().events.lastUpdate;
-    .then(lastUpdate => Math.abs(eventId - lastUpdate) < 10)
-    .then(update => update && Promise.resolve()
-        .then(() => {
-            // openworld()
-        })
-        .then(() => {
-            // setppos(userId, eventId);
-            // setLastUpdate(eventId);
-        })
-        .then(() => null)
-    )
-    .then(() => undefined);
 
 export const onWait = (
     dispatch: Dispatch<TalkerAction>,

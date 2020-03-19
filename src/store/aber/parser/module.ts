@@ -1014,12 +1014,9 @@ eorte()
             }
         }
     }
-    if((iswornby(18,mynum))||(randperc()<10))
-    {
+    if((iswornby(18,mynum))||(randperc()<10)) {
         my_str++;
-        if (getState().talker.loggedIn) {
-            calibme();
-        }
+        calibme();
     }
     forchk();
     if(me_drunk>0)
@@ -1165,15 +1162,16 @@ eatcom()
 
 calibme()
 {
-*/
-    /* Routine to correct me in user file */
-/*
+    // Routine to correct me in user file
+    if(!getState().talker.loggedIn()) {
+        return;
+    }
+
     long  a;
     extern long mynum,my_sco,my_lev,my_str,my_sex,wpnheld;
     extern char globme[];
     long  b;
     char *sp[128];
-    if(!getState().talker.loggedIn()) return;
     b=levelof(my_sco);
     if(b!=my_lev)
     {
@@ -1563,23 +1561,24 @@ rmeditcom()
 
     sprintf(ms,"\001s%s\001%s fades out of reality\n\001",globme,globme);
     sendsys(globme,globme,-10113,0,ms); *//* Info *//*
-    cms= -2;*//* CODE NUMBER *//*
-    update(globme);
-    pbfr();
-    closeworld();
-    if(chdir(ROOMS)==-1) bprintf("Warning: Can't CHDIR\n");
-    sprintf(ms,"/cs_d/aberstudent/yr2/hy8/.sunbin/emacs");
-    system(ms);
-    cms= -1;
-    openworld();
-    if(fpbns(globme)== -1)
-    {
-        loseme();
-        crapup("You have been kicked off");
-    }
-    sprintf(ms,"\001s%s\001%s re-enters the normal universe\n\001",globme,globme);
-    sendsys(globme,globme,-10113,0,ms);
-    rte();
+    return fadeUser(user) // CODE NUMBER
+        .then(() => {
+            pbfr();
+            closeworld();
+            if(chdir(ROOMS)==-1) bprintf("Warning: Can't CHDIR\n");
+            sprintf(ms,"/cs_d/aberstudent/yr2/hy8/.sunbin/emacs");
+            system(ms);
+            cms= -1;
+            openworld();
+            if(fpbns(globme)== -1)
+            {
+                loseme();
+                crapup("You have been kicked off");
+            }
+            sprintf(ms,"\001s%s\001%s re-enters the normal universe\n\001",globme,globme);
+            sendsys(globme,globme,-10113,0,ms);
+            rte();
+        });
 }
 
 u_system()
@@ -1593,23 +1592,24 @@ u_system()
         bprintf("You'll have to leave the game first!\n");
         return;
     }
-    cms= -2;
-    update(globme);
-    sprintf(x,"%s%s%s%s%s","\001s",globme,"\001",globme," has dropped into BB\n\001");
-    sendsys(globme,globme,-10113,0,x);
-    closeworld();
-    system("/cs_d/aberstudent/yr2/iy7/bt");
-    openworld();
-    cms= -1;
-    if(fpbns(globme)== -1)
-    {
-        loseme();
-        crapup("You have been kicked off");
-    }
-    rte();
-    openworld();
-    sprintf(x,"%s%s%s%s%s","\001s",globme,"\001",globme," has returned to AberMud\n\001");
-    sendsys(globme,globme,-10113,0,x);
+    return fadeUser(user)
+        .then(() => {
+            sprintf(x,"%s%s%s%s%s","\001s",globme,"\001",globme," has dropped into BB\n\001");
+            sendsys(globme,globme,-10113,0,x);
+            closeworld();
+            system("/cs_d/aberstudent/yr2/iy7/bt");
+            openworld();
+            cms= -1;
+            if(fpbns(globme)== -1)
+            {
+                loseme();
+                crapup("You have been kicked off");
+            }
+            rte();
+            openworld();
+            sprintf(x,"%s%s%s%s%s","\001s",globme,"\001",globme," has returned to AberMud\n\001");
+            sendsys(globme,globme,-10113,0,x);
+        });
 }
 
 inumcom()
@@ -1686,22 +1686,20 @@ systat()
     }
 }
 
-convcom()
-{
-    extern long convflg;
-    convflg=1;
+convcom() {
+    dispatch(setConversationMode(CONVERSATION_MODE_SAY));
     bprintf("Type '**' on a line of its own to exit converse mode\n");
 }
 
 shellcom()
 {
-    extern long convflg,my_lev;
+    extern long my_lev;
     if(my_lev<10000)
     {
         bprintf("There is nothing here you can shell\n");
         return;
     }
-    convflg=2;
+    dispatch(setConversationMode(CONVERSATION_MODE_TSS));
     bprintf("Type ** on its own on a new line to exit shell\n");
 }
 

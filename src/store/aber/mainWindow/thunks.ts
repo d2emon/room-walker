@@ -16,11 +16,16 @@ import {
 } from '../errors/actions';
 import {logReset} from '../logger/actions';
 import {
+    setLoggedIn,
+    setLoggedOut,
     setUser,
     TalkerAction,
     updateTitle,
 } from '../talker/actions';
-import {finishUser, onWait} from '../talker/thunks';
+import {
+    finishUser,
+    onWait,
+} from '../talker/thunks';
 import {Store} from '../../reducers';
 import Users from '../../../services/users';
 
@@ -37,17 +42,17 @@ const startUser = (
     dispatch: Dispatch<Action>,
     userId: string,
 ) => Users.processEvents(userId)
-    .then(() => Users.perform(userId, '.g'));
+    .then(() => Users.perform(userId, '.g'))
+    .then(() => dispatch(setLoggedIn()));
 
 const logOut = (
     dispatch: Dispatch<Action>,
     getState: () => Store,
-) => Promise.resolve()
-    .then(() => dispatch(setAlarm(false)))
-    .then(() => {
-        // dispatch(setLoggedOut())
-    })
-    .then(() => finishUser(getState));
+) => {
+    dispatch(setAlarm(false));
+    dispatch(setLoggedOut());
+    return finishUser(getState);
+};
 
 export const onStart = (userId: string, title: string, name: string): MainWindowThunkAction<MainWindowAction> => (
     dispatch: Dispatch<Action>,

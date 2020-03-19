@@ -1,9 +1,7 @@
 import * as types from './actionTypes';
 import {TalkerAction} from './actions';
 import {
-    ActionMode,
     ConversationMode,
-    MODE_SPECIAL,
     CONVERSATION_MODE_ACTION,
     CONVERSATION_MODE_SAY,
     CONVERSATION_MODE_TSS,
@@ -14,10 +12,11 @@ export interface TalkerState {
     loggedIn: boolean,
     channelId: number,
     name: string,
-    actionMode: ActionMode,
     conversationMode: ConversationMode,
     characterId: number,
 
+    // Server
+    // actionMode: ActionMode,
     // Other
     debugMode: boolean,
     isWizard: boolean,
@@ -26,6 +25,7 @@ export interface TalkerState {
     keyBuff: string,
     enemyId?: number,
     fightingCounter?: number,
+    zapped: boolean,
 }
 
 const InitialState: TalkerState = {
@@ -33,10 +33,12 @@ const InitialState: TalkerState = {
     loggedIn: false,
     channelId: 0,
     name: '',
-    actionMode: MODE_SPECIAL,
     conversationMode: CONVERSATION_MODE_ACTION,
     characterId: 0,
 
+    // Server
+    // actionMode: MODE_SPECIAL,
+    // Other
     debugMode: false,
     isWizard: false,
     isVisible: false,
@@ -44,6 +46,7 @@ const InitialState: TalkerState = {
     keyBuff: '',
     enemyId: undefined,
     fightingCounter: undefined,
+    zapped: false,
 };
 
 export default (state: TalkerState = InitialState, action: TalkerAction): TalkerState => {
@@ -59,16 +62,6 @@ export default (state: TalkerState = InitialState, action: TalkerAction): Talker
             return {
                 ...state,
                 title: getTitle(state),
-            };
-        case types.SET_IN_SETUP:
-            return {
-                ...state,
-                loggedIn: true,
-            };
-        case types.SET_MODE:
-            return {
-                ...state,
-                actionMode: action.actionMode,
             };
         case types.SET_LOGGED_IN:
             return {

@@ -23,6 +23,7 @@ export interface User {
     mode: ActionMode,
     characterId: number,
     character: Character,
+    lastUpdate?: number,
 }
 
 interface UserData {
@@ -34,7 +35,7 @@ const DATA: UserData = {
 };
 
 const makebfr = (): Promise<void> => Promise.resolve();
-const getCharacter = (characterId: number): Character => ({
+const getCharacter = (characterId: number): Promise<Character> => Promise.resolve({
     characterId,
     name: '',
     channelId: 0,
@@ -46,6 +47,7 @@ const getCharacter = (characterId: number): Character => ({
     sex: 0,
     helping: undefined,
 });
+const updateCharacter = (characterId: number, character: Character): Promise<void> => Promise.resolve();
 
 const createUser = (name: string, channelId: number): Promise<Character> => axios.post(
     config.worldUrl,
@@ -76,6 +78,18 @@ export const addUser = (userId: number, name: string): Promise<User> => axios.po
         mode: MODE_SPECIAL,
     }))
     .then((user) => {
-        DATA.records.push(user)
+        DATA.records.push(user);
         return user;
     });
+export const updateUser = (user: User, eventId: number): Promise<void> => {
+    const lastUpdate = user.lastUpdate || 0;
+    if (Math.abs(eventId - lastUpdate) < 10) {
+        return Promise.resolve();
+    }
+    user.lastUpdate = eventId;
+    return updateCharacter(user.characterId, {
+        ...user.character,
+        eventId,
+    });
+};
+export const fadeUser = (user: User): Promise<void> => updateUser(user, -2);
