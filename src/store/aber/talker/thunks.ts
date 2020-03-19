@@ -39,9 +39,7 @@ const onInput = (
     userId: string,
 ) => {
     const prepareInput = (action: string): Promise<string> => new Promise((resolve) => {
-        const {
-            conversationMode,
-        } = getState().talker;
+        const conversationMode = getState().talker.conversationMode;
         if (!action) {
             return resolve('');
         }

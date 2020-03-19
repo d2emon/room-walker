@@ -1,6 +1,6 @@
 import {Action} from 'redux';
 import * as types from './actionTypes';
-import {ActionMode} from './modes';
+import {ActionMode, ConversationMode} from './modes';
 
 // Interfaces
 interface SetUser extends Action {
@@ -22,8 +22,13 @@ interface SetLoggedOut extends Action {
     type: types.SET_LOGGED_OUT,
 }
 
+interface SetConversationMode extends Action {
+    type: types.SET_CONVERSATION_MODE,
+    conversationMode: ConversationMode,
+}
+
 // Types
-export type TalkerAction = SetUser | UpdateTitle | SetLoggedIn | SetLoggedOut;
+export type TalkerAction = SetUser | UpdateTitle | SetLoggedIn | SetLoggedOut | SetConversationMode;
 
 export const setUser = (characterId: number, name: string, title: string): SetUser => ({
     type: types.SET_USER,
@@ -44,21 +49,10 @@ export const setLoggedOut = (): SetLoggedOut => ({
     type: types.SET_LOGGED_OUT,
 });
 
-/**
- * Data format for mud packets
- *
- * Sector 0
- * [64 words]
- * 0   Current first message pointer
- * 1   Control Word
- * Sectors 1-n  in pairs ie [128 words]
- *
- * [channel][controlword][text data]
- *
- * [controlword]
- * 0 = Text
- * - 1 = general request
- */
+export const setConversationMode = (conversationMode: ConversationMode): SetConversationMode => ({
+    type: types.SET_CONVERSATION_MODE,
+    conversationMode,
+});
 
 /*
 const trapch = (channelId: number) => openworld()

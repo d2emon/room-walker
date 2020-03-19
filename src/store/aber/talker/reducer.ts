@@ -73,6 +73,11 @@ export default (state: TalkerState = InitialState, action: TalkerAction): Talker
                 ...state,
                 loggedIn: false,
             };
+        case types.SET_CONVERSATION_MODE:
+            return {
+                ...state,
+                conversationMode: action.conversationMode,
+            };
         default:
             return state;
     }
