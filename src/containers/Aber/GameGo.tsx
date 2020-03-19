@@ -149,7 +149,7 @@ class GameGo extends React.Component<Props, State> {
 
 const mapStateToProps = (store: Store): StateProps => ({
     errorMessage: store.mainWindow.errorMessage,
-    stateName: store.mainWindow.name,
+    stateName: store.talker.name,
     userId: store.mainWindow.userId,
     errorId: store.mainWindow.errorId,
 });

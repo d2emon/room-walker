@@ -1,5 +1,8 @@
-export const SET_NAME = 'TALKER.SET_NAME';
-export type SET_NAME = typeof SET_NAME;
+export const SET_USER = 'TALKER.SET_USER';
+export type SET_USER = typeof SET_USER;
+
+export const UPDATE_TITLE = 'TALKER.UPDATE_TITLE';
+export type UPDATE_TITLE = typeof UPDATE_TITLE;
 
 export const SET_IN_SETUP = 'TALKER.SET_IN_SETUP';
 export type SET_IN_SETUP = typeof SET_IN_SETUP;

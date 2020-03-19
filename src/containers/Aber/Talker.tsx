@@ -21,7 +21,6 @@ interface StateProps {
 interface DispatchProps {
     beforeInput: () => mainWindowActions.MainWindowThunkAction<Action>,
     afterInput: () => mainWindowActions.MainWindowThunkAction<Action>,
-    beforeStart: (name: string) => talkerActions.TalkerThunkAction<Action>,
     nextTurn: (name: string) => talkerActions.TalkerThunkAction<Action>,
 }
 
@@ -40,10 +39,6 @@ class Talker extends React.Component<Props, State> {
         this.state = {};
 
         this.onNextTurn = this.onNextTurn.bind(this);
-    }
-
-    componentDidMount(): void {
-        this.props.beforeStart(this.props.name);
     }
 
     componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
@@ -90,8 +85,6 @@ const mapStateToProps = (store: Store): StateProps => ({
 const mapDispatchToProps: DispatchProps = {
     beforeInput: mainWindowActions.beforeInput,
     afterInput: mainWindowActions.afterInput,
-
-    beforeStart: talkerActions.beforeStart,
     nextTurn: talkerActions.nextTurn,
 };
 

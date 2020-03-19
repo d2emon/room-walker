@@ -5,7 +5,7 @@ export interface MainWindowState {
     // Main Args
     userId: string,
     title: string,
-    name: string,
+    // name: string,
     // Errors
     errorId?: number,
     errorMessage?: string,
@@ -22,7 +22,6 @@ export interface MainWindowState {
 const InitialState: MainWindowState = {
     userId: '',
     title: '',
-    name: '',
 
     active: false,
     alarm: 0,
@@ -39,12 +38,6 @@ export default (state: MainWindowState = InitialState, action: MainWindowAction)
             return {
                 ...InitialState,
                 userId: action.userId,
-                title: action.title,
-                name: action.name,
-            };
-        case types.SET_TITLE:
-            return {
-                ...InitialState,
                 title: action.title,
             };
         case types.SET_ALARM_OFF:

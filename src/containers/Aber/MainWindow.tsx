@@ -1,9 +1,9 @@
 import * as React from 'react';
 import {connect} from "react-redux";
 import {
-    Alert,
     Card,
-    CardHeader, CardTitle,
+    CardHeader,
+    CardTitle,
     Container,
 } from 'reactstrap';
 import Keys from "./Keys";
@@ -48,7 +48,7 @@ class MainWindow extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (store: Store): StateProps => ({
-    name: store.mainWindow.name,
+    name: store.talker.name,
 });
 
 const mapDispatchToProps: DispatchProps = {

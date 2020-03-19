@@ -3,9 +3,15 @@ import * as types from './actionTypes';
 import {ActionMode} from './modes';
 
 // Interfaces
-interface SetName extends Action {
-    type: types.SET_NAME,
+interface SetUser extends Action {
+    type: types.SET_USER,
+    characterId: number,
     name: string,
+    title?: string,
+}
+
+interface UpdateTitle extends Action {
+    type: types.UPDATE_TITLE,
 }
 
 interface SetInSetup extends Action {
@@ -26,11 +32,17 @@ interface SetLoggedOut extends Action {
 }
 
 // Types
-export type TalkerAction = SetName | SetInSetup | SetMode | SetLoggedIn | SetLoggedOut;
+export type TalkerAction = SetUser | UpdateTitle | SetInSetup | SetMode | SetLoggedIn | SetLoggedOut;
 
-export const setName = (name: string): SetName => ({
-    type: types.SET_NAME,
+export const setUser = (characterId: number, name: string, title: string): SetUser => ({
+    type: types.SET_USER,
+    characterId,
     name,
+    title,
+});
+
+export const updateTitle = (): UpdateTitle => ({
+    type: types.UPDATE_TITLE,
 });
 
 export const setInSetup = (): SetInSetup => ({
@@ -74,10 +86,6 @@ const trapch = (channelId: number) => openworld()
         return channelId;
     })
     .then(lookIn)
-*/
-
-/*
-long mynum=0;
 */
 
 /*

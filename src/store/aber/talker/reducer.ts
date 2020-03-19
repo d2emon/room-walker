@@ -10,11 +10,13 @@ import {
 } from './modes';
 
 export interface TalkerState {
+    title?: string,
     loggedIn: boolean,
     channelId: number,
     name: string,
     actionMode: ActionMode,
     conversationMode: ConversationMode,
+    characterId: number,
 
     // Other
     debugMode: boolean,
@@ -25,11 +27,13 @@ export interface TalkerState {
 }
 
 const InitialState: TalkerState = {
+    title: undefined,
     loggedIn: false,
     channelId: 0,
     name: '',
     actionMode: MODE_SPECIAL,
     conversationMode: CONVERSATION_MODE_ACTION,
+    characterId: 0,
 
     debugMode: false,
     isWizard: false,
@@ -40,10 +44,17 @@ const InitialState: TalkerState = {
 
 export default (state: TalkerState = InitialState, action: TalkerAction): TalkerState => {
     switch (action.type) {
-        case types.SET_NAME:
+        case types.SET_USER:
             return {
                 ...state,
+                title: action.title || state.title,
+                characterId: action.characterId,
                 name: action.name,
+            };
+        case types.UPDATE_TITLE:
+            return {
+                ...state,
+                title: getTitle(state),
             };
         case types.SET_IN_SETUP:
             return {
