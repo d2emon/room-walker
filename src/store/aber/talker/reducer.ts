@@ -55,6 +55,7 @@ export default (state: TalkerState = InitialState, action: TalkerAction): Talker
             return {
                 ...state,
                 title: action.title || state.title,
+                channelId: action.channelId,
                 characterId: action.characterId,
                 name: action.name,
             };

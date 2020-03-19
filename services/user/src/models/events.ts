@@ -7,7 +7,10 @@ import {
 
 export interface Event {
     eventId?: number,
+    sender?: string,
+    receiver?: string,
     code: number,
+    channelId?: number,
     payload?: any,
 }
 

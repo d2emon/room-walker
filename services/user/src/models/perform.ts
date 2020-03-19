@@ -3,9 +3,11 @@ import {
     MODE_SPECIAL,
 } from './modes';
 import {
+    changeChannel,
     Character,
     User,
 } from './users';
+import {processEvents, sendEvent} from "./events";
 
 const initme = () => Promise.resolve({
     level: 0, // myLev
@@ -33,34 +35,28 @@ const start = (user: User) => Promise.resolve()
         // flags: data.flags,
         helping: undefined,
     }))
-    .then(() => {
-        /*
-        sendsys(
-            name,
-            name,
-            -10113,
-            channelId,
-            ifSeePlayer(name, `[ ${name}  has entered the game ]\n`),
-        );
-         */
-    })
-    // .then(() => processEvents(dispatch, name))
+    .then(() => sendEvent({
+        sender: user.character.name,
+        receiver: user.character.name,
+        code: -10113,
+        channelId: undefined,
+        payload: 'ifSeePlayer(name, `[ ${name}  has entered the game ]\n`)',
+    }))
+    .then(() => processEvents(user))
     .then(() => {
         // channelId = (randperc() > 50) ? -5 : -183;
-        // trapch(channelId);
+        return -5;
     })
-    .then(() => {
-        /*
-        sendsys(
-            name,
-            name,
-            -10000,
+    .then(channelId => Promise.all([
+        changeChannel(user, channelId),
+        sendEvent({
+            sender: user.character.name,
+            receiver: user.character.name,
+            code: -10000,
             channelId,
-            ifSeePlayer(name, `${name}  has entered the game\n`),
-        );
-         */
-    })
-    // .then(() => dispatch(setLoggedIn()))
+            payload: 'ifSeePlayer(name, `${name}  has entered the game\n`)',
+        }),
+    ]))
     .then(() => null);
 
 const gamecom = (user: User, action: string) => {};

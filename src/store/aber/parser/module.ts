@@ -791,10 +791,10 @@ dodirn(n)
     {
         sprintf(block,"%s%s%s%s%s%s%s%s%s%s","\001s",pname(mynum),"\001",globme," has gone ",exittxt[n]," ",out_ms,".","\n\001");
         sendsys(globme,globme,-10000,curch,block);
-        curch=newch;
+
         sprintf(block,"%s%s%s%s %s%s","\001s",globme,"\001",globme,in_ms,"\n\001");
         sendsys(globme,globme,-10000,newch,block);
-        trapch(curch);
+        changeChannel(newch)
     }
 }
 
@@ -1524,9 +1524,9 @@ dosumm(loc)
     sendsys(globme,globme,-10000,curch,ms);
     sprintf(ms,"\001s%s\001%s appears in a puff of smoke\n\001",globme,globme);
     dumpitems();
-    curch=loc;
-    sendsys(globme,globme,-10000,curch,ms);
-    trapch(curch);
+
+    sendsys(globme,globme,-10000,loc,ms);
+    changeChannel(loc);
 }
 
 tsscom()
@@ -1781,11 +1781,7 @@ look_cmd()
     extern long curch;
     if(brkword()==-1)
     {
-        brhold=brmode;
-        brmode=0;
-        lookin(curch);
-        brmode=brhold;
-        return;
+        return lookIn(channelId, false);
     }
     if(strcmp(wordbuf,"at")==0)
     {

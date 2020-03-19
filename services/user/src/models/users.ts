@@ -18,12 +18,23 @@ export interface Character {
     helping?: number,
 }
 
+interface ChannelData {
+    text: string,
+    messages: string[],
+    dead: boolean,
+    exitMessage: string,
+    listContents: boolean,
+}
+
 export interface User {
     userId: number,
     mode: ActionMode,
     characterId: number,
     character: Character,
     lastUpdate?: number,
+    //
+    isBlind: boolean,
+    briefMode: boolean,
 }
 
 interface UserData {
@@ -48,6 +59,25 @@ const getCharacter = (characterId: number): Promise<Character> => Promise.resolv
     helping: undefined,
 });
 const updateCharacter = (characterId: number, character: Character): Promise<void> => Promise.resolve();
+
+const afterLook = (data: ChannelData): Promise<ChannelData> => Promise.resolve()
+    .then(() => {
+        // bprintf(data.text);
+    })
+    .then(() => {
+        /*
+                if(data.listContent && !ail_blind)
+                {
+                    lisobs();
+                    if (getState().talker.actionMode === MODE_ACTION) {
+                        lispeople();
+                    }
+                }
+                bprintf("\n");
+                onlook();
+         */
+    })
+    .then(() => data);
 
 const createUser = (name: string, channelId: number): Promise<Character> => axios.post(
     config.worldUrl,
@@ -76,6 +106,8 @@ export const addUser = (userId: number, name: string): Promise<User> => axios.po
         characterId: character.characterId,
         character,
         mode: MODE_SPECIAL,
+        isBlind: false,
+        briefMode: false,
     }))
     .then((user) => {
         DATA.records.push(user);
@@ -93,3 +125,72 @@ export const updateUser = (user: User, eventId: number): Promise<void> => {
     });
 };
 export const fadeUser = (user: User): Promise<void> => updateUser(user, -2);
+const showChannel = (user: User, channelId: number, briefMode: boolean) => Promise.resolve()
+    .then(() => {
+        /*
+        if (user.level > 9) {
+            showname(channelId);
+        }
+         */
+        /*
+        // return openroom(channelId,"r");
+        return {
+            channelId,
+            deathRoom: false,
+            noBrief: false,
+            title: '',
+            content: '',
+            isDark: isdark(),
+        };
+         */
+        return {
+            channelId,
+            deathRoom: false,
+            noBrief: false,
+            title: '',
+            content: `You are on channel ${channelId}\n`,
+            isDark: false,
+        };
+    })
+    .then((channel) => {
+        let isDead = false;
+        const brief = briefMode && !channel.noBrief;
+        const data: ChannelData = {
+            text: '',
+            messages: [''],
+            dead: false,
+            exitMessage: '',
+            listContents: true,
+        };
+        if (user.isBlind) {
+            data.messages.push('You are blind... you can\'t see a thing!\n');
+        }
+        // lodex(channel);
+        if (channel.deathRoom) {
+            /*
+            if (my_lev > 9) {
+                data.messages.push('<DEATH ROOM>\n');
+            } else {
+                data.dead = true;
+                data.exitMessage = 'bye bye.....\n';
+            }
+             */
+        }
+        if (channel.isDark) {
+            data.text = 'It is dark\n';
+            data.listContents = false;
+        } else {
+            data.text = (channel.deathRoom || !user.isBlind)
+                ? `${channel.title}\n${brief ? '' : channel.content}\n`
+                : '';
+        }
+        return afterLook(data);
+    });
+export const changeChannel = (user: User, channelId: number): Promise<ChannelData> => Promise.resolve()
+    .then(() => {
+        /*
+        setChannelId(channelId);
+        setplocation(userId, channelId);
+         */
+    })
+    .then(() => showChannel(user, channelId, user.briefMode));

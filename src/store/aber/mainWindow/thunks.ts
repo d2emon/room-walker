@@ -67,7 +67,12 @@ export const onStart = (userId: string, title: string, name: string): MainWindow
     })
         .then((user) => {
             dispatch(startGame(user.userId, title));
-            dispatch(setUser(user.character.characterId || 0, user.character.name, title));
+            dispatch(setUser(
+                user.character.characterId || 0,
+                user.character.name,
+                user.character.channelId,
+                title,
+            ));
             return startUser(dispatch, userId);
         })
         .catch(e => dispatch(setErrorMessage(e)));
