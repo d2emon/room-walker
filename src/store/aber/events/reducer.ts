@@ -23,6 +23,11 @@ export default (state: EventsState = InitialState, action: EventsAction): Events
                 ...state,
                 eventId: action.eventId,
             };
+        case types.FORCED_EVENTS:
+            return {
+                ...state,
+                forceEvents: false,
+            };
         default:
             return state;
     }

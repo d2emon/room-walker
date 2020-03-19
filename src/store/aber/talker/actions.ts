@@ -89,44 +89,7 @@ const trapch = (channelId: number) => openworld()
 */
 
 /*
-const logOut = (name: string) => Promise.resolve()
-    .then(() => setSigAl(false))
-    .then(() => dispatch(setLoggedOut()))
-    .then(openworld)
-    .then(() => {
-        dumpitems();
-        if (pvis(userId) < 10000) {
-            sendsys(
-                name,
-                name,
-                -10113,
-                0,
-                `${name} has departed\n`,
-            );
-        }
-        setpname(userId, '');
-    })
-    .then(closeworld)
-    .then(() => zapped || saveme())
-    .then(chksnp);
-*/
-
-/*
 long lasup=0;
-*/
-
-/*
-const update = (name: string) => {
-    const eventId = getState().events.eventId;
-    return (Math.abs(eventId - getState().events.lasup) < 10)
-        ? Promise.resolve()
-        : Promise.resolve()
-        .then(openworld)
-        .then(() => {
-            setppos(userId, eventId);
-            setLastUpdate(eventId);
-        });
-}
 */
 
 /*

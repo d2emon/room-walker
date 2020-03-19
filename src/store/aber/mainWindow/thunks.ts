@@ -14,15 +14,13 @@ import {
     ErrorsAction,
     setErrorMessage
 } from '../errors/actions';
-import {processEvents} from '../events/thunks';
 import {logReset} from '../logger/actions';
 import {
     setUser,
     TalkerAction,
     updateTitle,
 } from '../talker/actions';
-import {performAction} from '../talker/perform';
-import {onWait} from '../talker/thunks';
+import {finishUser, onWait} from '../talker/thunks';
 import {Store} from '../../reducers';
 import Users from '../../../services/users';
 
@@ -31,7 +29,6 @@ type Dispatch<A extends Action> = ThunkDispatch<MainWindowAction, any, A>;
 export type MainWindowThunkAction<A extends Action> = ThunkAction<any, Store, any, A>;
 
 const pbfr = () => Promise.resolve();
-const logOut = () => console.log('loose me');
 
 const screenBottom = () => pbfr();
 const screenTop = () => pbfr();
@@ -39,14 +36,21 @@ const screenTop = () => pbfr();
 const startUser = (
     dispatch: Dispatch<Action>,
     userId: string,
-    name: string,
-) => processEvents(dispatch, name)
-    .then(() => '.g')
-    .then(performAction(userId));
+) => Users.processEvents(userId)
+    .then(() => Users.perform(userId, '.g'));
+
+const logOut = (
+    dispatch: Dispatch<Action>,
+    getState: () => Store,
+) => Promise.resolve()
+    .then(() => dispatch(setAlarm(false)))
+    .then(() => {
+        // dispatch(setLoggedOut())
+    })
+    .then(() => finishUser(getState));
 
 export const onStart = (userId: string, title: string, name: string): MainWindowThunkAction<MainWindowAction> => (
     dispatch: Dispatch<Action>,
-    getState: () => Store,
 ) => {
     dispatch(logReset());
     if (!userId || !title || !name) {
@@ -59,18 +63,16 @@ export const onStart = (userId: string, title: string, name: string): MainWindow
         .then((user) => {
             dispatch(startGame(user.userId, title));
             dispatch(setUser(user.character.characterId || 0, user.character.name, title));
+            return startUser(dispatch, userId);
         })
-        .then(() => startUser(dispatch, getState().mainWindow.userId, getState().talker.name))
         .catch(e => dispatch(setErrorMessage(e)));
 };
 
 export const onError = (): MainWindowThunkAction<MainWindowAction> => (
-    dispatch: Dispatch<MainWindowAction>
-) => {
-    dispatch(setAlarm(false));
-    logOut();
-    dispatch(setKeysOff(255));
-};
+    dispatch: Dispatch<MainWindowAction>,
+    getState: () => Store,
+) => logOut(dispatch, getState)
+    .then(() => dispatch(setKeysOff(255)));
 
 export const onExit = (): MainWindowThunkAction<MainWindowAction> => (
     dispatch: Dispatch<MainWindowAction | ErrorsAction>,
@@ -80,9 +82,8 @@ export const onExit = (): MainWindowThunkAction<MainWindowAction> => (
     if (getState().mainWindow.inFight) {
         return;
     }
-    dispatch(setAlarm(false));
-    logOut();
-    dispatch(setErrorMessage('Byeeeeeeeeee  ...........'));
+    logOut(dispatch, getState)
+        .then(() => dispatch(setErrorMessage('Byeeeeeeeeee  ...........')));
 };
 
 export const onTimer = (): MainWindowThunkAction<MainWindowAction> => (
@@ -93,7 +94,7 @@ export const onTimer = (): MainWindowThunkAction<MainWindowAction> => (
         return;
     }
     dispatch(setAlarm(false));
-    onWait(dispatch, getState)
+    onWait(dispatch, getState, getState().mainWindow.userId)
         .then(() => {
             // key_reprint()
         })

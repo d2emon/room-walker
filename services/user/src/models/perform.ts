@@ -1,7 +1,4 @@
-import {setLoggedIn, setMode} from "../../../../src/store/aber/talker/actions";
-import {processEvents} from "../../../../src/store/aber/events/thunks";
 import {
-    ActionMode,
     MODE_ACTION,
     MODE_SPECIAL,
 } from './modes';

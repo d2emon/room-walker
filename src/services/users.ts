@@ -1,5 +1,5 @@
 import axios from "axios";
-import {ActionMode} from "../../services/user/src/models/users";
+import {Event} from './events';
 
 export interface UserData {
     userId: string,
@@ -21,10 +21,19 @@ interface Character {
 
 export interface User {
     userId: string,
-    mode: ActionMode,
+    mode: string,
     characterId: number,
     character: Character,
 }
+
+const sendEvent = (event: Event) => axios.post(
+    'http://127.0.0.1:4001/event',
+    {
+        event,
+    },
+)
+    .then(response => response.data)
+    .then(data => data);
 
 export default {
     setUser: (user: UserData): Promise<User> => axios.post(
@@ -34,7 +43,7 @@ export default {
         .then(response => response.data)
         .then(data => data.user),
     perform: (userId: string, action: string): Promise<any> => axios.post(
-        'http://127.0.0.1:4001/',
+        'http://127.0.0.1:4001/action',
         {
             userId,
             action,
@@ -42,4 +51,24 @@ export default {
     )
         .then(response => response.data)
         .then(data => data),
+    processEvents: (userId: string, eventId?: number, force?: boolean): Promise<any> => axios.post(
+        'http://127.0.0.1:4001/events',
+        {
+            userId,
+            eventId,
+            force,
+        },
+    )
+        .then(response => response.data)
+        .then(data => data),
+    sendEvent,
+    broadcast: (message: string) => sendEvent({
+        code: -1,
+        payload: message,
+    })
+        // .then(() => dispatch(forceEvents))
+        .catch(() => {
+            // logOut();
+            // setErrorMessage('AberMUD: FILE_ACCESS : Access failed');
+        }),
 }

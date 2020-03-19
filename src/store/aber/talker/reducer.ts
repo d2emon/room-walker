@@ -24,6 +24,8 @@ export interface TalkerState {
     isVisible: boolean,
     isFullyInvisible: boolean,
     keyBuff: string,
+    enemyId?: number,
+    fightingCounter?: number,
 }
 
 const InitialState: TalkerState = {
@@ -40,6 +42,8 @@ const InitialState: TalkerState = {
     isVisible: false,
     isFullyInvisible: false,
     keyBuff: '',
+    enemyId: undefined,
+    fightingCounter: undefined,
 };
 
 export default (state: TalkerState = InitialState, action: TalkerAction): TalkerState => {
