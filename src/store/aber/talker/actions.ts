@@ -1,6 +1,6 @@
 import {Action} from 'redux';
 import * as types from './actionTypes';
-import {ActionMode, ConversationMode} from './modes';
+import {ConversationMode} from './modes';
 
 // Interfaces
 interface SetUser extends Action {

@@ -7,7 +7,6 @@ import {
     Row,
 } from 'reactstrap';
 import MainWindow from './MainWindow';
-import Values from './Values';
 import Controls from './Controls';
 import Talker from './Talker';
 import WelcomeModal from './modals/WelcomeModal';
@@ -88,10 +87,6 @@ class GameGo extends React.Component<Props, State> {
     }
 
     start(props: Props) {
-        const {
-            userId,
-            name,
-        } = props;
         this.setState({
             hasStarted: false,
         });
@@ -124,9 +119,6 @@ class GameGo extends React.Component<Props, State> {
         return (<Card>
             <Controls />
             <Row>
-                <Col xs={4}>
-                    <Values />
-                </Col>
                 <Col>
                     <WelcomeModal
                         show={!hasStarted}
@@ -148,10 +140,10 @@ class GameGo extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (store: Store): StateProps => ({
-    errorMessage: store.mainWindow.errorMessage,
+    errorMessage: store.errors.errorMessage,
     stateName: store.talker.name,
     userId: store.mainWindow.userId,
-    errorId: store.mainWindow.errorId,
+    errorId: store.errors.errorId,
 });
 
 const mapDispatchToProps: DispatchProps = {

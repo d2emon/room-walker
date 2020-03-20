@@ -18,7 +18,6 @@ import {
     setInputMode,
     unsetInputMode,
 } from '../keys/actions';
-import {getDirty} from '../keys/reducer';
 import {logReset} from '../logger/actions';
 import {
     setLoggedIn,
@@ -60,10 +59,6 @@ const logOut = (
     return finishUser(getState)
         .then(() => errorMessage && dispatch(setErrorMessage(errorMessage)));
 };
-
-const showPrompt = (prompt: string, buffer: string): Promise<void > => Promise
-    .resolve(`\n${prompt}${buffer}`)
-    .then(console.log);
 
 const screenBottom = () => showMessages();
 const screenTop = () => showMessages();

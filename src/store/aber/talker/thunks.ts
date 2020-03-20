@@ -129,15 +129,15 @@ export const nextTurn = (): TalkerThunkAction<TalkerAction> => (
     .then(() => Users.processEvents(getState().mainWindow.userId, getState().events.eventId))
     .then(() => onInput(dispatch, getState, getState().mainWindow.userId));
 
+/*
 const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
     .then(openworld)
     .then(() => {
-        /*
-        setChannelId(channelId);
-        setplocation(userId, channelId);
-         */
+        // setChannelId(channelId);
+        // setplocation(userId, channelId);
         return channelId;
     })
     .then(() => {
         //lookIn
     });
+*/
