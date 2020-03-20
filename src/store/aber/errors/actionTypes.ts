@@ -1,2 +1,5 @@
 export const SET_ERROR_MESSAGE = 'ERRORS.SET_ERROR_MESSAGE';
 export type SET_ERROR_MESSAGE = typeof SET_ERROR_MESSAGE;
+
+export const SET_ERROR = 'ERRORS.SET_ERROR';
+export type SET_ERROR = typeof SET_ERROR;

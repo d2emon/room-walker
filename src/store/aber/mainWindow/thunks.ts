@@ -7,19 +7,23 @@ import {
     MainWindowAction,
     startGame,
     setAlarm,
-    setKeysOff,
 } from './actions';
 import {canOnTimer} from './reducer';
 import {
-    ErrorsAction,
+    setError,
     setErrorMessage
 } from '../errors/actions';
+import {
+    setClean,
+    setInputMode,
+    unsetInputMode,
+} from '../keys/actions';
+import {getDirty} from '../keys/reducer';
 import {logReset} from '../logger/actions';
 import {
     setLoggedIn,
     setLoggedOut,
     setUser,
-    TalkerAction,
     updateTitle,
 } from '../talker/actions';
 import {
@@ -28,15 +32,16 @@ import {
 } from '../talker/thunks';
 import {Store} from '../../reducers';
 import Users from '../../../services/users';
+import {getPrompt} from "../talker/reducer";
 
 // Types
 type Dispatch<A extends Action> = ThunkDispatch<MainWindowAction, any, A>;
 export type MainWindowThunkAction<A extends Action> = ThunkAction<any, Store, any, A>;
 
-const pbfr = () => Promise.resolve();
-
-const screenBottom = () => pbfr();
-const screenTop = () => pbfr();
+const showMessages = (addLineBreak: boolean = false): Promise<void> => Promise.resolve();
+const sendMessage = (message: string): Promise<void> => Promise.resolve();
+const sendAndShow = (message: string): Promise<void> => sendMessage(message)
+    .then(() => showMessages(false));
 
 const startUser = (
     dispatch: Dispatch<Action>,
@@ -48,11 +53,20 @@ const startUser = (
 const logOut = (
     dispatch: Dispatch<Action>,
     getState: () => Store,
+    errorMessage?: string,
 ) => {
     dispatch(setAlarm(false));
     dispatch(setLoggedOut());
-    return finishUser(getState);
+    return finishUser(getState)
+        .then(() => errorMessage && dispatch(setErrorMessage(errorMessage)));
 };
+
+const showPrompt = (prompt: string, buffer: string): Promise<void > => Promise
+    .resolve(`\n${prompt}${buffer}`)
+    .then(console.log);
+
+const screenBottom = () => showMessages();
+const screenTop = () => showMessages();
 
 export const onStart = (userId: string, title: string, name: string): MainWindowThunkAction<MainWindowAction> => (
     dispatch: Dispatch<Action>,
@@ -78,26 +92,19 @@ export const onStart = (userId: string, title: string, name: string): MainWindow
         .catch(e => dispatch(setErrorMessage(e)));
 };
 
-export const onError = (): MainWindowThunkAction<MainWindowAction> => (
-    dispatch: Dispatch<MainWindowAction>,
+export const onError = (): MainWindowThunkAction<Action> => (
+    dispatch: Dispatch<Action>,
     getState: () => Store,
 ) => logOut(dispatch, getState)
-    .then(() => dispatch(setKeysOff(255)));
+    .then(() => dispatch(setError()));
 
-export const onExit = (): MainWindowThunkAction<MainWindowAction> => (
-    dispatch: Dispatch<MainWindowAction | ErrorsAction>,
+export const onExit = (): MainWindowThunkAction<Action> => (
+    dispatch: Dispatch<Action>,
     getState: () => Store,
-) => {
-    // console.log("^C");
-    if (getState().mainWindow.inFight) {
-        return;
-    }
-    logOut(dispatch, getState)
-        .then(() => dispatch(setErrorMessage('Byeeeeeeeeee  ...........')));
-};
+) => getState().mainWindow.inFight || logOut(dispatch, getState, 'Byeeeeeeeeee  ...........');
 
-export const onTimer = (): MainWindowThunkAction<MainWindowAction> => (
-    dispatch: Dispatch<MainWindowAction>,
+export const onTimer = (): MainWindowThunkAction<Action> => (
+    dispatch: Dispatch<Action>,
     getState: () => Store,
 ) => {
     if (!canOnTimer(getState().mainWindow)) {
@@ -105,20 +112,28 @@ export const onTimer = (): MainWindowThunkAction<MainWindowAction> => (
     }
     dispatch(setAlarm(false));
     onWait(dispatch, getState, getState().mainWindow.userId)
-        .then(() => {
-            // key_reprint()
-        })
+        .then(() => showMessages(true))
+        .then(() => dispatch(setClean()))
         .then(() => dispatch(setAlarm(true)));
 };
 
-export const beforeInput = (): MainWindowThunkAction<MainWindowAction> => (
-    dispatch: Dispatch<MainWindowAction | TalkerAction>,
+export const beforeInput = (): MainWindowThunkAction<Action> => (
+    dispatch: Dispatch<Action>,
+    getState: () => Store,
 ) => Promise.resolve()
     .then(screenBottom)
     .then(screenTop)
-    .then(() => dispatch(updateTitle()))
-    .then(() => dispatch(setAlarm(true)));
+    .then(() => {
+        dispatch(updateTitle());
+        dispatch(setAlarm(true));
+        dispatch(setInputMode());
+        return sendAndShow(getPrompt(getState().talker));
+    })
+    .then(() => dispatch(setClean()));
 
-export const afterInput = (): MainWindowThunkAction<MainWindowAction> => (
-    dispatch: Dispatch<MainWindowAction>,
-) => dispatch(setAlarm(false));
+export const afterInput = (message: string = ''): MainWindowThunkAction<Action> => (
+    dispatch: Dispatch<Action>,
+) => {
+    dispatch(unsetInputMode(message));
+    dispatch(setAlarm(false));
+};

@@ -2,16 +2,24 @@ import {Action} from 'redux';
 import * as types from './actionTypes';
 
 // Interfaces
-interface SetError extends Action {
+interface SetErrorMessage extends Action {
     type: types.SET_ERROR_MESSAGE,
     errorMessage: string,
 }
 
+interface SetError extends Action {
+    type: types.SET_ERROR,
+}
+
 // Types
-export type ErrorsAction = SetError;
+export type ErrorsAction = SetErrorMessage | SetError;
 
 // Actions
-export const setErrorMessage = (errorMessage: string): SetError => ({
+export const setErrorMessage = (errorMessage: string): SetErrorMessage => ({
     type: types.SET_ERROR_MESSAGE,
     errorMessage,
+});
+
+export const setError = (): SetError => ({
+    type: types.SET_ERROR,
 });

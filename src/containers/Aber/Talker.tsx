@@ -13,9 +13,12 @@ import {Store} from '../../store/reducers';
 import {getPrompt} from '../../store/aber/talker/reducer';
 import * as mainWindowActions from '../../store/aber/mainWindow/thunks';
 import * as talkerActions from '../../store/aber/talker/thunks';
+import {getDirty} from "../../store/aber/keys/reducer";
 
 interface StateProps {
     prompt: string,
+    buffer: string,
+    isDirty: boolean,
 }
 
 interface DispatchProps {
@@ -55,7 +58,9 @@ class Talker extends React.Component<Props, State> {
         const {
             children,
             name,
+            isDirty,
             prompt,
+            buffer,
         } = this.props;
         return (<Card>
             <CardHeader>
@@ -67,7 +72,7 @@ class Talker extends React.Component<Props, State> {
                 {children}
             </Container>
             <CardFooter>
-                {{ prompt }} [80]
+                {{ isDirty }} {{ prompt }} {{ buffer }} [80]
                 <Button
                     onClick={this.onNextTurn}
                 >
@@ -80,6 +85,8 @@ class Talker extends React.Component<Props, State> {
 
 const mapStateToProps = (store: Store): StateProps => ({
     prompt: getPrompt(store.talker),
+    buffer: store.keys.buffer,
+    isDirty: getDirty(store.keys),
 });
 
 const mapDispatchToProps: DispatchProps = {

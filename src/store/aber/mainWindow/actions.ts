@@ -18,13 +18,8 @@ interface SetBlock extends Action {
     value: boolean,
 }
 
-interface SetKeysOff extends Action {
-    type: types.SET_KEYS_OFF,
-    errorId: number,
-}
-
 // Types
-export type MainWindowAction = StartGame | SetAlarm | SetBlock | SetKeysOff;
+export type MainWindowAction = StartGame | SetAlarm | SetBlock;
 
 export const startGame = (userId: string, title: string): StartGame => ({
     type: types.START_GAME,
@@ -40,9 +35,4 @@ export const setAlarm = (value: boolean): SetAlarm => ({
 export const setBlock = (value: boolean): SetBlock => ({
     type: types.SET_BLOCK,
     value,
-});
-
-export const setKeysOff = (errorId: number): SetKeysOff => ({
-    type: types.SET_KEYS_OFF,
-    errorId,
 });

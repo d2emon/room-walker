@@ -153,7 +153,6 @@ const showChannel = (user: User, channelId: number, briefMode: boolean) => Promi
         };
     })
     .then((channel) => {
-        let isDead = false;
         const brief = briefMode && !channel.noBrief;
         const data: ChannelData = {
             text: '',
@@ -187,10 +186,8 @@ const showChannel = (user: User, channelId: number, briefMode: boolean) => Promi
         return afterLook(data);
     });
 export const changeChannel = (user: User, channelId: number): Promise<ChannelData> => Promise.resolve()
-    .then(() => {
-        /*
-        setChannelId(channelId);
-        setplocation(userId, channelId);
-         */
-    })
+    .then(() => updateCharacter(user.characterId, {
+        ...user.character,
+        channelId,
+    }))
     .then(() => showChannel(user, channelId, user.briefMode));

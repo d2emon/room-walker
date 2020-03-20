@@ -5,17 +5,11 @@ export interface MainWindowState {
     // Main Args
     userId: string,
     title: string,
-    // name: string,
-    // Errors
-    errorId?: number,
-    errorMessage?: string,
     // Timer
     active: boolean,
     alarm: number,
     ignore: boolean,
     // External
-    keysAreSet: boolean,
-    prDue: boolean,
     inFight: boolean,
 }
 
@@ -27,8 +21,6 @@ const InitialState: MainWindowState = {
     alarm: 0,
     ignore: false,
 
-    keysAreSet: true,
-    prDue: false,
     inFight: false,
 };
 
@@ -52,12 +44,6 @@ export default (state: MainWindowState = InitialState, action: MainWindowAction)
                 ...state,
                 alarm: (!action.value && state.active) ? 2 : state.alarm,
                 ignore: action.value,
-            };
-        case types.SET_KEYS_OFF:
-            return {
-                ...state,
-                errorId: action.errorId,
-                keysAreSet: false,
             };
         default:
             return state;
