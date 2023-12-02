@@ -59,9 +59,9 @@ class Talker extends React.Component<Props, State> {
         const {
             children,
             name,
-            isDirty,
-            prompt,
-            buffer,
+            // isDirty,
+            // prompt,
+            // buffer,
         } = this.props;
         return (<Card>
             <CardHeader>
