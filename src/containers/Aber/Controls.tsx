@@ -8,8 +8,8 @@ import {
 } from 'reactstrap';
 import GoodByeModal from './modals/GoodByeModal';
 import {Store} from '../../store/reducers';
-import * as mainWindowActions from '../../store/aber/mainWindow/thunks';
-import * as mainWindowSelector from '../../store/aber/mainWindow/reducer';
+import * as mainWindowSelector from 'store/aber/mainWindow/slice';
+import * as mainWindowActions from 'store/aber/mainWindow/thunks';
 
 interface StateProps {
     canExit: boolean,
@@ -150,8 +150,8 @@ class Controls extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (store: Store): StateProps => ({
-    canExit: mainWindowSelector.canExit(store.mainWindow),
-    timerIsOn: mainWindowSelector.timerIsOn(store.mainWindow),
+    canExit: mainWindowSelector.canExit(store),
+    timerIsOn: mainWindowSelector.timerIsOn(store),
 });
 
 const mapDispatchToProps: DispatchProps = {

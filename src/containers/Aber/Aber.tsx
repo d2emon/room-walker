@@ -4,14 +4,14 @@ import {
   Button,
   Card,
   Container,
-   Input,
+  Input,
 } from 'reactstrap';
 import GameGo from './GameGo';
 import Logger from './Logger';
 import {Message} from '../../services/logger';
-import {Store} from '../../store/reducers';
-import * as mainWindowActions from '../../store/aber/mainWindow/thunks';
-import * as loggerActions from '../../store/aber/logger/thunks';
+import { getMessages } from 'store/aber/logger/slice';
+import * as loggerActions from 'store/aber/logger/thunks';
+import * as mainWindowActions from 'store/aber/mainWindow/thunks';
 
 interface GameGoProps {
   userId: string;
@@ -22,7 +22,7 @@ interface GameGoProps {
 const Aber = (props: GameGoProps) => {
   const dispatch = useDispatch<any>();
 
-  const messages: Message[] = useSelector((store: Store) => (store.logger.messages));
+  const messages: Message[] = useSelector(getMessages);
 
   const [userId, setUserId] = useState('User Id');
   const [arg0, setArg0] = useState('Arg0');
@@ -89,10 +89,12 @@ const Aber = (props: GameGoProps) => {
           value={name}
           onChange={handleChangeName}
         />
+        {/* */}
         <GameGo
           arg0={arg0}
           name={name}
         />
+        {/* */}
         <Logger
           messages={messages}
         />

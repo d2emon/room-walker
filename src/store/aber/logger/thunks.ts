@@ -1,24 +1,24 @@
 import {Action} from 'redux';
 import {
-    ThunkAction,
-    ThunkDispatch,
+  ThunkAction,
+  ThunkDispatch,
 } from 'redux-thunk';
-import {
-    LoggerAction,
-    logReset,
-    logMessage,
-} from './actions';
 import {Store} from '../../reducers';
-import logger from '../../../services/logger';
+import logger, { Message } from '../../../services/logger';
+import {
+  LoggerAction,
+  logReset,
+  logMessage,
+} from './slice';
 
 // Types
 type Dispatch<A extends Action> = ThunkDispatch<Store, any, A>;
 export type LoggerThunkAction<A extends Action> = ThunkAction<any, Store, any, A>;
 
-export const getMessages = (): LoggerThunkAction<LoggerAction> => (
-    dispatch: Dispatch<LoggerAction>
-) => logger.getLog()
-    .then((records) => {
-        dispatch(logReset());
-        records.forEach((record: any) => dispatch(logMessage(record.date, record.message)))
-    });
+export const getMessages = () => async (
+  dispatch: Dispatch<LoggerAction>
+) => {
+  const records = await logger.getLog();
+  dispatch(logReset());
+  records.forEach((record: Message) => dispatch(logMessage(record)));
+};

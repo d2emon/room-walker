@@ -10,10 +10,10 @@ import {
     Container,
 } from 'reactstrap';
 import {Store} from '../../store/reducers';
-import {getPrompt} from '../../store/aber/talker/reducer';
-import * as mainWindowActions from '../../store/aber/mainWindow/thunks';
-import * as talkerActions from '../../store/aber/talker/thunks';
-import {getDirty} from "../../store/aber/keys/reducer";
+import { getDirty } from 'store/aber/keys/slice';
+import { getPrompt } from 'store/aber/talker/slice';
+import * as mainWindowActions from 'store/aber/mainWindow/thunks';
+import * as talkerActions from 'store/aber/talker/thunks';
 
 interface StateProps {
     prompt: string,
@@ -89,9 +89,9 @@ class Talker extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (store: Store): StateProps => ({
-    prompt: getPrompt(store.talker),
+    prompt: getPrompt(store),
     buffer: store.keys.buffer,
-    isDirty: getDirty(store.keys),
+    isDirty: getDirty(store),
 });
 
 const mapDispatchToProps: DispatchProps = {

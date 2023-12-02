@@ -8,7 +8,7 @@ import {
 } from 'reactstrap';
 import {Store} from '../../store/reducers';
 import * as actions from "../../store/main/actions";
-import * as selector from '../../store/main/reducer';
+import * as selector from '../../store/main/slice';
 import StartArgs from './StartArgs';
 
 // interface State {}
@@ -147,7 +147,7 @@ class Starter extends React.Component<Props, State> {
 }
 
 const mapStateToProps = (states: Store): StateProps => ({
-    started: selector.getStarted(states.main),
+    started: selector.getStarted(states),
     name: states.main.name,
     alarm: states.main.alarm.active && states.main.timerActive,
     timeout: states.main.alarm.timeout,
