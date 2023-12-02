@@ -1,11 +1,10 @@
-import React from 'react';
 import {
     Container,
     Row,
     Col, Card,
 } from 'reactstrap';
 // Components
-import Header from '../../components/Header';
+import Header from 'components/Header';
 // Containers
 import Aber from '../Aber/Aber';
 import MainStarter from '../Main/Starter';
