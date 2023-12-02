@@ -78,6 +78,7 @@ export const onStart = (userId: string, title: string, name: string) => async (
 
   if (!userId || !title || !name) {
     dispatch(setErrorMessage('Args!'));
+    return;
   }
 
   try {
@@ -90,13 +91,14 @@ export const onStart = (userId: string, title: string, name: string) => async (
       title,
     }));
     dispatch(setUser({
-      characterId: user.character.characterId || 0,
-      name: user.character.name,
-      channelId: user.character.channelId,
+      characterId: user?.character?.characterId || 0,
+      name: user?.character?.name || '',
+      channelId: user?.character?.channelId || 0,
       title,
     }));
     await startUser(dispatch, userId);    
   } catch(e: any) {
+    console.error(e);
     dispatch(setErrorMessage(e));
   }
 };

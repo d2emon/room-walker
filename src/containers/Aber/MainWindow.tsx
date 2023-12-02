@@ -1,60 +1,32 @@
-import * as React from 'react';
-import {connect} from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 import {
     Card,
     CardHeader,
-    CardTitle,
     Container,
 } from 'reactstrap';
-import Keys from "./Keys";
-import {Store} from '../../store/reducers';
+import { getName } from 'store/aber/talker/selectors';
+import Keys from './Keys';
+import Talker from './Talker';
 
-interface StateProps {
-    name: string,
+const MainWindow = () => {
+  const name = useSelector(getName);
+
+  return (
+    <Card>
+      <CardHeader>
+        Hello, {name}
+      </CardHeader>
+
+      <Container className="my-2">
+        { /* keysetup(); */ }
+        <Keys isSet={true}>
+          { /* talker(globme); */ }
+          <Talker name={name} />
+        </Keys>
+      </Container>
+    </Card>
+  );
 }
 
-interface DispatchProps {
-}
-
-interface MainWindowProps {
-    children: React.ReactNode,
-}
-
-type Props = StateProps & DispatchProps & MainWindowProps;
-
-interface State {
-}
-
-class MainWindow extends React.Component<Props, State> {
-    render() {
-        const {
-            children,
-            name,
-        } = this.props;
-        return (<Card>
-            <CardHeader>
-                Hello {name}
-            </CardHeader>
-            <Container>
-                <Keys isSet={true}>
-                    <CardTitle>
-                        Hello {name}
-                    </CardTitle>
-                    {children}
-                </Keys>
-            </Container>
-        </Card>);
-    }
-}
-
-const mapStateToProps = (store: Store): StateProps => ({
-    name: store.talker.name,
-});
-
-const mapDispatchToProps: DispatchProps = {
-};
-
-export default connect<StateProps, DispatchProps, MainWindowProps, Store>(
-    mapStateToProps,
-    mapDispatchToProps,
-)(MainWindow);
+export default MainWindow;

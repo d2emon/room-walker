@@ -6,8 +6,8 @@ import {
 // Components
 import Header from 'components/Header';
 // Containers
-import Aber from '../Aber/Aber';
-import MainStarter from '../Main/Starter';
+import Aber from 'containers/Aber';
+// import MainStarter from '../Main/Starter';
 import Starter from '../Starter';
 import Compass from '../Compass';
 import Room from '../Room';
@@ -21,9 +21,11 @@ const App = () => (
       <Card>
         <Aber />
       </Card>
+      { /*
       <Row>
         <Col><MainStarter /></Col>
       </Row>
+      */ }
       <Row>
         <Col xs="2"><Starter /></Col>
         <Col><Room /></Col>
