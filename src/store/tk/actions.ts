@@ -323,7 +323,7 @@ export const readMessages = (name: string): TkThunkAction<TkAction> => (
     .then(() => dispatch(eorte))
     .then(() => dispatch(setDes(0)));
 
-export const openlock = (): MainThunkAction<TkAction> => (
+export const openlock = (): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
 ) => {
     /*
@@ -579,7 +579,7 @@ export const nextTurn = (name: string): TkThunkAction<TkAction> => (
     .then(() => dispatch(sendmsg(name)))
     .then(() => dispatch(endTurn(name)));
 
-export const cleanup = (): MainThunkAction<TkAction> => (
+export const cleanup = (): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
 ) => {
     /*
@@ -617,7 +617,7 @@ export const tbroad = (message: string): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
 ) => dispatch(broad(message));
 
-export const split = (): MainThunkAction<TkAction> => (
+export const split = (): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
 ) => {
     /*
@@ -641,7 +641,7 @@ char *luser;
      */
 };
 
-export const revise = (): MainThunkAction<TkAction> => (
+export const revise = (): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
 ) => {
     /*
@@ -668,7 +668,7 @@ long cutoff;
      */
 };
 
-export const loodrv = (): MainThunkAction<TkAction> => (
+export const loodrv = (): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
 ) => {
     /*
@@ -680,7 +680,7 @@ loodrv()
      */
 };
 
-export const userwrap = (): MainThunkAction<TkAction> => (
+export const userwrap = (): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
 ) => {
     /*
@@ -693,7 +693,7 @@ userwrap()
      */
 };
 
-export const fcloselock = (): MainThunkAction<TkAction> => (
+export const fcloselock = (): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
 ) => {
     /*

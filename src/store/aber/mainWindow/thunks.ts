@@ -34,7 +34,7 @@ import Users from '../../../services/users';
 import {getPrompt} from "../talker/reducer";
 
 // Types
-type Dispatch<A extends Action> = ThunkDispatch<MainWindowAction, any, A>;
+type Dispatch<A extends Action> = ThunkDispatch<Store, any, A>;
 export type MainWindowThunkAction<A extends Action> = ThunkAction<any, Store, any, A>;
 
 const showMessages = (addLineBreak: boolean = false): Promise<void> => Promise.resolve();

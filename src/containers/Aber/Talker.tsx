@@ -29,6 +29,7 @@ interface DispatchProps {
 
 interface TalkerProps {
     name: string,
+    children?: React.ReactNode,
 }
 
 type Props = StateProps & DispatchProps & TalkerProps;
@@ -72,12 +73,16 @@ class Talker extends React.Component<Props, State> {
                 {children}
             </Container>
             <CardFooter>
-                {{ isDirty }} {{ prompt }} {{ buffer }} [80]
-                <Button
-                    onClick={this.onNextTurn}
-                >
-                    Ok
-                </Button>
+                <>
+                    { /* 
+                    {isDirty } { prompt } { buffer } [80]
+                    */ }
+                    <Button
+                        onClick={this.onNextTurn}
+                    >
+                        Ok
+                    </Button>
+                </>
             </CardFooter>
         </Card>);
     }

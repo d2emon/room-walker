@@ -12,7 +12,7 @@ import {Store} from '../../reducers';
 import logger from '../../../services/logger';
 
 // Types
-type Dispatch<A extends Action> = ThunkDispatch<LoggerAction, any, A>;
+type Dispatch<A extends Action> = ThunkDispatch<Store, any, A>;
 export type LoggerThunkAction<A extends Action> = ThunkAction<any, Store, any, A>;
 
 export const getMessages = (): LoggerThunkAction<LoggerAction> => (

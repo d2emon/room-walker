@@ -19,7 +19,7 @@ import {Store} from '../../reducers';
 import Users from '../../../services/users';
 
 // Types
-type Dispatch<A extends Action> = ThunkDispatch<TalkerAction, any, A>;
+type Dispatch<A extends Action> = ThunkDispatch<Store, any, A>;
 export type TalkerThunkAction<A extends Action> = ThunkAction<any, Store, any, A>;
 
 const openworld = () => Promise.resolve();

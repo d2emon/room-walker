@@ -11,7 +11,7 @@ export interface LoggerProps {
 const Logger = (props: LoggerProps): React.ReactElement => <Card>
     { props.messages && <CardText>
         { props.messages.map((message, messageId) => <p key={messageId}>
-            {message}
+            {message.message}
         </p>) }
     </CardText> }
 </Card>;
