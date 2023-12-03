@@ -1,7 +1,8 @@
 import {
-    Container,
-    Row,
-    Col, Card,
+  Card,
+  Col,
+  Container,
+  Row,
 } from 'reactstrap';
 // Components
 import Header from 'components/Header';
@@ -21,11 +22,13 @@ const App = () => (
       <Card>
         <Aber />
       </Card>
+
       { /*
       <Row>
         <Col><MainStarter /></Col>
       </Row>
       */ }
+
       <Row>
         <Col xs="2"><Starter /></Col>
         <Col><Room /></Col>

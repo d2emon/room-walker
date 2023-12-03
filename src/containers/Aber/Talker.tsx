@@ -1,106 +1,74 @@
-import * as React from 'react';
-import {Action} from 'redux';
-import {connect} from 'react-redux';
+import React, { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-    Button,
-    Card,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-    Container,
+  Button,
+  Card,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  Container,
 } from 'reactstrap';
-import {Store} from '../../store/reducers';
+import { Store } from 'store/reducers';
 import { getDirty } from 'store/aber/keys/slice';
-import { getPrompt } from 'store/aber/talker/slice';
 import * as mainWindowActions from 'store/aber/mainWindow/thunks';
+import { getPrompt } from 'store/aber/talker/slice';
 import * as talkerActions from 'store/aber/talker/thunks';
 
-interface StateProps {
-    prompt: string,
-    buffer: string,
-    isDirty: boolean,
-}
-
-interface DispatchProps {
-    beforeInput: () => mainWindowActions.MainWindowThunkAction<Action>,
-    afterInput: () => mainWindowActions.MainWindowThunkAction<Action>,
-    nextTurn: (name: string) => talkerActions.TalkerThunkAction<Action>,
-}
-
 interface TalkerProps {
-    name: string,
-    children?: React.ReactNode,
+  name: string,
+  children?: React.ReactNode,
 }
 
-type Props = StateProps & DispatchProps & TalkerProps;
+const NewTalker = (props: TalkerProps) => {
+  const {
+    children,
+    name,
+  } = props;
 
-interface State {
+  const dispatch = useDispatch<any>();
+
+  const buffer = useSelector((store: Store) => (store.keys.buffer));
+  const isDirty = useSelector(getDirty);
+  const prompt = useSelector(getPrompt);
+
+  const handleNextTurn = useCallback(() => {
+    dispatch(mainWindowActions.beforeInput());
+    dispatch(mainWindowActions.afterInput());
+    dispatch(talkerActions.nextTurn());
+  }, [
+    dispatch,
+  ]);
+
+  return (
+    <Card className="my-2">
+      <CardHeader>
+        <CardTitle>
+          Talker: { name }
+        </CardTitle>
+      </CardHeader>
+
+      <Container>
+        {children}
+      </Container>
+
+      <CardFooter>
+        <>
+          {isDirty && (
+            <div>
+              <strong>{ prompt }</strong>
+              {buffer}
+            </div>
+          )}
+
+          <Button
+            onClick={handleNextTurn}
+          >
+            Ok
+          </Button>
+        </>
+      </CardFooter>
+    </Card>    
+  );
 }
 
-class Talker extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-        this.state = {};
-
-        this.onNextTurn = this.onNextTurn.bind(this);
-    }
-
-    componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any): void {
-        this.onNextTurn();
-    }
-
-    onNextTurn() {
-        this.props.beforeInput();
-        this.props.afterInput();
-        this.props.nextTurn(this.props.name);
-    }
-
-    render() {
-        const {
-            children,
-            name,
-            // isDirty,
-            // prompt,
-            // buffer,
-        } = this.props;
-        return (<Card>
-            <CardHeader>
-                <CardTitle>
-                    Talker: { name }
-                </CardTitle>
-            </CardHeader>
-            <Container>
-                {children}
-            </Container>
-            <CardFooter>
-                <>
-                    { /* 
-                    {isDirty } { prompt } { buffer } [80]
-                    */ }
-                    <Button
-                        onClick={this.onNextTurn}
-                    >
-                        Ok
-                    </Button>
-                </>
-            </CardFooter>
-        </Card>);
-    }
-}
-
-const mapStateToProps = (store: Store): StateProps => ({
-    prompt: getPrompt(store),
-    buffer: store.keys.buffer,
-    isDirty: getDirty(store),
-});
-
-const mapDispatchToProps: DispatchProps = {
-    beforeInput: mainWindowActions.beforeInput,
-    afterInput: mainWindowActions.afterInput,
-    nextTurn: talkerActions.nextTurn,
-};
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(Talker);
+export default NewTalker;
