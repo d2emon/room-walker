@@ -1,6 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Store } from 'store/reducers';
-import { Message } from '../../../services/logger';
 
 export interface ErrorsState {
   errorId?: number,
@@ -10,7 +8,10 @@ export interface ErrorsState {
 const initialState: ErrorsState = {
 };
 
-type SetErrorMessageAction = PayloadAction<string>;
+interface ErrorPayload {
+  errorId?: number,
+  message?: string,
+};type SetErrorMessageAction = PayloadAction<ErrorPayload>;
 type SetErrorAction = PayloadAction<undefined>;
 export type ErrorsAction = SetErrorMessageAction | SetErrorAction;
 
@@ -18,22 +19,23 @@ export const errorsSlice = createSlice({
   name: 'errors',
   initialState,
   reducers: {
-    setErrorMessage: (state: ErrorsState, action: SetErrorMessageAction) => {
-      /**
-       * pbfr();
-       */
-      state.errorId = 0;
-      state.errorMessage = action.payload;
+    resetErrors: (state: ErrorsState) => {
+      state.errorId = undefined;
+      state.errorMessage = undefined;
     },
-    setError: (state: ErrorsState) => {
-      state.errorId = 255;
+    setErrorMessage: (state: ErrorsState, action: SetErrorMessageAction) => {
+      // pbfr();
+      // pr_due=0; // So we dont get a prompt after the exit
+      // keysetback();
+      state.errorId = action.payload.errorId;
+      state.errorMessage = action.payload.message;
     },
    },
 });
 
 export const {
+  resetErrors,
   setErrorMessage,
-  setError,
 } = errorsSlice.actions;
 
 export default errorsSlice.reducer;

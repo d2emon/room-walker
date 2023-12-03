@@ -92,6 +92,7 @@ const onInput = (
         .then(pbfr);
 };
 
+// loseme();
 export const finishUser = (getState: () => Store) => Promise.resolve()
     .then(openworld)
     .then(() => getState().talker.name)
@@ -114,6 +115,15 @@ export const finishUser = (getState: () => Store) => Promise.resolve()
         chksnp(),
     ]));
 
+/*
+openworld();
+interrupt=1;
+rte(globme);
+interrupt=0;
+on_timing();
+closeworld();
+*/
+// key_reprint();
 export const onWait = (
     dispatch: Dispatch<TalkerAction>,
     getState: () => Store,

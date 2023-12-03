@@ -10,7 +10,6 @@ import {
   setAlarm,
 } from './slice';
 import {
-  setError,
   setErrorMessage
 } from '../errors/slice';
 import {
@@ -58,77 +57,103 @@ const startUser = async (
 const logOut = async (
   dispatch: Dispatch<Action>,
   getState: () => Store,
-  errorMessage?: string,
+  errorId?: number,
+  message?: string,
 ) => {
   dispatch(setAlarm(false));
-  dispatch(setLoggedOut());
 
+  dispatch(setLoggedOut());
   // await finishUser(getState);
 
-  return errorMessage && dispatch(setErrorMessage(errorMessage));
+  if (errorId || message) {
+    dispatch(setErrorMessage({
+      errorId,
+      message,
+    }));
+  }
 };
 
 const screenBottom = () => showMessages();
 const screenTop = () => showMessages();
+
+// Start system
 
 export const onStart = (userId: string, title: string, name: string) => async (
   dispatch: Dispatch<Action>,
 ) => {
   dispatch(logReset());
 
-  if (!userId || !title || !name) {
-    dispatch(setErrorMessage('Args!'));
-    return;
-  }
-
   try {
+    if (!userId || !title || !name) {
+      throw new Error('Args!');
+    }
+
     const user = await Users.setUser({
       userId,
       name,
     });
+
     dispatch(startGame({
       userId: user.userId,
       title,
     }));
+
     dispatch(setUser({
       characterId: user?.character?.characterId || 0,
       name: user?.character?.name || '',
       channelId: user?.character?.channelId || 0,
       title,
     }));
+
     await startUser(dispatch, userId);    
   } catch(e: any) {
     console.error(e);
-    dispatch(setErrorMessage(e));
+    dispatch(setErrorMessage({
+      errorId: 0,
+      message: e,
+    }));
   }
 };
 
-export const onError = () => async (
+// Signals
+
+export const onError = async (
   dispatch: Dispatch<Action>,
   getState: () => Store,
 ) => {
-  await logOut(dispatch, getState);
-  dispatch(setError());
+  await logOut(dispatch, getState, 0, '');
 };
 
-export const onExit = () => (
-  dispatch: Dispatch<Action>,
-  getState: () => Store,
-) => getState().mainWindow.inFight || logOut(dispatch, getState, 'Byeeeeeeeeee  ...........');
-
-export const onTimer = () => async (
+export const onExit = async (
   dispatch: Dispatch<Action>,
   getState: () => Store,
 ) => {
+  if (getState().mainWindow.inFight) {
+    return;
+  }
+
+  await logOut(dispatch, getState, 255, 'Byeeeeeeeeee  ...........');
+};
+
+export const onTimer = async (
+  dispatch: Dispatch<Action>,
+  getState: () => Store,
+) => {
+  // if(sig_active==0) return;
   if (!canOnTimer(getState())) {
     return;
   }
+
   dispatch(setAlarm(false));
+
   // await onWait(dispatch, getState, getState().mainWindow.userId);
   await showMessages(true);
   dispatch(setClean());
-  await dispatch(setAlarm(true));
+
+  dispatch(setAlarm(true));
 };
+
+// ----
 
 export const beforeInput = () => async (
   dispatch: Dispatch<Action>,

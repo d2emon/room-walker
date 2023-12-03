@@ -1,5 +1,6 @@
 import { configureStore  } from '@reduxjs/toolkit';
 import errorsReducer from './aber/errors/slice';
+import eventsReducer from './aber/events/slice';
 import keysReducer from './aber/keys/slice';
 import loggerReducer from './aber/logger/slice';
 import mainWindowReducer from './aber/mainWindow/slice';
@@ -15,7 +16,7 @@ const store = configureStore({
     // tk,
 
     errors: errorsReducer,
-    // events,
+    events: eventsReducer,
     keys: keysReducer,
     logger: loggerReducer,
     mainWindow: mainWindowReducer,

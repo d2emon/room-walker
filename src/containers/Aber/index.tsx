@@ -16,6 +16,7 @@ import { getMessages } from 'store/aber/logger/slice';
 import * as loggerActions from 'store/aber/logger/thunks';
 import * as mainWindowActions from 'store/aber/mainWindow/thunks';
 import MainWindow from './MainWindow';
+import { resetErrors } from 'store/aber/errors/slice';
 
 const Aber = () => {
   const dispatch = useDispatch<any>();
@@ -28,8 +29,11 @@ const Aber = () => {
   const [isShowingStartModal, setIsShowingStartModal] = useState(true);
 
   const handleReset = useCallback(() => {
+    dispatch(resetErrors());
     setIsShowingStartModal(true);
-  }, []);
+  }, [
+    dispatch,
+  ]);
 
   const hadleCloseStartModal = useCallback((data: StartingData) => {
     setIsShowingStartModal(false);

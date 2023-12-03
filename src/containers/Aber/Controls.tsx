@@ -1,166 +1,120 @@
-import * as React from 'react';
-import {Action} from 'redux';
-import {connect} from 'react-redux';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     Button,
     Nav,
     Navbar,
 } from 'reactstrap';
-import GoodByeModal from './modals/GoodByeModal';
-import {Store} from '../../store/reducers';
 import * as mainWindowSelector from 'store/aber/mainWindow/slice';
 import * as mainWindowActions from 'store/aber/mainWindow/thunks';
-
-interface StateProps {
-    canExit: boolean,
-    timerIsOn: boolean,
-}
-
-interface DispatchProps {
-    onError: () => mainWindowActions.MainWindowThunkAction<Action>,
-    onExit: () => mainWindowActions.MainWindowThunkAction<Action>,
-    onTimer: () => mainWindowActions.MainWindowThunkAction<Action>,
-}
+import GoodByeModal from './modals/GoodByeModal';
 
 interface ControlsProps {
-    inFight?: boolean,
+  inFight?: boolean,
 }
 
-type Props = StateProps & DispatchProps & ControlsProps;
+const NewControls = (props: ControlsProps) => {
+  const {
+    inFight,
+  } = props;
 
-interface State {
-    canExit: boolean,
-    isExiting: boolean,
+  const dispatch = useDispatch<any>();
+
+  const canExit = useSelector(mainWindowSelector.canExit);
+  const timerIsOn = useSelector(mainWindowSelector.timerIsOn);
+
+  const [blockExit, setBlockExit] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
+
+  const handleCloseExitModal = useCallback(() => {
+    setIsExiting(false);
+  }, []);
+
+  const handleError = useCallback(() => {
+    dispatch(mainWindowActions.onError)
+  }, [
+    dispatch,
+  ]);
+
+  const handleExit = useCallback(() => {
+    if (!blockExit) {
+        setIsExiting(true);
+        dispatch(mainWindowActions.onExit)
+    }
+  }, [
+    dispatch,
+    blockExit,
+  ]);
+
+  const handleTimer = useCallback(() => {
+    dispatch(mainWindowActions.onTimer)
+  }, [
+    dispatch,
+  ]);
+
+  useEffect(() => {
+    setBlockExit(!!inFight);
+  }, [inFight]);
+
+  return (
+    <Navbar>
+      <GoodByeModal
+        show={isExiting}
+        onClose={handleCloseExitModal}
+      />
+
+      <Nav>
+        <Button
+          onClick={handleError}
+        >
+          SIGHUP
+        </Button>
+        <Button
+          onClick={handleExit}
+          disabled={!canExit}
+        >
+          SIGINT
+        </Button>
+        <Button
+          onClick={handleExit}
+          disabled={!canExit}
+        >
+          SIGTERM
+        </Button>
+        <Button
+          disabled={true}
+        >
+          SIGTSTP
+        </Button>
+        <Button
+          disabled={true}
+        >
+          SIGQUIT
+        </Button>
+        <Button
+          onClick={handleError}
+        >
+          SIGCONT
+        </Button>
+        <Button
+          onClick={handleTimer}
+          disabled={!timerIsOn}
+        >
+          SIGALRT
+        </Button>
+        <Button
+          onClick={handleExit}
+        >
+          Exit
+        </Button>
+        <Button
+          onClick={handleTimer}
+        >
+          Alert
+        </Button>
+      </Nav>
+    </Navbar>    
+  );
 }
 
-class Controls extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-
-        this.state = {
-            canExit: true,
-            isExiting: false,
-        };
-
-        this.onCloseExitModal = this.onCloseExitModal.bind(this);
-        this.onError = this.onError.bind(this);
-        this.onExit = this.onExit.bind(this);
-        this.onTimer = this.onTimer.bind(this);
-    }
-
-    static getDerivedStateFromProps(props: Props, currentState: State): State {
-        const {
-            inFight,
-        } = props;
-        return {
-            ...currentState,
-            canExit: !inFight,
-        };
-    }
-
-    onCloseExitModal() {
-        this.setState({
-            isExiting: false,
-        });
-    }
-
-    onError() {
-        this.props.onError();
-    }
-
-    onExit() {
-        this.setState({
-            isExiting: true,
-        });
-        if (!this.state.canExit) {
-            return;
-        }
-        this.props.onExit();
-    }
-
-    onTimer() {
-        this.props.onTimer();
-    }
-
-    render() {
-        const {
-            isExiting,
-        } = this.state;
-        const {
-            canExit,
-            timerIsOn,
-        } = this.props;
-        return <Navbar>
-            <GoodByeModal
-                show={isExiting}
-                onClose={this.onCloseExitModal}
-            />
-            <Nav>
-                <Button
-                    onClick={this.onError}
-                >
-                    SIGHUP
-                </Button>
-                <Button
-                    onClick={this.onExit}
-                    disabled={!canExit}
-                >
-                    SIGINT
-                </Button>
-                <Button
-                    onClick={this.onExit}
-                    disabled={!canExit}
-                >
-                    SIGTERM
-                </Button>
-                <Button
-                    disabled={true}
-                >
-                    SIGTSTP
-                </Button>
-                <Button
-                    disabled={true}
-                >
-                    SIGQUIT
-                </Button>
-                <Button
-                    onClick={this.onError}
-                >
-                    SIGCONT
-                </Button>
-                <Button
-                    onClick={this.onTimer}
-                    disabled={!timerIsOn}
-                >
-                    SIGALRT
-                </Button>
-                <Button
-                    onClick={this.onExit}
-                >
-                    Exit
-                </Button>
-                <Button
-                    onClick={this.onTimer}
-                >
-                    Alert
-                </Button>
-            </Nav>
-        </Navbar>;
-    }
-}
-
-const mapStateToProps = (store: Store): StateProps => ({
-    canExit: mainWindowSelector.canExit(store),
-    timerIsOn: mainWindowSelector.timerIsOn(store),
-});
-
-const mapDispatchToProps: DispatchProps = {
-    onError: mainWindowActions.onError,
-    onExit: mainWindowActions.onExit,
-    onTimer: mainWindowActions.onTimer,
-};
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(Controls);
+export default NewControls;
