@@ -11,8 +11,8 @@ import {
 import { Store } from 'store/reducers';
 import { getDirty } from 'store/aber/keys/slice';
 import * as mainWindowActions from 'store/aber/mainWindow/thunks';
-import { getPrompt } from 'store/aber/talker/slice';
-import * as talkerActions from 'store/aber/talker/thunks';
+import { getPrompt } from 'store/aber/talker/selectors';
+import { nextTurn } from 'store/aber/talker/thunks';
 
 interface TalkerProps {
   name: string,
@@ -34,7 +34,7 @@ const NewTalker = (props: TalkerProps) => {
   const handleNextTurn = useCallback(() => {
     dispatch(mainWindowActions.beforeInput());
     dispatch(mainWindowActions.afterInput());
-    dispatch(talkerActions.nextTurn());
+    dispatch(nextTurn);
   }, [
     dispatch,
   ]);

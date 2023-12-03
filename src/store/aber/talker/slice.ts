@@ -1,10 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Store } from 'store/reducers';
 import {
-    ConversationMode,
-    CONVERSATION_MODE_ACTION,
-    CONVERSATION_MODE_SAY,
-    CONVERSATION_MODE_TSS,
+  ConversationMode,
+  CONVERSATION_MODE_ACTION,
 } from './modes';
 
 export interface TalkerState {
@@ -53,7 +50,7 @@ interface SetUserPayload {
   characterId: number;
   name: string;
   channelId: number;
-  title: string;
+  title?: string;
 }
 type SetUserAction = PayloadAction<SetUserPayload>;
 type UpdateTitleAction = PayloadAction<undefined>;
@@ -97,29 +94,6 @@ export const talkerSlice = createSlice({
     },
   },
 });
-
-// Selectors
-export const getPrompt = (state: Store): string => {
-  const prompt = [];
-  if (state.talker.debugMode) {
-    prompt.push('#');
-  }
-  if (state.talker.isWizard) {
-    prompt.push('----');
-  }
-
-  if (state.talker.conversationMode === CONVERSATION_MODE_ACTION) {
-    prompt.push('>');
-  } else if (state.talker.conversationMode === CONVERSATION_MODE_SAY) {
-    prompt.push('"');
-  } else if (state.talker.conversationMode === CONVERSATION_MODE_TSS) {
-    prompt.push('*');
-  } else {
-    prompt.push('?');
-  }
-
-  return state.talker.isVisible ? prompt.join('') : `(${prompt.join('')})`;
-};
 
 export const {
   setConversationMode,

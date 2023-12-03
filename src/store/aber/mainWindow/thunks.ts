@@ -34,7 +34,7 @@ import {
 */
 import {Store} from '../../reducers';
 import Users from '../../../services/users';
-import {getPrompt} from "../talker/reducer";
+import { getPrompt } from '../talker/selectors';
 
 // Types
 type Dispatch<A extends Action> = ThunkDispatch<Store, any, A>;
@@ -97,7 +97,6 @@ export const onStart = (userId: string, title: string, name: string) => async (
       userId: user.userId,
       title,
     }));
-
     dispatch(setUser({
       characterId: user?.character?.characterId || 0,
       name: user?.character?.name || '',
@@ -164,7 +163,7 @@ export const beforeInput = () => async (
    dispatch(updateTitle());
    dispatch(setAlarm(true));
    dispatch(setInputMode());
-   await sendAndShow(getPrompt(getState().talker));
+   await sendAndShow(getPrompt(getState()));
    dispatch(setClean());
 };
 

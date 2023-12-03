@@ -7,7 +7,7 @@ import events, {EventsState} from './aber/events/reducer';
 import keys, {KeysState} from './aber/keys/reducer';
 import logger, {LoggerState} from './aber/logger/reducer';
 import mainWindow, {MainWindowState} from './aber/mainWindow/reducer';
-import talker, {TalkerState} from "./aber/talker/reducer";
+import { TalkerState } from './aber/talker/slice';
 
 export interface Store {
     rooms: RoomState,
@@ -21,6 +21,7 @@ export interface Store {
     mainWindow: MainWindowState,
     talker: TalkerState,
 }
+/*
 export {
     rooms,
     main,
@@ -33,3 +34,4 @@ export {
     mainWindow,
     talker,
 };
+*/
