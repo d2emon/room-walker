@@ -47,10 +47,10 @@ const initialState: TalkerState = {
 };
 
 interface SetUserPayload {
-  characterId: number;
-  name: string;
-  channelId: number;
-  title?: string;
+  characterId?: number | null;
+  name?: string | null;
+  channelId?: number | null;
+  title?: string | null;
 }
 type SetUserAction = PayloadAction<SetUserPayload>;
 type UpdateTitleAction = PayloadAction<undefined>;
@@ -76,15 +76,13 @@ export const talkerSlice = createSlice({
   reducers: {
     setUser: (state: TalkerState, action: SetUserAction) => {
       state.title = action.payload.title || state.title;
-      state.channelId = action.payload.channelId;
-      state.characterId = action.payload.characterId;
-      state.name = action.payload.name;
+      state.channelId = action.payload.channelId || 0;
+      state.characterId = action.payload.characterId || 0;
+      state.name = action.payload.name || '';
+      state.loggedIn = true;
     },
     updateTitle: (state: TalkerState) => {
       state.title = getTitle(state);
-    },
-    setLoggedIn: (state: TalkerState) => {
-      state.loggedIn = true;
     },
     setLoggedOut: (state: TalkerState) => {
       state.loggedIn = false;
@@ -97,7 +95,6 @@ export const talkerSlice = createSlice({
 
 export const {
   setConversationMode,
-  setLoggedIn,
   setLoggedOut,
   setUser,
   updateTitle,

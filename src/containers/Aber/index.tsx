@@ -14,7 +14,7 @@ import StartModal, { StartingData } from './modals/StartModal';
 import {Message} from '../../services/logger';
 import { getMessages } from 'store/aber/logger/slice';
 import * as loggerActions from 'store/aber/logger/thunks';
-import * as mainWindowActions from 'store/aber/mainWindow/thunks';
+import { onStart } from 'store/aber/mainWindow/thunks';
 import MainWindow from './MainWindow';
 import { resetErrors } from 'store/aber/errors/slice';
 
@@ -42,7 +42,7 @@ const Aber = () => {
     setTitle(data.title);
     setName(data.name);
 
-    dispatch(mainWindowActions.onStart(data.userId, data.title, data.name));
+    dispatch(onStart(data.userId, data.title, data.name));
     // syslog("GAME ENTRY: %s[%s]",globme,cuserid(NULL));
     console.log(`GAME ENTRY: ${data.name}[${data.userId}]`);
     dispatch(loggerActions.getMessages());

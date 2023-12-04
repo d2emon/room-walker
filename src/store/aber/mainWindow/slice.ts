@@ -3,7 +3,7 @@ import { Store } from 'store/reducers';
 
 export interface MainWindowState {
   // Main Args
-  userId: string,
+  userId: string | number,
   title: string,
   // Timer
   active: boolean,
@@ -25,7 +25,7 @@ const initialState: MainWindowState = {
 };
 
 interface StartGamePayload {
-  userId: string;
+  userId: string | number;
   title: string;
 }
 type StartGameAction = PayloadAction<StartGamePayload>;

@@ -21,7 +21,6 @@ import {
   logReset,
 } from '../logger/slice';
 import {
-  setLoggedIn,
   setLoggedOut,
   setUser,
   updateTitle,
@@ -33,7 +32,7 @@ import {
 } from '../talker/thunks';
 */
 import {Store} from '../../reducers';
-import Users from '../../../services/users';
+import Users, { addUser } from '../../../services/users';
 import { getPrompt } from '../talker/selectors';
 
 // Types
@@ -44,15 +43,6 @@ const showMessages = (addLineBreak: boolean = false): Promise<void> => Promise.r
 const sendMessage = (message: string): Promise<void> => Promise.resolve();
 const sendAndShow = (message: string): Promise<void> => sendMessage(message)
     .then(() => showMessages(false));
-
-const startUser = async (
-  dispatch: Dispatch<Action>,
-  userId: string,
-) => {
-  await Users.processEvents(userId);
-  await Users.perform(userId, '.g');
-  dispatch(setLoggedIn());
-}
 
 const logOut = async (
   dispatch: Dispatch<Action>,
@@ -84,27 +74,27 @@ export const onStart = (userId: string, title: string, name: string) => async (
   dispatch(logReset());
 
   try {
-    if (!userId || !title || !name) {
+    if (!title || !name) {
       throw new Error('Args!');
     }
 
-    const user = await Users.setUser({
-      userId,
-      name,
-    });
+    const user = await addUser(name);
+    const userId = user?.userId || '';
+    const character = user?.character;
+
+    await Users.processEvents(userId);
+    await Users.perform(userId, '.g');
 
     dispatch(startGame({
-      userId: user.userId,
+      userId,
       title,
     }));
     dispatch(setUser({
-      characterId: user?.character?.characterId || 0,
-      name: user?.character?.name || '',
-      channelId: user?.character?.channelId || 0,
+      characterId: character?.characterId,
+      name: character?.name,
+      channelId: character?.channelId,
       title,
     }));
-
-    await startUser(dispatch, userId);    
   } catch(e: any) {
     console.error(e);
     dispatch(setErrorMessage({

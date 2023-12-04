@@ -596,44 +596,7 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
   
  long mynum=0;
   
-  putmeon(name)
-  char *name;
-     {
-     extern long mynum,curch;
-     extern long maxu;
-     long ct,f;
-     FILE *unit;
-     extern long iamon;
-     iamon=0;
-     unit=openworld();
-     ct=0;
-     f=0;
-     if(fpbn(name)!= -1)
-        {
-        crapup("You are already on the system - you may only be on once at a time");
-        }
-     while((f==0)&&(ct<maxu))
-        {
-        if (!strlen(pname(ct))) f=1;
-        else
-           ct++;
-        }
-     if(ct==maxu)
-        {
-        mynum=maxu;
-        return;
-        }
-     strcpy(pname(ct),name);
-     setploc(ct,curch);
-     setppos(ct,-1);
-     setplev(ct,1);
-     setpvis(ct,0);
-     setpstr(ct,-1);
-     setpwpn(ct,-1);
-     setpsex(ct,0);
-     mynum=ct;
- iamon=1;
-     }
+// putmeon(name)
   
   loseme(name)
   char *name;
