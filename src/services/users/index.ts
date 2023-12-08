@@ -1,4 +1,4 @@
-import { Event } from '../events';
+import { Event, EventId } from '../events/types';
 import {
   User,
   UserId,
@@ -26,15 +26,6 @@ const perform = async (userId: UserId, action: string): Promise<any> => {
   return response?.data;
 }
 
-const processEvents = async (userId: UserId, eventId?: number, force?: boolean): Promise<any> => {
-  const response = await postUserEvents(userId, {
-    eventId,
-    force,
-  });
-
-  return response?.data;
-}
-
 const sendEvent = async (event: Event) => {
   const response = await postUserEvent({
     event,
@@ -57,9 +48,18 @@ const broadcast = async (message: string) => {
   }
 }
 
+const processUserEvents = async (userId: UserId, eventId?: EventId, force?: boolean) => {
+  const response = await postUserEvents(userId, {
+    eventId,
+    force,
+  });
+
+  return response?.data;
+}
+
 const UserService = {
   perform,
-  processEvents,
+  processUserEvents,
   sendEvent,
   broadcast,
 }

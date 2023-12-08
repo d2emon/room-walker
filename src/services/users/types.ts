@@ -1,3 +1,5 @@
+import { EventId } from "services/events/types";
+
 export type UserId = number | string;
 
 export interface Character {
@@ -14,9 +16,11 @@ export interface Character {
 }
   
 export interface User {
-  userId: UserId,
-  mode: string,
-  characterId: number,
-  character: Character,
+  userId: UserId;
+  mode: string;
+  characterId: number;
+  character: Character;
+  lastUpdate?: number;
+  eventId?: EventId;
 }
   

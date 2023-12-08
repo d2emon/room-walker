@@ -82,7 +82,7 @@ export const onStart = (userId: string, title: string, name: string) => async (
     const userId = user?.userId || '';
     const character = user?.character;
 
-    await Users.processEvents(userId);
+    await Users.processUserEvents(userId);
     await Users.perform(userId, '.g');
 
     dispatch(startGame({

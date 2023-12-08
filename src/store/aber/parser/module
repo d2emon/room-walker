@@ -223,7 +223,12 @@ const doQuit = (): Promise<void> => {
                 bprintf("You can't be forced to do that\n");
                 break;
             }
-            rte(globme);
+
+            // await postUserEvents(user.id, {
+            //   eventId: user.eventId,
+            //   force: true,
+            // });
+
             openworld();
             if(in_fight)
             {
@@ -817,7 +822,6 @@ long *blok;
     extern long my_sco;
     extern long my_str;
     extern long snoopd;
-    extern long fl_com;
     char ms[128];
     char nam1[40],nam2[40],text[256],nameme[40];
     long isme;
@@ -1577,7 +1581,11 @@ rmeditcom()
             }
             sprintf(ms,"\001s%s\001%s re-enters the normal universe\n\001",globme,globme);
             sendsys(globme,globme,-10113,0,ms);
-            rte();
+
+            // await postUserEvents(null, {
+            //   eventId: user.eventId,
+            //   force: true,
+            // });
         });
 }
 
@@ -1605,7 +1613,12 @@ u_system()
                 loseme();
                 crapup("You have been kicked off");
             }
-            rte();
+
+            // await postUserEvents(null, {
+            //   eventId: user.eventId,
+            //   force: true,
+            // });
+
             openworld();
             sprintf(x,"%s%s%s%s%s","\001s",globme,"\001",globme," has returned to AberMud\n\001");
             sendsys(globme,globme,-10113,0,x);

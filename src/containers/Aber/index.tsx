@@ -46,8 +46,6 @@ const Aber = () => {
 
 
     dispatch(onStart(data.userId, data.title, data.name));
-    // syslog("GAME ENTRY: %s[%s]",globme,cuserid(NULL));
-    console.log(`GAME ENTRY: ${data.name}[${data.userId}]`);
     dispatch(loggerActions.getMessages());
   }, [
     dispatch,

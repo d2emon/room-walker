@@ -1,8 +1,10 @@
 // import axios from 'axios';
-import { Event } from '../events';
-import { addNewCharacter } from './characters';
+import * as Events from 'services/events';
+import { Event, EventId } from '../events/types';
+import { addNewCharacter, saveCharacter } from './characters';
 import { addMessagesUser } from './messages';
 import {
+  Character,
   User,
   UserId,
 } from './types';
@@ -25,20 +27,21 @@ interface PostUserActionResponse {
   data: any;
 }
 
-interface PostUserEventsRequestData {
-  eventId?: number;
-  force?: boolean;
-}
-      
-interface PostUserEventsResponse {
-  data: any;
-}
-
 interface PostUserEventRequestData {
   event: Event;
 }
         
 interface PostUserEventResponse {
+  data: any;
+}
+
+interface PostUserEventsRequestData {
+  userId?: UserId;
+  eventId?: EventId;
+  force?: boolean;
+}
+        
+interface PostUserEventsResponse {
   data: any;
 }
         
@@ -47,6 +50,42 @@ interface UserStorage {
 }
 
 const stored: UserStorage = {};
+
+const getUser = async (userId: UserId) => {
+  const user = stored[userId] || {};
+  return {
+    ...user,
+  };
+}
+
+const setUser = async (userId: UserId, user: User) => {
+  stored[userId] = user;
+}
+
+const updateEventId = async (userId: UserId, eventId: EventId) => {
+  const user = await getUser(userId);
+  const lastUpdate = user?.lastUpdate || 0;
+
+  const newEvents = (eventId < lastUpdate)
+    ? (eventId - lastUpdate)
+    : (lastUpdate - eventId);
+
+  if (newEvents < 10) {
+    return;
+  }
+
+  const char:Character = user?.character || {};
+  saveCharacter(user?.characterId, {
+    ...char,
+    eventId,
+  });
+
+  setUser(userId, {
+    ...user,
+    // eventId,
+    lastUpdate,
+  });
+};
 
 export const postUser = async (data: AddUserRequestData): Promise<AddUserResponse> => {
   /*
@@ -59,6 +98,9 @@ export const postUser = async (data: AddUserRequestData): Promise<AddUserRespons
   const {
     name,
   } = data;
+
+  // syslog("GAME ENTRY: %s[%s]",globme,cuserid(NULL));
+  console.log(`GAME ENTRY: ${name}[${userId}]`);
 
   await addMessagesUser(userId);
 
@@ -100,27 +142,6 @@ export const postUserAction = async (userId: UserId, data: PostUserActionRequest
   };
 };
 
-export const postUserEvents = async (userId: UserId, data: PostUserEventsRequestData): Promise<PostUserEventsResponse> => {
-  /*
-  axios.post(
-    'http://127.0.0.1:4001/action',
-    {
-      userId,
-      eventId,
-      force,
-    },
-  )
-  */
-      
-  // openworld();
-  // rte(name);
-  // closeworld();
-      
-  return {
-    data: {},
-  };
-};
-
 export const postUserEvent = async (data: PostUserEventRequestData): Promise<PostUserEventResponse> => {
   /*
   axios.post(
@@ -133,5 +154,28 @@ export const postUserEvent = async (data: PostUserEventRequestData): Promise<Pos
         
   return {
     data: {},
+  };
+};
+
+export const postUserEvents = async (userId: UserId, data: PostUserEventsRequestData): Promise<PostUserEventsResponse> => {
+  // async (eventId?: EventId, force?: boolean) => {
+  const {
+    eventId,
+    force,
+  } = data;
+  const response = await Events.processEvents(userId, eventId, force);
+  const { lastEventId } = response?.data || {};
+
+  await updateEventId(userId, lastEventId);
+
+  // eorte();
+
+  return {
+    data: {
+      lastEventId,
+      rdes: 0,
+      tdes: 0,
+      vdes: 0,  
+    },
   };
 };

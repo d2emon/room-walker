@@ -51,7 +51,6 @@ export const addNewCharacter = async (name: string) => {
   }
   
   const characterId = await getNewCharacterId();
-  console.log('characterId', characterId);
   if (characterId === null) {
     throw new Error('Sorry AberMUD is full at the moment');
   }
@@ -67,5 +66,10 @@ export const addNewCharacter = async (name: string) => {
     sex: 0,
   };
   stored[characterId] = char;
-  return char;
+  return { ...char };
+};
+
+export const saveCharacter = async (characterId: number, char: Character) => {
+  stored[characterId] = char;
+  return { ...char };
 };

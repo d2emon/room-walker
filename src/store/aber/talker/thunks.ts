@@ -3,6 +3,7 @@ import {
   ThunkAction,
   ThunkDispatch,
 } from 'redux-thunk';
+import * as Events from 'services/events';
 import {
   CONVERSATION_MODE_ACTION,
   CONVERSATION_MODE_SAY,
@@ -75,7 +76,7 @@ const onInput = (
         // setFightingCounter(getState().talker.fightingCounter - 1);
     });
     const afterInput = (): Promise<void> => (getState().events.forceEvents
-        ? Users.processEvents(userId, getState().events.eventId)
+        ? Events.processEvents(userId, getState().events.eventId)
             .then(() => dispatch(forcedEvents()))
             .then(() => undefined)
         : Promise.resolve()
@@ -113,10 +114,12 @@ export const finishUser = (getState: () => Store) => Promise.resolve()
     ]));
 
 /*
-openworld();
-interrupt=1;
-rte(globme);
-interrupt=0;
+// await postUserEvents(user.id, {
+//   eventId: user.eventId,
+//   force: true,
+//   interrupt: true,
+// });
+
 on_timing();
 closeworld();
 */
@@ -125,7 +128,7 @@ export const onWait = (
     dispatch: Dispatch<Action>,
     getState: () => Store,
     userId: string,
-) => Users.processEvents(userId, getState().events.eventId, true)
+) => Events.processEvents(userId, getState().events.eventId, true)
     .then(onTiming);
 
 export const nextTurn = async (
@@ -135,7 +138,7 @@ export const nextTurn = async (
   const { keyBuff } = getState().talker;
 
   await setFromKeyboard(keyBuff);
-  await Users.processEvents(getState().mainWindow.userId, getState().events.eventId);
+  await Events.processEvents(getState().mainWindow.userId, getState().events.eventId);
   await onInput(dispatch, getState, getState().mainWindow.userId)
 };
 
@@ -344,48 +347,6 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
      if(number>=199) longwthr();
      }
   
-  readmsg(channel,block,num)
-  long channel;
-  long *block;
-  int num;
-     {
-     long buff[64],actnum;
-     sec_read(channel,buff,0,64);
-     actnum=num*2-buff[0];
-     sec_read(channel,block,actnum,128);
-     }
-  
- FILE *fl_com;
- extern long findstart();
- extern long findend();
-  
-  rte(name)
-  char *name;
-     {
-     extern long cms;
-     extern long vdes,tdes,rdes;
-     extern FILE *fl_com;
-     extern long debug_mode;
-     FILE *unit;
-     long too,ct,block[128];
-     unit=openworld();
-     fl_com=unit;
-     if (unit==NULL) crapup("AberMUD: FILE_ACCESS : Access failed\n");
-     if (cms== -1) cms=findend(unit);
-     too=findend(unit);
-     ct=cms;
-     while(ct<too)
-        {
-        readmsg(unit,block,ct);
-        mstoout(block,name);
-        ct++;
-        }
-     cms=ct;
-     update(name);
-     eorte();
-     rdes=0;tdes=0;vdes=0;
-     }
-     
  FILE *openlock(file,perm)
  char *file;
  char *perm;
@@ -410,23 +371,7 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
      return(unit);
      }
   
- long findstart(unit)
-  FILE *unit;
-     {
-     long bk[2];
-     sec_read(unit,bk,0,1);
-     return(bk[0]);
-     }
-  
- long findend(unit)
-  FILE *unit;
-     {
-     long bk[3];
-     sec_read(unit,bk,0,2);
-     return(bk[1]);
-     }
-  
-  
+   
   talker(name)
   char *name;
      {
@@ -439,11 +384,14 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
      extern char globme[];
      makebfr();
          cms= -1;putmeon(name);
-     if(openworld()==NULL) crapup("Sorry AberMUD is currently unavailable");
      if (mynum>=maxu) {printf("\nSorry AberMUD is full at the moment\n");return(0);}
      strcpy(globme,name);
-     rte(name);
-         closeworld();
+
+    // await postUserEvents(user.id, {
+    //   eventId: null,
+    //   force: true,
+    // });
+
      cms= -1;
      special(".g",name);
      i_setup=1;
@@ -451,8 +399,12 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
         {
         pbfr();
         sendmsg(name);
-        if(rd_qd) rte(name);
-        rd_qd=0;
+
+        // await postUserEvents(user.id, {
+        //   eventId: user.eventId,
+        //   force: rd_qd,
+        // });
+
         closeworld();
         pbfr();
         }
@@ -625,22 +577,6 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
   
  long lasup=0;
  
-  update(name)
-  char *name;
-     {
-     extern long mynum,cms;
-     FILE *unit;
-     long xp;
-     extern long lasup;
-     xp=cms-lasup;
-     if(xp<0) xp= -xp;
-     if(xp<10) goto noup;
-     unit=openworld();
-     setppos(mynum,cms);
-     lasup=cms;
-     noup:;
-     }
-  
   revise(cutoff)
   long cutoff;
      {
