@@ -33,7 +33,7 @@ const setFromKeyboard = (work: string) => Promise.resolve(`[l]${work}[/l]`);
 const onInput = (
   dispatch: Dispatch<Action | EventsAction>,
   getState: () => Store,
-  userId: string,
+  userId: number | string,
 ) => {
     const prepareInput = (action: string): Promise<string> => new Promise((resolve) => {
         const conversationMode = getState().talker.conversationMode;

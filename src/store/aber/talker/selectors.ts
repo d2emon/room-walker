@@ -7,7 +7,6 @@ import {
 
 export const getName = (store: Store): string => (store.talker.name);
 
-// Selectors
 export const getPrompt = (state: Store): string => {
   const prompt = [];
   if (state.talker.debugMode) {

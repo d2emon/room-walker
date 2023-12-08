@@ -62,7 +62,6 @@ export const postUser = async (data: AddUserRequestData): Promise<AddUserRespons
 
   await addMessagesUser(userId);
 
-  // putmeon(name);
   const character = await addNewCharacter(name);
   
   const user: User = {

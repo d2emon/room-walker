@@ -5,7 +5,10 @@ import {
     Nav,
     Navbar,
 } from 'reactstrap';
-import * as mainWindowSelector from 'store/aber/mainWindow/slice';
+import {
+  getCanExit,
+  getTimerIsOn,
+} from 'store/aber/mainWindow/selectors';
 import * as mainWindowActions from 'store/aber/mainWindow/thunks';
 import GoodByeModal from './modals/GoodByeModal';
 
@@ -20,8 +23,8 @@ const NewControls = (props: ControlsProps) => {
 
   const dispatch = useDispatch<any>();
 
-  const canExit = useSelector(mainWindowSelector.canExit);
-  const timerIsOn = useSelector(mainWindowSelector.timerIsOn);
+  const canExit = useSelector(getCanExit);
+  const timerIsOn = useSelector(getTimerIsOn);
 
   const [blockExit, setBlockExit] = useState(false);
   const [isExiting, setIsExiting] = useState(false);

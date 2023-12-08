@@ -18,7 +18,11 @@ export type LoggerThunkAction<A extends Action> = ThunkAction<any, Store, any, A
 export const getMessages = () => async (
   dispatch: Dispatch<LoggerAction>
 ) => {
-  const records = await logger.getLog();
-  dispatch(logReset());
-  records.forEach((record: Message) => dispatch(logMessage(record)));
+  try {
+    const records = await logger.getLog();
+    dispatch(logReset());
+    records.forEach((record: Message) => dispatch(logMessage(record)));
+  } catch(e) {
+    console.error('Error in "getMessages":', e);
+  }
 };

@@ -17,15 +17,21 @@ import * as loggerActions from 'store/aber/logger/thunks';
 import { onStart } from 'store/aber/mainWindow/thunks';
 import MainWindow from './MainWindow';
 import { resetErrors } from 'store/aber/errors/slice';
+import {
+  getTitle,
+  getUserId,
+} from 'store/aber/mainWindow/selectors';
+import { getName } from 'store/aber/talker/selectors';
 
 const Aber = () => {
   const dispatch = useDispatch<any>();
 
   const messages: Message[] = useSelector(getMessages);
 
-  const [userId, setUserId] = useState('');
-  const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
+  const name = useSelector(getName);
+  const title = useSelector(getTitle);
+  const userId = useSelector(getUserId);
+
   const [isShowingStartModal, setIsShowingStartModal] = useState(true);
 
   const handleReset = useCallback(() => {
@@ -38,9 +44,6 @@ const Aber = () => {
   const hadleCloseStartModal = useCallback((data: StartingData) => {
     setIsShowingStartModal(false);
 
-    setUserId(data.userId);
-    setTitle(data.title);
-    setName(data.name);
 
     dispatch(onStart(data.userId, data.title, data.name));
     // syslog("GAME ENTRY: %s[%s]",globme,cuserid(NULL));

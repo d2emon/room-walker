@@ -6,7 +6,7 @@ import errors, {ErrorsState} from './aber/errors/reducer';
 import events, {EventsState} from './aber/events/reducer';
 import keys, {KeysState} from './aber/keys/reducer';
 import logger, {LoggerState} from './aber/logger/reducer';
-import mainWindow, {MainWindowState} from './aber/mainWindow/reducer';
+import { MainWindowState } from './aber/mainWindow/slice';
 import { TalkerState } from './aber/talker/slice';
 
 export interface Store {

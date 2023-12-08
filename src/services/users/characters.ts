@@ -31,9 +31,9 @@ const fpbn = (name: string): Promise<Character | null> => Promise.resolve(null);
 
 export const getNewCharacterId = async (): Promise<number | null> => {
   const characters = await Promise.all(characterIds.map(getCharacter));
-  const newCharacterId = characterIds.find((characterId) => (characters[characterId]));
+  const newCharacterId = characterIds.find((characterId) => (!characters[characterId]));
 
-  if (!newCharacterId) {
+  if (newCharacterId === undefined) {
     return null;
   }
 
@@ -41,7 +41,7 @@ export const getNewCharacterId = async (): Promise<number | null> => {
     return null;
   }
 
-  return newCharacterId || null;
+  return newCharacterId;
 };
 
 export const addNewCharacter = async (name: string) => {
@@ -51,6 +51,7 @@ export const addNewCharacter = async (name: string) => {
   }
   
   const characterId = await getNewCharacterId();
+  console.log('characterId', characterId);
   if (characterId === null) {
     throw new Error('Sorry AberMUD is full at the moment');
   }

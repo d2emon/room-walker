@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Store } from 'store/reducers';
 
 export interface MainWindowState {
   // Main Args
@@ -55,11 +54,6 @@ export const mainWindowSlice = createSlice({
     },
   },
 });
-
-// Selectors
-export const canExit = (state: Store) => !state.mainWindow.inFight;
-export const timerIsOn = (state: Store) => !state.mainWindow.ignore;
-export const canOnTimer = (state: Store) => state.mainWindow.active && !state.mainWindow.ignore;
 
 export const {
   startGame,

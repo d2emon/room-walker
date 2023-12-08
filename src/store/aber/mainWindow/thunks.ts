@@ -3,9 +3,9 @@ import {
   ThunkAction,
   ThunkDispatch,
 } from 'redux-thunk';
+import { getCanOnTimer } from './selectors';
 import {
   // MainWindowAction,
-  canOnTimer,
   startGame,
   setAlarm,
 } from './slice';
@@ -95,11 +95,11 @@ export const onStart = (userId: string, title: string, name: string) => async (
       channelId: character?.channelId,
       title,
     }));
-  } catch(e: any) {
-    console.error(e);
+  } catch(e) {
+    console.error('Error in "onStart":', e);
     dispatch(setErrorMessage({
       errorId: 0,
-      message: e,
+      message: (e as Error).message,
     }));
   }
 };
@@ -128,8 +128,7 @@ export const onTimer = async (
   dispatch: Dispatch<Action>,
   getState: () => Store,
 ) => {
-  // if(sig_active==0) return;
-  if (!canOnTimer(getState())) {
+  if (!getCanOnTimer(getState())) {
     return;
   }
 
