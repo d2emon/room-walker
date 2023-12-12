@@ -62,7 +62,73 @@ const setUser = async (userId: UserId, user: User) => {
   stored[userId] = user;
 }
 
-const updateEventId = async (userId: UserId, eventId: EventId) => {
+const initUser = async () => {
+  // extern char globme[];
+
+  /*
+	if(findpers(globme,&x)!=-1)
+	{
+		decpers(&x,s,&my_str,&my_sco,&my_lev,&my_sex);
+		return;
+	}
+  */
+
+  /*
+  const messages = [
+    'Creating character....\n',
+    '\n',
+    'Sex (M/F) : ',
+  ];
+  */
+
+  const my = {
+    level: 1,
+    score: 0,
+    sex: 0,
+    strength: 40,
+  };
+
+  // moan1:
+  // pbfr();
+
+  // keysetback();
+  const s = '';
+  // getkbd(s,2);
+  // lowercase(s);
+  // keysetup();
+
+  /*
+	switch(s[0])
+	{
+		case 'm':my_sex=0;
+		break;
+		case 'f':my_sex=1;
+		break;
+		default:bprintf("M or F");
+		goto moan1;
+	}
+  */
+
+  /*
+  const x = {
+    level: my.level,
+    name: '', // globme
+    score: my.score,
+    sex: my.sex,
+    strength: my.strength,
+  };
+  */
+
+  // putpers(globme,&x);
+
+  return my;
+}
+
+const updateEventId = async (userId: UserId, eventId?: EventId) => {
+  if (!eventId) {
+    return;
+  }
+
   const user = await getUser(userId);
   const lastUpdate = user?.lastUpdate || 0;
 
@@ -87,6 +153,114 @@ const updateEventId = async (userId: UserId, eventId: EventId) => {
   });
 };
 
+const processEvent = (user: User) => async (event: Event) => {
+  // Print appropriate stuff from data block
+  let message: string = '';
+  if (event.code < -3) {
+    // const luser = user.name.toLowerCase();
+    // sysctrl(block,luser);
+  } else {
+    message = `${event.payload}`;
+  }
+
+  if (user.debugMode) {
+    return `&lt;${event.code}&gt;\n${message}`
+  }
+
+  return message;
+}
+
+const startGame = async (user: User) => {
+  const channelId = -5;
+  /*
+  if(randperc()>50)trapch(-5);
+  else{curch= -183;trapch(-183);}
+  */
+  const eventId = undefined;
+  const mode = '1';
+
+  const {
+    level,
+    sex,
+    strength,
+  } = await initUser();
+  const visibility = (level < 10000) ? 0 : 10000;
+
+  // Load world
+
+  // cuserid(us);
+
+  const character: Character = {
+    characterId: user?.characterId,
+    channelId: user?.character?.channelId,
+    helping: -1,
+    level,
+    name: user?.character?.name,
+    sex,
+    strength,
+    visibility,
+    weapon: -1,
+  };
+  const newUser: User = {
+    userId: user?.userId || -1,
+    // channelId,
+    characterId: user?.characterId,
+    debugMode: user?.debugMode || false,
+    eventId,
+    mode,
+    name: user?.name,
+
+    character,
+  };
+
+
+  const xx = `[s name="${user?.name}"][ ${user?.name}  has entered the game ]\n[/s]`;
+  const xy = `[s name="${user?.name}"]${user?.name}  has entered the game\n[/s]`;
+  // sendsys(name, name, -10113, -5, xx);
+  // rte(name);
+  // trapch(channelId);
+  // sendsys(name, name, -10000, curch, xy);
+
+  return {};
+}
+
+export const postUserEvents = async (userId: UserId, data: PostUserEventsRequestData): Promise<PostUserEventsResponse> => {
+  // async (eventId?: EventId, force?: boolean) => {
+  const {
+    eventId,
+    // force,
+  } = data;
+
+  const [
+    user,
+    eventData,
+  ] = await Promise.all([
+    getUser(userId),
+    Events.processEvents(eventId),
+  ]);
+
+  const {
+    lastEventId,
+    events,
+  } = eventData || {};
+
+  const messages = await Promise.all(events.map(processEvent(user)));
+
+  await updateEventId(userId, lastEventId);
+
+  // eorte();
+
+  return {
+    data: {
+      lastEventId,
+      messages,
+      rdes: 0,
+      tdes: 0,
+      vdes: 0,  
+    },
+  };
+};
+
 export const postUser = async (data: AddUserRequestData): Promise<AddUserResponse> => {
   /*
   axios.post(
@@ -109,12 +283,17 @@ export const postUser = async (data: AddUserRequestData): Promise<AddUserRespons
   const user: User = {
     userId,
     mode: '',
-    characterId: character.characterId || 0,
+    name: character?.name || name,
+    characterId: character?.characterId || 0,
     character,
     // eventId: null,
+    debugMode: true,
   };
   
   stored[userId] = user;
+
+  const processed = await postUserEvents(userId, {});
+  console.log(processed);
 
   return {
     data: {
@@ -133,12 +312,30 @@ export const postUserAction = async (userId: UserId, data: PostUserActionRequest
     },
   )
   */
-    
-  // cms = -1;
-  // special('.q', name);
-    
+  const {
+    action,
+  } = data;
+
+  const user = await getUser(userId);
+
+  if (action[0] !== '.') {
+    const data = {};
+    return {
+      data,
+    };
+  }
+
+  if (action[1].toLowerCase() === 'g') {
+    const data = await startGame(user);
+    return {
+      data,
+    };
+  }
+
   return {
-    data: {},
+    data: {
+      error: 'Unknown . option',
+    },
   };
 };
 
@@ -154,28 +351,5 @@ export const postUserEvent = async (data: PostUserEventRequestData): Promise<Pos
         
   return {
     data: {},
-  };
-};
-
-export const postUserEvents = async (userId: UserId, data: PostUserEventsRequestData): Promise<PostUserEventsResponse> => {
-  // async (eventId?: EventId, force?: boolean) => {
-  const {
-    eventId,
-    force,
-  } = data;
-  const response = await Events.processEvents(userId, eventId, force);
-  const { lastEventId } = response?.data || {};
-
-  await updateEventId(userId, lastEventId);
-
-  // eorte();
-
-  return {
-    data: {
-      lastEventId,
-      rdes: 0,
-      tdes: 0,
-      vdes: 0,  
-    },
   };
 };

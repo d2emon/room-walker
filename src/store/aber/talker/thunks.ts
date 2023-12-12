@@ -76,7 +76,7 @@ const onInput = (
         // setFightingCounter(getState().talker.fightingCounter - 1);
     });
     const afterInput = (): Promise<void> => (getState().events.forceEvents
-        ? Events.processEvents(userId, getState().events.eventId)
+        ? Users.processUserEvents(userId, getState().events.eventId)
             .then(() => dispatch(forcedEvents()))
             .then(() => undefined)
         : Promise.resolve()
@@ -128,7 +128,7 @@ export const onWait = (
     dispatch: Dispatch<Action>,
     getState: () => Store,
     userId: string,
-) => Events.processEvents(userId, getState().events.eventId, true)
+) => Users.processUserEvents(userId, getState().events.eventId, true)
     .then(onTiming);
 
 export const nextTurn = async (
@@ -138,7 +138,7 @@ export const nextTurn = async (
   const { keyBuff } = getState().talker;
 
   await setFromKeyboard(keyBuff);
-  await Events.processEvents(getState().mainWindow.userId, getState().events.eventId);
+  await Users.processUserEvents(getState().mainWindow.userId, getState().events.eventId);
   await onInput(dispatch, getState, getState().mainWindow.userId)
 };
 
@@ -215,21 +215,6 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
         dest[c+offd]=source[c+offs];
         c++;
         }
-     }
-  
-  mstoout(block,name)
-  long *block;char *name;
-     {
-     extern long debug_mode;
-     char luser[40];
-     char *x;
-     x=(char *)block;
-     *//* Print appropriate stuff from data block *//*
-     strcpy(luser,name);lowercase(luser);
- if(debug_mode)    bprintf("\n<%d>",block[1]);
-     if (block[1]<-3) sysctrl(block,luser);
-     else
-        bprintf("%s", (x+2*sizeof(long)));
      }
   
  long gurum=0;
@@ -432,51 +417,6 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
   
   
   
-  special(string,name)
-  char *string,*name;
-     {
-     extern long curmode;
-     char ch,bk[128];
-     extern long curch,moni;
-     extern long mynum;
-     extern long my_str,my_lev,my_sco,my_sex;
-     FILE * ufl;
-     char xx[128];
-     char xy[128];
-     char us[32];
-     strcpy(bk,string);
-     lowercase(bk);
-     ch= *bk;
-     if (ch!='.') return(0);
-     ch=bk[1];
-     switch(ch)
-        {
-        case 'g':
-           curmode=1;
-           curch= -5;
-           initme();
-           ufl=openworld();
-           setpstr(mynum,my_str);
-           setplev(mynum,my_lev);
-  if(my_lev<10000) setpvis(mynum,0);
-     else setpvis(mynum,10000);
-           setpwpn(mynum,-1);
-           setpsexall(mynum,my_sex);
-           setphelping(mynum,-1);
-           cuserid(us);
-           sprintf(xy,"\001s%s\001%s  has entered the game\n\001",name,name);
-           sprintf(xx,"\001s%s\001[ %s  has entered the game ]\n\001",name,name);
-           sendsys(name,name,-10113,curch,xx);
-           rte(name);
-           if(randperc()>50)trapch(-5);
- else{curch= -183;trapch(-183);}
- sendsys(name,name,-10000,curch,xy);
-           break;
-        default:
-           printf("\nUnknown . option\n");
-           }
-     return(1);
-     }
   
   
   

@@ -1,14 +1,18 @@
-import { UserId } from 'services/users/types';
-import { loadEvents, postUserEvents, saveEvent } from './events';
+import { getUserEvents, loadEvents, saveEvent } from './events';
 import { Event, EventId } from './types';
 
 export interface EventsResponse {
-    lastEventId: EventId;
-    events: Event[];
+  lastEventId: EventId;
+  events: Event[];
 }
 
 export interface PostEventResponse {
-    eventId: EventId;
+  eventId: EventId;
+}
+
+export interface ProcessEventsResponse {
+  lastEventId?: EventId;
+  events: Event[];
 }
 
 const getEvents = async (eventId?: number): Promise<EventsResponse> => {
@@ -23,11 +27,8 @@ const postEvent = async (event: Event): Promise<PostEventResponse> => {
   return response?.data;
 };
 
-export const processEvents = async (userId: UserId, eventId?: number, force?: boolean): Promise<any> => {
-  const response = await postUserEvents(userId, {
-    eventId,
-    force,
-  });
+export const processEvents = async (eventId?: number): Promise<ProcessEventsResponse> => {
+  const response = await getUserEvents(eventId);
   return response?.data;
 }
 

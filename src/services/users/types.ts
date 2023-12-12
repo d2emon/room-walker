@@ -17,7 +17,9 @@ export interface Character {
   
 export interface User {
   userId: UserId;
+  debugMode: boolean;
   mode: string;
+  name: string;
   characterId: number;
   character: Character;
   lastUpdate?: number;

@@ -27,7 +27,8 @@ interface PostUserEventsRequestData {
 
 interface PostUserEventsResponse {
   data: {
-    lastEventId: EventId | undefined;
+    lastEventId: EventId;
+    events: Event[];
   };
 }
 
@@ -108,40 +109,33 @@ export const saveEvent = async (data: SaveEventRequestData): Promise<EventRespon
   };
 };
 
-export const postUserEvents = async (userId: UserId, data: PostUserEventsRequestData): Promise<PostUserEventsResponse> => {
+export const getUserEvents = async (eventId?: EventId): Promise<PostUserEventsResponse> => {
   /*
-  axios.post(
-    'http://127.0.0.1:4001/events/:userId',
-    {
-      eventId,
-      force,
-    },
+  axios.get(
+    'http://127.0.0.1:4001/events/:eventId',
   )
   */
-  const {
-    eventId,
-  } = data;
-      
+     
   const lastEventId = await getLastEventId();
 
   if (!eventId) {
     return {
       data: {
         lastEventId,
+        events: [],
       },
     };  
   }
 
-  let newEventId: EventId | undefined;
   const events = await getEvents(eventId);
-  events.forEach((block) => {
-    // mstoout(block,name);
-    newEventId = block.eventId;
-  });
+  const newEventId: EventId | undefined = events.length
+    ? events[events.length - 1].eventId
+    : lastEventId;
 
   return {
     data: {
-      lastEventId: newEventId,
+      lastEventId: newEventId || -1,
+      events,
     },
   };
 };
