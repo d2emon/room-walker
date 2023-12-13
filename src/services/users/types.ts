@@ -24,5 +24,7 @@ export interface User {
   character: Character;
   lastUpdate?: number;
   eventId?: EventId;
+
+  isSaved: boolean;
 }
   

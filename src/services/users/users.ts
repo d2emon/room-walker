@@ -3,6 +3,7 @@ import * as Events from 'services/events';
 import { Event, EventId } from '../events/types';
 import { addNewCharacter, saveCharacter } from './characters';
 import { addMessagesUser } from './messages';
+import { getPersonData, Person } from './persons';
 import {
   Character,
   User,
@@ -16,6 +17,8 @@ interface AddUserRequestData {
 interface AddUserResponse {
   data: {
     user: User,
+    eventId: EventId,
+    person: Person | null,
   };
 }
 
@@ -60,68 +63,6 @@ const getUser = async (userId: UserId) => {
 
 const setUser = async (userId: UserId, user: User) => {
   stored[userId] = user;
-}
-
-const initUser = async () => {
-  // extern char globme[];
-
-  /*
-	if(findpers(globme,&x)!=-1)
-	{
-		decpers(&x,s,&my_str,&my_sco,&my_lev,&my_sex);
-		return;
-	}
-  */
-
-  /*
-  const messages = [
-    'Creating character....\n',
-    '\n',
-    'Sex (M/F) : ',
-  ];
-  */
-
-  const my = {
-    level: 1,
-    score: 0,
-    sex: 0,
-    strength: 40,
-  };
-
-  // moan1:
-  // pbfr();
-
-  // keysetback();
-  const s = '';
-  // getkbd(s,2);
-  // lowercase(s);
-  // keysetup();
-
-  /*
-	switch(s[0])
-	{
-		case 'm':my_sex=0;
-		break;
-		case 'f':my_sex=1;
-		break;
-		default:bprintf("M or F");
-		goto moan1;
-	}
-  */
-
-  /*
-  const x = {
-    level: my.level,
-    name: '', // globme
-    score: my.score,
-    sex: my.sex,
-    strength: my.strength,
-  };
-  */
-
-  // putpers(globme,&x);
-
-  return my;
 }
 
 const updateEventId = async (userId: UserId, eventId?: EventId) => {
@@ -179,11 +120,20 @@ const startGame = async (user: User) => {
   const eventId = undefined;
   const mode = '1';
 
+  const personResponse = await getPersonData(user?.name);
+  const {
+    person,
+  } = personResponse?.data;
+
+  if (!person) {
+    return null;
+  }
+
   const {
     level,
     sex,
     strength,
-  } = await initUser();
+  } = person;
   const visibility = (level < 10000) ? 0 : 10000;
 
   // Load world
@@ -210,9 +160,9 @@ const startGame = async (user: User) => {
     mode,
     name: user?.name,
 
+    isSaved: true,
     character,
   };
-
 
   const xx = `[s name="${user?.name}"][ ${user?.name}  has entered the game ]\n[/s]`;
   const xy = `[s name="${user?.name}"]${user?.name}  has entered the game\n[/s]`;
@@ -285,19 +235,30 @@ export const postUser = async (data: AddUserRequestData): Promise<AddUserRespons
     mode: '',
     name: character?.name || name,
     characterId: character?.characterId || 0,
-    character,
     // eventId: null,
     debugMode: true,
+
+    isSaved: false,
+    character,
   };
-  
-  stored[userId] = user;
 
   const processed = await postUserEvents(userId, {});
-  console.log(processed);
+  const eventId = processed?.data?.lastEventId;
+
+  const personResponse = await getPersonData(user?.name);
+  const {
+    person,
+  } = personResponse?.data;
+
+  user.isSaved = !!person;
+
+  stored[userId] = user;
 
   return {
     data: {
       user,
+      eventId,
+      person,
     },
   };
 };

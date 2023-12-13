@@ -10,6 +10,8 @@ export interface MainWindowState {
   ignore: boolean,
   // External
   inFight: boolean,
+  // Additional
+  isSaved: boolean,
 };
 
 const initialState: MainWindowState = {
@@ -21,11 +23,14 @@ const initialState: MainWindowState = {
   ignore: false,
 
   inFight: false,
+
+  isSaved: true,
 };
 
 interface StartGamePayload {
   userId: string | number;
   title: string;
+  isSaved: boolean;
 }
 type StartGameAction = PayloadAction<StartGamePayload>;
 type SetAlarmAction = PayloadAction<boolean>;
@@ -40,6 +45,7 @@ export const mainWindowSlice = createSlice({
     startGame: (state: MainWindowState, action: StartGameAction) => {
       state.userId = action.payload.userId;
       state.title = action.payload.title;
+      state.isSaved = action.payload.isSaved;
     },
     setAlarm: (state: MainWindowState, action: SetAlarmAction) => {
       state.active = action.payload;

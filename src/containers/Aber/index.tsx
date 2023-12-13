@@ -18,6 +18,7 @@ import { onStart } from 'store/aber/mainWindow/thunks';
 import MainWindow from './MainWindow';
 import { resetErrors } from 'store/aber/errors/slice';
 import {
+  getNeedCreateCharacter,
   getTitle,
   getUserId,
 } from 'store/aber/mainWindow/selectors';
@@ -31,6 +32,7 @@ const Aber = () => {
   const name = useSelector(getName);
   const title = useSelector(getTitle);
   const userId = useSelector(getUserId);
+  const needCreateCharacter = useSelector(getNeedCreateCharacter);
 
   const [isShowingStartModal, setIsShowingStartModal] = useState(true);
 
@@ -44,7 +46,6 @@ const Aber = () => {
   const hadleCloseStartModal = useCallback((data: StartingData) => {
     setIsShowingStartModal(false);
 
-
     dispatch(onStart(data.userId, data.title, data.name));
     dispatch(loggerActions.getMessages());
   }, [
@@ -56,6 +57,12 @@ const Aber = () => {
   }, [
     handleReset,
   ]);
+
+  useEffect(() => {
+    console.log(needCreateCharacter);
+  }, [
+    needCreateCharacter,
+  ])
 
   return (
     <Card>

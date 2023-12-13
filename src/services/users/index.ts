@@ -1,4 +1,5 @@
 import { Event, EventId } from '../events/types';
+import { Person } from './persons';
 import {
   User,
   UserId,
@@ -10,12 +11,18 @@ import {
   postUserEvents,
 } from './users';
 
-export const addUser = async (name: string): Promise<User> => {
+interface AddUserResponse {
+  user: User;
+  eventId: EventId;
+  person: Person | null;
+};
+
+export const addUser = async (name: string): Promise<AddUserResponse> => {
   const response = await postUser({
     name,
   });
 
-  return response?.data?.user;
+  return response?.data;
 };
 
 const perform = async (userId: UserId, action: string): Promise<any> => {

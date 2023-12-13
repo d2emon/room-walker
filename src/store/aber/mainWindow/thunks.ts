@@ -78,15 +78,21 @@ export const onStart = (userId: string, title: string, name: string) => async (
       throw new Error('Args!');
     }
 
-    const user = await addUser(name);
+    const addUserResponse = await addUser(name);
+    const {
+      user,
+    } = addUserResponse;
     const userId = user?.userId || '';
     const character = user?.character;
+    const isSaved = user?.isSaved;
 
-    await Users.perform(userId, '.g');
+    const res = await Users.perform(userId, '.g');
+    console.log(res);
 
     dispatch(startGame({
       userId,
       title,
+      isSaved,
     }));
     dispatch(setUser({
       characterId: user?.characterId,
