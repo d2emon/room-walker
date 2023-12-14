@@ -55,10 +55,8 @@ const Aber = () => {
 
   const hadleCloseCreateCharacterModal = useCallback((data: CreateCharacterData) => {
     // keysetback();
-    console.log(data);
     // keysetup();
 
-    //
     dispatch(createUserCharacter(userId, data?.sex))
     // dispatch(loggerActions.getMessages());
   }, [

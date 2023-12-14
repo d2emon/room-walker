@@ -70,6 +70,6 @@ export const addNewCharacter = async (name: string) => {
 };
 
 export const saveCharacter = async (characterId: number, char: Character) => {
-  stored[characterId] = char;
+  stored[characterId] = {...char};
   return { ...char };
 };

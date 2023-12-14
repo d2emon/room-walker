@@ -1,4 +1,4 @@
-import mockQueryDecorator, { MockQuery } from './mock';
+import mockQueryDecorator, { MockQuery } from '../mock';
 
 export interface Person {
   level: number;

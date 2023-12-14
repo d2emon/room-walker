@@ -24,6 +24,7 @@ export interface User {
   character: Character;
   lastUpdate?: number;
   eventId?: EventId;
+  channelId?: number;
 
   isSaved: boolean;
 }

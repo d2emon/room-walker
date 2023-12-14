@@ -314,23 +314,6 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
      return((!strcmp(work,".Q"))||(!strcmp(work,".q")));
      }
   
-  send2(block)
-  long *block;
-     {
-     FILE * unit;
-     long number;
-     long inpbk[128];
-     extern char globme[];
-     extern char *echoback;
-         unit=openworld();
-     if (unit<0) {loseme();crapup("\nAberMUD: FILE_ACCESS : Access failed\n");}
-     sec_read(unit,inpbk,0,64);
-     number=2*inpbk[1]-inpbk[0];inpbk[1]++;
-     sec_write(unit,block,number,128);
-     sec_write(unit,inpbk,0,64);
-     if (number>=199) cleanup(inpbk);
-     if(number>=199) longwthr();
-     }
   
  FILE *openlock(file,perm)
  char *file;
@@ -473,18 +456,6 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
  }
      return(!strcmp(lowercase(nam1),lowercase(luser)));
      }
-  trapch(chan)
-  long chan;
-     {
- extern long curch;
-     extern long mynum;
-     FILE *unit;
-     extern long my_lev;
-     if(my_lev>9) goto ndie;
-     ndie:unit=openworld();
-     setploc(mynum,chan);
-     lookin(chan);
-     }
   
  long mynum=0;
   
@@ -538,70 +509,6 @@ const changeChannel = (channelId: number): Promise<void> => Promise.resolve()
         }
      }
   
-  lookin(room)
-  long room; *//* Lords ???? *//*
-     {
-     extern char globme[];
-     FILE *un1,un2;
-     char str[128];
-     long xxx;
-     extern long brmode;
-     extern long curmode;
-     extern long ail_blind;
-     long ct;
-     extern long my_lev;
-     closeworld();
-     if(ail_blind)
-     {
-         bprintf("You are blind... you can't see a thing!\n");
-     }
-     if(my_lev>9) showname(room);
-     un1=openroom(room,"r");
-     if (un1!=NULL)
-     {
- xx1:   xxx=0;
-        lodex(un1);
-            if(isdark())
-            {
-                   fclose(un1);
-                   bprintf("It is dark\n");
-                         openworld();
-                   onlook();
-                   return;
-               }
-        while(getstr(un1,str)!=0)
-           {
-           if(!strcmp(str,"#DIE"))
-              {
-              if(ail_blind) {rewind(un1);ail_blind=0;goto xx1;}
-              if(my_lev>9)bprintf("<DEATH ROOM>\n");
-              else
-                 {
-                 loseme(globme);
-                 crapup("bye bye.....\n");
-                 }
-              }
-           else
- {
- if(!strcmp(str,"#NOBR")) brmode=0;
- else
-              if((!ail_blind)&&(!xxx))bprintf("%s\n",str);
-           xxx=brmode;
- }
-           }
-        }
-     else
-        bprintf("\nYou are on channel %d\n",room);
-     fclose(un1);
-     openworld();
-     if(!ail_blind)
-     {
-         lisobs();
-         if(curmode==1) lispeople();
-     }
-     bprintf("\n");
-     onlook();
-     }
   loodrv()
      {
      extern long curch;

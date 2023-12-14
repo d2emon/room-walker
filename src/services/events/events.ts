@@ -1,36 +1,59 @@
 // import axios from 'axios';
 import { UserId } from 'services/users/types';
 import { Event, EventId } from './types';
+import mockQueryDecorator, { MockQuery } from 'services/mock';
+
+// SaveEvent
 
 interface SaveEventRequestData {    
   event: Event;
 }
 
-interface EventsResponse {
-  data: {
-    lastEventId: EventId;
-    events: Event[];
-  };
+type SaveEventRequest = MockQuery<any, SaveEventRequestData>;
+
+// Events
+
+interface EventsRequestParams {
+  userId?: UserId,
+  eventId?: EventId,
+  force?: boolean,
 }
+
+type EventsRequest = MockQuery<EventsRequestParams, any>;
+
+interface EventsResponse {
+  lastEventId: EventId;
+  events: Event[];
+}
+
+// Event
 
 interface EventResponse {
-  data: {
-    eventId: EventId;
-  };
+  eventId: EventId;
 }
 
-interface PostUserEventsRequestData {
-  userId?: UserId;
-  eventId?: number;
-  force?: boolean;
+// UserEvents
+
+interface UserEventsRequestParams {
+  eventId?: EventId,
 }
 
-interface PostUserEventsResponse {
-  data: {
-    lastEventId: EventId;
-    events: Event[];
-  };
+type UserEventsRequest = MockQuery<UserEventsRequestParams, any>;
+
+interface UserEventsResponse {
+  lastEventId: EventId;
+  events: Event[];
 }
+
+// EventId
+
+type EventIdRequest = MockQuery<any, any>;
+
+interface EventIdResponse {
+  lastEventId: EventId;
+}
+
+// Storage
 
 interface EventStorage {
   firstEventId: EventId;
@@ -41,12 +64,28 @@ interface EventStorage {
 }
 
 const stored: EventStorage = {
-  firstEventId: 1,
-  lastEventId: 1,
+  firstEventId: 0,
+  lastEventId: 2,
   events: {},
 };
 
+// Helpers
+
 const getLastEventId = async () => (stored.lastEventId);
+
+const setEvent = async (event: Event): Promise<EventId> => {
+  const {
+    firstEventId,
+    lastEventId,
+  } = stored;
+
+  const eventId = 2 * lastEventId - firstEventId;
+
+  stored.lastEventId += 1;
+  stored.events[eventId] = {...event};
+
+  return eventId;
+};
 
 const getEvent = async (eventId: EventId): Promise<Event | undefined> => {
   const {
@@ -62,7 +101,7 @@ const getEvents = async (eventId: EventId): Promise<Event[]> => {
   const firstEventId: number = eventId || lastEventId;
 
   const eventIds: EventId[] = [];
-  for (let id = firstEventId; id < lastEventId; id += 1) {
+  for (let id = firstEventId; id <= lastEventId; id += 1) {
     eventIds.push(id);
   }
 
@@ -71,59 +110,56 @@ const getEvents = async (eventId: EventId): Promise<Event[]> => {
   return events.filter(event => !!event) as Event[];
 };
 
-export const loadEvents = async (eventId?: number): Promise<EventsResponse> => {
-  /*
-  axios.get(
-    'http://127.0.0.1:4001/event/:eventId',
-  )
-  */
-        
+// Handlers
+
+export const loadEvents = mockQueryDecorator<
+  EventsRequest,
+  EventsResponse
+>('GET http://127.0.0.1:4001/event/events', async (): Promise<EventsResponse> => {
   const events: Event[] = Object.values(stored);
   
   return {
-    data: {
-      lastEventId: stored.lastEventId,
-      events,
-    },
+    lastEventId: stored.lastEventId,
+    events,
   };
-};
+});
 
-export const saveEvent = async (data: SaveEventRequestData): Promise<EventResponse> => {
-  /*
-  axios.post(
-    'http://127.0.0.1:4001/event',
-    event,
-  )
-  */
+export const saveEvent = mockQueryDecorator<
+  SaveEventRequest,
+  EventResponse
+>('POST http://127.0.0.1:4001/event/save', async (query): Promise<EventResponse> => {
   const eventId: EventId = 0;
   const {
-    event,
-  } = data;
+    data: {
+      event,
+    },
+  } = query;
 
   stored.events[eventId] = event;
   
   return {
-    data: {
+    eventId,
+  };
+});
+
+export const getUserEvents = mockQueryDecorator<
+  UserEventsRequest,
+  UserEventsResponse
+>('GET http://127.0.0.1:4001/event/:eventId/', async (query): Promise<UserEventsResponse> => {
+  const {
+    params: {
       eventId,
     },
-  };
-};
+  } = query;
 
-export const getUserEvents = async (eventId?: EventId): Promise<PostUserEventsResponse> => {
-  /*
-  axios.get(
-    'http://127.0.0.1:4001/events/:eventId',
-  )
-  */
-     
+  console.log(stored);
+
   const lastEventId = await getLastEventId();
 
   if (!eventId) {
     return {
-      data: {
-        lastEventId,
-        events: [],
-      },
+      lastEventId,
+      events: [],
     };  
   }
 
@@ -133,9 +169,60 @@ export const getUserEvents = async (eventId?: EventId): Promise<PostUserEventsRe
     : lastEventId;
 
   return {
-    data: {
-      lastEventId: newEventId || -1,
-      events,
-    },
+    lastEventId: newEventId || -1,
+    events,
   };
-};
+});
+
+export const getUserEventId = mockQueryDecorator<
+  EventIdRequest,
+  EventIdResponse
+>('GET http://127.0.0.1:4001/event/', async (): Promise<EventIdResponse> => {
+  const lastEventId = await getLastEventId();
+
+  return {
+    lastEventId,
+  };  
+});
+
+export const postEvent = mockQueryDecorator<
+  SaveEventRequest,
+  EventResponse
+>('POST http://127.0.0.1:4001/event/', async (query): Promise<EventResponse> => {
+  const {
+    data: {
+      event,
+    },
+  } = query;
+  /*
+  const {
+    receiver,
+    sender,
+    code,
+    channelId,
+    payload,
+  } = event;
+  const block = [
+    channelId,
+    code,
+    [
+      receiver,
+      sender,
+    ],
+    payload,
+  ];
+  */
+
+  const eventId = await setEvent(event);
+
+  if (eventId >= 199) {
+    /*
+    cleanup(inpbk);
+    longwthr();
+    */
+  }
+
+  return {
+    eventId,
+  };
+});

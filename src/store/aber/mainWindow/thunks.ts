@@ -119,6 +119,8 @@ export const onStart = (title: string, name: string) => async (
   }
 };
 
+// Start system with new user
+
 export const createUserCharacter = (userId: UserId, sex: string) => async (
   dispatch: Dispatch<Action>,
 ) => {

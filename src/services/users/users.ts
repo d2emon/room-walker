@@ -1,25 +1,17 @@
 // import axios from 'axios';
-import * as Events from 'services/events';
 import { Event, EventId } from '../events/types';
-import { addNewCharacter, saveCharacter } from './characters';
-import { addMessagesUser } from './messages';
-import { getPersonData, Person, postPersonData } from './persons';
+import { addNewCharacter } from './characters';
+import { Person } from './persons';
 import {
-  Character,
   User,
   UserId,
 } from './types';
-import mockQueryDecorator, { MockQuery } from './mock';
+import mockQueryDecorator, { MockQuery } from '../mock';
+import { loadUser, newUser } from './models/UserModel';
+import { noAction, startGame } from './actions';
 
 interface UserRequestParams {
   userId: UserId,
-}
-
-interface PersonResponse {
-  error?: string;
-  data?: {
-    person: Person | null,
-  },
 }
 
 // AddUser
@@ -48,9 +40,7 @@ interface PostUserActionRequestData {
     
 type PostUserActionRequest = MockQuery<UserRequestParams, PostUserActionRequestData>;
 
-interface PostUserActionResponse {
-  data: any;
-}
+type PostUserActionResponse = any;
 
 // PostUserEvent
 
@@ -71,7 +61,7 @@ interface PostUserEventsRequestData {
   eventId?: EventId,
   force?: boolean,
 }
-        
+
 type PostUserEventsRequest = MockQuery<UserRequestParams, PostUserEventsRequestData>;
 
 interface PostUserEventsResponse {
@@ -82,188 +72,6 @@ interface PostUserEventsResponse {
   vdes: number,  
 }
         
-// Storage
-
-interface UserStorage {
-  [k: UserId]: User;
-}
-
-const stored: UserStorage = {};
-
-// Helpers
-
-const getUser = async (userId: UserId) => {
-  const user = stored[userId] || {};
-  return {
-    ...user,
-  };
-}
-
-const setUser = async (userId: UserId, user: User) => {
-  stored[userId] = user;
-}
-
-const updateEventId = async (user: User, eventId?: EventId) => {
-  if (!user) {
-    return;
-  }
-
-  if (!eventId) {
-    return;
-  }
-
-  const lastUpdate = user.lastUpdate || 0;
-
-  const newEvents = (eventId < lastUpdate)
-    ? (eventId - lastUpdate)
-    : (lastUpdate - eventId);
-
-  if (newEvents < 10) {
-    return;
-  }
-
-  const char:Character = user?.character || {};
-  saveCharacter(user.characterId, {
-    ...char,
-    eventId,
-  });
-
-  setUser(user.userId, {
-    ...user,
-    eventId,
-    lastUpdate,
-  });
-};
-
-const processEvent = (user: User) => async (event: Event) => {
-  // Print appropriate stuff from data block
-  let message: string = '';
-  if (event.code < -3) {
-    // const luser = user.name.toLowerCase();
-    // sysctrl(block,luser);
-  } else {
-    message = `${event.payload}`;
-  }
-
-  if (user.debugMode) {
-    return `&lt;${event.code}&gt;\n${message}`
-  }
-
-  return message;
-}
-
-const processEvents = async (user: User) => {
-  const eventData = await Events.processEvents(user?.eventId);
-
-  const {
-    lastEventId,
-    events,
-  } = eventData || {};
-
-  const messages = await Promise.all(events.map(processEvent(user)));
-
-  await updateEventId(user, lastEventId);
-
-  // eorte();
-
-  return {
-    lastEventId,
-    messages,
-    rdes: 0,
-    tdes: 0,
-    vdes: 0,  
-  };
-}
-
-const startGame = async (user: User) => {
-  const channelId = -5;
-  /*
-  if(randperc()>50)trapch(-5);
-  else{curch= -183;trapch(-183);}
-  */
-  // const eventId = undefined;
-  const mode = '1';
-
-  const personResponse = await getPersonData({
-    params: {
-      name: user?.name,
-    },
-    data: {},
-  });
-  const {
-    person,
-  } = personResponse?.data || {};
-
-  if (!person) {
-    return null;
-  }
-
-  const {
-    level,
-    sex,
-    strength,
-  } = person;
-  const visibility = (level < 10000) ? 0 : 10000;
-
-  // Load world
-
-  // cuserid(us);
-
-  const character: Character = {
-    characterId: user?.characterId,
-    channelId: user?.character?.channelId,
-    helping: -1,
-    level,
-    name: user?.character?.name,
-    sex,
-    strength,
-    visibility,
-    weapon: -1,
-  };
-  const newUser: User = {
-    userId: user?.userId || -1,
-    // channelId,
-    characterId: user?.characterId,
-    debugMode: user?.debugMode || false,
-    eventId: undefined,
-    mode,
-    name: user?.name,
-
-    isSaved: user?.isSaved,
-    character,
-  };
-
-  const xx = `[s name="${user?.name}"][ ${user?.name}  has entered the game ]\n[/s]`;
-  const xy = `[s name="${user?.name}"]${user?.name}  has entered the game\n[/s]`;
-
-  // sendsys(name, name, -10113, -5, xx);
-
-  const processed = await processEvents(user);
-  console.log(processed);
-
-  // trapch(channelId);
-
-  // sendsys(name, name, -10000, curch, xy);
-
-  return {};
-}
-
-const getPersonFromResponse = (response: PersonResponse): Person | null => {
-  const {
-    error,
-    data,
-  } = response;
-  if (error || !data) {
-    throw new Error(error);
-  }
-
-  const {
-    person,
-  } = data;
-
-  return person || null;
-};
-
 // Handlers
 
 export const postUserEvents = mockQueryDecorator<
@@ -282,8 +90,8 @@ export const postUserEvents = mockQueryDecorator<
     },
   } = query;
 
-  const user = await getUser(userId);
-  return processEvents(user);
+  const model = await loadUser(userId);
+  return model.processEvents();
 });
 
 export const postUser = mockQueryDecorator<
@@ -295,46 +103,16 @@ export const postUser = mockQueryDecorator<
       name,
     },
   } = query;
-  const userId: UserId = 'NEW_USER_ID';
-
-  // syslog("GAME ENTRY: %s[%s]",globme,cuserid(NULL));
-  console.log(`GAME ENTRY: ${name}[${userId}]`);
-
-  await addMessagesUser(userId);
 
   const character = await addNewCharacter(name);
-  
-  const user: User = {
-    userId,
-    mode: '',
-    name: character?.name || name,
-    characterId: character?.characterId || 0,
-    // eventId: null,
-    debugMode: true,
+  const model = await newUser(character);
 
-    isSaved: false,
-    character,
-  };
-  await setUser(userId, user);
+  await model.initializeUser();
 
-  const processed = await processEvents(user);
-  const eventId = processed?.lastEventId;
-
-  const personResponse = await getPersonData({
-    params: {
-      name: user?.name,
-    },
-    data: {},
-  });
-  const person = getPersonFromResponse(personResponse);
-
-  user.isSaved = !!person;
-
-  await setUser(userId, user);
-
+  const person = await model.getPersonData();
+  const user = await model.save(model.getData());
   return {
     user,
-    eventId,
     person,
   };
 });
@@ -352,25 +130,14 @@ export const postNewCharacter = mockQueryDecorator<
     },
   } = query;
 
-  const user = await getUser(userId);
+  const model = await loadUser(userId);
 
-  const personResponse = await postPersonData({
-    params: {
-      name: user?.name,
-    },
-    data: {
-      sex,
-    },
+  const person = await model.postPersonData({
+    sex,
   });
-  const person = getPersonFromResponse(personResponse);
-
-  user.isSaved = !!person;
-
-  stored[userId] = user;
-
+  const user = await model.save(model.getData());
   return {
     user,
-    eventId: user?.eventId,
     person,
   };
 });
@@ -388,27 +155,17 @@ export const postUserAction = mockQueryDecorator<
     },
   } = query;
 
-  const user = await getUser(userId);
+  const model = await loadUser(userId);
 
   if (action[0] !== '.') {
-    const data = {};
-    return {
-      data,
-    };
+    return noAction();
   }
 
   if (action[1].toLowerCase() === 'g') {
-    const data = await startGame(user);
-    return {
-      data,
-    };
+    return startGame(model);
   }
 
-  return {
-    data: {
-      error: 'Unknown . option',
-    },
-  };
+  throw new Error('Unknown . option');
 });
 
 export const postUserEvent = mockQueryDecorator<
@@ -419,3 +176,70 @@ export const postUserEvent = mockQueryDecorator<
     data: {},
   };
 });
+
+/*
+  lookin(room)
+  long room; *//* Lords ???? *//*
+     {
+     extern char globme[];
+     FILE *un1,un2;
+     char str[128];
+     long xxx;
+     extern long brmode;
+     extern long curmode;
+     extern long ail_blind;
+     long ct;
+     extern long my_lev;
+     closeworld();
+     if(ail_blind)
+     {
+         bprintf("You are blind... you can't see a thing!\n");
+     }
+     if(my_lev>9) showname(room);
+     un1=openroom(room,"r");
+     if (un1!=NULL)
+     {
+ xx1:   xxx=0;
+        lodex(un1);
+            if(isdark())
+            {
+                   fclose(un1);
+                   bprintf("It is dark\n");
+                         openworld();
+                   onlook();
+                   return;
+               }
+        while(getstr(un1,str)!=0)
+           {
+           if(!strcmp(str,"#DIE"))
+              {
+              if(ail_blind) {rewind(un1);ail_blind=0;goto xx1;}
+              if(my_lev>9)bprintf("<DEATH ROOM>\n");
+              else
+                 {
+                 loseme(globme);
+                 crapup("bye bye.....\n");
+                 }
+              }
+           else
+ {
+ if(!strcmp(str,"#NOBR")) brmode=0;
+ else
+              if((!ail_blind)&&(!xxx))bprintf("%s\n",str);
+           xxx=brmode;
+ }
+           }
+        }
+     else
+        bprintf("\nYou are on channel %d\n",room);
+     fclose(un1);
+     openworld();
+     if(!ail_blind)
+     {
+         lisobs();
+         if(curmode==1) lispeople();
+     }
+     bprintf("\n");
+     onlook();
+     }
+*/
