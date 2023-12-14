@@ -14,6 +14,18 @@ interface UserRequestParams {
   userId: UserId,
 }
 
+// GetUser
+
+interface GetUserRequestParams {    
+  userId: UserId;
+}
+
+type GetUserRequest = MockQuery<GetUserRequestParams, any>;
+
+interface GetUserResponse {
+  user: User | null,
+}
+
 // AddUser
 
 interface AddUserRequestData {    
@@ -25,7 +37,6 @@ type AddUserRequest = MockQuery<any, AddUserRequestData>;
 interface AddUserResponse {
   user: User,
   eventId?: EventId,
-  person: Person | null,
 }
 
 // NewCharacter
@@ -74,46 +85,48 @@ interface PostUserEventsResponse {
         
 // Handlers
 
-export const postUserEvents = mockQueryDecorator<
-  PostUserEventsRequest,
-  PostUserEventsResponse
-> ('POST http://127.0.0.1:4001/user/:userId/events/', async (query): Promise<PostUserEventsResponse> =>  {
+export const getUser = mockQueryDecorator<
+  GetUserRequest,
+  GetUserResponse
+> ('GET http://127.0.0.1:4001/user/:userId/', async (query): Promise<GetUserResponse> => {
   const {
-    /*
-    data: {
-      eventId,
-      // force,  
-    },
-    */
     params: {
       userId,
     },
   } = query;
 
   const model = await loadUser(userId);
-  return model.processEvents();
+  const user = model ? model.getData() : null;
+
+  return {
+    user,
+  };
 });
 
 export const postUser = mockQueryDecorator<
   AddUserRequest,
   AddUserResponse
-> ('POST http://127.0.0.1:4001/user/', async (query): Promise<AddUserResponse> =>  {
+> ('POST http://127.0.0.1:4001/user/:userId', async (query): Promise<AddUserResponse> =>  {
   const {
     data: {
       name,
     },
+    params: {
+      userId,
+    },
   } = query;
 
   const character = await addNewCharacter(name);
-  const model = await newUser(character);
+  const model = await newUser(userId, character);
 
-  await model.initializeUser();
+  const processed = await model.processEvents();
+  console.log(processed);
 
-  const person = await model.getPersonData();
-  const user = await model.save(model.getData());
+  await model.loadPersonData();
+  const user = await model.save();
+  console.log(user.person);
   return {
     user,
-    person,
   };
 });
 
@@ -132,13 +145,16 @@ export const postNewCharacter = mockQueryDecorator<
 
   const model = await loadUser(userId);
 
-  const person = await model.postPersonData({
+  if (!model) {
+    throw new Error('No user!');
+  }
+
+  await model.savePersonData({
     sex,
   });
-  const user = await model.save(model.getData());
+  const user = await model.save();
   return {
     user,
-    person,
   };
 });
 
@@ -157,6 +173,10 @@ export const postUserAction = mockQueryDecorator<
 
   const model = await loadUser(userId);
 
+  if (!model) {
+    throw new Error('No user!');
+  }
+
   if (action[0] !== '.') {
     return noAction();
   }
@@ -166,6 +186,31 @@ export const postUserAction = mockQueryDecorator<
   }
 
   throw new Error('Unknown . option');
+});
+
+export const postUserEvents = mockQueryDecorator<
+  PostUserEventsRequest,
+  PostUserEventsResponse
+> ('POST http://127.0.0.1:4001/user/:userId/events/', async (query): Promise<PostUserEventsResponse> =>  {
+  const {
+    /*
+    data: {
+      eventId,
+      // force,  
+    },
+    */
+    params: {
+      userId,
+    },
+  } = query;
+
+  const model = await loadUser(userId);
+ 
+  if (!model) {
+    throw new Error('No user!');
+  }
+
+  return model.processEvents();
 });
 
 export const postUserEvent = mockQueryDecorator<

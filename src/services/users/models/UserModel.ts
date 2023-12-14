@@ -2,6 +2,7 @@ import * as Events from 'services/events';
 import { EventId, Event } from 'services/events/types';
 import { getUser, setUser } from './storage';
 import { saveCharacter } from '../characters';
+import { sendAdminMessage, sendGlobalMessage } from '../events';
 import { addMessagesUser } from '../messages';
 import { getPersonData, Person, postPersonData } from '../persons';
 import { Character, User, UserId } from '../types';
@@ -27,13 +28,14 @@ interface ProcessedEvents {
   
 export interface UserModelInterface {
   getData: () => User,
-  initializeUser: () => Promise<void>,
-  getPersonData: () => Promise<Person | null>,
-  postPersonData: (data: CharacterData) => Promise<Person | null>,
   goToChannel: (channelId: number) => Promise<void>,
   processEvents: () => Promise<ProcessedEvents>,
-  save: (user: User) => Promise<User>,
+  save: () => Promise<User>,
   updateEventId: (eventId?: EventId) => Promise<User | null>,
+  startGame: () => Promise<void>,
+  // PersonData
+  loadPersonData: () => Promise<Person | null>,
+  savePersonData: (data: CharacterData) => Promise<Person | null>,
 };
   
 // Helpers
@@ -76,13 +78,13 @@ const UserModel = (user: User): UserModelInterface => {
 
   const getData = () => values;
 
-  const save = (data: User) => setUser(data.userId, data);
+  const save = () => setUser(values.userId, values);
 
   const updateEventId = async (eventId?: EventId): Promise<User | null> => {
     values.eventId = eventId;
 
     if (!eventId) {
-      return save(values);
+      return save();
     }
           
     const lastUpdate = values.lastUpdate || 0;
@@ -92,7 +94,7 @@ const UserModel = (user: User): UserModelInterface => {
       : (lastUpdate - eventId);
           
     if (newEvents < 10) {
-      return save(values);
+      return save();
     }
           
     const char: Character = user?.character || {};
@@ -103,18 +105,9 @@ const UserModel = (user: User): UserModelInterface => {
 
 
     values.lastUpdate = lastUpdate;
-    return save(values);  
+    return save();  
   };
   
-  const initializeUser = async () => {
-    // syslog("GAME ENTRY: %s[%s]",globme,cuserid(NULL));
-    console.log(`GAME ENTRY: ${values.name}[${values.userId}]`);
-
-    await addMessagesUser(values.userId);
-
-    await processEvents();
-  };
-
   const loadPersonData = async () => {
     const response = await getPersonData({
       params: {
@@ -124,7 +117,10 @@ const UserModel = (user: User): UserModelInterface => {
     });
 
     const person = getPersonFromResponse(response);
+
+    values.person = person;
     values.isSaved = !!person;
+
     return person;
   };
 
@@ -137,7 +133,10 @@ const UserModel = (user: User): UserModelInterface => {
     });
 
     const person = getPersonFromResponse(response);
+
+    values.person = person;
     values.isSaved = !!person;
+
     return person;
   };
 
@@ -170,23 +169,67 @@ const UserModel = (user: User): UserModelInterface => {
     };
   };
 
+  const goToChannel = async (channelId: number) => {
+    await saveCharacter(user.characterId, {
+      ...user.character,
+      channelId,
+    });
+
+    console.log(channelId);
+    // lookin(chan);
+  };
+
+  const startGame = async () => {
+    const person = values.person;
+
+    if (!person) {
+      return;
+    }
+
+    sendAdminMessage(values, `[s name="${values?.name}"][ ${values?.name}  has entered the game ]\n[/s]`);
+
+    const {
+      level,
+      // score,
+      sex,
+      strength,
+    } = person;
+    const visibility = (level < 10000) ? 0 : 10000;
+    const channelId = (Math.floor(Math.random() % 100) > 50) ? -5 : -183; 
+
+    const character: Character = {
+      ...user?.character,
+      // From person
+      level,
+      sex,
+      strength,
+      visibility,
+      // Other
+      helping: -1,
+      weapon: -1,
+    };
+    
+    values.character = character;
+    values.channelId = channelId;
+    values.eventId = undefined;
+    values.mode = '1';
+
+    await processEvents();
+
+    await goToChannel(channelId);
+
+    sendGlobalMessage(values, values.channelId, `[s name="${values.name}"]${values.name}  has entered the game\n[/s]`);
+  };
+
   return {
     getData,
-    initializeUser,
-    getPersonData: loadPersonData,
-    postPersonData: savePersonData,
-    goToChannel: async(channelId: number) => {
-        await saveCharacter(user.characterId, {
-        ...user.character,
-        channelId,
-        });
-        
-        console.log(channelId);
-        // lookin(chan);  
-    },
+    loadPersonData,
+    savePersonData,
+    goToChannel,
     processEvents,
     save,
     updateEventId,
+    startGame,
   }
 };
   
@@ -194,12 +237,21 @@ export default UserModel;
 
 export const loadUser = async (userId: UserId) => {
   const user = await getUser(userId);
-  return UserModel(user);
+
+  if (!user) {
+    return user;
+  }
+
+  const model = UserModel(user);
+
+  await model.loadPersonData();
+
+  return model;
 };
 
-export const newUser = async (character: Character) => {
+export const newUser = async (userId: UserId, character: Character) => {
   const user: User = {
-    userId: 'NEW_USER_ID',
+    userId,
     mode: '',
     name: character.name,
     characterId: character.characterId || 0,
@@ -210,7 +262,15 @@ export const newUser = async (character: Character) => {
     
     isSaved: false,
     character,
+    person: null,
   };
+  console.log(user);
+
+  // syslog("GAME ENTRY: %s[%s]",globme,cuserid(NULL));
+  console.log(`GAME ENTRY: ${user.name}[${userId}]`);
+
+  await addMessagesUser(userId);
+
   return UserModel(user);
 };
   

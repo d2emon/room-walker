@@ -5,6 +5,7 @@ import {
   UserId,
 } from './types';
 import {
+  getUser,
   postNewCharacter,
   postUser,
   postUserAction,
@@ -22,9 +23,31 @@ export interface NewCharacterData {
   sex: string;
 };
 
-export const addUser = async (name: string): Promise<AddUserResponse> => {
+export const loadUser = async (userId: UserId): Promise<User | null> => {
+  const response = await getUser({
+    params: {
+      userId,
+    },
+    data: undefined,
+  });
+
+  const {
+    error,
+    data,
+  } = response;
+
+  if (error || !data) {
+    throw new Error();
+  }
+
+  return data?.user || null;
+}
+
+export const addUser = async (userId: UserId, name: string): Promise<User | null> => {
   const response = await postUser({
-    params: undefined,
+    params: {
+      userId,
+    },
     data: {
       name,
     },
@@ -39,10 +62,10 @@ export const addUser = async (name: string): Promise<AddUserResponse> => {
     throw new Error();
   }
 
-  return data;
+  return data?.user || null;
 };
 
-export const createCharacter = async (userId: UserId, characterData: NewCharacterData): Promise<AddUserResponse> => {
+export const createCharacter = async (userId: UserId, characterData: NewCharacterData): Promise<User | null> => {
   const response = await postNewCharacter({
     params: {
       userId,
@@ -59,7 +82,7 @@ export const createCharacter = async (userId: UserId, characterData: NewCharacte
     throw new Error();
   }
 
-  return data;
+  return data?.user || null;
 };
 
 const perform = async (userId: UserId, action: string): Promise<any> => {

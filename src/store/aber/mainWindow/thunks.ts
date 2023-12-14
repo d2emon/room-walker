@@ -32,9 +32,9 @@ import {
 } from '../talker/thunks';
 */
 import {Store} from '../../reducers';
-import Users, { AddUserResponse, addUser, createCharacter } from '../../../services/users';
+import Users, { AddUserResponse, addUser, createCharacter, loadUser } from '../../../services/users';
 import { getPrompt } from '../talker/selectors';
-import { UserId } from 'services/users/types';
+import { User, UserId } from 'services/users/types';
 import { setTitle } from 'store/main/slice';
 
 // Types
@@ -68,12 +68,13 @@ const logOut = async (
 const screenBottom = () => showMessages();
 const screenTop = () => showMessages();
 
-const onUserResponse = (response: AddUserResponse, title?: string) => async (
+const onUserResponse = (user: User | null, title?: string) => async (
   dispatch: Dispatch<Action>,  
 ) => {
-  const {
-    user,
-  } = response;
+  if (!user) {
+    throw new Error('No user!');
+  }
+
   const userId = user?.userId || '';
   const character = user?.character;
   const isSaved = user?.isSaved;
@@ -96,20 +97,26 @@ const onUserResponse = (response: AddUserResponse, title?: string) => async (
 
 // Start system
 
-export const onStart = (title: string, name: string) => async (
+export const onStart = (userId: UserId, title: string, name: string) => async (
   dispatch: Dispatch<Action>,
 ) => {
   dispatch(logReset());
 
   try {
-    if (!title || !name) {
+    if (!userId || !title || !name) {
       throw new Error('Args!');
     }
 
     dispatch(setTitle(title));
 
-    const userResponse = await addUser(name);
-    dispatch(onUserResponse(userResponse, title));
+    const loadUserResponse = await loadUser(userId);
+    if (loadUserResponse) {
+      console.log(loadUserResponse);
+      return;
+    }
+
+    const user = await addUser(userId, name);
+    dispatch(onUserResponse(user, title));
   } catch(e) {
     console.error('Error in "onStart":', e);
     dispatch(setErrorMessage({
@@ -125,10 +132,14 @@ export const createUserCharacter = (userId: UserId, sex: string) => async (
   dispatch: Dispatch<Action>,
 ) => {
   try {
-    const userResponse = await createCharacter(userId, {
+    if (!userId) {
+      throw new Error('Args!');
+    }
+
+    const user = await createCharacter(userId, {
       sex,
     });
-    dispatch(onUserResponse(userResponse));
+    dispatch(onUserResponse(user));
   } catch(e) {
     console.error('Error in "createCharacter":', e);
     dispatch(setErrorMessage({

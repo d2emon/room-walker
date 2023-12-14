@@ -50,9 +50,9 @@ const setPerson = async (name: string, person: Person) => {
 const loadPersons = async () => Object.values(stored).map((p) => ({...p}));
 
 export const getPersonData = mockQueryDecorator<
-GetPersonRequest,
-GetPersonResponse
-> ('POST http://127.0.0.1:4001/person/:name/', async (query): Promise<GetPersonResponse> => {
+  GetPersonRequest,
+  GetPersonResponse
+> ('GET http://127.0.0.1:4001/person/:name/', async (query): Promise<GetPersonResponse> => {
   const {
     params: {
       name,

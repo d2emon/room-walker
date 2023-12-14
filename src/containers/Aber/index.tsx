@@ -47,7 +47,7 @@ const Aber = () => {
   const hadleCloseStartModal = useCallback((data: StartingData) => {
     setIsShowingStartModal(false);
 
-    dispatch(onStart(data.title, data.name));
+    dispatch(onStart(data.userId, data.title, data.name));
     dispatch(loggerActions.getMessages());
   }, [
     dispatch,

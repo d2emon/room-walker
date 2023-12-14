@@ -1,4 +1,5 @@
 import { EventId } from "services/events/types";
+import { Person } from "./persons";
 
 export type UserId = number | string;
 
@@ -27,5 +28,7 @@ export interface User {
   channelId?: number;
 
   isSaved: boolean;
+
+  person: Person | null;
 }
   
