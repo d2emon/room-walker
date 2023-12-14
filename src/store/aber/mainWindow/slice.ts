@@ -29,14 +29,14 @@ const initialState: MainWindowState = {
 
 interface StartGamePayload {
   userId: string | number;
-  title: string;
   isSaved: boolean;
 }
 type StartGameAction = PayloadAction<StartGamePayload>;
 type SetAlarmAction = PayloadAction<boolean>;
 type SetBlockAction = PayloadAction<boolean>;
+type SetTitleAction = PayloadAction<string>;
   
-export type MainWindowAction = StartGameAction | SetAlarmAction | SetBlockAction;
+export type MainWindowAction = StartGameAction | SetAlarmAction | SetBlockAction | SetTitleAction;
 
 export const mainWindowSlice = createSlice({
   name: 'mainWindow',
@@ -44,7 +44,6 @@ export const mainWindowSlice = createSlice({
   reducers: {
     startGame: (state: MainWindowState, action: StartGameAction) => {
       state.userId = action.payload.userId;
-      state.title = action.payload.title;
       state.isSaved = action.payload.isSaved;
     },
     setAlarm: (state: MainWindowState, action: SetAlarmAction) => {
@@ -57,6 +56,9 @@ export const mainWindowSlice = createSlice({
         state.alarm = 2;
       }
       state.ignore = action.payload;
+    },
+    setTitle: (state: MainWindowState, action: SetTitleAction) => {
+      state.title = action.payload;
     },
   },
 });

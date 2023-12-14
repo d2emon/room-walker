@@ -14,7 +14,7 @@ import StartModal, { StartingData } from './modals/StartModal';
 import {Message} from '../../services/logger';
 import { getMessages } from 'store/aber/logger/slice';
 import * as loggerActions from 'store/aber/logger/thunks';
-import { onStart } from 'store/aber/mainWindow/thunks';
+import { createUserCharacter, onStart } from 'store/aber/mainWindow/thunks';
 import MainWindow from './MainWindow';
 import { resetErrors } from 'store/aber/errors/slice';
 import {
@@ -23,6 +23,7 @@ import {
   getUserId,
 } from 'store/aber/mainWindow/selectors';
 import { getName } from 'store/aber/talker/selectors';
+import CreateCharacterModal, { CreateCharacterData } from './modals/CreateCharacterModal';
 
 const Aber = () => {
   const dispatch = useDispatch<any>();
@@ -46,10 +47,23 @@ const Aber = () => {
   const hadleCloseStartModal = useCallback((data: StartingData) => {
     setIsShowingStartModal(false);
 
-    dispatch(onStart(data.userId, data.title, data.name));
+    dispatch(onStart(data.title, data.name));
     dispatch(loggerActions.getMessages());
   }, [
     dispatch,
+  ]);
+
+  const hadleCloseCreateCharacterModal = useCallback((data: CreateCharacterData) => {
+    // keysetback();
+    console.log(data);
+    // keysetup();
+
+    //
+    dispatch(createUserCharacter(userId, data?.sex))
+    // dispatch(loggerActions.getMessages());
+  }, [
+    dispatch,
+    userId,
   ]);
 
   useEffect(() => {
@@ -58,17 +72,16 @@ const Aber = () => {
     handleReset,
   ]);
 
-  useEffect(() => {
-    console.log(needCreateCharacter);
-  }, [
-    needCreateCharacter,
-  ])
-
   return (
     <Card>
       <StartModal
         show={isShowingStartModal}
         onClose={hadleCloseStartModal}
+      />
+
+      <CreateCharacterModal
+        isOpen={needCreateCharacter}
+        onClose={hadleCloseCreateCharacterModal}
       />
 
       <Container className="my-2">

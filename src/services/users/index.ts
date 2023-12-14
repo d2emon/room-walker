@@ -5,40 +5,103 @@ import {
   UserId,
 } from './types';
 import {
+  postNewCharacter,
   postUser,
   postUserAction,
   postUserEvent,
   postUserEvents,
 } from './users';
 
-interface AddUserResponse {
+export interface AddUserResponse {
   user: User;
-  eventId: EventId;
+  eventId?: EventId;
   person: Person | null;
+};
+
+export interface NewCharacterData {
+  sex: string;
 };
 
 export const addUser = async (name: string): Promise<AddUserResponse> => {
   const response = await postUser({
-    name,
+    params: undefined,
+    data: {
+      name,
+    },
   });
 
-  return response?.data;
+  const {
+    error,
+    data,
+  } = response;
+
+  if (error || !data) {
+    throw new Error();
+  }
+
+  return data;
+};
+
+export const createCharacter = async (userId: UserId, characterData: NewCharacterData): Promise<AddUserResponse> => {
+  const response = await postNewCharacter({
+    params: {
+      userId,
+    },
+    data: characterData,
+  });
+
+  const {
+    error,
+    data,
+  } = response;
+
+  if (error || !data) {
+    throw new Error();
+  }
+
+  return data;
 };
 
 const perform = async (userId: UserId, action: string): Promise<any> => {
-  const response = await postUserAction(userId, {
-    action,
+  const response = await postUserAction({
+    params: {
+      userId,
+    },
+    data: {
+      action,
+    },
   });
 
-  return response?.data;
+  const {
+    error,
+    data,
+  } = response;
+
+  if (error || !data) {
+    throw new Error();
+  }
+
+  return data;
 }
 
 const sendEvent = async (event: Event) => {
   const response = await postUserEvent({
-    event,
+    params: undefined,
+    data: {
+      event,
+    },
   });
 
-  return response?.data;
+  const {
+    error,
+    data,
+  } = response;
+
+  if (error || !data) {
+    throw new Error();
+  }
+
+  return data;
 }
 
 const broadcast = async (message: string) => {
@@ -56,12 +119,26 @@ const broadcast = async (message: string) => {
 }
 
 const processUserEvents = async (userId: UserId, eventId?: EventId, force?: boolean) => {
-  const response = await postUserEvents(userId, {
-    eventId,
-    force,
+  const response = await postUserEvents({
+    params: {
+      userId,
+    },
+    data: {
+      eventId,
+      force,
+    },
   });
 
-  return response?.data;
+  const {
+    error,
+    data,
+  } = response;
+
+  if (error || !data) {
+    throw new Error();
+  }
+
+  return data;
 }
 
 const UserService = {

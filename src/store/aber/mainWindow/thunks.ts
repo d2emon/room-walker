@@ -32,8 +32,10 @@ import {
 } from '../talker/thunks';
 */
 import {Store} from '../../reducers';
-import Users, { addUser } from '../../../services/users';
+import Users, { AddUserResponse, addUser, createCharacter } from '../../../services/users';
 import { getPrompt } from '../talker/selectors';
+import { UserId } from 'services/users/types';
+import { setTitle } from 'store/main/slice';
 
 // Types
 type Dispatch<A extends Action> = ThunkDispatch<Store, any, A>;
@@ -66,9 +68,35 @@ const logOut = async (
 const screenBottom = () => showMessages();
 const screenTop = () => showMessages();
 
+const onUserResponse = (response: AddUserResponse, title?: string) => async (
+  dispatch: Dispatch<Action>,  
+) => {
+  const {
+    user,
+  } = response;
+  const userId = user?.userId || '';
+  const character = user?.character;
+  const isSaved = user?.isSaved;
+
+  if (isSaved) {
+    await Users.perform(userId, '.g');
+  }
+
+  dispatch(startGame({
+    userId,
+    isSaved,
+  }));
+  dispatch(setUser({
+    characterId: user?.characterId,
+    name: user?.name,
+    channelId: character?.channelId,
+    title,
+  }));
+}
+
 // Start system
 
-export const onStart = (userId: string, title: string, name: string) => async (
+export const onStart = (title: string, name: string) => async (
   dispatch: Dispatch<Action>,
 ) => {
   dispatch(logReset());
@@ -78,30 +106,29 @@ export const onStart = (userId: string, title: string, name: string) => async (
       throw new Error('Args!');
     }
 
-    const addUserResponse = await addUser(name);
-    const {
-      user,
-    } = addUserResponse;
-    const userId = user?.userId || '';
-    const character = user?.character;
-    const isSaved = user?.isSaved;
+    dispatch(setTitle(title));
 
-    const res = await Users.perform(userId, '.g');
-    console.log(res);
-
-    dispatch(startGame({
-      userId,
-      title,
-      isSaved,
-    }));
-    dispatch(setUser({
-      characterId: user?.characterId,
-      name: user?.name,
-      channelId: character?.channelId,
-      title,
-    }));
+    const userResponse = await addUser(name);
+    dispatch(onUserResponse(userResponse, title));
   } catch(e) {
     console.error('Error in "onStart":', e);
+    dispatch(setErrorMessage({
+      errorId: 0,
+      message: (e as Error).message,
+    }));
+  }
+};
+
+export const createUserCharacter = (userId: UserId, sex: string) => async (
+  dispatch: Dispatch<Action>,
+) => {
+  try {
+    const userResponse = await createCharacter(userId, {
+      sex,
+    });
+    dispatch(onUserResponse(userResponse));
+  } catch(e) {
+    console.error('Error in "createCharacter":', e);
     dispatch(setErrorMessage({
       errorId: 0,
       message: (e as Error).message,

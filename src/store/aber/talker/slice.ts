@@ -58,7 +58,7 @@ type SetLoggedInAction = PayloadAction<undefined>;
 type SetLoggedOutAction = PayloadAction<undefined>;
 type SetConversationModeAction = PayloadAction<ConversationMode>;
   
-export type MainWindowAction = SetUserPayload | UpdateTitleAction | SetLoggedInAction | SetLoggedOutAction | SetConversationModeAction;
+export type MainWindowAction = SetUserAction | UpdateTitleAction | SetLoggedInAction | SetLoggedOutAction | SetConversationModeAction;
 
 const getTitle = (state: TalkerState): string | undefined => {
   if (state.isFullyInvisible) {

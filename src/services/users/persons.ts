@@ -1,6 +1,4 @@
-import {
-  User,
-} from './types';
+import mockQueryDecorator, { MockQuery } from './mock';
 
 export interface Person {
   level: number;
@@ -10,11 +8,27 @@ export interface Person {
   strength: number;
 };
 
-interface GetPersonResponse {
-  data: {
-    person: Person | null,
-  };
+interface PersonRequestParams {
+  name: string,
 }
+
+// GetPerson
+
+type GetPersonRequest = MockQuery<PersonRequestParams, any>;
+
+interface GetPersonResponse {
+  person: Person | null,
+}
+
+// PostPerson
+
+interface PostPersonRequestData {
+  sex?: string,
+}
+
+type PostPersonRequest = MockQuery<PersonRequestParams, PostPersonRequestData>;
+
+// Storage
 
 interface PersonStorage {
   [name: string]: Person;
@@ -28,114 +42,73 @@ const getPerson = async (name: string) => {
 }
 
 const setPerson = async (name: string, person: Person) => {
-  stored[name] = person;
+  stored[name.toLowerCase()] = {...person};
+
+  return getPerson(name);
 }
 
 const loadPersons = async () => Object.values(stored).map((p) => ({...p}));
 
-const initPerson = async (user: User) => {
-  // PERSONA x;
-  // char s[32];
-  // extern char globme[];
+export const getPersonData = mockQueryDecorator<
+GetPersonRequest,
+GetPersonResponse
+> ('POST http://127.0.0.1:4001/person/:name/', async (query): Promise<GetPersonResponse> => {
+  const {
+    params: {
+      name,
+    },
+  } = query;
+  const person = await getPerson(name);
 
-  const person = await getPerson(user.name);
+  return {
+    person,
+  };
+});
+
+export const postPersonData = mockQueryDecorator<
+  PostPersonRequest,
+  GetPersonResponse
+> ('POST http://127.0.0.1:4001/person/:name/', async (query): Promise<GetPersonResponse> => {
+  const {
+    data: {
+      sex,
+    },
+    params: {
+      name,
+    },
+  } = query;
+  const person = await getPerson(name);
+
   if (person) {
-    return person;
+    return {
+      person,
+    };  
   }
 
-  /*
-  const messages = [
-    'Creating character....\n',
-    '\n',
-    'Sex (M/F) : ',
-  ];
-  */
-
-  const my = {
+  const newPerson: Person = {
+    name,
     level: 1,
     score: 0,
     sex: 0,
     strength: 40,
   };
 
-  // moan1:
   // pbfr();
 
-  // keysetback();
-  const s = '';
-  // getkbd(s,2);
-  // lowercase(s);
-  // keysetup();
+  if (sex === 'm') {
+    newPerson.sex = 0;
+  } else if (sex === 'f') {
+    newPerson.sex = 1;
+  } else {
+    throw new Error('M or F');
+  }
 
-  /*
-	switch(s[0])
-	{
-		case 'm':my_sex=0;
-		break;
-		case 'f':my_sex=1;
-		break;
-		default:bprintf("M or F");
-		goto moan1;
-	}
-  */
-
-  /*
-  const x = {
-    level: my.level,
-    name: '', // globme
-    score: my.score,
-    sex: my.sex,
-    strength: my.strength,
-  };
-  */
-
-  // putpers(globme,&x);
-
-  return my;
-}
-/*
-initme()
-{
-	if(errno!=0) crapup("Panic: Timeout event on user file\n");
-	x.p_score=0;
-	bprintf("Creating character....\n");
-	my_sco=0;
-	my_str=40;
-	my_lev=1;
-	moan1:bprintf("\nSex (M/F) : ");
-	pbfr();
-	keysetback();
-	getkbd(s,2);
-	keysetup();
-	lowercase(s);
-	switch(s[0])
-	{
-		case 'm':my_sex=0;
-		break;
-		case 'f':my_sex=1;
-		break;
-		default:bprintf("M or F");
-		goto moan1;
-	}
-	strcpy(x.p_name,globme);
-	x.p_strength=my_str;
-	x.p_level=my_lev;
-	x.p_sex=my_sex;
-	x.p_score=my_sco;
-	putpers(globme,&x);
-}
-
-*/
-
-export const getPersonData = async (name: string): Promise<GetPersonResponse> => {
-  const person = await getPerson(name);
+  const saved = await setPerson(name, newPerson);
 
   return {
-    data: {
-      person,
-    },
+    person: saved,
   };
-};
+});
 
 /*
 extern FILE *openlock();
@@ -166,34 +139,6 @@ l1:	i=(FILE *)getPerson(name);
 
 
 
-putpers(name,pers)
-char *name;
-PERSONA *pers;
-{
-	FILE *i;
-	unsigned long flen;
-	PERSONA s;
-	i=(FILE *)getPerson(name);
-	if(i==(FILE *)-1)
-	{
-		flen= -1;
-		i=(FILE *)getPerson(name);
-		if(i!=(FILE *)-1) goto fiok;
-		// i=openuaf("a");
-		flen=ftell(i);
-        fiok: 	if(fwrite(pers,sizeof(PERSONA),1,i)!=1)
-		{
-			bprintf("Save Failed - Device Full ?\n");
-			if(flen!=-1)ftruncate(fileno(i),flen);
-			fcloselock(i);
-			return;
-		}
-		fcloselock(i);
-		return;
-	}
-	fwrite(pers,sizeof(PERSONA),1,i);
-	fcloselock(i);
-}
 
 long my_sco;
 long my_lev;
@@ -214,7 +159,7 @@ saveme()
 	x.p_score=my_sco;
 	if(zapped) return;
 	bprintf("\nSaving %s\n",globme);
-	putpers(globme,&x);
+  await setPerson(globme, x);
 }
 
  validname(name)
