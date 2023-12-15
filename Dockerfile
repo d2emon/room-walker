@@ -1,25 +1,28 @@
-FROM node:lts-alpine
+# Set node version
+FROM node:12.13.0-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package.json ./
-
+# Packages
+COPY package*.json ./
 RUN npm install
 
+# Typescript
 COPY ts*.json ./
 
+# Folders
 COPY public ./public
-
 COPY src ./src
 
-RUN mkdir ./backend
+# Data folders
+# RUN mkdir ./backend
+# RUN mkdir ./backend/data
+# RUN mkdir ./backend/data/files
 
-RUN mkdir ./backend/data
+# COPY backend/data/files ./backend/data/files
 
-RUN mkdir ./backend/data/files
-
-COPY backend/data/files ./backend/data/files
-
+# Port to expose
 EXPOSE 3000
 
-CMD ["npm", "start"]
+# Run script
+CMD npm run start
