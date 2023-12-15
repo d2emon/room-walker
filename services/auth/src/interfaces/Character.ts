@@ -1,4 +1,4 @@
-import { GameUser } from './User';
+import GameUser from './User';
 
 export default interface CharacterInterface<CharacterId, User> {
   characterId: CharacterId,

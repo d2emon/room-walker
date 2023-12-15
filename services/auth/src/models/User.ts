@@ -2,12 +2,12 @@ import mongoose, {
   Schema,
   Document,
 } from 'mongoose';
-import { GameUser } from '../interfaces/User';
+import GameUser from '../interfaces/User';
 
 export interface UserModelInterface extends Document, GameUser {}
 
 const userSchema: Schema<UserModelInterface> = new mongoose.Schema<UserModelInterface>({
-  userId: {
+  token: {
     type: String,
     index: true,
     unique: true,

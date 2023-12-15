@@ -1,5 +1,5 @@
-export default interface UserInterface<UserId> {
-  userId: UserId;
+export default interface GameUser {
+  token: string;
   debugMode: boolean;
   mode: string;
   name: string;
@@ -11,5 +11,3 @@ export default interface UserInterface<UserId> {
   
   // person: Person | null;
 }
-
-export type GameUser = UserInterface<string>;
