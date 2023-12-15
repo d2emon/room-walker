@@ -1,6 +1,7 @@
 import express from 'express';
 
 import cors from 'cors';
+import Debug from 'debug';
 import helmet from 'helmet';
 import morgan from 'morgan';
 // import path from 'path';
@@ -22,9 +23,7 @@ app.use(express.json());
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
-  /* eslint-disable no-console */
-  console.log('MongoDB connected');
-  /* eslint-enable no-console */
+  Debug('auth:db')('MongoDB connected');
 });
 
 app.use('/api/v1.0/user', userRouter);
