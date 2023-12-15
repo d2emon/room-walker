@@ -15,7 +15,7 @@ export interface Character {
   sex: number,
   helping?: number,
 }
-  
+
 export interface User {
   userId: UserId;
   debugMode: boolean;
