@@ -75,7 +75,7 @@ const onUserResponse = (user: User | null, title?: string) => async (
     throw new Error('No user!');
   }
 
-  const userId = user?.userId || '';
+  const userId = user?.token || '';
   const character = user?.character;
   const isSaved = user?.isSaved;
 

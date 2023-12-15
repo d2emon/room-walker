@@ -7,11 +7,18 @@ import { GameCharacter } from '../interfaces/Character';
 export interface CharacterModelInterface extends Document, GameCharacter {}
 
 const characterSchema: Schema<CharacterModelInterface> = new mongoose.Schema<CharacterModelInterface>({
+  /*
+  characterId: {
+    type: Number,
+    index: true,
+    unique: true,
+  },
+  */
+  characterId: Number,
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },
-  characterId: Number,
   name: String,
 }, {
   toObject: {

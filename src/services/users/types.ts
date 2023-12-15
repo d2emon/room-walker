@@ -18,6 +18,7 @@ export interface Character {
 
 export interface User {
   userId: UserId;
+  token?: string;
   debugMode: boolean;
   mode: string;
   name: string;

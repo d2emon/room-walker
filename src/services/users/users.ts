@@ -1,4 +1,3 @@
-// import axios from 'axios';
 import { Event, EventId } from '../events/types';
 import { addNewCharacter } from './characters';
 import { Person } from './persons';

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Event, EventId } from '../events/types';
 import { Person } from './persons';
 import {
@@ -24,26 +25,23 @@ export interface NewCharacterData {
 };
 
 export const loadUser = async (userId: UserId): Promise<User | null> => {
+  /*
   const response = await getUser({
     params: {
       userId,
     },
     data: undefined,
   });
-
+  */
+  const response = await axios.get(`http://127.0.0.1:4000/api/v1.0/user/?token=${userId}`);
   const {
-    error,
     data,
   } = response;
-
-  if (error || !data) {
-    throw new Error();
-  }
-
   return data?.user || null;
 }
 
 export const addUser = async (userId: UserId, name: string): Promise<User | null> => {
+  /*
   const response = await postUser({
     params: {
       userId,
@@ -52,16 +50,13 @@ export const addUser = async (userId: UserId, name: string): Promise<User | null
       name,
     },
   });
-
+  */
+  const response = await axios.post(`http://127.0.0.1:4000/api/v1.0/user/?token=${userId}`, {
+    name,
+  });
   const {
-    error,
     data,
   } = response;
-
-  if (error || !data) {
-    throw new Error();
-  }
-
   return data?.user || null;
 };
 
