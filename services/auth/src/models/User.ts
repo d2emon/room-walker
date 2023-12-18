@@ -1,12 +1,21 @@
-import mongoose, {
-  Schema,
+import {
   Document,
+  Model,
+  Schema,
+  model,
 } from 'mongoose';
 import GameUser from '../interfaces/User';
+import Character, { CharacterDocument } from './Character';
 
-export interface UserModelInterface extends Document, GameUser {}
+export interface UserDocument extends GameUser, Document {};
 
-const userSchema: Schema<UserModelInterface> = new mongoose.Schema<UserModelInterface>({
+interface UserMethods {
+  withCharacters(): Promise<CharacterDocument[]>;
+}
+
+type UserModel = Model<GameUser, {}, UserMethods>;
+
+const userSchema = new Schema<GameUser, UserModel>({
   token: {
     type: String,
     index: true,
@@ -26,5 +35,11 @@ const userSchema: Schema<UserModelInterface> = new mongoose.Schema<UserModelInte
     },
   },
 });
+userSchema.method('withCharacters', async function (): Promise<CharacterDocument[]> {
+  const characters = await Character
+    .find({ user: this.id })
+    .populate('user');
+  return characters;
+});
 
-export default mongoose.model<UserModelInterface>('User', userSchema);
+export default model<GameUser, UserModel>('User', userSchema);

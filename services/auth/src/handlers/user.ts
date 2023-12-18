@@ -3,11 +3,12 @@ import {
   Request,
   Response,
 } from 'express';
+import Debug from 'debug';
 import GameUser from '../interfaces/User';
 import UserRequest from '../interfaces/UserRequest';
 import UserResponse from '../interfaces/UserResponse';
 import User from '../models/User';
-import Character from '../models/Character';
+import { createCharacter } from '../helpers/character';
   
 interface UserQueryParams {
   token?: string;
@@ -38,7 +39,6 @@ export const getUserHandler = async (
     const token = checkToken(req);
   
     const user = await User.findOne({ token });
-    // const model = await loadUser(userId);
   
     if (!user) {
       return res.json({
@@ -46,10 +46,9 @@ export const getUserHandler = async (
       });
     }
   
-    const characters = await Character
-      .find({ user: user.id })
-      .populate('user');
-  
+    const characters = await user.withCharacters();
+    // TODO: Load personal data
+
     return res.json({
       user: user.toObject(),
       characters: characters.map(character => character.toObject()),
@@ -70,33 +69,39 @@ export const postUserHandler = async (
       name = '',
     } = req.body;
 
-    // const character = await addNewCharacter(name);
+    const exists = await User.findOne({ token });
+    if (exists) {
+      throw new Error('User allready exists!');
+    }
+
+    Debug('auth:auth')(`GAME ENTRY: ${name}[${token}]`);
+
     const userData: GameUser = {
       token,
+      // characterId: character.characterId || 0,
       debugMode: true,
       mode: '',
       name,
       isSaved: false,
+
+      // channelId: 0,
+      // eventId: undefined,
     };
-  
     const user = new User(userData);
-    // const model = await newUser(userId, character);
-    // const processed = await model.processEvents();
     const userResult = await user.save();
-  
-    const character = new Character({
-      user,
+
+    // TODO: Create message storage for user
+
+    const character = createCharacter(user, {
       name,
     });
     const characterResult = await character.save();
   
-    /*
-    await model.loadPersonData();
-    const user = await model.save();
-    */
-  
+    // TODO: Start event processor
+
     const saved = await User.findOne({ token });
-  
+    // TODO: Load personal data
+
     return res.json({
       user: saved?.toObject() || null,
       characters: [character.toObject()],

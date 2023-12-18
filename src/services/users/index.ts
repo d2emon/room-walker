@@ -6,9 +6,9 @@ import {
   UserId,
 } from './types';
 import {
-  getUser,
+  // getUser,
   postNewCharacter,
-  postUser,
+  // postUser,
   postUserAction,
   postUserEvent,
   postUserEvents,
@@ -24,7 +24,7 @@ export interface NewCharacterData {
   sex: string;
 };
 
-export const loadUser = async (userId: UserId): Promise<User | null> => {
+export const loadUser = async (token: UserId): Promise<User | null> => {
   /*
   const response = await getUser({
     params: {
@@ -33,14 +33,14 @@ export const loadUser = async (userId: UserId): Promise<User | null> => {
     data: undefined,
   });
   */
-  const response = await axios.get(`http://127.0.0.1:4000/api/v1.0/user/?token=${userId}`);
+  const response = await axios.get(`http://127.0.0.1:4000/api/v1.0/user/?token=${token}`);
   const {
     data,
   } = response;
   return data?.user || null;
 }
 
-export const addUser = async (userId: UserId, name: string): Promise<User | null> => {
+export const addUser = async (token: UserId, name: string): Promise<User | null> => {
   /*
   const response = await postUser({
     params: {
@@ -51,7 +51,7 @@ export const addUser = async (userId: UserId, name: string): Promise<User | null
     },
   });
   */
-  const response = await axios.post(`http://127.0.0.1:4000/api/v1.0/user/?token=${userId}`, {
+  const response = await axios.post(`http://127.0.0.1:4000/api/v1.0/user/?token=${token}`, {
     name,
   });
   const {

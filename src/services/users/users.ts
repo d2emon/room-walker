@@ -84,6 +84,7 @@ interface PostUserEventsResponse {
         
 // Handlers
 
+/*
 export const getUser = mockQueryDecorator<
   GetUserRequest,
   GetUserResponse
@@ -101,7 +102,9 @@ export const getUser = mockQueryDecorator<
     user,
   };
 });
+*/
 
+/*
 export const postUser = mockQueryDecorator<
   AddUserRequest,
   AddUserResponse
@@ -128,6 +131,7 @@ export const postUser = mockQueryDecorator<
     user,
   };
 });
+*/
 
 export const postNewCharacter = mockQueryDecorator<
   NewCharacterRequest,

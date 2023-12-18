@@ -1,12 +1,16 @@
-import mongoose, {
-  Schema,
+import {
   Document,
+  Model,
+  Schema,
+  model,
 } from 'mongoose';
 import { GameCharacter } from '../interfaces/Character';
 
-export interface CharacterModelInterface extends Document, GameCharacter {}
+export interface CharacterDocument extends GameCharacter, Document {};
 
-const characterSchema: Schema<CharacterModelInterface> = new mongoose.Schema<CharacterModelInterface>({
+type CharacterModel = Model<GameCharacter, {}, {}>;
+
+const characterSchema = new Schema<GameCharacter, CharacterModel>({
   /*
   characterId: {
     type: Number,
@@ -16,7 +20,7 @@ const characterSchema: Schema<CharacterModelInterface> = new mongoose.Schema<Cha
   */
   characterId: Number,
   user: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'User',
   },
   name: String,
@@ -29,5 +33,5 @@ const characterSchema: Schema<CharacterModelInterface> = new mongoose.Schema<Cha
   },
 });
 
-export default mongoose.model<CharacterModelInterface>('Character', characterSchema);
+export default model<GameCharacter, CharacterModel>('Character', characterSchema);
     
