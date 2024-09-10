@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
     Button,
 } from 'reactstrap';
-import { Store } from '../../store/reducers';
+import { Store } from '../../store';
 import * as roomsActions from "../../store/rooms/actions";
 
 // interface State {}

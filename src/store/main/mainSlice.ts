@@ -118,7 +118,7 @@ export const mainSlice = createSlice({
     }),
     setPrDue: (state: MainState, action) => ({
       ...state,
-      name: action.payload.prDue,
+      prDue: action.payload.prDue,
     }),
   },
 });

@@ -10,7 +10,7 @@ import {
     Exits,
 } from '../../types';
 import CompassButton from './CompassButton';
-import { Store } from '../../store/reducers';
+import { Store } from '../../store';
 import * as roomsSelector from '../../store/rooms/selectors';
 
 // interface State {}

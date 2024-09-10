@@ -1,71 +1,71 @@
-import * as React from 'react';
+import React, { useCallback, useState } from 'react';
 import {
-    Button,
-    Col,
-    Container,
-    Input,
-    Row,
+  Button,
+  Col,
+  Container,
+  Input,
+  Row,
 } from 'reactstrap';
 
 interface Props {
-    disabled?: boolean,
-    name?: string,
-    onSubmit?: (name: string) => any,
-}
-interface State {
-    name: string,
+  disabled?: boolean,
+  name?: string,
+  onSubmit?: (name: string) => any,
 }
 
-class StartArgs extends React.Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-        this.state = {
-            name: props.name || '',
-        };
+const StartArgs = (props: Props) => {
+  const {
+    disabled = false,
+    onSubmit,
+  } = props;
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+  const [name, setName] = useState(props.name || '');
 
-    handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-        this.setState({name: event.target.value});
-    }
+  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    setName(event.target.value);
+    /* 
+  if (props.length !== 2) {
+    exit(0);
+    return (
+      <div>Args!</div>
+    );
+  }
+    */
+  }, []);
 
-    handleSubmit() {
-        const {onSubmit} = this.props;
-        const {name} = this.state;
-        if (onSubmit) onSubmit(name);
-    }
+  const handleSubmit = useCallback(
+    () => {
+      if (onSubmit) onSubmit(name);
+    },
+    [
+      name,
+      onSubmit,
+    ],
+  );
 
-    render() {
-        const {
-            disabled = false,
-        } = this.props;
-        const {name} = this.state;
-        return (
-            <Container>
-                <Row>
-                    <Col xs="8">
-                        <Input
-                            placeholder="Name"
-                            value={name}
-                            disabled={disabled}
-                            onChange={this.handleChange}
-                        />
-                    </Col>
-                    <Col xs="4">
-                        <Button
-                            disabled={disabled || !name}
-                            onClick={this.handleSubmit}
-                        >
-                            Start
-                        </Button>
-                    </Col>
-                </Row>
+  return (
+    <Container>
+      <Row>
+        <Col xs="8">
+          <Input
+            placeholder="Name"
+            value={name}
+            disabled={disabled}
+            onChange={handleChange}
+          />
+        </Col>
 
-            </Container>
-        );
-    }
+        <Col xs="4">
+          <Button
+            disabled={disabled || !name}
+            onClick={handleSubmit}
+          >
+            Start
+          </Button>
+        </Col>
+      </Row>
+    </Container>
+  );
 }
 
 export default StartArgs;
