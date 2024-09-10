@@ -1,9 +1,10 @@
 import React from 'react';
+// import ReactDOM from 'react-dom/client';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import App from './containers/App';
-// TODO: Change registerServiceWorker to reportWebVitals
-import registerServiceWorker from './registerServiceWorker';
+import App from './pages/App';
+import reportWebVitals from './reportWebVitals';
+// import { store } from './store';
 import store from './store';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,5 +21,4 @@ root.render(
     </React.StrictMode>
 );
 
-// TODO: Change registerServiceWorker to reportWebVitals
-registerServiceWorker();
+reportWebVitals();

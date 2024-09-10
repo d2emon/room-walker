@@ -5,9 +5,16 @@ import keysReducer from './aber/keys/slice';
 import loggerReducer from './aber/logger/slice';
 import mainWindowReducer from './aber/mainWindow/slice';
 import talkerReducer from './aber/talker/slice';
-import mainReducer from './main/slice';
-import roomsReducer from './rooms/slice';
+import mainReducer, { MainState } from './main/slice';
+import roomsReducer, { RoomState } from './rooms/slice';
 // import reducer from './reducers';
+import tk, { TkState } from './tk/tkSlice';
+
+export interface Store {
+  rooms: RoomState,
+  main: MainState,
+  tk: TkState,
+}
 
 const store = configureStore({
   reducer: {

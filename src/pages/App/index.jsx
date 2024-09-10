@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import {
   Card,
   Col,
@@ -9,25 +10,26 @@ import Header from 'components/Header';
 // Containers
 import Aber from 'containers/Aber';
 // import MainStarter from '../Main/Starter';
-import Starter from '../Starter';
-import Compass from '../Compass';
-import Room from '../Room';
+import Starter from 'containers/Starter';
+import Compass from 'containers/Compass';
+import Room from 'containers/Room';
 // Styles
 import './index.css';
 
 const App = () => (
   <div className="App">
-    <Header />
+        <Header />
+
+        { /*
+        <Container>
+          <MainStarter />
+        </Container>
+          */ }
+
     <Container className="App-intro">
       <Card>
         <Aber />
       </Card>
-
-      { /*
-      <Row>
-        <Col><MainStarter /></Col>
-      </Row>
-      */ }
 
       <Row>
         <Col xs="2"><Starter /></Col>
