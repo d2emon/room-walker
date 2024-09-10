@@ -11,7 +11,7 @@ import {
 } from '../../types';
 import CompassButton from './CompassButton';
 import { Store } from '../../store/reducers';
-import * as roomsSelector from '../../store/rooms/reducer';
+import * as roomsSelector from '../../store/rooms/selectors';
 
 // interface State {}
 interface OwnProps {}

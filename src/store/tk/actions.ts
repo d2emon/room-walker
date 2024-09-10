@@ -1,92 +1,17 @@
 import {Action} from 'redux';
 import {ThunkAction, ThunkDispatch} from 'redux-thunk';
-import {TkState} from './reducer';
-import * as types from './actionTypes';
-import {MainAction, MainThunkAction} from "../main/actions";
-import {MainState} from "../main/reducer";
-
-// Interfaces
-interface SetPlayer {
-    type: types.SET_PLAYER,
-    playerId: number,
-    name: string,
-}
-
-interface SetName {
-    type: types.SET_NAME,
-    name: string,
-}
-
-interface SetMessageId {
-    type: types.SET_MESSAGE_ID,
-    messageId: number,
-}
-
-interface SetLocationId {
-    type: types.SET_LOCATION_ID,
-    locationId: number,
-}
-
-interface SetISetup {
-    type: types.SET_I_SETUP,
-    iSetup: boolean,
-}
-
-interface SetMode {
-    type: types.SET_MODE,
-    mode: number,
-}
-
-interface SetUpdate {
-    type: types.SET_UPDATE,
-}
+import { TkAction, TkState, setISetup, setLocationId, setMessageId, setMode, setPlayer, setUpdate } from './tkSlice';
+import { MainThunkAction} from "../main/actions";
 
 // Types
-export type TkAction = SetPlayer | SetName | SetMessageId | SetLocationId | SetISetup | SetMode | SetUpdate;
 type Dispatch<A extends Action> = ThunkDispatch<TkState, any, A>;
 export type TkThunkAction<A extends Action> = ThunkAction<any, TkState, any, A>;
 
-// Setters
-export const setPlayer = (playerId: number, name: string): SetPlayer => ({
-    type: types.SET_PLAYER,
-    playerId,
-    name,
-});
-
-export const setName = (name: string): SetName => ({
-    type: types.SET_NAME,
-    name,
-});
-
-export const setMessageId = (messageId: number): SetMessageId => ({
-    type: types.SET_MESSAGE_ID,
-    messageId,
-});
-
-export const setLocationId = (locationId: number): SetLocationId => ({
-    type: types.SET_LOCATION_ID,
-    locationId,
-});
-
-export const setISetup = (iSetup: boolean): SetISetup => ({
-    type: types.SET_I_SETUP,
-    iSetup,
-});
-
-export const setMode = (mode: number): SetMode => ({
-    type: types.SET_MODE,
-    mode,
-});
-
-export const setUpdate = (): SetUpdate => ({
-    type: types.SET_UPDATE,
-});
-
 // TODO: Remove actions
 interface Message {
-    // 0
-    code: number,
-    text: string,
+  // 0
+  code: number,
+  text: string,
 }
 
 const bprintf = (text: string) => () => Promise.resolve();
@@ -290,7 +215,7 @@ export const update = (): TkThunkAction<TkAction> => (
     getState: () => TkState,
 ) => (Math.abs(getState().messageId - getState().updated) >= 10) && dispatch(openworld)
     .then(() => dispatch(setppos(getState().playerId, getState().messageId)))
-    .then(() => dispatch(setUpdate));
+    .then(() => dispatch(setUpdate()));
 
 // readmsg
 const readMessage = (world: any, messageId: number): TkThunkAction<TkAction> => (
@@ -314,7 +239,7 @@ export const readMessages = (name: string): TkThunkAction<TkAction> => (
             for (let messageId = firstMessageId; messageId < lastMessageId; messageId++) {
                 promises.push(dispatch(readMessage(world, messageId))
                     .then((message: Message) => dispatch(outputMessage(message)))
-                    .then(() => dispatch(setMessageId(messageId))));
+                    .then(() => dispatch(setMessageId({ messageId }))));
             }
             return Promise.all(promises);
         })
@@ -324,7 +249,7 @@ export const readMessages = (name: string): TkThunkAction<TkAction> => (
     .then(() => dispatch(setDes(0)));
 
 export const openlock = (): MainThunkAction<TkAction> => (
-    dispatch: Dispatch<TkAction>,
+  dispatch: any, //Dispatch<TkAction>,
 ) => {
     /*
 FILE *openlock(file,perm)
@@ -384,7 +309,7 @@ const addPlayer = (name: string): TkThunkAction<TkAction> => (
         dispatch(setpstr(playerId, -1)),
         dispatch(setpwpn(playerId, -1)),
         dispatch(setpsex(playerId, 0)),
-        dispatch(setPlayer(playerId, name)),
+        dispatch(setPlayer({ playerId, name })),
     ]).then(() => playerId));
 
 // loseme
@@ -398,7 +323,7 @@ export const loose = (name: string): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
     getState: () => TkState,
 ) => dispatch(sigAloff)
-    .then(() => dispatch(setISetup(false)))
+    .then(() => dispatch(setISetup({ iSetup: false })))
     .then(() => dispatch(openworld))
     .then(() => dispatch(dumpitems))
     .then(() => dispatch(pvis(getState().playerId)))
@@ -524,9 +449,9 @@ export const special = (command: string): TkThunkAction<TkAction> => (
                 dispatch(setphelping(playerId,-1)),
 
             ]))
-            .then(() => dispatch(setMode(1)))
+            .then(() => dispatch(setMode({ mode: 1 })))
             .then(() => dispatch(randperc))
-            .then((result: number) => dispatch(setLocationId((result > 50) ? -5 : -183)))
+            .then((result: number) => dispatch(setLocationId({ locationId: (result > 50) ? -5 : -183 })))
             .then(() => dispatch(sendsys(
                 name,
                 name,
@@ -557,9 +482,9 @@ export const startWalk = (name: string): TkThunkAction<TkAction> => (
     .then(() => dispatch(openworld))
     .then(() => dispatch(readMessages(name)))
     .then(() => dispatch(closeworld))
-    .then(() => dispatch(setMessageId(-1)))
+    .then(() => dispatch(setMessageId({ messageId: -1 })))
     .then(() => dispatch(special('.g')))
-    .then(() => dispatch(setISetup(true)));
+    .then(() => dispatch(setISetup({ iSetup: true })));
 
 const startTurn = (): TkThunkAction<TkAction> => (
     dispatch: Dispatch<TkAction>,
@@ -580,7 +505,7 @@ export const nextTurn = (name: string): TkThunkAction<TkAction> => (
     .then(() => dispatch(endTurn(name)));
 
 export const cleanup = (): MainThunkAction<TkAction> => (
-    dispatch: Dispatch<TkAction>,
+  // dispatch: Dispatch<TkAction>,
 ) => {
     /*
 cleanup(inpbk)
@@ -618,7 +543,7 @@ export const tbroad = (message: string): TkThunkAction<TkAction> => (
 ) => dispatch(broad(message));
 
 export const split = (): MainThunkAction<TkAction> => (
-    dispatch: Dispatch<TkAction>,
+  // dispatch: Dispatch<TkAction>,
 ) => {
     /*
 split(block,nam1,nam2,work,luser)
@@ -642,7 +567,7 @@ char *luser;
 };
 
 export const revise = (): MainThunkAction<TkAction> => (
-    dispatch: Dispatch<TkAction>,
+  // dispatch: Dispatch<TkAction>,
 ) => {
     /*
 revise(cutoff)
@@ -669,7 +594,7 @@ long cutoff;
 };
 
 export const loodrv = (): MainThunkAction<TkAction> => (
-    dispatch: Dispatch<TkAction>,
+  // dispatch: Dispatch<TkAction>,
 ) => {
     /*
 loodrv()
@@ -681,7 +606,7 @@ loodrv()
 };
 
 export const userwrap = (): MainThunkAction<TkAction> => (
-    dispatch: Dispatch<TkAction>,
+  // dispatch: Dispatch<TkAction>,
 ) => {
     /*
 userwrap()
@@ -694,7 +619,7 @@ userwrap()
 };
 
 export const fcloselock = (): MainThunkAction<TkAction> => (
-    dispatch: Dispatch<TkAction>,
+  // dispatch: Dispatch<TkAction>,
 ) => {
     /*
 fcloselock(file)

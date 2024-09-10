@@ -7,8 +7,8 @@ import {
     Button,
 } from 'reactstrap';
 import {Store} from '../../store/reducers';
-import * as actions from "../../store/main/actions";
-import * as selector from '../../store/main/reducer';
+import * as actions from '../../store/main/actions';
+import * as selector from '../../store/main/selectors';
 import StartArgs from './StartArgs';
 
 // interface State {}

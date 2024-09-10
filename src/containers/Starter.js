@@ -5,8 +5,8 @@ import {
     ListGroupItem,
 } from 'reactstrap';
 
-import * as roomsActions from "../store/rooms/actions";
-import * as roomsSelector from "../store/rooms/reducer";
+import * as roomsActions from '../store/rooms/actions';
+import * as roomsSelector from '../store/rooms/selectors';
 
 class Starter extends Component {
     constructor(props) {
