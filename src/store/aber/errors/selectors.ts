@@ -1,4 +1,4 @@
-import { Store } from 'store/reducers';
+import { Store } from '../..';
 
 export const getErrorId = (store: Store): number | undefined => {
   if (store.errors.errorId !== undefined) {

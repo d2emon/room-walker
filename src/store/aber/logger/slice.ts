@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Store } from 'store/reducers';
+import { Store } from '../..';
 import { Message } from '../../../services/logger';
 
 export interface LoggerState {

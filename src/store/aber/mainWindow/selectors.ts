@@ -1,4 +1,4 @@
-import { Store } from 'store/reducers';
+import { Store } from '../..';
 
 // Selectors
 export const getCanExit = (state: Store) => !state.mainWindow.inFight;

@@ -31,7 +31,7 @@ import {
   onWait,
 } from '../talker/thunks';
 */
-import {Store} from '../../reducers';
+import {Store} from '../..';
 import Users, { AddUserResponse, addUser, createCharacter, loadUser } from '../../../services/users';
 import { getPrompt } from '../talker/selectors';
 import { User, UserId } from 'services/users/types';

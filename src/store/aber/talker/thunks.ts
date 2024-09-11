@@ -13,7 +13,7 @@ import {
   EventsAction,
   forcedEvents,
 } from '../events/actions';
-import {Store} from '../../reducers';
+import {Store} from '../..';
 import Users from '../../../services/users';
 
 // Types

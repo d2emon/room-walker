@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Store } from 'store/reducers';
+import { Store } from '../..';
 
 export interface KeysState {
   isInInput: boolean,

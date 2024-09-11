@@ -14,6 +14,13 @@ export interface Store {
   rooms: RoomState,
   main: MainState,
   tk: TkState,
+  //
+  errors: any,
+  events: any,
+  keys: any,
+  logger: any,
+  mainWindow: any,
+  talker: any,
 }
 
 const store = configureStore({

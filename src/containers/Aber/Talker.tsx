@@ -8,7 +8,7 @@ import {
   CardTitle,
   Container,
 } from 'reactstrap';
-import { Store } from 'store/reducers';
+import { Store } from 'store';
 import { getDirty } from 'store/aber/keys/slice';
 import * as mainWindowActions from 'store/aber/mainWindow/thunks';
 import { getPrompt } from 'store/aber/talker/selectors';

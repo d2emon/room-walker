@@ -59,7 +59,7 @@ interface EventStorage {
   firstEventId: EventId;
   lastEventId: EventId;
   events: {
-    [k: EventId]: Event;
+    [k: string]: Event;
   };
 }
 

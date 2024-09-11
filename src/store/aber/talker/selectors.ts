@@ -1,4 +1,4 @@
-import { Store } from 'store/reducers';
+import { Store } from '../..';
 import {
   CONVERSATION_MODE_ACTION,
   CONVERSATION_MODE_SAY,

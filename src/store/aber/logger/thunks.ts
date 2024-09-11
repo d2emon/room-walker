@@ -3,7 +3,7 @@ import {
   ThunkAction,
   ThunkDispatch,
 } from 'redux-thunk';
-import {Store} from '../../reducers';
+import { Store } from '../..';
 import logger, { Message } from '../../../services/logger';
 import {
   LoggerAction,

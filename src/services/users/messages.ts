@@ -1,7 +1,7 @@
 import { UserId } from './types';
 
 interface MessageStorage {
-  [k: UserId]: string[];
+  [k: string]: string[];
 }
 
 const data: MessageStorage = {};
