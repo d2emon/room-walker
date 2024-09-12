@@ -8,12 +8,16 @@ import talkerReducer from './aber/talker/slice';
 import mainReducer, { MainState } from './main/slice';
 import roomsReducer, { RoomState } from './rooms/slice';
 // import reducer from './reducers';
-import tk, { TkState } from './tk/tkSlice';
+// import tk, { TkState } from './tk/tkSlice';
+import mudErrorReducer from './error/slice';
+import { ErrorStateInterface } from './error/interface';
+import mainMudReducer from './mudMain/slice';
+import { MainStateInterface } from './mudMain/interface';
 
 export interface Store {
   rooms: RoomState,
   main: MainState,
-  tk: TkState,
+  // tk: TkState,
   //
   errors: any,
   events: any,
@@ -21,6 +25,9 @@ export interface Store {
   logger: any,
   mainWindow: any,
   talker: any,
+
+  mudErrors: ErrorStateInterface,
+  mainMud: MainStateInterface,
 }
 
 const store = configureStore({
@@ -35,6 +42,9 @@ const store = configureStore({
     logger: loggerReducer,
     mainWindow: mainWindowReducer,
     talker: talkerReducer,
+
+    mudError: mudErrorReducer,
+    mainMud: mainMudReducer,
   },
 });
 
