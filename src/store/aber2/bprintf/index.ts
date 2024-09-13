@@ -20,7 +20,7 @@ Max 240 chars/msg */
 if(strlen(x)>235)
 {
   try{
-    syslog("Bprintf Short Buffer overflow");
+    LoggerAPI.addRecord("Bprintf Short Buffer overflow");
   } catch (e) {
     return loseme(e);
   }
@@ -159,7 +159,7 @@ int tocontinue(str,ct,x,mx)
 if(s>=mx)
 {
   try{
-    syslog("IO_TOcontinue overrun");
+    LoggerAPI.addRecord("IO_TOcontinue overrun");
   } catch (e) {
     return loseme(e);
   }
@@ -324,7 +324,7 @@ void quprnt(x)
        strcpy(sysbuf,"");
        loseme();
   try{
-    syslog("Buffer overflow on user %s",globme);
+    LoggerAPI.addRecord("Buffer overflow on user %s",globme);
   } catch (e) {
     return loseme(e);
   }

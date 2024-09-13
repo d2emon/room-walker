@@ -44,6 +44,7 @@ const sigOccur = () => async (
   dispatch(deactivate());
   await dispatch(onTimer());
   await dispatch(showReprint())
+  //
   dispatch(activate());
 };
 

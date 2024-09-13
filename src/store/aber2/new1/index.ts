@@ -1238,7 +1238,7 @@ STARE AT etc*/
      if(my_str>=0) return;
      closeworld();
   try{
-    syslog("%s slain magically",globme);
+    LoggerAPI.addRecord("%s slain magically",globme);
   } catch (e) {
     loseme(e);
   }

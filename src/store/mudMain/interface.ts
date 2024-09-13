@@ -2,6 +2,6 @@ export interface MainStateInterface {
   arg0: string;
   name: string;
 
-  userId: string;
+  authToken: string;
   hasStarted: boolean;
 };

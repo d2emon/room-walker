@@ -5,8 +5,8 @@ const initialState: MainStateInterface = {
   arg0: '',
   name: 'Phantom',
 
+  authToken: 'TOKEN',
   hasStarted: false,
-  userId: 'USER_ID',
 };
 
 interface SetNamePayload {

@@ -309,25 +309,6 @@ case ESTALE:; */
   talker(name)
   char *name;
      {
-     extern long curch,cms;
-     extern long mynum;
-     extern long maxu;
-     extern long rd_qd;
-     FILE *fl;
-     char string[128];
-     extern char globme[];
-     makebfr();
-         cms= -1;putmeon(name);
-     if(openworld()==NULL) {
-           return await dispatch(stopWithMessage('Sorry AberMUD is currently unavailable'));
-     }
-     if (mynum>=maxu) {printf("\nSorry AberMUD is full at the moment\n");return(0);}
-     strcpy(globme,name);
-     rte(name);
-         closeworld();
-     cms= -1;
-     special(".g",name);
-     i_setup=1;
      while(1)
         {
         pbfr();
@@ -392,7 +373,8 @@ case ESTALE:; */
            setpwpn(mynum,-1);
            setpsexall(mynum,my_sex);
            setphelping(mynum,-1);
-     const us = getUserId(getState());
+  const auth = AuthAPI.getUser();
+  const us = auth.userId;
            sprintf(xy,"\001s%s\001%s  has entered the game\n\001",name,name);
            sprintf(xx,"\001s%s\001[ %s  has entered the game ]\n\001",name,name);
            sendsys(name,name,-10113,curch,xx);
@@ -671,7 +653,7 @@ Lords ???? */
  extern long iamon;
  if(fpbns(globme)!= -1) {loseme();
    try{
-    syslog("System Wrapup exorcised %s",globme);
+    LoggerAPI.addRecord("System Wrapup exorcised %s",globme);
   } catch (e) {
     loseme(e);
   }

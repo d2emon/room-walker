@@ -1,11 +1,12 @@
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import { Store } from 'store';
-import { getArgsCount, getName, getUserId } from './selectors';
+import { getArgsCount, getAuthToken, getName } from './selectors';
 import { ErrorAction, setError } from 'store/error/slice';
-import { finalMessage, finish, main } from 'store/aber2/gamego/actions';
+import { finalMessage, finish } from 'store/aber2/gamego/actions';
 import { startGame } from './slice';
-import { syslog } from 'store/logger/actions';
 import { KeyAction, resetKeys, setFlags } from 'store/key/slice';
+import SystemAPI from 'services/api/system';
+import { start } from 'store/aber2/tk/actions';
 
 export const startMain = () => async (
   dispatch: ThunkDispatch<Store, null, ErrorAction | any>,
@@ -23,16 +24,16 @@ export const startMain = () => async (
   dispatch(startGame());
   dispatch(setFlags());
 
+  const token = getAuthToken(getState());
   const name = getName(getState());
-  const userId = getUserId(getState());
-  dispatch(syslog(`GAME ENTRY: ${name}[${userId}]`))
 
-  await dispatch(main(name));
+  await SystemAPI.start(token, name);
+  await dispatch(start(name));
 };
 
 const dashes = '\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n';
 
-const stopWithMessage = (message: string) => async (
+export const stopWithMessage = (message: string) => async (
   dispatch: ThunkDispatch<Store, null, ErrorAction | KeyAction>,
 ) => {
   await dispatch(finalMessage());

@@ -3,7 +3,7 @@
  */
 import { Dispatch, ThunkDispatch } from '@reduxjs/toolkit';
 import {
-  getGlobme, setGlobme, talker, pbfr,
+  getGlobme, pbfr,
   openworld, closeworld, rte, onTiming, loseme,
   setNeedReprint,
 } from '../external';
@@ -11,11 +11,6 @@ import { Store } from 'store';
 
 export const finish = (message?: string) => async (dispatch: Dispatch) => {
   loseme(message || '');
-};
-
-export const main = (name: string) => async (dispatch: ThunkDispatch<Store, null, any>) => {
-  setGlobme(name);
-  await talker(name);
 };
 
 export const finalMessage = () => async (dispatch: Dispatch<any>) => {

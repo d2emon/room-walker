@@ -1113,7 +1113,7 @@ You are in the ....*/
         }
      sendsys(pname(vic),globme,-10001,ploc(vic),"");
   try{
-    syslog("%s zapped %s",globme,pname(vic));
+    LoggerAPI.addRecord("%s zapped %s",globme,pname(vic));
   } catch (e) {
     loseme(e);
   }
@@ -1209,7 +1209,7 @@ Routine to correct me in user file*/
         my_lev=b;
         bprintf("You are now %s ",globme);
   try{
-    syslog("%s to level %d",globme,b);
+    LoggerAPI.addRecord("%s to level %d",globme,b);
   } catch (e) {
     loseme(e);
   }
@@ -1371,7 +1371,7 @@ Scaling factor*/
             return;
             }
   try{
-    syslog("%s exorcised %s",globme,pname(x));
+    LoggerAPI.addRecord("%s exorcised %s",globme,pname(x));
   } catch (e) {
     loseme(e);
   }
@@ -1826,7 +1826,7 @@ GOTOSS eek!*/
      extern char globme[];
      getreinput(x);
   try{
-    syslog("Bug by %s : %s",globme,x);
+    LoggerAPI.addRecord("Bug by %s : %s",globme,x);
   } catch (e) {
     loseme(e);
   }
@@ -1840,7 +1840,7 @@ GOTOSS eek!*/
      sprintf(y,"%s in %d",globme,curch);
      getreinput(x);
   try{
-    syslog("Typo by %s : %s",y,x);
+    LoggerAPI.addRecord("Typo by %s : %s",y,x);
   } catch (e) {
     loseme(e);
   }

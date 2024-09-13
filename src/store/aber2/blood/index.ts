@@ -232,7 +232,7 @@ void hitplayer(victim,wpn)
      if(my_str<0)
      {
   try{
-    syslog("%s slain by %s",globme,pname(array[0]));
+    LoggerAPI.addRecord("%s slain by %s",globme,pname(array[0]));
   } catch (e) {
     loseme(e);
   }

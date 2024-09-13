@@ -29,9 +29,18 @@ export const getObject = (itemId: number) => ({
   value: 0,
 });
 
-export const getMynum = () => 0;
 export const getMaxu = () => 0;
 export const getNumobs = () => 0;
+
+export const getCurch = () => 0;
+
+export const getCms = () => 0;
+export const setCms = (value: number) => null;
+
+export const getMynum = () => 0;
+export const getRdQd = () => false;
+
+export const setISetup = (value: boolean) => null;
 
 // ----
 
@@ -46,18 +55,20 @@ export const cuserid = () => 0;
 export const iscarrby = (itemId: number, playerId: number) => false;
 export const ishere = (itemId: number, location?: number) => false;
 export const loseme = (e: string) => null;
+export const makebfr = async () => null;
 export const onTiming = async () => null;
-export const openworld = async () => null;
+export const openworld = async () => true;
 export const pbfr = async (needNewLine: boolean = false) => null;
+export const putmeon = async (name: string) => null;
 export const rte = async (name: string, interrupt?: boolean) => null;
-export const talker = async (name: string) => null;
+export const special = async (command:string, name: string) => null;
 // export const fgetsAll = async (file: any, maxLength: number, handler: (record: string) => Promise<void>) => null;
 // export const fcloselock = async (file: any) => null;
 // export const getchar = async () => '';
 // export const getcharWait = async (char: string) => null;
 
 // export const printf = (message: string) => null;
-export const getcharWait = async (maxLength: number) => '';
+// export const getcharWait = async (maxLength: number) => '';
 
 /*
 gepass() {

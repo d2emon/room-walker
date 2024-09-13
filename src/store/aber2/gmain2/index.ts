@@ -165,9 +165,10 @@ The initial routine */
             fgets(space,399,stdin);
             printf("\n\n");
         }
-     const space = getUserId(getState());
+  const auth = AuthAPI.getUser();
+  const space = auth.userId;
   try{
-    syslog("Game entry by %s : UID %s",user,space);
+    LoggerAPI.addRecord("Game entry by %s : UID %s",user,space);
   } catch (e) {
     loseme(e);
   }
