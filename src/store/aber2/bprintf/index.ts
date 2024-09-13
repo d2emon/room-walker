@@ -21,9 +21,9 @@ if(strlen(x)>235)
   try{
     syslog("Bprintf Short Buffer overflow");
   } catch (e) {
-    loseme(e);
+    return loseme(e);
   }
-crapup("Internal Error in BPRINTF");
+  return await dispatch(stopWithMessage('Internal Error in BPRINTF'));
 }
     */
 /*
@@ -69,7 +69,7 @@ void dcprnt(str,file)
              ct=pnotkb(str,ct,file);continue;
           default:
              strcpy(str,"");
-             loseme();crapup("Internal $ control sequence error\n");
+             loseme("Internal $ control sequence error\n");
              }
        }
     }
@@ -160,10 +160,10 @@ if(s>=mx)
   try{
     syslog("IO_TOcontinue overrun");
   } catch (e) {
-    loseme(e);
+    return loseme(e);
   }
 strcpy(str,"");
-crapup("Buffer OverRun in IO_TOcontinue");
+  return await dispatch(stopWithMessage('Buffer OverRun in IO_TOcontinue'));
 }
     return(ct+1);
     }
@@ -232,7 +232,9 @@ void makebfr()
 4K of chars should be enough for worst case*/
 /*
 
-    if(sysbuf==NULL) crapup("Out Of Memory");
+    if(sysbuf==NULL) {
+      return await dispatch(stopWithMessage('Out Of Memory'));
+    }
     sysbuf[0]=0;
     }
     
@@ -272,7 +274,8 @@ void pbfr()
     {
     FILE *fln;
     long mu;
-    block_alarm();
+    dispatch(pause());
+
     closeworld();
     if(strlen(sysbuf)) pr_due=1;
     if((strlen(sysbuf))&&(pr_qcr)) putchar('\n');
@@ -300,7 +303,8 @@ clear buffer*/
 /*
 
     if(snoopt!=-1) viewsnoop();
-    unblock_alarm();
+
+    dispatch(resume());
     }
 
 long iskb=1;
@@ -315,9 +319,9 @@ void quprnt(x)
   try{
     syslog("Buffer overflow on user %s",globme);
   } catch (e) {
-    loseme(e);
+    return loseme(e);
   }
-       crapup("PANIC - Buffer overflow");
+           return await dispatch(stopWithMessage('PANIC - Buffer overflow'));
        }
     strcat(sysbuf,x);
     }

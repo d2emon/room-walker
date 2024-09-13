@@ -104,7 +104,7 @@ Door is 6 panel 49
         case 20:
            bprintf("You can't shift the door from this side!!!!\n");break;
         default:
-           if(otstbit(a,2)==0)
+           if(!getItem(a).canBeOpened)
               {
               bprintf("You can't open that\n");
               return;
@@ -128,7 +128,7 @@ Door is 6 panel 49
      {
      extern long objinfo[];
      objinfo[4*o+1]=v;
-     if(otstbit(o,1)) objinfo[4*(o^1)+1]=v;
+     if(getItem(o).hasConnected) objinfo[4*(o^1)+1]=v;
   
      }
   
@@ -148,7 +148,7 @@ Door is 6 panel 49
               }
               break;
         default:
-           if(otstbit(a,2)==0)
+           if(!getItem(a).canBeOpened)
               {
               bprintf("You can't close that\n");
               return;
@@ -177,7 +177,7 @@ Door is 6 panel 49
      switch(a)
         {
         default:
-           if(!otstbit(a,3))
+           if(!getItem(a).canBeLocked)
               {
               bprintf("You can't lock that!\n");
               return;
@@ -206,7 +206,7 @@ Door is 6 panel 49
      switch(a)
         {
         default:
-           if(!otstbit(a,3))
+           if(!getItem(a).canBeLocked)
               {
               bprintf("You can't unlock that\n");
               return;
@@ -304,9 +304,9 @@ Door is 6 panel 49
          getItem(10).special = a;
          getItem(10).flags[9] = true;
          getItem(10).flags[10] = true;
-        if(otstbit(a,13))
+        if(getItem(10).isLight)
            {
-            getItem(10).flags[LIGHT] = true;
+            getItem(10).isLight = true;
            setstate(10,0);
            return;
            }
@@ -369,7 +369,7 @@ Door is 6 panel 49
          bprintf("What do you think this is, the goon show ?\n");
      return;
      }
-     if(otstbit(c,14)==0) {bprintf("You can't do that\n");return;}
+     if(!getItem(c).isContainer) {bprintf("You can't do that\n");return;}
      if(state(c)!=0){bprintf("That's not open\n");return;}
      if(oflannel(a))
      {
@@ -386,7 +386,7 @@ Door is 6 panel 49
      bprintf("Ok.\n");
      sprintf(ar,"\001D%s\001\001c puts the %s in the %s.\n\001",globme,oname(a),oname(c));
      sendsys(globme,globme,-10000,curch,ar);
-     if(otstbit(a,12)) setstate(a,0);
+     if(getItem(a).changeStateOnPut) setstate(a,0);
      if(curch==-1081) 
      {
      setstate(20,1);
@@ -408,7 +408,7 @@ Door is 6 panel 49
      switch(a)
         {
         default:
-           if(!otstbit(a,9))
+           if(!getItem(a).canBeLight)
               {
               bprintf("You can't light that!\n");
               return;
@@ -432,12 +432,12 @@ Door is 6 panel 49
      switch(a)
         {
         default:
-           if(!otstbit(a,13))
+           if(!getItem(a).isLight)
               {
               bprintf("That isn't lit\n");
               return;
               }
-           if(!otstbit(a,10))
+           if(!getItem(a).canBeExtinguished)
               {
               bprintf("You can't extinguish that!\n");
               return;
@@ -471,8 +471,7 @@ Door is 6 panel 49
         case 126:
            bprintf("The tripwire moves and a huge stone crashes down from above!\n");
            broad("\001dYou hear a thud and a squelch in the distance.\n\001");
-           loseme();
-           crapup("             S   P    L      A         T           !");
+           loseme("             S   P    L      A         T           !");
         case 162:
            bprintf("A trapdoor opens at your feet and you plumment downwards!\n");
            curch= -140;trapch(curch);
@@ -561,13 +560,13 @@ ELSE RUN INTO DEFAULT*/
      goto def2;
         default:;
               def2:
-           if(otstbit(x,4))
+           if(getItem(x).setStateOnPush)
               {
               setstate(x,0);
               oplong(x);
               return;
               }
-           if(otstbit(x,5))
+           if(getItem(x).switchStateOnPush)
               {
               setstate(x,1-state(x));
               oplong(x);
@@ -790,8 +789,7 @@ MARK ALREADY DEAD*/
      if(a==mynum)
         {
         bprintf("With a sudden attack of morality the machine edits your persona\n");
-        loseme();
-        crapup("Bye....... LINE TERMINATED - MORALITY REASONS");
+        loseme("Bye....... LINE TERMINATED - MORALITY REASONS");
         }
      sillytp(a,"gropes you");
      bprintf("<Well what sort of noise do you want here ?>\n");
@@ -1253,7 +1251,7 @@ STARE AT etc*/
      sendsys(globme,globme,-10000,curch,ms);
      sprintf(ms,"[ %s has just died ]\n",globme);
      sendsys(globme,globme,-10113,curch,ms);
-     crapup("Oh dear you just died\n");
+           return await dispatch(stopWithMessage('Oh dear you just died\n'));
      }
   
   woundmn(mon,am)
@@ -1464,7 +1462,7 @@ STARE AT etc*/
      switch(a)
         {
         default:
-           if(otstbit(a,8)) return(1);
+           if(getItem(a).canBeWeared) return(1);
            return(0);
            }
      }

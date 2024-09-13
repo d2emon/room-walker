@@ -47,7 +47,7 @@ export const getchar = async () => '';
 export const getcharWait = async (char: string) => null;
 export const openworld = async () => null;
 export const closeworld = async () => null;
-export const rte = async (name: string) => null;
+export const rte = async (name: string, interrupt?: boolean) => null;
 export const onTiming = async () => null;
 export const keyReprint = () => null;
 export const loseme = (e: string) => null;

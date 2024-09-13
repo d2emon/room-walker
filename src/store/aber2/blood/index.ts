@@ -16,7 +16,7 @@ long it;
     switch(it)
        {
 case -1:return(4);
-default:if(!otstbit(it,15))return(-1);
+default:if(!getItem(15).isWeapon)return(-1);
 else return(getItem(it).damage);
           }
 
@@ -246,7 +246,7 @@ void hitplayer(victim,wpn)
            sendsys(globme,globme,-10000,curch,ms);
            sprintf(ms,"[ \001p%s\001 has been slain by \001p%s\001 ]\n",globme,pname(array[0]));
            sendsys(globme,globme,-10113,curch,ms);
-           crapup("Oh dear... you seem to be slightly dead\n");
+           return await dispatch(stopWithMessage('Oh dear... you seem to be slightly dead\n'));
            }
         me_cal=1;  */
 /*Queue an update when ready  */

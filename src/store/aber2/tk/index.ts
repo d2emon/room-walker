@@ -11,17 +11,10 @@
  *
  */
 /*
- 
- #include "files.h"
- #include "flock.h"
- 
+
  long i_setup=0;
  long oddcat=0;
  long  talkfl=0;
- 
- #include <stdio.h>
- #include <sys/errno.h>
- #include <sys/file.h>
  
  extern FILE * openlock();
  extern char globme[];
@@ -144,9 +137,11 @@ Print appropriate stuff from data block */
      if(pvis(mynum)==0) {
        dispatch(setName({ argId: 0, value: work }));
      }
-     sig_alon();
+
+     dispatch(activate());
      key_input(prmpt,80);
-     sig_aloff();
+     dispatch(deactivate());
+
      strcpy(work,key_buff);
  if(tty==4) topscr();
  strcat(sysbuf,"\001l");
@@ -203,7 +198,7 @@ Print appropriate stuff from data block */
      extern char globme[];
      extern char *echoback;
          unit=openworld();
-     if (unit<0) {loseme();crapup("\nAberMUD: FILE_ACCESS : Access failed\n");}
+     if (unit<0) {loseme("\nAberMUD: FILE_ACCESS : Access failed\n");}
      sec_read(unit,inpbk,0,64);
      number=2*inpbk[1]-inpbk[0];inpbk[1]++;
      sec_write(unit,block,number,128);
@@ -238,7 +233,9 @@ Print appropriate stuff from data block */
      long too,ct,block[128];
      unit=openworld();
      fl_com=unit;
-     if (unit==NULL) crapup("AberMUD: FILE_ACCESS : Access failed\n");
+     if (unit==NULL) {
+           return await dispatch(stopWithMessage('AberMUD: FILE_ACCESS : Access failed\n'));
+     }
      if (cms== -1) cms=findend(unit);
      too=findend(unit);
      ct=cms;
@@ -278,14 +275,16 @@ INTERRUPTED SYSTEM CALL CATCH */
 
      switch(errno)
      {
-         case ENOSPC:crapup("PANIC exit device full\n");
+         case ENOSPC:
+                       return await dispatch(stopWithMessage('PANIC exit device full\n'));
  */
 /*
 case ESTALE:; */
 /*
 
          case EHOSTDOWN:;
-         case EHOSTUNREACH:crapup("PANIC exit access failure, NFS gone for a snooze");
+         case EHOSTUNREACH:
+                       return await dispatch(stopWithMessage('PANIC exit access failure, NFS gone for a snooze'));
      }
      return(unit);
      }
@@ -319,7 +318,9 @@ case ESTALE:; */
      extern char globme[];
      makebfr();
          cms= -1;putmeon(name);
-     if(openworld()==NULL) crapup("Sorry AberMUD is currently unavailable");
+     if(openworld()==NULL) {
+           return await dispatch(stopWithMessage('Sorry AberMUD is currently unavailable'));
+     }
      if (mynum>=maxu) {printf("\nSorry AberMUD is full at the moment\n");return(0);}
      strcpy(globme,name);
      rte(name);
@@ -494,7 +495,7 @@ Illegal name so natural immunes are ungettable! */
      f=0;
      if(fpbn(name)!= -1)
         {
-        crapup("You are already on the system - you may only be on once at a time");
+           return await dispatch(stopWithMessage('You are already on the system - you may only be on once at a time'));
         }
      while((f==0)&&(ct<maxu))
         {
@@ -527,8 +528,9 @@ Illegal name so natural immunes are ungettable! */
  extern long zapped;
  char bk[128];
  extern char globme[];
- FILE *unit;  
- sig_aloff();  */
+ FILE *unit;
+   dispatch(deactivate());
+*/
 /*
 No interruptions while you are busy dying */
              /* ABOUT 2 MINUTES OR SO */
@@ -630,8 +632,7 @@ Lords ???? */
               if(my_lev>9)bprintf("<DEATH ROOM>\n");
               else
                  {
-                 loseme(globme);
-                 crapup("bye bye.....\n");
+                 loseme("bye bye.....\n");
                  }
               }
            else

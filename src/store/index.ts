@@ -13,6 +13,8 @@ import mudErrorReducer from './error/slice';
 import { ErrorStateInterface } from './error/interface';
 import mainMudReducer from './mudMain/slice';
 import { MainStateInterface } from './mudMain/interface';
+import signalReducer from './signals/slice';
+import { SignalStateInterface } from './signals/interface';
 
 export interface Store {
   rooms: RoomState,
@@ -28,6 +30,7 @@ export interface Store {
 
   mudErrors: ErrorStateInterface,
   mainMud: MainStateInterface,
+  signals: SignalStateInterface,
 }
 
 const store = configureStore({
@@ -45,6 +48,7 @@ const store = configureStore({
 
     mudError: mudErrorReducer,
     mainMud: mainMudReducer,
+    signals: signalReducer,
   },
 });
 

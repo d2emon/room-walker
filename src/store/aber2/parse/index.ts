@@ -281,7 +281,7 @@ Otherwise drops out after command*/
            closeworld();
            curmode=0;curch=0;
            saveme();
-           crapup("Goodbye");
+           return await dispatch(stopWithMessage('Goodbye'));
            break;
         case 9:
            getobj();
@@ -859,8 +859,7 @@ Invis doors*/
            setpvis(i[0],i[1]);break;
         case -666:
            bprintf("Something Very Evil Has Just Happened...\n");
-           loseme();
-           crapup("Bye Bye Cruel World....");
+           loseme("Bye Bye Cruel World....");
         case -599:
            if(isme)
               {
@@ -944,7 +943,7 @@ You are in the ....*/
                  loseme();
                  bprintf("You have been utterly destroyed by %s\n",nam2);
  
-                 crapup("Bye Bye.... Slain By Lightning");
+           return await dispatch(stopWithMessage('Bye Bye.... Slain By Lightning'));
                  }
               }
            else if (blok[0]==curch)
@@ -973,8 +972,7 @@ You are in the ....*/
         case -10010:
            if(isme==1)
               {
-              loseme();
-              crapup("You have been kicked off");
+              loseme("You have been kicked off");
               }
            else
               bprintf("%s has been kicked off\n",nam1);
@@ -1178,7 +1176,7 @@ DIE*/
               }
            break;
         default:
-           if(otstbit(b,6))
+           if(getItem(b).canBeEat)
               {
               destroy(b);
               bprintf("Ok....\n");
@@ -1631,8 +1629,7 @@ CODE NUMBER*/
      openworld();
      if(fpbns(globme)== -1)
         {
-        loseme();
-        crapup("You have been kicked off");
+        loseme("You have been kicked off");
         }
      sprintf(ms,"\001s%s\001%s re-enters the normal universe\n\001",globme,globme);
      sendsys(globme,globme,-10113,0,ms);
@@ -1660,8 +1657,7 @@ CODE NUMBER*/
      cms= -1;
      if(fpbns(globme)== -1)
         {
-        loseme();
-        crapup("You have been kicked off");
+        loseme("You have been kicked off");
         }
      rte();
      openworld();
@@ -1882,12 +1878,12 @@ GOTOSS eek!*/
          bprintf("What ?\n");
          return;
      }
-     if(!otstbit(a,14))
+     if(!getItem(b).isContainer)
      {
          bprintf("That isn't a container\n");
          return;
      }
-     if((otstbit(a,2))&&(state(a)!=0))
+     if((getItem(b).canBeOpened)&&(state(a)!=0))
      {
          bprintf("It's closed!\n");
          return;

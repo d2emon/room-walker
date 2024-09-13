@@ -276,7 +276,7 @@
      sprintf(bf,"\001D%s\001\001c takes the %s\n\001",globme,oname(a));
     bprintf("Ok...\n");
      sendsys(globme,globme,-10000,curch,bf);
- if(otstbit(a,12)) setstate(a,0);
+ if(getItem(a).changeStateOnPut) setstate(a,0);
  if(curch==-1081) 
  {
      setstate(20,1);

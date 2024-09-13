@@ -198,7 +198,7 @@ else
        case 8:
           if(state(7)!=0)
              {
-             if((iscarrby(3+state(7),mynum))&&(otstbit(3+state(7),13)))
+             if((iscarrby(3+state(7),mynum))&&(getItem(3+state(7)).isLight))
                 {
                 bprintf("Everything shimmers and then solidifies into a different view!\n");
                 destroy(8);
@@ -353,8 +353,7 @@ if(unit==NULL){curch=y;bprintf("No such room\n");return;}
  	curch=b;
  bprintf("Wheeeeeeeeeeeeeeeee  <<<<SPLAT>>>>\n");
  bprintf("You seem to be splattered all over the place\n");
- loseme();
- crapup("I suppose you could be scraped up - with a spatula");
+ loseme("I suppose you could be scraped up - with a spatula");
  }
  sprintf(ms,"\001s%s\001%s has just left\n\001",globme,globme);
  sendsys(globme,globme,-10000,curch,ms);

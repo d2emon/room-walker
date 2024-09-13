@@ -234,8 +234,7 @@ errk:t=my_lev ;
     /*
        bprintf( "The dragon sneezes forth a massive ball of flame.....\n" ) ;
        bprintf( "Unfortunately you seem to have been fried\n" ) ;
-       loseme(  ) ;
-       crapup( "Whoops.....   Frying tonight" ) ;
+       loseme( "Whoops.....   Frying tonight" ) ;
        }
     }
  

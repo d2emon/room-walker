@@ -10,7 +10,7 @@
  * are elsewhere
  */
 
-import { bitClear, bitFetch, bitSet, byteFetch, bytePut, getGlobme, getMaxu, getMynum, getNumobs, getObject, getObjinfo, getUblock, iscarrby, ishere, setObjinfo, setUblock } from '../external';
+import { bitClear, bitFetch, bitSet, byteFetch, getGlobme, getMaxu, getMynum, getNumobs, getObject, getObjinfo, getUblock, iscarrby, ishere, setObjinfo, setUblock } from '../external';
 
 export const itemLocationId = (itemId: number) => getObjinfo(4 * itemId + 0);
 
@@ -19,13 +19,21 @@ const setItemFlag = (itemId: number, flagId: number) => bitSet(getObjinfo(4 * it
  const removeItemFlag = (itemId: number, flagId: number) => bitClear(getObjinfo(4 * itemId + 2), flagId);
 
 export const getItemIsDestroyed = (itemId: number) => itemFlags(itemId, 0);
-// export const getItemIsLight = (itemId: number) => itemFlags(itemId, 9);
-// export const getItemIsLight = (itemId: number) => itemFlags(itemId, 10);
+export const getItemHasConnected = (itemId: number) => itemFlags(itemId, 1);
+export const getItemCanBeOpened = (itemId: number) => itemFlags(itemId, 2);
+export const getItemCanBeLocked = (itemId: number) => itemFlags(itemId, 3);
+export const getItemSetStateOnPush = (itemId: number) => itemFlags(itemId, 4);
+export const getItemSwitchStateOnPush = (itemId: number) => itemFlags(itemId, 5);
+export const getItemCanBeEat = (itemId: number) => itemFlags(itemId, 6);
+export const getItemCanBeWeared = (itemId: number) => itemFlags(itemId, 8);
+export const getItemCanBeLight = (itemId: number) => itemFlags(itemId, 9);
+export const getItemCanBeExtinguished = (itemId: number) => itemFlags(itemId, 10);
+export const getItemChangeStateOnPut = (itemId: number) => itemFlags(itemId, 12);
 export const getItemIsLight = (itemId: number) => itemFlags(itemId, 13);
+export const getItemIsContainer = (itemId: number) => itemFlags(itemId, 14);
+export const getItemIsWeapon = (itemId: number) => itemFlags(itemId, 15);
 
 export const setItemIsDestroyed = (itemId: number, value: boolean) => value ? setItemFlag(itemId, 0) : removeItemFlag(itemId, 0);
-// export const setItemIsLight = (itemId: number, value: boolean) => value ? setItemFlag(itemId, 9) : removeItemFlag(itemId, 9);
-// export const setItemIsLight = (itemId: number, value: boolean) => value ? setItemFlag(itemId, 10) : removeItemFlag(itemId, 10);
 export const setItemIsLight = (itemId: number, value: boolean) => value ? setItemFlag(itemId, 13) : removeItemFlag(itemId, 13);
 
 export const itemCreate = (itemId: number) => setItemIsDestroyed(itemId, false);
@@ -47,8 +55,6 @@ const setItemLocationId = (itemId: number, locationId: number, carryFlag: number
 export const setItemIsLocatedAt = (itemId: number, locationId: number) => setItemLocationId(itemId, locationId, 0);
 export const setItemIsCarriedBy = (itemId: number, locationId: number) => setItemLocationId(itemId, locationId, 1);
 export const setItemIsContainedIn = (itemId: number, locationId: number) => setItemLocationId(itemId, locationId, 3);
-
-const otstbit = (itemId: number, value: number) => bitFetch(getObjinfo(4 * itemId + 2), value);
 
 const oname = (itemId: number) => getObject(itemId).name;
 const olongt = (itemId: number, state: number) => getObject(itemId).desc[state];

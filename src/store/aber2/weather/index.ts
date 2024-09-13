@@ -407,7 +407,7 @@ bitset:if(brkword()==-1)
        	b=numarg(wordbuf);
        	if(brkword()==-1)
        	{
-       	   bprintf("The bit is %s\n",otstbit(a,b)?"TRUE":"FALSE");
+       	   bprintf("The bit is %s\n",getItem(a).flags[b]?"TRUE":"FALSE");
        	   return;
        	}
        	c=numarg(wordbuf);
@@ -471,7 +471,7 @@ if((curch<-399)||(curch>-300)) return(0);
 idk:c=0;
 while(c<numobs)
 {
-if((c!=32)&&(otstbit(c,13)==0)) {c++;continue;}
+if((c!=32)&& !getItem(c).isLight) {c++;continue;}
 if(ishere(c)) return(0);
 if((getItem(c).isLocatedAt)||(getItem(a).isContainedIn)) {c++;continue;}
 if(ploc(getItem(c).locationId)!=curch) {c++;continue;}
