@@ -59,7 +59,9 @@ if(brkword()!= -1)
        {
        bprintf("Hit <Return> For More....\n");
        pbfr();
-       while(getchar()!='\n');
+
+       await waitForEnter();
+
        bprintf("\001f%s\001",HELP2);
        }
     bprintf("\n");
@@ -67,7 +69,9 @@ if(brkword()!= -1)
        {
        bprintf("Hit <Return> For More....\n");
        pbfr();
-       while(getchar()!='\n');
+
+       await waitForEnter();
+
        bprintf("\001f%s\001",HELP3);
        }
     bprintf("\n");

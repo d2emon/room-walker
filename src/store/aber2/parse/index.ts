@@ -1589,10 +1589,11 @@ a=player*/
         }
      getreinput(s);
      closeworld();
-     keysetback();
+
+      dispatch(resetKeys());
      if(getuid()==geteuid()) system(s);
      else bprintf("Not permitted on this ID\n");
-     keysetup();
+      dispatch(setFlags());
      }
   
   rmeditcom()
@@ -1725,8 +1726,10 @@ GOTOSS eek!*/
         }
      sprintf(x,"%s has quit, via BECOME\n",globme);
      sendsys("","",-10113,0,x);
-     keysetback();
-     loseme();
+
+  dispatch(resetKeys());
+
+  loseme();
      closeworld();
      sprintf(x,"-n%s",x2);
      execl(EXE2,"   --}----- ABERMUD ------   ",x,0);	*/

@@ -161,9 +161,12 @@ initme()
 	my_lev=1;
 	moan1:bprintf("\nSex (M/F) : ");
 	pbfr();
-	keysetback();
-	getkbd(s,2);
-	keysetup();
+
+        dispatch(resetKeys());
+	    <Getkbd maxLength={2} onChange={(s) => {
+          dispatch(setFlags());
+		}} />
+
 	lowercase(s);
 	switch(s[0])
 	{

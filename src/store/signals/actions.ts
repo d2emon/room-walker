@@ -4,9 +4,10 @@ import { ErrorAction, setError } from 'store/error/slice';
 import { stopMain } from 'store/mudMain/actions';
 import { MainAction } from 'store/mudMain/slice';
 import { onTimer } from 'store/aber2/gamego/actions';
-import { GamegoAction } from 'store/aber2/gamego/slice';
 import { getIsActive } from './selectors';
 import { SignalAction, activate, deactivate } from './slice';
+import { resetKeys } from 'store/key/slice';
+import { showReprint } from 'store/key/actions';
 
 const sigNone = () => null;
     
@@ -28,12 +29,12 @@ const sigOops = () => async (
 ) => {
   await dispatch(stopMain());
 
-  // keysetback();
+  dispatch(resetKeys());
   dispatch(setError({ code: 255 }));
 };
 
 const sigOccur = () => async (
-  dispatch: ThunkDispatch<Store, null,  SignalAction | GamegoAction>,
+  dispatch: ThunkDispatch<Store, null,  SignalAction | any>,
   getState: () => Store,
 ) => {
   if (!getIsActive(getState())) {
@@ -42,6 +43,7 @@ const sigOccur = () => async (
 
   dispatch(deactivate());
   await dispatch(onTimer());
+  await dispatch(showReprint())
   dispatch(activate());
 };
 
@@ -51,4 +53,4 @@ export const sigterm = sigCtrlc;
 export const sigtstp = sigNone;
 export const sigquit = sigNone;
 export const sigcont = sigOops;
-export const _sigcont = sigOccur;
+export const sigalrm = sigOccur;

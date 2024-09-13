@@ -165,7 +165,7 @@ The initial routine */
             fgets(space,399,stdin);
             printf("\n\n");
         }
-     cuserid(space);
+     const space = getUserId(getState());
   try{
     syslog("Game entry by %s : UID %s",user,space);
   } catch (e) {
@@ -207,7 +207,7 @@ The whole login system is called from this*/
   *
 */
 /*
-     chkbnid(cuserid(NULL));
+     chkbnid(getUserId(getState()));
 */
 /*
    *	Get the user name
@@ -339,10 +339,8 @@ save for new user*/
         a=scan(uid,block,0,"",".");
         a=scan(pwd,block,a+1,"",".");
         tries=0;
-        pastry:printf("\nThis persona already exists, what is the password ?\n*");
-        fflush(stdout);
-        gepass(block);
-        printf("\n");
+        pastry:printf("\nThis persona already exists, what is the password ?\n");
+        <Gepass onChange={block} />
         if (strcmp(block,pwd))
            {
            if (tries<2) {tries++;goto pastry;}
@@ -359,9 +357,8 @@ this bit registers the new user*/
         {
          printf("Creating new persona...\n");
          printf("Give me a password for this persona\n");
-         repass:printf("*");fflush(stdout);
-             gepass(block);
-             printf("\n");
+         repass:
+        <Gepass onChange={block} />
              if (any('.',block)!= -1)
                  {
                      printf("Illegal character in password\n");
@@ -527,26 +524,22 @@ Change your password */
      strcpy(user,data);
      a=scan(data,block,0,"",".");
      a=scan(pwd,block,a+1,"",".");
-     printf("\nOld Password\n*");
-     fflush(stdout);
-     gepass(data);
-     if(strcmp(data,pwd)) printf("\nIncorrect Password\n");
+     printf("\nOld Password\n");
+        <Gepass onChange={data} />
+     if(strcmp(data,pwd)) printf("Incorrect Password\n");
      else
         {
-        printf("\nNew Password\n");
-        chptagn:printf("*");
-        fflush(stdout);
-        gepass(pwd);
-        printf("\n");
+        printf("New Password\n");
+        chptagn:
+        <Gepass onChange={pwd} />
         if (!strlen(pwd)) goto chptagn;
         if (strchr(pwd,',')) 
      {
          printf("Illegal Character in password\n");
          goto chptagn;
      }
-        printf("\nVerify Password\n*");
-        gepass(pv);
-        printf("\n");
+        printf("\nVerify Password\n");
+        <Gepass onChange={pv} />
         if (strcmp(pv,pwd))
         {
          printf("\nNO!\n");

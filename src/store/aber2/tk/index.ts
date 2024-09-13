@@ -28,7 +28,7 @@
  extern char * pname();
  extern char * oname();
  extern long ppos();
- extern char key_buff[];
+ 
  long cms= -1;
  long curch=0;
   
@@ -101,7 +101,6 @@ Print appropriate stuff from data block */
  extern long tty;
      char work[200];
      long w2[35];
-     extern char key_buff[];
      extern long convflg;
      extern long my_lev;
  extern long my_str;
@@ -138,11 +137,12 @@ Print appropriate stuff from data block */
        dispatch(setName({ argId: 0, value: work }));
      }
 
-     dispatch(activate());
-     key_input(prmpt,80);
-     dispatch(deactivate());
+     await dispatch(beforeKeyInput(prmpt));
 
-     strcpy(work,key_buff);
+     <Input onChange={keyInput} maxLength={80} />
+
+     const work = getKeyBuffer(getState());
+
  if(tty==4) topscr();
  strcat(sysbuf,"\001l");
  strcat(sysbuf,work);
@@ -392,7 +392,7 @@ case ESTALE:; */
            setpwpn(mynum,-1);
            setpsexall(mynum,my_sex);
            setphelping(mynum,-1);
-           cuserid(us);
+     const us = getUserId(getState());
            sprintf(xy,"\001s%s\001%s  has entered the game\n\001",name,name);
            sprintf(xx,"\001s%s\001[ %s  has entered the game ]\n\001",name,name);
            sendsys(name,name,-10113,curch,xx);
@@ -681,7 +681,6 @@ Lords ???? */
  fcloselock(file)
  FILE *file;
  {
-     fflush(file);
      flock(fileno(file),LOCK_UN);
      fclose(file);
  }

@@ -9,3 +9,4 @@ export const getName = (store: Store): string => (store.mainMud.name === 'Phanto
   ? `The ${store.mainMud.name}`
   : store.mainMud.name;
 export const getHasStarted = (store: Store): boolean => store.mainMud.hasStarted;
+export const getUserId = (store: Store): string => store.mainMud.userId;

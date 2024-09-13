@@ -6,6 +6,7 @@ const initialState: MainStateInterface = {
   name: 'Phantom',
 
   hasStarted: false,
+  userId: 'USER_ID',
 };
 
 interface SetNamePayload {
