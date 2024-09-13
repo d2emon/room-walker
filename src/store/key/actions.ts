@@ -1,6 +1,6 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import { KeyAction, setBuffer, setPrompt } from './slice';
-import { bprintf, pbfr, setPrDue, setPrQcr } from '../aber2/external';
+import { bprintf, pbfr, setNeedReprint } from '../aber2/external';
 import { activate, deactivate } from 'store/signals/slice';
 
 export const beforeKeyInput = (prompt: string) => async (dispatch: Dispatch<KeyAction>) => {
@@ -10,7 +10,7 @@ export const beforeKeyInput = (prompt: string) => async (dispatch: Dispatch<KeyA
   await bprintf(prompt);
   await pbfr();
 
-  setPrDue(false);
+  setNeedReprint(false);
 }
 
 export const keyInput = (keyInput: string) => async (dispatch: Dispatch<KeyAction>) => {
@@ -21,13 +21,12 @@ export const keyInput = (keyInput: string) => async (dispatch: Dispatch<KeyActio
 export const showReprint = () => async (
   dispatch: Dispatch<KeyAction>,
 ) => {
-  setPrQcr(true);
-  await pbfr();
+  await pbfr(true);
 }
 
 export const afterReprint = () => async (
   dispatch: Dispatch<KeyAction>,
 ) => {
-  setPrDue(false);
+  setNeedReprint(false);
 }
   

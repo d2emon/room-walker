@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include "System.h"
 
-long pr_due=0;
+long getHadReprint = 0;
+long setHadReprint = 0;
 
 void bprintf(args,arg1,arg2,arg3,arg4,arg5,arg6,arg7)
 char *args,*arg1,*arg2,*arg3,*arg4,*arg5,*arg6,*arg7;
@@ -268,18 +269,24 @@ void logcom()
     bprintf("The log will be written to the file 'mud_log'\n");
     }
 
-long pr_qcr; 
-
-void pbfr()
+void pbfr(needNewLine = false)
     {
     FILE *fln;
     long mu;
     dispatch(pause());
 
     closeworld();
-    if(strlen(sysbuf)) pr_due=1;
-    if((strlen(sysbuf))&&(pr_qcr)) putchar('\n');
-    pr_qcr=0;
+    if(strlen(sysbuf)) {
+      setNeedReprint(true);
+    }
+    if(needNewLine or getNeedNewLine) {
+      if (strlen(sysbuf)) {
+        putchar('\n');
+        setNeedNewLine(false);
+      } else {
+        setNeedNewLine(true);
+      }
+    }
     if(log_fl!=NULL)
        {
        iskb=0;

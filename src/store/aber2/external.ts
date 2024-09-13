@@ -7,10 +7,8 @@ export const setGlobme = (value: string) => null;
 // export const getTty = () => 0;
 // export const setTty = (value: number) => null;
 
-export const getPrDue = () => false;
-export const setPrDue = (value: boolean) => null;
-
-export const setPrQcr = (value: boolean) => null;
+export const getNeedReprint = () => false;
+export const setNeedReprint = (value: boolean) => null;
 
 // export const getInFight = () => 0;
 // export const setInFight = (value: number) => null;
@@ -50,7 +48,7 @@ export const ishere = (itemId: number, location?: number) => false;
 export const loseme = (e: string) => null;
 export const onTiming = async () => null;
 export const openworld = async () => null;
-export const pbfr = async () => null;
+export const pbfr = async (needNewLine: boolean = false) => null;
 export const rte = async (name: string, interrupt?: boolean) => null;
 export const talker = async (name: string) => null;
 // export const fgetsAll = async (file: any, maxLength: number, handler: (record: string) => Promise<void>) => null;

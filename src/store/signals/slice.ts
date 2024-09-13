@@ -16,13 +16,11 @@ export const signalSlice = createSlice({
       ...state,
       isActive: true,
       isEnabled: true,
-      // alarm: 2,
     }),
     deactivate: (state: SignalStateInterface): SignalStateInterface => ({
       ...state,
       isActive: false,
       isEnabled: false,
-      // alarm: 2147487643,
     }),
     pause: (state: SignalStateInterface): SignalStateInterface => ({
       ...state,
@@ -31,7 +29,6 @@ export const signalSlice = createSlice({
     resume: (state: SignalStateInterface): SignalStateInterface => ({
       ...state,
       isEnabled: true,
-      // alarm: state.sigActive ? 2 : state.alarm,
     }),
   },
 });
