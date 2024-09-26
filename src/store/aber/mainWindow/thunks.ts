@@ -72,7 +72,7 @@ const onUserResponse = (user: User | null, title?: string) => async (
     throw new Error('No user!');
   }
 
-  const userId = user?.token || '';
+  const userId = user?.userId;
   const character = user?.character;
   const isSaved = user?.isSaved;
 
@@ -134,7 +134,7 @@ export const createUserCharacter = (userId: UserId, sex: string) => async (
     const user = await createCharacter(userId, {
       sex,
     });
-    dispatch(onUserResponse(user));
+    dispatch(onUserResponse(user || null));
   } catch(e) {
     console.error('Error in "createCharacter":', e);
     dispatch(setErrorMessage({

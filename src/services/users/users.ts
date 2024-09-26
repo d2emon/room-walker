@@ -2,6 +2,7 @@ import { Event, EventId } from '../events/types';
 import { addNewCharacter } from './characters';
 import { Person } from './persons';
 import {
+  Character,
   User,
   UserId,
 } from './types';
@@ -36,11 +37,15 @@ type AddUserRequest = MockQuery<any, AddUserRequestData>;
 interface AddUserResponse {
   user: User,
   eventId?: EventId,
+  error?: string;
 }
 
 // NewCharacter
 
-type NewCharacterRequest = MockQuery<UserRequestParams, any>;
+export interface NewCharacterData {
+  sex: string;
+};
+export type NewCharacterRequest = MockQuery<UserRequestParams, NewCharacterData>;
 
 // PostUserAction
 
@@ -133,16 +138,60 @@ export const postUser = mockQueryDecorator<
 });
 */
 
-export const postNewCharacter = mockQueryDecorator<
+interface UsersQueryParams {
+  token: UserId;
+};
+interface UsersQueryData {
+  name: string;
+};
+interface UserResponseData {
+  user: User | null;
+};
+
+export const API_URL = 'http://127.0.0.1:4000/api/v1.0/user/';
+
+const postNewUserHandler = mockQueryDecorator<
+  MockQuery<UsersQueryParams, UsersQueryData>,
+  UserResponseData
+> ('POST', API_URL, async (query) => {
+  const userId = crypto.randomUUID();
+  const character: Character = {
+    channelId: -1,
+    level: -1,
+    name: query?.data?.name,
+    sex: -1,
+    strength: -1,
+    visibility: -1,
+  };
+  const model = await newUser(userId, character);
+
+  if (!model) {
+    throw new Error('No user!');
+  }
+
+  const user = await model.save();
+
+  return {
+    user,
+  };
+});
+
+export const postNewUser = (token: UserId, name: string) => postNewUserHandler({
+  data: {
+    name,
+  },
+  params: {
+    token,
+  },
+});
+
+const postNewCharacterHandler = (userId: UserId) => mockQueryDecorator<
   NewCharacterRequest,
   AddUserResponse
-> ('POST http://127.0.0.1:4001/user/:userId/character', async (query): Promise<AddUserResponse> =>  {
+> ('POST', `${API_URL}${userId}/character`, async (query): Promise<AddUserResponse> =>  {
   const {
     data: {
       sex,
-    },
-    params: {
-      userId,
     },
   } = query;
 
@@ -161,10 +210,17 @@ export const postNewCharacter = mockQueryDecorator<
   };
 });
 
+export const postNewCharacter = (userId: UserId, data: NewCharacterData) => postNewCharacterHandler(userId)({
+  data,
+  params: {
+    userId,
+  },
+});
+
 export const postUserAction = mockQueryDecorator<
   PostUserActionRequest,
   PostUserActionResponse
-> ('POST http://127.0.0.1:4001/user/:userId/action/', async (query): Promise<PostUserActionResponse> => {
+> ('POST', 'http://127.0.0.1:4001/user/:userId/action/', async (query): Promise<PostUserActionResponse> => {
   const {
     data: {
       action,
@@ -194,7 +250,7 @@ export const postUserAction = mockQueryDecorator<
 export const postUserEvents = mockQueryDecorator<
   PostUserEventsRequest,
   PostUserEventsResponse
-> ('POST http://127.0.0.1:4001/user/:userId/events/', async (query): Promise<PostUserEventsResponse> =>  {
+> ('POST', 'http://127.0.0.1:4001/user/:userId/events/', async (query): Promise<PostUserEventsResponse> =>  {
   const {
     /*
     data: {
@@ -219,7 +275,7 @@ export const postUserEvents = mockQueryDecorator<
 export const postUserEvent = mockQueryDecorator<
   PostUserEventRequest,
   PostUserEventResponse
-> ('POST http://127.0.0.1:4001/user/event', async (): Promise<PostUserEventResponse> => {
+> ('POST', 'http://127.0.0.1:4001/user/event', async (): Promise<PostUserEventResponse> => {
   return {
     data: {},
   };

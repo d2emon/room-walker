@@ -115,7 +115,7 @@ const getEvents = async (eventId: EventId): Promise<Event[]> => {
 export const loadEvents = mockQueryDecorator<
   EventsRequest,
   EventsResponse
->('GET http://127.0.0.1:4001/event/events', async (): Promise<EventsResponse> => {
+>('GET', 'http://127.0.0.1:4001/event/events', async (): Promise<EventsResponse> => {
   const events: Event[] = Object.values(stored);
   
   return {
@@ -127,7 +127,7 @@ export const loadEvents = mockQueryDecorator<
 export const saveEvent = mockQueryDecorator<
   SaveEventRequest,
   EventResponse
->('POST http://127.0.0.1:4001/event/save', async (query): Promise<EventResponse> => {
+>('POST', 'http://127.0.0.1:4001/event/save', async (query): Promise<EventResponse> => {
   const eventId: EventId = 0;
   const {
     data: {
@@ -145,7 +145,7 @@ export const saveEvent = mockQueryDecorator<
 export const getUserEvents = mockQueryDecorator<
   UserEventsRequest,
   UserEventsResponse
->('GET http://127.0.0.1:4001/event/:eventId/', async (query): Promise<UserEventsResponse> => {
+>('GET', 'http://127.0.0.1:4001/event/:eventId/', async (query): Promise<UserEventsResponse> => {
   const {
     params: {
       eventId,
@@ -177,7 +177,7 @@ export const getUserEvents = mockQueryDecorator<
 export const getUserEventId = mockQueryDecorator<
   EventIdRequest,
   EventIdResponse
->('GET http://127.0.0.1:4001/event/', async (): Promise<EventIdResponse> => {
+>('GET', 'http://127.0.0.1:4001/event/', async (): Promise<EventIdResponse> => {
   const lastEventId = await getLastEventId();
 
   return {
@@ -188,7 +188,7 @@ export const getUserEventId = mockQueryDecorator<
 export const postEvent = mockQueryDecorator<
   SaveEventRequest,
   EventResponse
->('POST http://127.0.0.1:4001/event/', async (query): Promise<EventResponse> => {
+>('POST', 'http://127.0.0.1:4001/event/', async (query): Promise<EventResponse> => {
   const {
     data: {
       event,

@@ -14,8 +14,6 @@ interface PersonRequestParams {
 
 // GetPerson
 
-type GetPersonRequest = MockQuery<PersonRequestParams, any>;
-
 interface GetPersonResponse {
   person: Person | null,
 }
@@ -49,26 +47,28 @@ const setPerson = async (name: string, person: Person) => {
 
 const loadPersons = async () => Object.values(stored).map((p) => ({...p}));
 
-export const getPersonData = mockQueryDecorator<
-  GetPersonRequest,
+const getPersonDataHandler = (name: string) => mockQueryDecorator<
+  MockQuery<PersonRequestParams, undefined>,
   GetPersonResponse
-> ('GET http://127.0.0.1:4001/person/:name/', async (query): Promise<GetPersonResponse> => {
-  const {
-    params: {
-      name,
-    },
-  } = query;
-  const person = await getPerson(name);
+> ('GET', `http://127.0.0.1:4001/person/${name}/`, async (query): Promise<GetPersonResponse> => {
+  const person = await getPerson(query?.params?.name);
 
   return {
     person,
   };
 });
 
-export const postPersonData = mockQueryDecorator<
-  PostPersonRequest,
+export const getPersonData = (name: string) => getPersonDataHandler(name)({
+  data: undefined,
+  params: {
+    name,
+  },
+});
+
+const postPersonDataHandler = (name: string) => mockQueryDecorator<
+  MockQuery<PersonRequestParams, PostPersonRequestData>,
   GetPersonResponse
-> ('POST http://127.0.0.1:4001/person/:name/', async (query): Promise<GetPersonResponse> => {
+> ('POST', `http://127.0.0.1:4001/person/${name}/`, async (query): Promise<GetPersonResponse> => {
   const {
     data: {
       sex,
@@ -108,6 +108,13 @@ export const postPersonData = mockQueryDecorator<
   return {
     person: saved,
   };
+});
+
+export const postPersonData = (name: string, data: PostPersonRequestData) => postPersonDataHandler(name)({
+  data,
+  params: {
+    name,
+  },
 });
 
 /*

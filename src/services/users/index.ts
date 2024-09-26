@@ -1,4 +1,5 @@
 import axios from 'axios';
+import mockQueryDecorator, { MockQuery } from '../mock';
 import { Event, EventId } from '../events/types';
 import { Person } from './persons';
 import {
@@ -6,8 +7,10 @@ import {
   UserId,
 } from './types';
 import {
+  API_URL,
   // getUser,
   postNewCharacter,
+  postNewUser,
   // postUser,
   postUserAction,
   postUserEvent,
@@ -24,41 +27,38 @@ export interface NewCharacterData {
   sex: string;
 };
 
-const API_URL = 'http://127.0.0.1:4000';
 const hasBack = false;
-const sampleUser = {
-  userId: 'USER_ID',
-  token: 'TOKEN',
-  debugMode: true,
-  mode: '%MODE%',
-  name: 'Name',
-  characterId: -1,
-  character: null,
-  // lastUpdate: -1,
-  // eventId?: EventId,
-  // channelId?: -1,
 
-  isSaved: false,
-
-  person: null,
+interface UsersQueryParams {
+  token: UserId;
 };
+interface UserResponseData {
+  user: User | null;
+};
+
+const getUserByTokenHandler = mockQueryDecorator<
+  MockQuery<UsersQueryParams, undefined>,
+  UserResponseData
+> ('GET', API_URL, async (query) => ({
+  user: null,
+}));
 
 const API = {
   createUser: (token: UserId, name: string) => (hasBack
-    ? axios.post(`${API_URL}/api/v1.0/user/?token=${token}`, { name })
-    : Promise.resolve({
-      data: {
-        user: sampleUser,
-      },
-    })),
+    ? axios.post(`${API_URL}?token=${token}`, { name })
+    : postNewUser(token, name)),
   getUserByToken: (token: UserId) => (hasBack
-    ? axios.get(`${API_URL}/api/v1.0/user/?token=${token}`)
-    : Promise.resolve({
-      data: {
-        user: null,
+    ? axios.get(`${API_URL}?token=${token}`)
+    : getUserByTokenHandler({
+      data: undefined,
+      params: {
+        token,
       },
     })),
-}
+  createCharacter: (userId: UserId, data: NewCharacterData) => (hasBack
+    ? axios.post(`${API_URL}${userId}/character`)
+    : postNewCharacter(userId, data)),
+};
 
 export const loadUser = async (token: UserId): Promise<User | null> => {
   /*
@@ -88,24 +88,14 @@ export const addUser = async (token: UserId, name: string): Promise<User | null>
   return response?.data?.user || null;
 };
 
-export const createCharacter = async (userId: UserId, characterData: NewCharacterData): Promise<User | null> => {
-  const response = await postNewCharacter({
-    params: {
-      userId,
-    },
-    data: characterData,
-  });
+export const createCharacter = async (userId: UserId, characterData: NewCharacterData) => {
+  const response = await API.createCharacter(userId, characterData);
 
-  const {
-    error,
-    data,
-  } = response;
-
-  if (error || !data) {
+  if (!response?.data || response?.data?.error) {
     throw new Error();
   }
 
-  return data?.user || null;
+  return response?.data?.user || null;
 };
 
 const perform = async (userId: UserId, action: string): Promise<any> => {

@@ -109,12 +109,7 @@ const UserModel = (user: User): UserModelInterface => {
   };
   
   const loadPersonData = async () => {
-    const response = await getPersonData({
-      params: {
-        name: values.name,
-      },
-      data: {},
-    });
+    const response = await getPersonData(values.name);
 
     const person = getPersonFromResponse(response);
 
@@ -125,12 +120,7 @@ const UserModel = (user: User): UserModelInterface => {
   };
 
   const savePersonData = async (data: CharacterData) => {
-    const response = await postPersonData({
-      params: {
-        name: values.name,
-      },
-      data,
-    });
+    const response = await postPersonData(values.name, data);
 
     const person = getPersonFromResponse(response);
 
