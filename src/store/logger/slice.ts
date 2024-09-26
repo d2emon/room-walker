@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Store } from '../..';
-import { Message } from '../../../services/logger';
+import { Store } from '..';
+import { LogMessage } from 'types/LogMessage';
 
 export interface LoggerState {
-  messages: Message[];
+  messages: LogMessage[];
 };
 
 const initialState: LoggerState = {
   messages: [],
 };
 
-type LogResetAction = PayloadAction<undefined>;
-type LogMessageAction = PayloadAction<Message>;
+type LogResetAction = PayloadAction<void>;
+type LogMessageAction = PayloadAction<LogMessage>;
 export type LoggerAction = LogResetAction | LogMessageAction;
 
 export const loggerSlice = createSlice({

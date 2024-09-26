@@ -19,7 +19,7 @@ import {
 } from '../keys/slice';
 import {
   logReset,
-} from '../logger/slice';
+} from '../../logger/slice';
 import {
   setLoggedOut,
   setUser,

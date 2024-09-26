@@ -11,9 +11,6 @@ import Controls from './Controls';
 import WithError from './WithError';
 import Logger from './Logger';
 import StartModal, { StartingData } from './modals/StartModal';
-import {Message} from '../../services/logger';
-import { getMessages } from 'store/aber/logger/slice';
-import * as loggerActions from 'store/aber/logger/thunks';
 import { createUserCharacter, onStart } from 'store/aber/mainWindow/thunks';
 import MainWindow from './MainWindow';
 import { resetErrors } from 'store/aber/errors/slice';
@@ -27,8 +24,6 @@ import CreateCharacterModal, { CreateCharacterData } from './modals/CreateCharac
 
 const Aber = () => {
   const dispatch = useDispatch<any>();
-
-  const messages: Message[] = useSelector(getMessages);
 
   const name = useSelector(getName);
   const title = useSelector(getTitle);
@@ -47,8 +42,8 @@ const Aber = () => {
   const hadleCloseStartModal = useCallback((data: StartingData) => {
     setIsShowingStartModal(false);
 
+    console.log('Starting...');
     dispatch(onStart(data.userId, data.title, data.name));
-    dispatch(loggerActions.getMessages());
   }, [
     dispatch,
   ]);
@@ -58,7 +53,6 @@ const Aber = () => {
     // keysetup();
 
     dispatch(createUserCharacter(userId, data?.sex))
-    // dispatch(loggerActions.getMessages());
   }, [
     dispatch,
     userId,
@@ -106,13 +100,7 @@ const Aber = () => {
 
         <hr />
 
-        <Card>
-          <Container>
-            <Logger
-              messages={messages}
-            />
-          </Container>
-        </Card>
+        <Logger />
       </Container>
     </Card>
   );

@@ -1,19 +1,42 @@
-import * as React from 'react';
-import {
-    Card, CardText,
-} from 'reactstrap';
-import {Message} from '../../services/logger';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { Button, Card, CardFooter, CardText, Container } from 'reactstrap';
+import { getMessages } from 'store/logger/slice';
+import * as loggerActions from 'store/logger/thunks';
+import { LogMessage } from 'types/LogMessage';
 
-export interface LoggerProps {
-    messages?: Message[],
-}
+const Logger = (): React.ReactElement => {
+  const dispatch = useDispatch<any>();
 
-const Logger = (props: LoggerProps): React.ReactElement => <Card>
-    { props.messages && <CardText>
-        { props.messages.map((message, messageId) => <p key={messageId}>
-            {message.message}
+  const messages: LogMessage[] = useSelector(getMessages)
+
+  const reload = () => {
+    dispatch(loggerActions.getMessages());
+  };
+
+  const handleReloadClick = () => {
+    reload();
+  };
+
+  useEffect(() => {
+    reload();
+  }, []);
+
+  return (<Card>
+    <Container>
+      { messages && <CardText>
+        { messages.map((message, messageId) => <p key={messageId}>
+          {message.message}
         </p>) }
-    </CardText> }
-</Card>;
+      </CardText> }
+    </Container>
+    <CardFooter>
+      <Button onClick={handleReloadClick}>
+        Reload
+      </Button>
+    </CardFooter>
+  </Card>);
+};
 
 export default Logger;

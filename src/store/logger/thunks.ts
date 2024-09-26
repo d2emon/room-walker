@@ -3,8 +3,9 @@ import {
   ThunkAction,
   ThunkDispatch,
 } from 'redux-thunk';
-import { Store } from '../..';
-import logger, { Message } from '../../../services/logger';
+import logger from 'services/logger';
+import { LogMessage } from 'types/LogMessage';
+import { Store } from '..';
 import {
   LoggerAction,
   logReset,
@@ -19,9 +20,9 @@ export const getMessages = () => async (
   dispatch: Dispatch<LoggerAction>
 ) => {
   try {
-    const records = await logger.getLog();
     dispatch(logReset());
-    records.forEach((record: Message) => dispatch(logMessage(record)));
+    const records = await logger.getLog();
+    records.forEach((record: LogMessage) => dispatch(logMessage(record)));
   } catch(e) {
     console.error('Error in "getMessages":', e);
   }

@@ -18,7 +18,7 @@ import './index.css';
 
 const App = () => (
   <div className="App">
-        <Header />
+    <Header />
 
         { /*
         <Container>
