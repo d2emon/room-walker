@@ -6,6 +6,7 @@ import loggerReducer from './aber/logger/slice';
 import mainWindowReducer from './aber/mainWindow/slice';
 import talkerReducer from './aber/talker/slice';
 import mainReducer, { MainState } from './main/slice';
+import mainAlarmReducer, { MainAlarmState } from './main/alarm/slice';
 import roomsReducer, { RoomState } from './rooms/slice';
 // import reducer from './reducers';
 // import tk, { TkState } from './tk/tkSlice';
@@ -19,6 +20,7 @@ import { SignalStateInterface } from './signals/interface';
 export interface Store {
   rooms: RoomState,
   main: MainState,
+  mainAlarm: MainAlarmState,
   // tk: TkState,
   //
   errors: any,
@@ -37,6 +39,7 @@ const store = configureStore({
   reducer: {
     rooms: roomsReducer,
     main: mainReducer,
+    mainAlarm: mainAlarmReducer,
     // tk,
 
     errors: errorsReducer,
