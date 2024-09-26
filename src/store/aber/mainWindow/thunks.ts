@@ -18,9 +18,6 @@ import {
   unsetInputMode,
 } from '../keys/slice';
 import {
-  logReset,
-} from '../../logger/slice';
-import {
   setLoggedOut,
   setUser,
   updateTitle,
@@ -32,10 +29,10 @@ import {
 } from '../talker/thunks';
 */
 import {Store} from '../..';
-import Users, { AddUserResponse, addUser, createCharacter, loadUser } from '../../../services/users';
-import { getPrompt } from '../talker/selectors';
+import Users, { AddUserResponse, addUser, createCharacter, loadUser } from 'services/users';
 import { User, UserId } from 'services/users/types';
 import { setTitle } from 'store/main/slice';
+import { getPrompt } from '../talker/selectors';
 
 // Types
 type Dispatch<A extends Action> = ThunkDispatch<Store, any, A>;
@@ -100,8 +97,6 @@ const onUserResponse = (user: User | null, title?: string) => async (
 export const onStart = (userId: UserId, title: string, name: string) => async (
   dispatch: Dispatch<Action>,
 ) => {
-  dispatch(logReset());
-
   try {
     if (!userId || !title || !name) {
       throw new Error('Args!');

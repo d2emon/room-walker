@@ -2,14 +2,19 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Button, Card, CardFooter, CardText, Container } from 'reactstrap';
-import { getMessages } from 'store/logger/slice';
-import * as loggerActions from 'store/logger/thunks';
-import { LogMessage } from 'types/LogMessage';
+import { getMessages } from '../store/selectors';
+import { logReset } from '../store/slice';
+import * as loggerActions from '../store/thunks';
+import { LogMessage } from '../types/LogMessage';
 
 const Logger = (): React.ReactElement => {
   const dispatch = useDispatch<any>();
 
   const messages: LogMessage[] = useSelector(getMessages)
+
+  const reset = () => {
+    dispatch(logReset());
+  };
 
   const reload = () => {
     dispatch(loggerActions.getMessages());
@@ -20,6 +25,7 @@ const Logger = (): React.ReactElement => {
   };
 
   useEffect(() => {
+    reset();
     reload();
   }, []);
 

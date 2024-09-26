@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LogMessage } from 'types/LogMessage';
+import { LogMessage } from '../types/LogMessage';
 
 const API_URL = 'http://127.0.0.1:4002';
 

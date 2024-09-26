@@ -24,6 +24,42 @@ export interface NewCharacterData {
   sex: string;
 };
 
+const API_URL = 'http://127.0.0.1:4000';
+const hasBack = false;
+const sampleUser = {
+  userId: 'USER_ID',
+  token: 'TOKEN',
+  debugMode: true,
+  mode: '%MODE%',
+  name: 'Name',
+  characterId: -1,
+  character: null,
+  // lastUpdate: -1,
+  // eventId?: EventId,
+  // channelId?: -1,
+
+  isSaved: false,
+
+  person: null,
+};
+
+const API = {
+  createUser: (token: UserId, name: string) => (hasBack
+    ? axios.post(`${API_URL}/api/v1.0/user/?token=${token}`, { name })
+    : Promise.resolve({
+      data: {
+        user: sampleUser,
+      },
+    })),
+  getUserByToken: (token: UserId) => (hasBack
+    ? axios.get(`${API_URL}/api/v1.0/user/?token=${token}`)
+    : Promise.resolve({
+      data: {
+        user: null,
+      },
+    })),
+}
+
 export const loadUser = async (token: UserId): Promise<User | null> => {
   /*
   const response = await getUser({
@@ -33,11 +69,8 @@ export const loadUser = async (token: UserId): Promise<User | null> => {
     data: undefined,
   });
   */
-  const response = await axios.get(`http://127.0.0.1:4000/api/v1.0/user/?token=${token}`);
-  const {
-    data,
-  } = response;
-  return data?.user || null;
+  const response = await API.getUserByToken(token);
+  return response?.data?.user || null;
 }
 
 export const addUser = async (token: UserId, name: string): Promise<User | null> => {
@@ -51,13 +84,8 @@ export const addUser = async (token: UserId, name: string): Promise<User | null>
     },
   });
   */
-  const response = await axios.post(`http://127.0.0.1:4000/api/v1.0/user/?token=${token}`, {
-    name,
-  });
-  const {
-    data,
-  } = response;
-  return data?.user || null;
+  const response = await API.createUser(token, name);
+  return response?.data?.user || null;
 };
 
 export const createCharacter = async (userId: UserId, characterData: NewCharacterData): Promise<User | null> => {

@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 import Controls from './Controls';
 import WithError from './WithError';
-import Logger from './Logger';
+import Logger from 'modules/logger/containers/Logger';
 import StartModal, { StartingData } from './modals/StartModal';
 import { createUserCharacter, onStart } from 'store/aber/mainWindow/thunks';
 import MainWindow from './MainWindow';
@@ -42,7 +42,6 @@ const Aber = () => {
   const hadleCloseStartModal = useCallback((data: StartingData) => {
     setIsShowingStartModal(false);
 
-    console.log('Starting...');
     dispatch(onStart(data.userId, data.title, data.name));
   }, [
     dispatch,

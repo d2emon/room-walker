@@ -2,7 +2,7 @@ import { configureStore  } from '@reduxjs/toolkit';
 import errorsReducer from './aber/errors/slice';
 import eventsReducer from './aber/events/slice';
 import keysReducer from './aber/keys/slice';
-import loggerReducer from './logger/slice';
+import loggerReducer from '../modules/logger/store/slice';
 import mainWindowReducer from './aber/mainWindow/slice';
 import talkerReducer from './aber/talker/slice';
 import mainReducer, { MainState } from './main/slice';

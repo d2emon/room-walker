@@ -3,9 +3,9 @@ import {
   ThunkAction,
   ThunkDispatch,
 } from 'redux-thunk';
-import logger from 'services/logger';
-import { LogMessage } from 'types/LogMessage';
-import { Store } from '..';
+import logger from '../services/logger';
+import { LogMessage } from '../types/LogMessage';
+import { Store } from '../../../store';
 import {
   LoggerAction,
   logReset,

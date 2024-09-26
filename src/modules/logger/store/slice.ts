@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Store } from '..';
-import { LogMessage } from 'types/LogMessage';
+import { LogMessage } from '../types/LogMessage';
 
 export interface LoggerState {
   messages: LogMessage[];
@@ -26,9 +25,6 @@ export const loggerSlice = createSlice({
     },
   },
 });
-
-// Selectors
-export const getMessages = (state: Store) => state.logger.messages;
 
 export const {
   logMessage,
