@@ -1,6 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ErrorStateInterface } from './interface';
 
+export interface ErrorStateInterface {
+  code?: number;
+  message?: string;
+};
+  
 const initialState: ErrorStateInterface = {
 };
 

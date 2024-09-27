@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { LogMessage } from '../types/LogMessage';
 
-export interface LoggerState {
+export interface LoggerStateInterface {
   messages: LogMessage[];
 };
 
-const initialState: LoggerState = {
+const initialState: LoggerStateInterface = {
   messages: [],
 };
 
@@ -17,10 +17,10 @@ export const loggerSlice = createSlice({
   name: 'logger',
   initialState,
   reducers: {
-    logReset: (state: LoggerState) => {
+    logReset: (state: LoggerStateInterface) => {
       state.messages = [];
     },
-    logMessage: (state: LoggerState, action: LogMessageAction) => {
+    logMessage: (state: LoggerStateInterface, action: LogMessageAction) => {
       state.messages.push(action.payload);
     },
   },

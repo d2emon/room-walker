@@ -7,7 +7,7 @@ import {
 } from 'reactstrap';
 import * as actions from '../../../store/main/actions';
 import * as selector from '../../../store/main/selectors';
-import * as errorSelector from 'store/error/selectors';
+import * as errorSelector from 'modules/error/store/selectors';
 import Starting from './Starting';
 import Loading from './Loading';
 

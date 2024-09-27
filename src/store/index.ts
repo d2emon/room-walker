@@ -1,7 +1,8 @@
 import { configureStore  } from '@reduxjs/toolkit';
+import loggerReducer, { LoggerStateInterface } from 'modules/logger/store/slice';
+import mudErrorReducer, { ErrorStateInterface } from 'modules/error/store/slice';
 import eventsReducer from './aber/events/slice';
 import keysReducer from './aber/keys/slice';
-import loggerReducer from '../modules/logger/store/slice';
 import mainWindowReducer from './aber/mainWindow/slice';
 import talkerReducer from './aber/talker/slice';
 import mainReducer, { MainState } from './main/slice';
@@ -9,8 +10,6 @@ import mainAlarmReducer, { MainAlarmState } from './main/alarm/slice';
 import roomsReducer, { RoomState } from './rooms/slice';
 // import reducer from './reducers';
 // import tk, { TkState } from './tk/tkSlice';
-import mudErrorReducer from './error/slice';
-import { ErrorStateInterface } from './error/interface';
 import mainMudReducer from './mudMain/slice';
 import { MainStateInterface } from './mudMain/interface';
 import signalReducer from './signals/slice';
@@ -24,16 +23,17 @@ export interface Store {
 
   events: any,
   keys: any,
-  logger: any,
   mainWindow: any,
   talker: any,
 
+  logger: LoggerStateInterface,
   mudErrors: ErrorStateInterface,
+
   mainMud: MainStateInterface,
   signals: SignalStateInterface,
 }
 
-const store = configureStore({
+const store = configureStore<Store>({
   reducer: {
     rooms: roomsReducer,
     main: mainReducer,
@@ -42,11 +42,12 @@ const store = configureStore({
 
     events: eventsReducer,
     keys: keysReducer,
-    logger: loggerReducer,
     mainWindow: mainWindowReducer,
     talker: talkerReducer,
 
-    mudError: mudErrorReducer,
+    logger: loggerReducer,
+    mudErrors: mudErrorReducer,
+
     mainMud: mainMudReducer,
     signals: signalReducer,
   },

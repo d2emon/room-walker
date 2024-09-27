@@ -5,7 +5,7 @@ import { SetActiveAction, SetAlarmAction, setActive, setAlarm, setAlarmStarted }
 import { TkAction } from '../tk/tkSlice';
 import { Store } from '..';
 import { getAlarm } from './selectors';
-import { resetErrors, setError } from 'store/error/slice';
+import { resetErrors, setError } from 'modules/error/store/slice';
 
 // Types
 type Dispatch<A extends Action> = ThunkDispatch<Store, any, A>;

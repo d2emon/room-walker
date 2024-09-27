@@ -3,9 +3,9 @@ import {
   ThunkAction,
   ThunkDispatch,
 } from 'redux-thunk';
-import Users, { AddUserResponse, addUser, createCharacter, loadUser } from 'services/users';
+import Users, { /* AddUserResponse, */ addUser, createCharacter, loadUser } from 'services/users';
 import { User, UserId } from 'services/users/types';
-import { setError } from 'store/error/slice';
+import { resetErrors, setError } from 'modules/error/store/slice';
 import { setAlarm } from 'store/main/alarm/slice';
 import { getAlarm } from 'store/main/selectors';
 import { setTitle } from 'store/main/slice';
@@ -95,6 +95,8 @@ const onUserResponse = (user: User | null, title?: string) => async (
 export const onStart = (userId: UserId, title: string, name: string) => async (
   dispatch: Dispatch<Action>,
 ) => {
+  dispatch(resetErrors());
+
   try {
     if (!userId) {
       throw new Error('Unauthorized user!');

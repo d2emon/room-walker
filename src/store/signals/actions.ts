@@ -1,6 +1,6 @@
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import { Store } from 'store';
-import { ErrorAction, setError } from 'store/error/slice';
+import { ErrorAction, setError } from 'modules/error/store/slice';
 import { stopMain } from 'store/mudMain/actions';
 import { MainAction } from 'store/mudMain/slice';
 import { onTimer } from 'store/aber2/gamego/actions';

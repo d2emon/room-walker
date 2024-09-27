@@ -7,20 +7,19 @@ import {
   CardHeader,
   Container,
 } from 'reactstrap';
-import Controls from './Controls';
-import WithError from './WithError';
+import WithError from 'modules/error/components/WithError';
 import Logger from 'modules/logger/containers/Logger';
-import StartModal, { StartingData } from './modals/StartModal';
-import { createUserCharacter, onStart } from 'store/aber/mainWindow/thunks';
-import MainWindow from './MainWindow';
-import { resetErrors } from 'store/error/slice';
 import {
   getNeedCreateCharacter,
   getTitle,
   getUserId,
 } from 'store/aber/mainWindow/selectors';
+import { createUserCharacter, onStart } from 'store/aber/mainWindow/thunks';
 import { getName } from 'store/aber/talker/selectors';
+import StartModal, { StartingData } from './modals/StartModal';
 import CreateCharacterModal, { CreateCharacterData } from './modals/CreateCharacterModal';
+import Controls from './Controls';
+import MainWindow from './MainWindow';
 
 const Aber = () => {
   const dispatch = useDispatch<any>();
@@ -33,11 +32,8 @@ const Aber = () => {
   const [isShowingStartModal, setIsShowingStartModal] = useState(true);
 
   const handleReset = useCallback(() => {
-    dispatch(resetErrors());
     setIsShowingStartModal(true);
-  }, [
-    dispatch,
-  ]);
+  }, []);
 
   const hadleCloseStartModal = useCallback((data: StartingData) => {
     setIsShowingStartModal(false);

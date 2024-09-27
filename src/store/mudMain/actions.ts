@@ -1,7 +1,7 @@
 import { ThunkDispatch } from '@reduxjs/toolkit';
 import { Store } from 'store';
 import { getArgsCount, getAuthToken, getName } from './selectors';
-import { ErrorAction, setError } from 'store/error/slice';
+import { ErrorAction, setError } from 'modules/error/store/slice';
 import { finalMessage, finish } from 'store/aber2/gamego/actions';
 import { startGame } from './slice';
 import { KeyAction, resetKeys, setFlags } from 'store/key/slice';

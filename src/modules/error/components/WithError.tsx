@@ -1,10 +1,13 @@
-import React, { ReactElement, useMemo } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import {
   getErrorCode,
   getErrorMessage,
-} from 'store/error/selectors';
+  getHasError,
+} from '../store/selectors';
 import ErrorMessage from './ErrorMessage';
+import { useDispatch } from 'react-redux';
+import { resetErrors } from '../store/slice';
 
 interface WithErrorProps {
   children?: ReactElement;
@@ -15,13 +18,18 @@ const WithError = (props: WithErrorProps) => {
     children,
   } = props;
 
+  const dispatch = useDispatch();
+
   const errorId = useSelector(getErrorCode);
   const errorMessage = useSelector(getErrorMessage);
+  const hasError = useSelector(getHasError);
 
-  const hasError = useMemo(() => ((errorId !== undefined) || !!errorMessage), [
-    errorId,
-    errorMessage,
-  ]);
+  useEffect(
+    () => {
+      dispatch(resetErrors());
+    },
+    [dispatch],
+  );
 
   if (hasError) {
     return (
