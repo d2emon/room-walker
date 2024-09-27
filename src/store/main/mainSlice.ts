@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import {Alarm} from '../../types';
 
 interface SetFinishedPayload {
   code: number,
@@ -30,10 +29,6 @@ export type MainAction = SetFinishedAction | SetTitleAction
 export interface MainState {
   userId?: number,
   title: string,
-  error: {
-      code: number,
-      message: string,
-  } | null,
   interrupt: boolean,
   // TODO: Remove fields
   name?: string,
@@ -43,7 +38,6 @@ export interface MainState {
 
 const initialState: MainState = {
   title: '',
-  error: null,
   interrupt: false,
 };
 
@@ -51,14 +45,6 @@ export const mainSlice = createSlice({
   name: 'main',
   initialState,
   reducers: {
-    setFinished: (state: MainState, action: SetFinishedAction) => ({
-      ...state,
-      error: {
-        code: action.payload.code,
-        message: action.payload.message,
-      },
-      userId: undefined,
-    }),
     // setProgname
     setTitle: (state: MainState, action: SetTitleAction) => ({
       ...state,
@@ -80,6 +66,6 @@ export const mainSlice = createSlice({
   },
 });
 
-export const { setFinished, setInterrupt, setName, setPrDue, setTitle } = mainSlice.actions;
+export const { setInterrupt, setName, setPrDue, setTitle } = mainSlice.actions;
 
 export default mainSlice.reducer;

@@ -13,7 +13,7 @@ import Logger from 'modules/logger/containers/Logger';
 import StartModal, { StartingData } from './modals/StartModal';
 import { createUserCharacter, onStart } from 'store/aber/mainWindow/thunks';
 import MainWindow from './MainWindow';
-import { resetErrors } from 'store/aber/errors/slice';
+import { resetErrors } from 'store/error/slice';
 import {
   getNeedCreateCharacter,
   getTitle,

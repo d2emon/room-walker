@@ -4,10 +4,6 @@ import { Store } from '..';
 export interface MainState {
   userId?: number,
   title: string,
-  error: {
-    code: number,
-    message: string,
-  } | null,
   interrupt: boolean,
   // TODO: Remove fields
   name?: string,
@@ -17,7 +13,6 @@ export interface MainState {
 
 const initialState: MainState = {
   title: '',
-  error: null,
   interrupt: false,
 };
 
@@ -47,11 +42,6 @@ export type SetPrDueAction = PayloadAction<SetPrDuePayload>;
 */
 
 type SetStartedAction = PayloadAction<number>;
-interface SetFinishedPayload {
-  code: number;
-  message: string;
-}
-type SetFinishedAction = PayloadAction<SetFinishedPayload>;
 type SetTitleAction = PayloadAction<string>;
 type SetInterruptAction = PayloadAction<boolean>;
 type SetPrDueAction = PayloadAction<boolean>;
@@ -67,16 +57,11 @@ export const mainSlice = createSlice({
       ...state,
       userId: action.payload,
       title: '',
-      error: null,
       timerActive: false,
       interrupt: false,
     }),
-    setFinished: (state: MainState, action: SetFinishedAction) => ({
+    setFinished: (state: MainState) => ({
       ...state,
-      error: {
-        code: action.payload.code,
-        message: action.payload.message,
-      },
       userId: undefined,
     }),
 

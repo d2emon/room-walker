@@ -1,5 +1,4 @@
 import { configureStore  } from '@reduxjs/toolkit';
-import errorsReducer from './aber/errors/slice';
 import eventsReducer from './aber/events/slice';
 import keysReducer from './aber/keys/slice';
 import loggerReducer from '../modules/logger/store/slice';
@@ -22,8 +21,7 @@ export interface Store {
   main: MainState,
   mainAlarm: MainAlarmState,
   // tk: TkState,
-  //
-  errors: any,
+
   events: any,
   keys: any,
   logger: any,
@@ -42,7 +40,6 @@ const store = configureStore({
     mainAlarm: mainAlarmReducer,
     // tk,
 
-    errors: errorsReducer,
     events: eventsReducer,
     keys: keysReducer,
     logger: loggerReducer,

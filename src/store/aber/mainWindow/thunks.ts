@@ -3,15 +3,16 @@ import {
   ThunkAction,
   ThunkDispatch,
 } from 'redux-thunk';
-import { getCanOnTimer } from './selectors';
+import Users, { AddUserResponse, addUser, createCharacter, loadUser } from 'services/users';
+import { User, UserId } from 'services/users/types';
+import { setError } from 'store/error/slice';
+import { setAlarm } from 'store/main/alarm/slice';
+import { getAlarm } from 'store/main/selectors';
+import { setTitle } from 'store/main/slice';
 import {
   // MainWindowAction,
   startGame,
-  setAlarm,
 } from './slice';
-import {
-  setErrorMessage
-} from '../errors/slice';
 import {
   setClean,
   setInputMode,
@@ -29,9 +30,6 @@ import {
 } from '../talker/thunks';
 */
 import {Store} from '../..';
-import Users, { AddUserResponse, addUser, createCharacter, loadUser } from 'services/users';
-import { User, UserId } from 'services/users/types';
-import { setTitle } from 'store/main/slice';
 import { getPrompt } from '../talker/selectors';
 
 // Types
@@ -46,7 +44,7 @@ const sendAndShow = (message: string): Promise<void> => sendMessage(message)
 const logOut = async (
   dispatch: Dispatch<Action>,
   getState: () => Store,
-  errorId?: number,
+  code?: number,
   message?: string,
 ) => {
   dispatch(setAlarm(false));
@@ -54,9 +52,9 @@ const logOut = async (
   dispatch(setLoggedOut());
   // await finishUser(getState);
 
-  if (errorId || message) {
-    dispatch(setErrorMessage({
-      errorId,
+  if (code || message) {
+    dispatch(setError({
+      code,
       message,
     }));
   }
@@ -98,8 +96,14 @@ export const onStart = (userId: UserId, title: string, name: string) => async (
   dispatch: Dispatch<Action>,
 ) => {
   try {
-    if (!userId || !title || !name) {
-      throw new Error('Args!');
+    if (!userId) {
+      throw new Error('Unauthorized user!');
+    }
+    if (!title) {
+      throw new Error('Title is required!');
+    }
+    if (!name) {
+      throw new Error('Name is required!');
     }
 
     dispatch(setTitle(title));
@@ -114,8 +118,8 @@ export const onStart = (userId: UserId, title: string, name: string) => async (
     dispatch(onUserResponse(user, title));
   } catch(e) {
     console.error('Error in "onStart":', e);
-    dispatch(setErrorMessage({
-      errorId: 0,
+    dispatch(setError({
+      code: 0,
       message: (e as Error).message,
     }));
   }
@@ -137,8 +141,8 @@ export const createUserCharacter = (userId: UserId, sex: string) => async (
     dispatch(onUserResponse(user || null));
   } catch(e) {
     console.error('Error in "createCharacter":', e);
-    dispatch(setErrorMessage({
-      errorId: 0,
+    dispatch(setError({
+      code: 0,
       message: (e as Error).message,
     }));
   }
@@ -168,7 +172,7 @@ export const onTimer = async (
   dispatch: Dispatch<Action>,
   getState: () => Store,
 ) => {
-  if (!getCanOnTimer(getState())) {
+  if (!getAlarm(getState())) {
     return;
   }
 

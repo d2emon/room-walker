@@ -1,9 +1,9 @@
 import React, { ReactElement, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import {
-  getErrorId,
+  getErrorCode,
   getErrorMessage,
-} from 'store/aber/errors/selectors';
+} from 'store/error/selectors';
 import ErrorMessage from './ErrorMessage';
 
 interface WithErrorProps {
@@ -15,7 +15,7 @@ const WithError = (props: WithErrorProps) => {
     children,
   } = props;
 
-  const errorId = useSelector(getErrorId);
+  const errorId = useSelector(getErrorCode);
   const errorMessage = useSelector(getErrorMessage);
 
   const hasError = useMemo(() => ((errorId !== undefined) || !!errorMessage), [

@@ -7,8 +7,8 @@ import {
 } from 'reactstrap';
 import {
   getCanExit,
-  getTimerIsOn,
 } from 'store/aber/mainWindow/selectors';
+import { getTimerIsOn } from 'store/main/selectors';
 import * as mainWindowActions from 'store/aber/mainWindow/thunks';
 import GoodByeModal from './modals/GoodByeModal';
 

@@ -5,6 +5,7 @@ import { SetActiveAction, SetAlarmAction, setActive, setAlarm, setAlarmStarted }
 import { TkAction } from '../tk/tkSlice';
 import { Store } from '..';
 import { getAlarm } from './selectors';
+import { resetErrors, setError } from 'store/error/slice';
 
 // Types
 type Dispatch<A extends Action> = ThunkDispatch<Store, any, A>;
@@ -25,6 +26,7 @@ Two Phase Game System
 export const start = (userId: number, name: string): MainThunkAction<MainAction | TkAction> => (
     dispatch: Dispatch<MainAction | TkAction>,
 ) => Promise.all([
+        dispatch(resetErrors()),
         dispatch(setStarted(userId)),
         dispatch(setAlarmStarted()),
         Promise.resolve(console.log(`GAME ENTRY: ${name}[${userId}]`)),
@@ -37,7 +39,8 @@ export const finish = (message: string): MainThunkAction<Action> => (
     dispatch: Dispatch<Action>,
 ) => dispatch(pbfr)
     .then(() => dispatch(setPrDue(false))) // So we dont get a prompt after the exit
-    .then(() => dispatch(setFinished({ code: 0, message })));
+    .then(() => dispatch(setError({ code: 0, message })))
+    .then(() => dispatch(setFinished()));
 
 // getkbd
 // Getstr() with length limit and filter ctrl
@@ -78,7 +81,8 @@ export const onError = (): MainThunkAction<Action> => (
 ) => Promise.resolve(null)
     .then(() => dispatch(setTimerAlarm(false)))
     .then(() => dispatch(loseme))
-    .then(() => dispatch(setFinished({ code: 255, message: '' })));
+    .then(() => dispatch(setError({ code: 255, message: '' })))
+    .then(() => dispatch(setFinished()));
 
 // sig_ctrlc
 export const onQuit = (): MainThunkAction<Action> => (

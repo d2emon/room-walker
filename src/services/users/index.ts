@@ -150,7 +150,7 @@ const broadcast = async (message: string) => {
     return response;
   } catch(e) {
     // logOut();
-    // setErrorMessage(null, 'AberMUD: FILE_ACCESS : Access failed');
+    // setError({ message: 'AberMUD: FILE_ACCESS : Access failed'});
   }
 }
 

@@ -7,6 +7,7 @@ import {
 } from 'reactstrap';
 import * as actions from '../../../store/main/actions';
 import * as selector from '../../../store/main/selectors';
+import * as errorSelector from 'store/error/selectors';
 import Starting from './Starting';
 import Loading from './Loading';
 
@@ -21,8 +22,8 @@ const Starter = () => {
   const name = useSelector(selector.getName);
   const alarm = useSelector(selector.getAlarm);
   const timeout = useSelector(selector.getTimeout);
-  const error = useSelector(selector.getError);
-  const errorMessage = useSelector(selector.getErrorMessage);
+  const error = useSelector(errorSelector.getErrorCode);
+  const errorMessage = useSelector(errorSelector.getErrorMessage);
 
   const handleError = useCallback(
     () => {
