@@ -2,12 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface MainWindowState {
   // Main Args
-  userId: string | number,
-  title: string,
+  userId: string | number;
+  title: string;
   // External
-  inFight: boolean,
+  inFight: boolean;
   // Additional
-  isSaved: boolean,
+  isSaved: boolean;
 };
 
 const initialState: MainWindowState = {

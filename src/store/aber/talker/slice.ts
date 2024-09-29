@@ -5,7 +5,7 @@ import {
 } from './modes';
 
 export interface TalkerState {
-  title?: string,
+  // title?: string,
   loggedIn: boolean,
   channelId: number,
   name: string,
@@ -26,7 +26,7 @@ export interface TalkerState {
 };
 
 const initialState: TalkerState = {
-  title: undefined,
+  // title: undefined,
   loggedIn: false,
   channelId: 0,
   name: '',
@@ -50,7 +50,6 @@ interface SetUserPayload {
   characterId?: number | null;
   name?: string | null;
   channelId?: number | null;
-  title?: string | null;
 }
 type SetUserAction = PayloadAction<SetUserPayload>;
 type UpdateTitleAction = PayloadAction<undefined>;
@@ -60,29 +59,15 @@ type SetConversationModeAction = PayloadAction<ConversationMode>;
   
 export type MainWindowAction = SetUserAction | UpdateTitleAction | SetLoggedInAction | SetLoggedOutAction | SetConversationModeAction;
 
-const getTitle = (state: TalkerState): string | undefined => {
-  if (state.isFullyInvisible) {
-    return '-csh';
-  } else if (state.isVisible) {
-    return `   --}----- ROOM WALKER -----{--     Entered as ${state.name}`;
-  } else {
-    return undefined;
-  }
-};
-    
 export const talkerSlice = createSlice({
   name: 'talker',
   initialState,
   reducers: {
     setUser: (state: TalkerState, action: SetUserAction) => {
-      state.title = action.payload.title || state.title;
       state.channelId = action.payload.channelId || 0;
       state.characterId = action.payload.characterId || 0;
       state.name = action.payload.name || '';
       state.loggedIn = true;
-    },
-    updateTitle: (state: TalkerState) => {
-      state.title = getTitle(state);
     },
     setLoggedOut: (state: TalkerState) => {
       state.loggedIn = false;
@@ -97,7 +82,6 @@ export const {
   setConversationMode,
   setLoggedOut,
   setUser,
-  updateTitle,
 } = talkerSlice.actions;
 
 export default talkerSlice.reducer;

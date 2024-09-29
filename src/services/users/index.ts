@@ -60,7 +60,10 @@ const API = {
     : postNewCharacter(userId, data)),
 };
 
-export const loadUser = async (token: UserId): Promise<User | null> => {
+const loadUser = async (token: UserId): Promise<User | null> => {
+  if (!token) {
+    throw new Error('Authorization token is required!');
+  }
   /*
   const response = await getUser({
     params: {
@@ -73,7 +76,13 @@ export const loadUser = async (token: UserId): Promise<User | null> => {
   return response?.data?.user || null;
 }
 
-export const addUser = async (token: UserId, name: string): Promise<User | null> => {
+const addUser = async (token: string, name: string): Promise<User | null> => {
+  if (!token) {
+    throw new Error('Authorization token is required!');
+  }
+  if (!name) {
+    throw new Error('Name is required!');
+  }
   /*
   const response = await postUser({
     params: {
@@ -88,8 +97,11 @@ export const addUser = async (token: UserId, name: string): Promise<User | null>
   return response?.data?.user || null;
 };
 
-export const createCharacter = async (userId: UserId, characterData: NewCharacterData) => {
-  const response = await API.createCharacter(userId, characterData);
+const createCharacter = async (token: string, characterData: NewCharacterData) => {
+  if (!token) {
+    throw new Error('Authorization token is required!');
+  }
+  const response = await API.createCharacter(token, characterData);
 
   if (!response?.data || response?.data?.error) {
     throw new Error();
@@ -178,6 +190,10 @@ const processUserEvents = async (userId: UserId, eventId?: EventId, force?: bool
 }
 
 const UserService = {
+  addUser,
+  loadUser,
+  createCharacter,
+  //
   perform,
   processUserEvents,
   sendEvent,

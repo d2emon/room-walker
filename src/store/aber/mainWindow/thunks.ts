@@ -3,12 +3,15 @@ import {
   ThunkAction,
   ThunkDispatch,
 } from 'redux-thunk';
-import Users, { /* AddUserResponse, */ addUser, createCharacter, loadUser } from 'services/users';
-import { User, UserId } from 'services/users/types';
+import UserAPI from 'services/users';
+import { User } from 'services/users/types';
 import { resetErrors, setError } from 'modules/error/store/slice';
 import { setAlarm } from 'store/main/alarm/slice';
 import { getAlarm } from 'store/main/selectors';
-import { setTitle } from 'store/main/slice';
+import {
+  setTitle,
+  updateTitle,
+} from 'store/main/slice';
 import {
   // MainWindowAction,
   startGame,
@@ -21,7 +24,6 @@ import {
 import {
   setLoggedOut,
   setUser,
-  updateTitle,
 } from '../talker/slice';
 /*
 import {
@@ -31,21 +33,30 @@ import {
 */
 import {Store} from '../..';
 import { getPrompt } from '../talker/selectors';
+import { getCanExit } from './selectors';
 
 // Types
 type Dispatch<A extends Action> = ThunkDispatch<Store, any, A>;
 export type MainWindowThunkAction<A extends Action> = ThunkAction<any, Store, any, A>;
+
+export interface NewCharacterData {
+  sex: string;
+};
 
 const showMessages = (addLineBreak: boolean = false): Promise<void> => Promise.resolve();
 const sendMessage = (message: string): Promise<void> => Promise.resolve();
 const sendAndShow = (message: string): Promise<void> => sendMessage(message)
     .then(() => showMessages(false));
 
-const logOut = async (
-  dispatch: Dispatch<Action>,
-  getState: () => Store,
+const screenBottom = () => showMessages();
+const screenTop = () => showMessages();
+
+const logOut = (
   code?: number,
   message?: string,
+) => async (
+  dispatch: Dispatch<Action>,
+  // getState: () => Store,
 ) => {
   dispatch(setAlarm(false));
 
@@ -60,64 +71,45 @@ const logOut = async (
   }
 };
 
-const screenBottom = () => showMessages();
-const screenTop = () => showMessages();
-
-const onUserResponse = (user: User | null, title?: string) => async (
-  dispatch: Dispatch<Action>,  
-) => {
+const setUserFromAPI = (user: User | null) => async (dispatch: Dispatch<Action>) => {
   if (!user) {
     throw new Error('No user!');
   }
 
-  const userId = user?.userId;
-  const character = user?.character;
-  const isSaved = user?.isSaved;
-
-  if (isSaved) {
-    await Users.perform(userId, '.g');
+  if (user?.isSaved) {
+    await UserAPI.perform(user?.userId, '.g');
   }
 
-  dispatch(startGame({
-    userId,
-    isSaved,
-  }));
   dispatch(setUser({
     characterId: user?.characterId,
     name: user?.name,
-    channelId: character?.channelId,
-    title,
+    channelId: user?.character?.channelId,
+  }));
+
+  dispatch(startGame({
+    userId: user?.userId,
+    isSaved: user?.isSaved,
   }));
 }
 
 // Start system
 
-export const onStart = (userId: UserId, title: string, name: string) => async (
+export const onStart = (token: string, title: string, name: string) => async (
   dispatch: Dispatch<Action>,
 ) => {
   dispatch(resetErrors());
 
   try {
-    if (!userId) {
-      throw new Error('Unauthorized user!');
-    }
-    if (!title) {
-      throw new Error('Title is required!');
-    }
-    if (!name) {
-      throw new Error('Name is required!');
-    }
-
     dispatch(setTitle(title));
 
-    const loadUserResponse = await loadUser(userId);
-    if (loadUserResponse) {
-      console.log(loadUserResponse);
+    const user = await UserAPI.loadUser(token);
+    if (user) {
+      dispatch(setUserFromAPI(user));
       return;
     }
 
-    const user = await addUser(userId, name);
-    dispatch(onUserResponse(user, title));
+    const newUser = await UserAPI.addUser(token, name);
+    dispatch(setUserFromAPI(newUser));
   } catch(e) {
     console.error('Error in "onStart":', e);
     dispatch(setError({
@@ -129,18 +121,14 @@ export const onStart = (userId: UserId, title: string, name: string) => async (
 
 // Start system with new user
 
-export const createUserCharacter = (userId: UserId, sex: string) => async (
+export const createUserCharacter = (token: string, data: NewCharacterData) => async (
   dispatch: Dispatch<Action>,
 ) => {
   try {
-    if (!userId) {
-      throw new Error('Args!');
-    }
-
-    const user = await createCharacter(userId, {
-      sex,
-    });
-    dispatch(onUserResponse(user || null));
+    // keysetback();
+    // keysetup();
+    const user = await UserAPI.createCharacter(token, data);
+    dispatch(setUserFromAPI(user));
   } catch(e) {
     console.error('Error in "createCharacter":', e);
     dispatch(setError({
@@ -153,25 +141,24 @@ export const createUserCharacter = (userId: UserId, sex: string) => async (
 // Signals
 
 export const onError = async (
-  dispatch: Dispatch<Action>,
-  getState: () => Store,
+  dispatch: ThunkDispatch<Store, null, Action>,
 ) => {
-  await logOut(dispatch, getState, 0, '');
+  await dispatch(logOut(0, ''));
 };
 
 export const onExit = async (
-  dispatch: Dispatch<Action>,
+  dispatch: ThunkDispatch<Store, null, Action>,
   getState: () => Store,
 ) => {
-  if (getState().mainWindow.inFight) {
+  if (getCanExit(getState())) {
     return;
   }
 
-  await logOut(dispatch, getState, 255, 'Byeeeeeeeeee  ...........');
+  await dispatch(logOut(255, 'Byeeeeeeeeee  ...........'));
 };
 
 export const onTimer = async (
-  dispatch: Dispatch<Action>,
+  dispatch: ThunkDispatch<Store, null, Action>,
   getState: () => Store,
 ) => {
   if (!getAlarm(getState())) {

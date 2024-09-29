@@ -9,6 +9,9 @@ export interface MainState {
   name?: string,
   inFight?: boolean,
   prDue?: boolean,
+  //
+  isFullyInvisible?: boolean;
+  isVisible?: boolean;
 };
 
 const initialState: MainState = {
@@ -70,6 +73,24 @@ export const mainSlice = createSlice({
       ...state,
       title: action.payload,
     }),
+    updateTitle: (state: MainState) => {
+      if (state.isFullyInvisible) {
+        return {
+          ...state,
+          title: '-csh',
+        };
+      }
+
+      if (state.isVisible) {
+        return {
+          ...state,
+          title: `   --}----- ROOM WALKER -----{--     Entered as ${state.name}`,
+        };
+      }
+    
+      return state;
+    },
+
     setInterrupt: (state: MainState, action: SetInterruptAction) => ({
       ...state,
       interrupt: action.payload,
@@ -92,6 +113,7 @@ export const {
   setPrDue,
   setStarted,
   setTitle,
+  updateTitle,
 } = mainSlice.actions;
 
 export default mainSlice.reducer;

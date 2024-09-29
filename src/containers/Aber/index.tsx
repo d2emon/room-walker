@@ -38,16 +38,15 @@ const Aber = () => {
   const hadleCloseStartModal = useCallback((data: StartingData) => {
     setIsShowingStartModal(false);
 
-    dispatch(onStart(data.userId, data.title, data.name));
+    dispatch(onStart(data?.userId, data?.title, data?.name));
   }, [
     dispatch,
   ]);
 
   const hadleCloseCreateCharacterModal = useCallback((data: CreateCharacterData) => {
-    // keysetback();
-    // keysetup();
-
-    dispatch(createUserCharacter(userId, data?.sex))
+    dispatch(createUserCharacter(userId, {
+      sex: data?.sex,
+    }));
   }, [
     dispatch,
     userId,
