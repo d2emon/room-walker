@@ -1,6 +1,8 @@
-import { injectKeysData, keySetBack, keySetUp } from './key';
+import { injectKeysData, keySetUp } from './key';
+import { crapup, makeResult } from './response';
 import storage, { MudData } from './storage';
-import { ServiceError, ServiceResponse, ServiceResult } from './types';
+import { rte, startTalker } from './tk';
+import { ServiceResponse, ServiceResult } from './types';
 
 interface StartArgs {
   title: string;
@@ -18,7 +20,6 @@ const bloodModule = {
 };
     
 const bprintfModule = {
-  setPrDue: (value: boolean) => null,
   setPrQcr: (value: boolean) => null,
   pbfr: async (data: MudData, response: ServiceResponse): Promise<ServiceResponse> => ({
     ...response,
@@ -33,10 +34,6 @@ const bprintfModule = {
   }),
 };
   
-const keysModule = {
-  keyReprint: () => null,
-};
-
 const mobileModule = {
   onTiming: async () => null,
 };
@@ -50,24 +47,6 @@ const supportModule = {
   syslog: async (message: string) => null,
 };
   
-const tkModule = {
-  setGlobme: (value: string) => null,
-  loseme: async () => ({}),
-  rte: async (name: string, interrupt: boolean) => ({}),
-  talker: async (name: string) => ({}),
-};
-
-const makeResult = (
-  data: MudData | null,
-  result: ServiceResult,
-): ServiceResult => ({
-  ...result,
-  sessionId: data?.sessionId || '',
-  isSetAlarm: !!data?.isSetAlarm,
-  isWaiting: !!data?.isWaiting,
-  name: data?.name || '',
-});
-    
 const successResponse = (
   data: MudData | null,
   response?: ServiceResponse,
@@ -114,81 +93,33 @@ const unblockAlarm = (data: MudData) => ({
   isWaiting: true,
 });
     
-const dashes = '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-';
-const makeError = (error: ServiceError): ServiceError => ({
-  code: error.code,
-  message: error.code === 0
-    ? `\n${dashes}\n\n${error.message}\n\n${dashes}\n`
-    : error.message,
-});
-
-const crapup = (
-  data: MudData,
-  error: ServiceError,
-  isSystemError: boolean,
-) => async (
-  response: ServiceResponse,
-): Promise<ServiceResponse> => {
-  if (response.error) {
-    return response;
-  }
-
-  let newResponse: ServiceResponse = response;
-  if (!isSystemError) {
-    newResponse = await tkModule.loseme();
-    if (error.code === 0) {
-      newResponse = await bprintfModule.pbfr(data, newResponse);
-    
-      /* So we dont get a prompt after the exit */
-      bprintfModule.setPrDue(false);  
-    }
-  }
-
-  const sessionId = data?.sessionId;
-  const newData = {
-    ...data,
-    isPlaying: false,
-  };  
-  if (sessionId) {
-    await Promise.all([
-      keySetBack(sessionId),
-      storage.setData(sessionId, newData),
-    ]);    
-  }
-   
-  return {
-    error: makeError(error),
-    result: makeResult(newData, newResponse.result || {}),
-  };
-};
-
 const start = async (params: StartArgs): Promise<ServiceResponse> => {
   if (!params.title || !params.name) {
     return errorResponse(0, 'Args!');
   }
 
   const name = params.name === 'Phantom' ? `The ${params.name}` : params.name;
-  tkModule.setGlobme(params.name === 'Phantom' ? `The ${params.name}` : params.name);
 
   // printf("Entering Game ....\n");
   // printf("Hello %s\n",globme);
 
   const sessionId = params.userId;
+  const data: MudData = {
+    isActive: false,
+    isPlaying: true,
+    isSetAlarm: false,
+    isWaiting: false,
+    name,
+    sessionId,
+    userId: params.userId,
+  };
   await Promise.all([
     keySetUp(sessionId),
-    storage.setData(sessionId, {
-      isActive: false,
-      isPlaying: true,
-      isSetAlarm: false,
-      isWaiting: false,
-      name,
-      sessionId,
-      userId: params.userId,
-    }),
+    storage.setData(sessionId, data),
     supportModule.syslog(`GAME ENTRY: ${name}[${params.userId}]`),
   ]);
 
-  return tkModule.talker(name);
+  return await startTalker(data);
 };
 
 const systemExit = async (params: UserExitArgs) => {
@@ -237,7 +168,7 @@ const userTimeout = async (params: UserExitArgs) => {
   await storage.setData(data.sessionId, sigAlOff(data));
 
   const world = await opensysModule.openworld();
-  await tkModule.rte(data.name, true);
+  await rte(data.name, true);
   await mobileModule.onTiming();
   await opensysModule.closeworld(world);
 
