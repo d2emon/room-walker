@@ -1,7 +1,9 @@
 import { injectKeysData, keySetUp } from './key';
-import { crapup, makeResult } from './response';
+import { makeResult } from './response';
 import storage, { MudData } from './storage';
-import { rte, startTalker } from './tk';
+import { startTalker } from './tk';
+import { rte } from './tk/events';
+import { removePlayer } from './tk/loseme';
 import { ServiceResponse, ServiceResult } from './types';
 
 interface StartArgs {
@@ -39,7 +41,11 @@ const mobileModule = {
 };
     
 const opensysModule = {
-  openworld: async () => ({}),
+  openworld: async () => ({
+    firstEventId: 0,
+    lastEventId: 0,
+    events: [],
+  }),
   closeworld: async (world: any) => null,
 };
   
@@ -101,7 +107,7 @@ const start = async (params: StartArgs): Promise<ServiceResponse> => {
   const name = params.name === 'Phantom' ? `The ${params.name}` : params.name;
 
   // printf("Entering Game ....\n");
-  // printf("Hello %s\n",globme);
+  // printf("Hello %s\n",name);
 
   const sessionId = params.userId;
   const data: MudData = {
@@ -128,10 +134,9 @@ const systemExit = async (params: UserExitArgs) => {
     return errorResponse(-1, 'Unauthorized!');
   };
 
-  return crapup(
+  return removePlayer(
     data,
     { code: 255, message: '' },
-    false,
   )({});
 };
 
@@ -148,10 +153,9 @@ const userExit = async (params: UserExitArgs) => {
     return successResponse(data);
   }
 
-  return crapup(
+  return removePlayer(
     data,
     { code: 0, message: 'Byeeeeeeeeee  ...........' },
-    false,
   )({});
 };
 
@@ -168,7 +172,11 @@ const userTimeout = async (params: UserExitArgs) => {
   await storage.setData(data.sessionId, sigAlOff(data));
 
   const world = await opensysModule.openworld();
-  await rte(data.name, true);
+  await rte(
+    world,
+    data,
+    true,
+  );
   await mobileModule.onTiming();
   await opensysModule.closeworld(world);
 

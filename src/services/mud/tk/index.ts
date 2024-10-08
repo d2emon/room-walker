@@ -1,9 +1,32 @@
-import { crapup } from '../response';
+import storage from './storage';
 import { MudData } from '../storage';
 import { ServiceResponse } from '../types';
+import { rte } from './events';
+import { removePlayer } from './loseme';
+
+interface EventData {
+  receiverId?: string;
+  senderId?: string;
+  code?: number;
+  channelId?: number;
+  payload?: any;
+};
+ 
+interface Event {
+  code: number;
+  payload: any;
+};
+
+interface World {
+  firstEventId: number;
+  lastEventId: number;
+  events: { [k: number]: Event };
+};
 
 const bprintfModule = {
-  makebfr: async () => null,
+  bprintf: async (bufferId: string, message: string) => null,
+  chksnp: async () => null,
+  makebfr: async () => '',
   /*
   setPrDue: (value: boolean) => null,
   setPrQcr: (value: boolean) => null,
@@ -21,74 +44,60 @@ const bprintfModule = {
   }),
 };
   
+const magicModule = {
+  randperc: () =>0,
+};
+ 
+const newuafModule = {
+  getMyLev: () => 0,
+  getMySco: () => 0,
+  getMySex: () => 0,
+  getMyStr: () => 0,
+  initme: async () => ({}),
+};
+  
 const ndebugModule = {
   getMaxu: () => 16,
 };
   
-const objsysModule = {
-  fpbn: async (world: any, name: string) => -1,
+ const objsysModule = {
+  dumpitems: async (world: World | null) => null,
+  fpbn: async (world: World | null, name: string) => -1,
 };
       
 const opensysModule = {
-  openworld: async () => ({}),
-  closeworld: async (world: any) => null,
+  openworld: async (): Promise<World | null> => ({
+    firstEventId: 0,
+    lastEventId: 0,
+    events: [],
+  }),
+  closeworld: async (world: World | null) => null,
 };
-    
-const supportModule = {
-  pname: async (world: any, playerId: number) => '',
-  setphelping: async (world: any, playerId: number | undefined, value: number) => null,
-  setplev: async (world: any, playerId: number | undefined, value: number) => null,
-  setploc: async (world: any, playerId: number | undefined, value: number) => null,
-  setpname: async (world: any, playerId: number | undefined, value: string) => null,
-  setppos: async (world: any, playerId: number | undefined, value: number) => null,
-  setpsex: async (world: any, playerId: number | undefined, value: number) => null,
-  setpstr: async (world: any, playerId: number | undefined, value: number) => null,
-  setpvis: async (world: any, playerId: number | undefined, value: number) => null,
-  setpwpn: async (world: any, playerId: number | undefined, value: number) => null,
+
+const parseModule = {
+   sendsys: async (world: World, data: EventData) => null,
+ };
+ 
+ const supportModule = {
+  pname: async (world: World | null, playerId: string) => '',
+  pvis: async (world: World | null, playerId: string) => 0,
+  setphelping: async (world: World | null, playerId: string, value: number) => null,
+  setplev: async (world: World | null, playerId: string, value: number) => null,
+  setploc: async (world: World | null, playerId: string, value: number) => null,
+  setpname: async (world: World | null, playerId: string, value: string) => null,
+  setppos: async (world: World | null, playerId: string, value: number) => null,
+  setpsex: async (world: World | null, playerId: string, value: number) => null,
+  setpsexall: async (world: World | null, playerId: string, value: number) => null,
+  setpstr: async (world: World | null, playerId: string, value: number) => null,
+  setpvis: async (world: World | null, playerId: string, value: number) => null,
+  setpwpn: async (world: World | null, playerId: string, value: number) => null,
 };
         
-const tkModule = {
-  setGlobme: (value: string) => null,
-  loseme: async () => ({}),
-  rte: async (name: string, interrupt: boolean) => ({}),
-};
-
-const resetCms = () => null;
-const setCms = (value: number) => null;
-const getCms = () => -1;
-
-const setMynum = (value: number) => null;
-const getMynum = () => 0;
-
-const setISetup = (value: boolean) => null;
-const getISetup = () => false;
-
-/*
- *
- *		AberMUD II   C
- *
- *
- *	This game systems, its code scenario and design
- *	are (C) 1987/88  Alan Cox,Jim Finnis,Richard Acott
- *
- *
- *	This file holds the basic communications routines
- *
- */
 /* 
- #include "files.h"
- #include "flock.h"
- 
  long oddcat=0;
  long  talkfl=0;
  
- #include <stdio.h>
- #include <sys/errno.h>
- #include <sys/file.h>
- 
  extern FILE * openlock();
- extern char globme[];
- extern long curch;
  extern long my_str;
  extern long my_sex;
  extern long my_lev;
@@ -98,10 +107,7 @@ const getISetup = () => false;
  extern char * oname();
  extern long ppos();
  extern char key_buff[];
- long curch=0;
   
- char globme[40];
- long  curmode=0;
  long  meall=0;
 */
 /*
@@ -135,26 +141,9 @@ const getISetup = () => false;
         c++;
         }
      }
-  
-  mstoout(block,name)
-  long *block;char *name;
-     {
-     extern long debug_mode;
-     char luser[40];
-     char *x;
-     x=(char *)block;
 */
-/*
- Print appropriate stuff from data block */
-/*
 
-     strcpy(luser,name);lowercase(luser);
- if(debug_mode)    bprintf("\n<%d>",block[1]);
-     if (block[1]<-3) sysctrl(block,luser);
-     else
-        bprintf("%s", (x+2*sizeof(long)));
-     }
-  
+/*  
  long gurum=0;
  long convflg=0;
   
@@ -163,7 +152,7 @@ const getISetup = () => false;
      {
      extern long debug_mode;
      extern char *sysbuf;
-     extern long curch,moni;
+     extern long moni;
      char prmpt[32];
      long a;
  extern long tty;
@@ -175,11 +164,10 @@ const getISetup = () => false;
  extern long my_str;
  extern long in_fight;
  extern long fighting;
-     extern long curmode;
      l:pbfr();
  if(tty==4) btmscr();
  strcpy(prmpt,"\r");
-     if(pvis(getMynum())) strcat(prmpt,"(");
+     if(pvis(talkerData.playerId)) strcat(prmpt,"(");
      if(debug_mode) strcat(prmpt,"#");
      if(my_lev>9)strcat(prmpt,"----");
      switch(convflg)
@@ -196,12 +184,12 @@ const getISetup = () => false;
         default:
            strcat(prmpt,"?");
            }
-     if(pvis(getMynum())) strcat(prmpt,")");
+     if(pvis(talkerData.playerId)) strcat(prmpt,")");
      pbfr();
-     if(pvis(getMynum())>9999) set_progname(0,"-csh");
+     if(pvis(talkerData.playerId)>9999) set_progname(0,"-csh");
      else
      sprintf(work,"   --}----- ABERMUD -----{--     Playing as %s",name);
-     if(pvis(getMynum())==0) set_progname(0,work);
+     if(pvis(talkerData.playerId)==0) set_progname(0,work);
      sig_alon();
      key_input(prmpt,80);
      sig_aloff();
@@ -210,9 +198,11 @@ const getISetup = () => false;
  strcat(sysbuf,"\001l");
  strcat(sysbuf,work);
  strcat(sysbuf,"\n\001");
- openworld();
- rte(name);
- closeworld();
+
+  const world = await opensysModule.openworld();
+  await rte(world, data, false);
+  await opensysModule.closeworld(world);
+
      if((convflg)&&(!strcmp(work,"**")))
         {
         convflg=0;
@@ -227,7 +217,7 @@ const getISetup = () => false;
         else
            sprintf(work,"tss %s",w2);
         }
-     nadj:if(curmode==1) gamecom(work);
+     nadj:if(talkerData.hasStarted) gamecom(work);
      else
         {
         if(((strcmp(work,".Q"))&&(strcmp(work,".q")))&& (!!strlen(work)))
@@ -242,7 +232,7 @@ const getISetup = () => false;
  in_fight=0;
  fighting= -1;
  }
- if(ploc(fighting)!=curch) 
+ if(ploc(fighting)!= talkerData.channelId) 
  {
  in_fight=0;
  fighting= -1;
@@ -258,10 +248,10 @@ const getISetup = () => false;
      FILE * unit;
      long number;
      long inpbk[128];
-     extern char globme[];
      extern char *echoback;
          unit=openworld();
-     if (unit<0) {loseme();crapup("\nAberMUD: FILE_ACCESS : Access failed\n");}
+     if (unit<0) {
+       removePlayer("\nAberMUD: FILE_ACCESS : Access failed\n");}
      sec_read(unit,inpbk,0,64);
      number=2*inpbk[1]-inpbk[0];inpbk[1]++;
      sec_write(unit,block,number,128);
@@ -269,52 +259,9 @@ const getISetup = () => false;
      if (number>=199) cleanup(inpbk);
      if(number>=199) longwthr();
      }
-  
-  readmsg(channel,block,num)
-  long channel;
-  long *block;
-  int num;
-     {
-     long buff[64],actnum;
-     sec_read(channel,buff,0,64);
-     actnum=num*2-buff[0];
-     sec_read(channel,block,actnum,128);
-     }
-  
- FILE *fl_com;
- extern long findstart();
- extern long findend();
- */
-
-export const rte = async (name: string, interrupt: boolean) => ({})
+     */
 
 /*
-  rte(name)
-  char *name;
-     {
-     extern long vdes,tdes,rdes;
-     extern FILE *fl_com;
-     extern long debug_mode;
-     FILE *unit;
-     long too,ct,block[128];
-     unit=openworld();
-     fl_com=unit;
-     if (unit==NULL) crapup("AberMUD: FILE_ACCESS : Access failed\n");
-     if (getCms() == -1) setCms(findend(unit));
-     too=findend(unit);
-     ct= getCms();
-     while(ct<too)
-        {
-        readmsg(unit,block,ct);
-        mstoout(block,name);
-        ct++;
-        }
-     setCms(ct);
-     update(name);
-     eorte();
-     rdes=0;tdes=0;vdes=0;
-     }
-     
  FILE *openlock(file,perm)
  char *file;
  char *perm;
@@ -322,7 +269,6 @@ export const rte = async (name: string, interrupt: boolean) => ({})
      FILE *unit;
      long ct;
      extern int errno;
-     extern char globme[];
      ct=0;
     unit=fopen(file,perm);
     if(unit==NULL) return(unit);
@@ -339,36 +285,28 @@ export const rte = async (name: string, interrupt: boolean) => ({})
 
      switch(errno)
      {
-         case ENOSPC:crapup("PANIC exit device full\n");
+         case ENOSPC:removePlayer("PANIC exit device full\n");
 */
 /*
     	case ESTALE:;*/
 /*
 
          case EHOSTDOWN:;
-         case EHOSTUNREACH:crapup("PANIC exit access failure, NFS gone for a snooze");
+         case EHOSTUNREACH:removePlayer("PANIC exit access failure, NFS gone for a snooze");
      }
      return(unit);
      }
-  
- long findstart(unit)
-  FILE *unit;
-     {
-     long bk[2];
-     sec_read(unit,bk,0,1);
-     return(bk[0]);
-     }
-  
- long findend(unit)
-  FILE *unit;
-     {
-     long bk[3];
-     sec_read(unit,bk,0,2);
-     return(bk[1]);
-     }
 */
 
-const createPlayer = async (world: any, name: string) => {
+const createPlayer = async (
+  userId: string,
+  world: any,
+  name: string,
+): Promise<void> => {
+  if (!world) {
+    throw new Error('Sorry AberMUD is currently unavailable');
+  }
+
   const found = await objsysModule.fpbn(world, name);
   if (found !== -1) {
     throw new Error('You are already on the system - you may only be on once at a time');
@@ -378,80 +316,128 @@ const createPlayer = async (world: any, name: string) => {
   const promises = [];
   for (let playerId = 0; playerId < maxPlayerId; playerId += 1) {
     promises.push(new Promise<number | null>(async (resolve) => {
-      const playerName = await supportModule.pname(world, playerId);
+      const playerName = await supportModule.pname(world, `${playerId}`);
       return resolve(playerName ? null : playerId);
     }));
   }
   const result = await Promise.all(promises);
-  const id = result.find(i => i !== null);
+  const numberId = result.find(i => i !== null);
 
-  if (id === null) {
+  if (numberId === null) {
     throw new Error('Sorry AberMUD is full at the moment');
   }
+
+  const id = `${numberId}`;
+  const bufferId = await bprintfModule.makebfr();
   await Promise.all([
-    bprintfModule.makebfr(),
     supportModule.setpname(world, id, name),
-    supportModule.setploc(world, id, getCurch()),
+    supportModule.setploc(world, id, 0),
     supportModule.setppos(world, id, -1),
     supportModule.setplev(world, id, 1),
     supportModule.setpvis(world, id, 0),
     supportModule.setpstr(world, id, -1),
     supportModule.setpwpn(world, id, -1),
     supportModule.setpsex(world, id, 0),
-  ]);    
-  setMynum(id || 0);
-  setGlobme(name);
-  resetCms();
+    storage.setData(userId, {
+      bufferId,
+      channelId: 0,
+      eventId: -1,
+      hasStarted: false,
+      isActive: false,
+      lastUpdate: 0,
+      name,
+      playerId: id,
+      rdQd: false,
+      worldId: '',   
+    }),
+  ]);
 };
 
-/*
-  special(string,name)
-  char *string,*name;
-     {
-     extern long curmode;
-     char ch,bk[128];
-     extern long curch,moni;
+const specialCommands: { [k: string]: (data: MudData) => Promise<ServiceResponse> } = {
+  'g': async (data: MudData) => {
+    const talkerData = await storage.getData(data.userId);
+    if (!talkerData) {
+      return {};
+    }
+
+    await storage.setData(data.userId, {
+      ...talkerData,
+      channelId: -5,
+      eventId: -1,
+      hasStarted: true,
+    });
+
+    await newuafModule.initme();
+
+    const world = await opensysModule.openworld();
+    if (!world) {
+      return {};
+    }
+
+    const playerId = talkerData.playerId;
+    const visibility = (newuafModule.getMyLev() < 10000) ? 0 : 10000;
+    await Promise.all([
+      supportModule.setpstr(world, playerId, newuafModule.getMyStr()),
+      supportModule.setplev(world, playerId, newuafModule.getMyLev()),
+      supportModule.setpvis(world, playerId, visibility),
+      supportModule.setpwpn(world, playerId, -1),
+      supportModule.setpsexall(world, playerId, newuafModule.getMySex()),
+      supportModule.setphelping(world, playerId, -1),
+      parseModule.sendsys(world, {
+        code: -10113,
+        payload: `[s player=${playerId}][ ${talkerData.name}  has entered the game ]\n[/s]`,
+      }),
+    ]);
+
+    const result = await rte(
+      world,
+      data,
+      false,
+    );
+
+    const chance = magicModule.randperc();
+    if (chance > 50) {
+      // trapch(-5);
+    } else {
+      // talkerData.channelId= -183;
+      // trapch(-183);
+    }
+    await parseModule.sendsys(world, {
+      code: -10000,
+      senderId: playerId,
+      channelId: talkerData.channelId,
+      payload: `[s player=${playerId}]${talkerData.name}  has entered the game\n[/s]`,
+    })
+
+    await opensysModule.closeworld(world);
+
+    return result;
+  },
+};
+     
+const special = async (data: MudData, command: string, name: string) => {
+  /*
+     extern long moni;
      extern long my_str,my_lev,my_sco,my_sex;
-     FILE * ufl;
      char xx[128];
      char xy[128];
      char us[32];
-     strcpy(bk,string);
-     lowercase(bk);
-     ch= *bk;
-     if (ch!='.') return(0);
-     ch=bk[1];
-     switch(ch)
-        {
-        case 'g':
-           curmode=1;
-           curch= -5;
-           initme();
-           ufl=openworld();
-           setpstr(getMynum(),my_str);
-           setplev(getMynum(),my_lev);
-  if(my_lev<10000) setpvis(getMynum(),0);
-     else setpvis(getMynum(),10000);
-           setpwpn(getMynum(),-1);
-           setpsexall(getMynum(),my_sex);
-           setphelping(getMynum(),-1);
-           cuserid(us);
-           sprintf(xy,"\001s%s\001%s  has entered the game\n\001",name,name);
-           sprintf(xx,"\001s%s\001[ %s  has entered the game ]\n\001",name,name);
-           sendsys(name,name,-10113,curch,xx);
-           rte(name);
-           if(randperc()>50)trapch(-5);
- else{curch= -183;trapch(-183);}
- sendsys(name,name,-10000,curch,xy);
-           break;
-        default:
-           printf("\nUnknown . option\n");
-           }
-     return(1);
-     }
-  
- */
-const special = async (command: string, name: string) => null;
+   */
+  const bk = command.toLowerCase();
+  if (bk[0] !== '.') {
+    return 0;
+  }
+  const ch = bk[1];
+
+  const handler = specialCommands[ch];
+  if (!handler) {
+    // printf("\nUnknown . option\n");
+  } else {
+    handler(data);
+  }
+
+  return 1;
+};
 
 export const afterTalker = async (
   data: MudData,
@@ -472,54 +458,55 @@ export const beforeTalker = async (
   response: ServiceResponse,
 ) => {
   // sendmsg(name);
-  /*
-     extern long rd_qd;
-   */
-  /*
-        if(rd_qd) rte(name);
-        rd_qd=0;
-        closeworld();
-        pbfr();
-   */
-  return await bprintfModule.pbfr(data, response);
+  // await opensysModule.closeworld(null);
+
+  const talkerData = await storage.getData(data.userId);
+
+  if (!talkerData?.rdQd) {
+    return await bprintfModule.pbfr(data, response);
+  }
+
+  try {
+    const world = await opensysModule.openworld();
+    const eventResult = await rte(world, data, false);
+    await opensysModule.closeworld(world);
+
+    await storage.setData(data.userId, {
+      ...talkerData,
+      rdQd: false,
+    });
+
+    return await bprintfModule.pbfr(data, {
+      ...response,
+      ...eventResult,
+    });
+  } catch (e) {
+    return removePlayer(data, { code:0, message: `${e}` })(response);
+  }
 };
   
 export const startTalker = async (
   data: MudData,
 ): Promise<ServiceResponse> => {
   const world = await opensysModule.openworld();
-  if (!world) {
-    return crapup(
-      data,
-      { code: 0, message: 'Sorry AberMUD is currently unavailable' },
-      false,
-    )({});
-  }
 
   try {
-    await createPlayer(world, data.name);
+    await createPlayer(data.userId, world, data.name);
   } catch (e) {
-    return crapup(
-      data,
-      { code: 0, message: `${e}` },
-      false,
-    )({});  
+    return removePlayer(data, { code:0, message: `${e}` })({});
   }
 
-  await rte(data.name, false);
+  await rte(world, data, false);
 
   await opensysModule.closeworld(world);
 
-  resetCms();
-  await special('.g', data.name);
-  setISetup(true);
+  await special(data, '.g', data.name);
+  // talkerData.isActive = true;
 
   return afterTalker(data, {});
 };
 
 /*
- long rd_qd=0;
-  
   cleanup(inpbk)
   long *inpbk;
      {
@@ -550,10 +537,9 @@ export const startTalker = async (
   broad(mesg)
   char *mesg;
      {
- extern long rd_qd;
  char bk2[256];
  long block[128];
- rd_qd=1;
+ talkerData.rdQd = true;
  block[1]= -1;
  strcpy(bk2,mesg);
  vcpy(block,2,(long *)bk2,0,126);
@@ -566,12 +552,6 @@ export const startTalker = async (
      broad(message);
      }
      
-  sysctrl(block,luser)
-  long *block;
-  char *luser;
-     {
-     gamrcv(block);
-     }
  long  bound=0;
  long  tmpimu=0;
  char  *echoback="*e";
@@ -602,61 +582,16 @@ export const startTalker = async (
   trapch(chan)
   long chan;
      {
- extern long curch;
      FILE *unit;
      extern long my_lev;
      if(my_lev>9) goto ndie;
      ndie:unit=openworld();
-     setploc(getMynum(),chan);
+     setploc(talkerData.playerId,chan);
      lookin(chan);
      }
-  
-  
-  
-  loseme(name)
-  char *name;
-     {
- extern long zapped;
- char bk[128];
- extern char globme[];
- FILE *unit;  
- sig_aloff(); */
-/*
- No interruptions while you are busy dying */
-             /* ABOUT 2 MINUTES OR SO */
-/*
-
-  setISetup(false);
-                
- unit=openworld();
-     dumpitems();
- if(pvis(getMynum())<10000) {
- sprintf(bk,"%s has departed from AberMUDII\n",globme);
- sendsys(globme,globme,-10113,0,bk);
- }
-     pname(getMynum())[0]=0;
-         closeworld();
- if(!zapped) saveme();
-         chksnp();
-     }
-  
- long lasup=0;
+*/
  
-  update(name)
-  char *name;
-     {
-     FILE *unit;
-     long xp;
-     extern long lasup;
-     xp=getCms() - lasup;
-     if(xp<0) xp= -xp;
-     if(xp<10) goto noup;
-     unit=openworld();
-     setppos(getMynum(), getCms());
-     lasup=getCms();
-     noup:;
-     }
-  
+ /*  
   revise(cutoff)
   long cutoff;
      {
@@ -685,12 +620,10 @@ export const startTalker = async (
 /*
 
      {
-     extern char globme[];
      FILE *un1,un2;
      char str[128];
      long xxx;
      extern long brmode;
-     extern long curmode;
      extern long ail_blind;
      long ct;
      extern long my_lev;
@@ -721,8 +654,7 @@ export const startTalker = async (
               if(my_lev>9)bprintf("<DEATH ROOM>\n");
               else
                  {
-                 loseme(globme);
-                 crapup("bye bye.....\n");
+                 removePlayer("bye bye.....\n");
                  }
               }
            else
@@ -741,22 +673,23 @@ export const startTalker = async (
      if(!ail_blind)
      {
          lisobs();
-         if(curmode==1) lispeople();
+         if(talkerData.hasStarted) lispeople();
      }
      bprintf("\n");
      onlook();
      }
   loodrv()
      {
-     extern long curch;
-     lookin(curch);
+     lookin(talkerData.channelId);
      }
   
  
  userwrap()
  {
- extern char globme[];
- if(fpbns(globme)!= -1) {loseme();syslog("System Wrapup exorcised %s",globme);}
+ if(fpbns(talkerData.name)!= -1) {
+   removePlayer();
+   syslog("System Wrapup exorcised %s",talkerData.name);
+}
  }
  
  fcloselock(file)

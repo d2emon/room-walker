@@ -36,12 +36,6 @@ const bprintfModule = {
   }),
 };
   
-const tkModule = {
-  setGlobme: (value: string) => null,
-  loseme: async () => ({}),
-  rte: async (name: string, interrupt: boolean) => ({}),
-};
-
 export const crapup = (
   data: MudData,
   error: ServiceError,
@@ -55,13 +49,12 @@ export const crapup = (
   
   let newResponse: ServiceResponse = response;
   if (!isSystemError) {
-    newResponse = await tkModule.loseme();
     if (error.code === 0) {
       newResponse = await bprintfModule.pbfr(data, newResponse);
      
       /* So we dont get a prompt after the exit */
       bprintfModule.setPrDue(false);  
-     }
+    }
   }
   
   const sessionId = data?.sessionId;
