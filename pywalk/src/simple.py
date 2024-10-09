@@ -39,7 +39,7 @@ def add0(x):
 def load(x, y):
     str_x = add0(x)
     str_y = add0(y)
-    filename = f"pywalk/data/input/{str_x}{str_y}.json"
+    filename = f"data/input/{str_x}{str_y}.json"
     data = {
         "filename": filename,
         "x": x,
