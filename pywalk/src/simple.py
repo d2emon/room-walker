@@ -1,4 +1,6 @@
 import json
+import os
+from id2text import get_data_filename, get_markdown_filename
 
 
 directions = {
@@ -25,26 +27,17 @@ exits = [
 ]
 
 
-def add0(x):
-    if x >= 1000:
-        return f"{x}"
-    elif x >= 100:
-        return f"0{x}"
-    elif x >= 10:
-        return f"00{x}"
-    else:
-        return f"000{x}"
-
-
 def load(x, y):
-    str_x = add0(x)
-    str_y = add0(y)
-    filename = f"data/input/{str_x}{str_y}.json"
+    filename = get_data_filename(x, y)
     data = {
         "filename": filename,
         "x": x,
         "y": y,
+        "name": filename,
     }
+
+    if not os.path.exists(filename):
+        return data
 
     try:
         with open(filename, encoding='utf-8') as f:
@@ -52,7 +45,7 @@ def load(x, y):
         data.update(file_data)
     except Exception as e:
         # print(e)
-        data["name"] = filename
+        pass
 
     return data
 
@@ -65,20 +58,23 @@ def describe(data):
     print(f"# {name}")
     for e in exits:
         key = e["key"]
-        move_by = directions.get(key)
-        dir_x = data.get("x", 0) + move_by[0] * 25
-        dir_y = data.get("y", 0) + move_by[1] * 25
-        str_x = add0(dir_x)
-        str_y = add0(dir_y)
-
-        dir_filename = f"./{str_x}{str_y}.md"
-        print(f"\n## [{e['name']}]({dir_filename})\n")
         description = data.get(key)
-        if not description:
-            continue
-        if description.get("street"):
+
+        if description and description.get("walkable"):
+            move_by = directions.get(key)
+            dir_filename = get_markdown_filename(
+                data.get("x", 0) + move_by[0] * 25,
+                data.get("y", 0) + move_by[1] * 25,
+            )
+
+            print(f"\n## [{e['name']}]({dir_filename})\n")
+        else:
+            print(f"\n## {e['name']}\n")
+
+        if description and description.get("street"):
           print(description.get("street"))
-        if description.get("description"):
+
+        if description and description.get("description"):
           print(description.get("description"))
 
 
