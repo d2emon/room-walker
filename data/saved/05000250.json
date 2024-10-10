@@ -5,32 +5,32 @@
         "description": ""
     },
     "ne": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая через промзону."
+        "street": "Промзона",
+        "description": ""
     },
     "e": {
         "street": "Промзона",
         "description": ""
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая через промзону."
+        "street": "Промзона",
+        "description": ""
     },
     "s": {
         "street": "Промзона",
         "description": ""
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая через промзону."
+        "street": "Промзона",
+        "description": ""
     },
     "w": {
         "street": "Промзона",
         "description": ""
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая через промзону."
+        "street": "Промзона",
+        "description": ""
     },
     "description": ""
 }
