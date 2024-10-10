@@ -19,3 +19,9 @@ def get_markdown_filename(x, y):
     str_x = add0(x)
     str_y = add0(y)
     return f"./{str_x}{str_y}.md"
+
+
+def get_output_filename(x, y):
+    str_x = add0(x)
+    str_y = add0(y)
+    return f"data/output/{str_x}{str_y}.md"
