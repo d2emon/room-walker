@@ -1,0 +1,36 @@
+{
+    "name": "Парковая лестница",
+    "n": {
+        "street": "Лестница на холм",
+        "description": ""
+    },
+    "ne": {
+        "street": "",
+        "description": "Склон холма."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая вдоль холма."
+    },
+    "se": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "s": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "sw": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая вдоль холма."
+    },
+    "nw": {
+        "street": "",
+        "description": "Склон холма."
+    },
+    "description": ""
+}
