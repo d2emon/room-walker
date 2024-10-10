@@ -1,0 +1,38 @@
+{
+    "name": "Северный парк",
+    "n": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "ne": {
+        "street": "Улица Хмельная",
+        "description": "Широкая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Широкая улица."
+    },
+    "s": {
+        "street": "Северный парк",
+        "description": "Центральная аллея северного парка."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица Хмельная",
+        "description": "Широкая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "nw": {
+        "street": "Улица Весенняя",
+        "description": "Широкая улица."
+    },
+    "description": ""
+}

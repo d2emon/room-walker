@@ -1,0 +1,37 @@
+{
+    "name": "Зоопарк",
+    "n": {
+        "street": "Зоопарк",
+        "description": "Центральная аллея зоопарка."
+    },
+    "ne": {
+        "street": "Зоопарк",
+        "description": ""
+    },
+    "e": {
+        "street": "Улица Шишкина",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "Ботанический сад",
+        "description": ""
+    },
+    "s": {
+        "street": "Ботанический сад",
+        "description": "Центральная аллея ботанического сада."
+    },
+    "sw": {
+        "street": "Ботанический сад",
+        "description": ""
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Шишкина",
+        "description": "Неширокая улица."
+    },
+    "nw": {
+        "street": "Зоопарк",
+        "description": ""
+    },
+    "description": ""
+}

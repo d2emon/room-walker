@@ -1,0 +1,38 @@
+{
+    "name": "Северный парк",
+    "n": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая между высоток."
+    },
+    "e": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Широкая улица."
+    },
+    "s": {
+        "street": "Северный парк",
+        "description": "Центральная аллея северного парка."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через парк."
+    },
+    "w": {
+        "street": "Северный парк",
+        "description": ""
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Широкая улица."
+    },
+    "description": ""
+}

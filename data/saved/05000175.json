@@ -1,0 +1,37 @@
+{
+    "name": "Ботанический сад",
+    "n": {
+        "street": "Ботанический сад",
+        "description": "Центральная аллея ботанического сада."
+    },
+    "ne": {
+        "street": "Ботанический сад",
+        "description": ""
+    },
+    "e": {
+        "street": "Улица Линнея",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "s": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Линнея",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "Ботанический сад",
+        "description": ""
+    },
+    "description": ""
+}
