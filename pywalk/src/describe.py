@@ -35,7 +35,7 @@ def describe_exit(loc_x, loc_y, exit_data, data):
         output.append(f"\n## {name}\n")
 
     if street:
-        output.append(street)
+        output.append(f"{street}.")
 
     if description:
         output.append(description)
