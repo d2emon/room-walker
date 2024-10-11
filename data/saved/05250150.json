@@ -1,40 +1,36 @@
 {
     "name": "Перекрёсток 525/150",
     "n": {
-        "walkable": true,
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "description": "Узкая тропа идущая через высотные дома."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "e": {
-        "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Шишкина",
         "description": "Неширокая улица."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "s": {
-        "walkable": true,
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "description": "Узкая тропа идущая через высотные дома."
     },
     "sw": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Ботанический сад",
+        "description": ""
     },
     "w": {
-        "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Шишкина",
         "description": "Неширокая улица."
     },
     "nw": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Зоопарк",
+        "description": ""
     },
     "description": ""
 }
