@@ -1,0 +1,38 @@
+{
+    "name": "Перекрёсток 550/200",
+    "n": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через промзону."
+    },
+    "ne": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Вертолётная",
+        "description": "Неширокая улица рабочего поселка."
+    },
+    "se": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через промзону."
+    },
+    "sw": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Вертолётная",
+        "description": "Неширокая улица рабочего поселка."
+    },
+    "nw": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "description": ""
+}

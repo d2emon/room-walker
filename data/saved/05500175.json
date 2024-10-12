@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 550/175",
+    "n": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "ne": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "e": {
+        "street": "Улица Линнея",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через промзону."
+    },
+    "sw": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "w": {
+        "street": "Улица Линнея",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "description": ""
+}

@@ -1,0 +1,38 @@
+{
+    "name": "Перекрёсток 550/150",
+    "n": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "ne": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "e": {
+        "street": "Улица Шишкина",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Широкая улица."
+    },
+    "s": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "sw": {
+        "street": "Промзона",
+        "description": ""
+    },
+    "w": {
+        "street": "Улица Шишкина",
+        "description": "Неширокая улица."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Широкая улица."
+    },
+    "description": ""
+}
