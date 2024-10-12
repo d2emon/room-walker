@@ -1,40 +1,36 @@
 {
     "name": "Перекрёсток 525/75",
     "n": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "ne": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая между высоток."
     },
     "e": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "se": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая между высоток."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "sw": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая между высоток."
     },
     "w": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "nw": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая между высоток."
     },
     "description": ""
 }

@@ -5,8 +5,8 @@
         "description": "Узкая тропа идущая через высотные дома."
     },
     "ne": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Промзона",
+        "description": ""
     },
     "e": {
         "walkable": true,

@@ -5,32 +5,32 @@
         "description": "Высотные жилые дома."
     },
     "ne": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая между высоток."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "e": {
         "street": "",
         "description": "Высотные жилые дома."
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая между высоток."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "s": {
         "street": "",
         "description": "Высотные жилые дома."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая между высоток."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "w": {
         "street": "",
         "description": "Высотные жилые дома."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая между высоток."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }
