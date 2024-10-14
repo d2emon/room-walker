@@ -1,20 +1,21 @@
 {
     "name": "Перекрёсток 525/150",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая вдоль зоопарка."
+        "street": "",
+        "description": "Высотные жилые дома."
      },
     "ne": {
-        "street": "Промзона",
-        "description": ""
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "e": {
         "street": "Улица Шишкина",
         "description": "Неширокая улица."
     },
     "se": {
-        "street": "Промзона",
-        "description": ""
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Неширокая улица рабочего поселка."
     },
     "s": {
         "street": "Улица ???",
@@ -29,8 +30,9 @@
         "description": "Неширокая улица."
     },
     "nw": {
-        "street": "Зоопарк",
-        "description": ""
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Неширокая улица рабочего поселка."
     },
     "description": ""
 }

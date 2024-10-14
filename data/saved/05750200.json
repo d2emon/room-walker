@@ -1,0 +1,40 @@
+{
+    "name": "Улица Вертолётная",
+    "n": {
+        "walkable": true,
+        "street": "Улица Авиационная",
+        "description": "Неширокая улица рабочего поселка."
+    },
+    "ne": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "e": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Вертолётная",
+        "description": "Неширокая улица рабочего поселка."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Неширокая улица рабочего поселка."
+    },
+    "description": ""
+}

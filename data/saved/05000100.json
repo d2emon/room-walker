@@ -1,38 +1,36 @@
 {
-    "name": "Северный парк",
+    "name": "Перекрёсток 500/100",
     "n": {
-        "street": "",
-        "description": "Высотные жилые дома."
-    },
-    "ne": {
         "street": "Улица ???",
         "description": "Узкая тропа идущая между высоток."
     },
-    "e": {
+    "ne": {
         "street": "",
         "description": "Высотные жилые дома."
     },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая между высоток."
+    },
     "se": {
-        "walkable": true,
-        "street": "Улица Весенняя",
-        "description": "Широкая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "s": {
-        "street": "Северный парк",
-        "description": "Центральная аллея северного парка."
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая между высоток."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая через парк."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "Северный парк",
-        "description": ""
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "nw": {
-        "walkable": true,
-        "street": "Улица Весенняя",
-        "description": "Широкая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }

@@ -13,12 +13,13 @@
         "description": "Узкая улица."
     },
     "se": {
-        "street": "Промзона",
-        "description": ""
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Неширокая улица рабочего поселка."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая через промзону."
+        "street": "Промзона",
+        "description": ""
     },
     "sw": {
         "street": "Промзона",
@@ -29,8 +30,9 @@
         "description": "Узкая улица."
     },
     "nw": {
-        "street": "Промзона",
-        "description": ""
+        "walkable": true,
+        "street": "Улица Весенняя",
+        "description": "Неширокая улица рабочего поселка."
     },
     "description": ""
 }

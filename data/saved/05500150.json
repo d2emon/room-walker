@@ -30,9 +30,8 @@
         "description": "Неширокая улица."
     },
     "nw": {
-        "walkable": true,
-        "street": "Улица Весенняя",
-        "description": "Широкая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }
