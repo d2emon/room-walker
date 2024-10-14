@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 600/200",
+    "n": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "ne": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "e": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "se": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "s": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "w": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "description": ""
+}
