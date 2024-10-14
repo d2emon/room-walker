@@ -1,0 +1,38 @@
+{
+    "name": "Перекрёсток 575/450",
+    "n": {
+        "walkable": true,
+        "street": "Улица Сазонова",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "Старый парк",
+        "description": ""
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "se": {
+        "street": "Старый парк",
+        "description": "Река Зеленка в старом парке."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Сазонова",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}
