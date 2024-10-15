@@ -9,8 +9,8 @@
         "description": ""
     },
     "e": {
-        "street": "Авиашкола",
-        "description": ""
+        "street": "Улица ???",
+        "description": "Узкая тропа рабочего поселка."
     },
     "se": {
         "walkable": true,
