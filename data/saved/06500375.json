@@ -1,0 +1,39 @@
+{
+    "name": "Перекрёсток 650/375",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Зеркальная",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Коттеджи у реки."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая между жилых домов."
+    },
+    "sw": {
+        "street": "",
+        "description": "Коттеджи у реки."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Зеркальная",
+        "description": "Неширокая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}
