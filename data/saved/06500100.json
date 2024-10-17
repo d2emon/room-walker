@@ -9,12 +9,12 @@
         "description": ""
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая тропа идущая через промзону."
+        "street": "",
+        "description": "Зона отдыха у реки Зелёнки."
     },
     "se": {
-        "street": "Промзона",
-        "description": ""
+        "street": "",
+        "description": "Зона отдыха у реки Зелёнки."
     },
     "s": {
         "street": "Улица ???",
@@ -29,8 +29,8 @@
         "description": "Узкая тропа идущая через промзону."
     },
     "nw": {
-        "street": "Промзона",
-        "description": ""
+        "street": "",
+        "description": "Зона отдыха у реки Зелёнки."
     },
     "description": ""
 }
