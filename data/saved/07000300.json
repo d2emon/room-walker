@@ -6,7 +6,7 @@
     },
     "ne": {
         "street": "",
-        "description": "Горное ущелье."
+        "description": "Скальное ущелье."
     },
     "e": {
         "walkable": true,

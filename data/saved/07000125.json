@@ -1,0 +1,38 @@
+{
+    "name": "Улица Освобождения",
+    "n": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Каменская",
+        "description": "Широкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Школьный сад на берегу реки Каменки."
+    },
+    "s": {
+        "street": "Река Каменка",
+        "description": ""
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица Освобождения",
+        "description": "Широкая улица."
+    },
+    "w": {
+        "street": "Конанск. Улица ???",
+        "description": "Неширокая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

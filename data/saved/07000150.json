@@ -1,0 +1,37 @@
+{
+    "name": "Перекрёсток 700/150",
+    "n": {
+        "street": "Река Каменка",
+        "description": ""
+    },
+    "ne": {
+        "street": "Река Каменка",
+        "description": ""
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "Фруктовые сады",
+        "description": ""
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через сады."
+    },
+    "sw": {
+        "street": "Фруктовые сады",
+        "description": ""
+    },
+    "w": {
+        "street": "Фруктовые сады",
+        "description": ""
+    },
+    "nw": {
+        "street": "Река Каменка",
+        "description": ""
+    },
+    "description": ""
+}
