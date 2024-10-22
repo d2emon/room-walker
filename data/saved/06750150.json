@@ -2,17 +2,16 @@
     "name": "Конанские дачи",
     "n": {
         "street": "Конанск. Улица Паломников.",
-        "description": "Широкая улица."
+        "description": "Широкая улица идущая мимо школы."
     },
     "ne": {
         "walkable": true,
         "street": "Улица Каменская",
-        "description": "Широкая улица."
+        "description": "Широкая улица идущая мимо школы."
     },
     "e": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "Фруктовые сады",
+        "description": ""
     },
     "se": {
         "street": "Фруктовые сады",
