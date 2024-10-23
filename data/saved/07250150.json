@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 725/150",
+    "n": {
+        "street": "Река Каменка",
+        "description": ""
+    },
+    "ne": {
+        "street": "Река Каменка",
+        "description": ""
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "Фруктовые сады",
+        "description": ""
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через сады."
+    },
+    "sw": {
+        "street": "Фруктовые сады",
+        "description": ""
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "nw": {
+        "street": "Река Каменка",
+        "description": ""
+    },
+    "description": ""
+}
