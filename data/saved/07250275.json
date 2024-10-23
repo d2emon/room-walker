@@ -1,0 +1,38 @@
+{
+    "name": "Перекрёсток 725/275",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Низкоэтажная застройка поселка"
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "description": "Неширокая улица рабочего посёлка."
+    },
+    "se": {
+        "street": "",
+        "description": "Низкоэтажная застройка поселка"
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая вдоль ущелья."
+    },
+    "sw": {
+        "street": "",
+        "description": "Скальное ущелье."
+    },
+    "w": {
+        "street": "",
+        "description": "Скальное ущелье."
+    },
+    "nw": {
+        "street": "",
+        "description": "Скальное ущелье."
+    },
+    "description": ""
+}

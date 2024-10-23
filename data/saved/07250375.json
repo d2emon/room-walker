@@ -1,0 +1,38 @@
+{
+    "name": "Перекрёсток 725/375",
+    "n": {
+        "street": "",
+        "description": "Стены тоннеля."
+    },
+    "ne": {
+        "street": "",
+        "description": "Стены тоннеля."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Выезд из тоннеля под высокой горой",
+        "description": ""
+    },
+    "se": {
+        "street": "",
+        "description": "Стены тоннеля."
+    },
+    "s": {
+        "street": "",
+        "description": "Стены тоннеля."
+    },
+    "sw": {
+        "street": "",
+        "description": "Стены тоннеля."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Выезд из тоннеля под высокой горой",
+        "description": ""
+    },
+    "nw": {
+        "street": "",
+        "description": "Стены тоннеля."
+    },
+    "description": ""
+}
