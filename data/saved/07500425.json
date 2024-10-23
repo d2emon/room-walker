@@ -1,0 +1,39 @@
+{
+    "name": "Монетный двор",
+    "n": {
+        "street": "",
+        "description": "Техникум. Высотные жилые дома."
+    },
+    "ne": {
+        "street": "",
+        "description": "Техникум. Высотные жилые дома."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Переулок Советский",
+        "description": "Широкий переулок."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Улица Седова",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "Улица Автосборочная",
+        "description": "Широкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "w": {
+        "street": "Переулок Советский",
+        "description": "Широкий переулок."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица Нахимова",
+        "description": "Широкая улица с подвесной линией."
+    },
+    "description": ""
+}
