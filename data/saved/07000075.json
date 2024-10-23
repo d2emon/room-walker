@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 700/75",
+    "name": "Улица Железная",
     "n": {
-        "street": "Стадион",
+        "street": "Промзона",
         "description": ""
     },
     "ne": {
-        "street": "Стадион",
-        "description": ""
+        "street": "Улица Железная",
+        "description": "Узкая улица."
     },
     "e": {
         "street": "Стадион",
         "description": ""
     },
     "se": {
-        "street": "Стадион",
-        "description": ""
+        "street": "Улица Иванова",
+        "description": "Широкая улица."
     },
     "s": {
-        "street": "Стадион",
+        "street": "Река Каменка",
         "description": ""
     },
     "sw": {
-        "street": "Стадион",
+        "street": "Река Каменка",
         "description": ""
     },
     "w": {
-        "street": "Стадион",
-        "description": ""
+        "street": "",
+        "description": "Дачные участки."
     },
     "nw": {
-        "street": "Стадион",
-        "description": ""
+        "street": "Улица Иванова",
+        "description": "Широкая улица."
     },
     "description": ""
 }

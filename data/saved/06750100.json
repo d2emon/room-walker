@@ -1,24 +1,24 @@
 {
-    "name": "Конанск",
+    "name": "Перекрёсток 675/100",
     "n": {
-        "street": "Река Каменка",
-        "description": ""
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через сады."
     },
     "ne": {
         "street": "Река Каменка",
-        "description": ""
+        "description": "Дачные участки."
     },
     "e": {
         "street": "Река Каменка",
-        "description": ""
+        "description": "Дачные участки."
     },
     "se": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Река Каменка",
+        "description": "Дачные участки."
     },
     "s": {
-        "street": "Конанск. Улица Паломников.",
-        "description": "Широкая улица."
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через сады."
     },
     "sw": {
         "street": "",
@@ -29,8 +29,8 @@
         "description": "Зона отдыха у реки Зелёнки."
     },
     "nw": {
-        "street": "Промзона",
-        "description": ""
+        "street": "",
+        "description": "Зона отдыха у реки Зелёнки."
     },
     "description": ""
 }

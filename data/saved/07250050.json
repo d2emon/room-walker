@@ -1,36 +1,36 @@
 {
     "name": "Перекрёсток 700/50",
     "n": {
-        "street": "Улица ???",
+        "street": "Конанск. Улица ???",
         "description": "Неширокая улица."
     },
     "ne": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица Железная",
+        "description": "Узкая улица."
     },
     "e": {
         "street": "Конанск. Улица ???",
         "description": "Неширокая улица."
     },
     "se": {
-        "street": "Промзона",
-        "description": ""
+        "street": "Конанск. Улица ???",
+        "description": "Неширокая улица."
     },
     "s": {
-        "street": "Промзона",
+        "street": "Стадион",
         "description": ""
     },
     "sw": {
-        "street": "Промзона",
-        "description": ""
+        "street": "Улица Железная",
+        "description": "Узкая улица."
     },
     "w": {
         "street": "Конанск. Улица ???",
         "description": "Неширокая улица."
     },
     "nw": {
-        "street": "Промзона",
-        "description": ""
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "description": ""
 }

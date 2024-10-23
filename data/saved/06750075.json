@@ -1,36 +1,36 @@
 {
-    "name": "Улица Железная",
+    "name": "Перекрёсток 675/75",
     "n": {
-        "street": "Промзона",
-        "description": ""
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через сады."
     },
     "ne": {
-        "street": "Улица Железная",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Дачные участки."
     },
     "e": {
-        "street": "Стадион",
-        "description": ""
+        "street": "",
+        "description": "Дачные участки."
     },
     "se": {
-        "street": "Улица Иванова",
-        "description": "Широкая улица."
+        "street": "Река Каменка",
+        "description": "Дачные участки."
     },
     "s": {
-        "street": "Река Каменка",
-        "description": ""
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через сады."
     },
     "sw": {
-        "street": "Река Каменка",
-        "description": ""
+        "street": "",
+        "description": "Зона отдыха у реки Зелёнки."
     },
     "w": {
-        "street": "Река Каменка",
-        "description": ""
+        "street": "",
+        "description": "Зона отдыха у реки Зелёнки."
     },
     "nw": {
-        "street": "Улица Иванова",
-        "description": "Широкая улица."
+        "street": "",
+        "description": "Зона отдыха у реки Зелёнки."
     },
     "description": ""
 }

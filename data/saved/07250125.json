@@ -1,0 +1,38 @@
+{
+    "name": "Школьный сад",
+    "n": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Каменская",
+        "description": "Широкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Школьный сад на берегу реки Каменки."
+    },
+    "s": {
+        "street": "Река Каменка",
+        "description": ""
+    },
+    "sw": {
+        "street": "Река Каменка",
+        "description": "Коттеджи у реки."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Каменская",
+        "description": "Широкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

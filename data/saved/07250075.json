@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 725/75",
+    "n": {
+        "street": "Стадион",
+        "description": ""
+    },
+    "ne": {
+        "street": "Стадион",
+        "description": ""
+    },
+    "e": {
+        "street": "Стадион",
+        "description": ""
+    },
+    "se": {
+        "street": "Стадион",
+        "description": ""
+    },
+    "s": {
+        "street": "Стадион",
+        "description": ""
+    },
+    "sw": {
+        "street": "Стадион",
+        "description": ""
+    },
+    "w": {
+        "street": "Стадион",
+        "description": ""
+    },
+    "nw": {
+        "street": "Стадион",
+        "description": ""
+    },
+    "description": ""
+}

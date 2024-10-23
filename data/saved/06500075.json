@@ -1,20 +1,20 @@
 {
     "name": "Перекрёсток 650/75",
     "n": {
-        "street": "Река Каменка",
-        "description": ""
+        "street": "Улица ???",
+        "description": "Узкая тропа идущая через промзону."
     },
     "ne": {
-        "street": "Река Каменка",
-        "description": ""
+        "street": "",
+        "description": "Зона отдыха у реки Зелёнки."
     },
     "e": {
-        "street": "Река Каменка",
-        "description": ""
+        "street": "",
+        "description": "Зона отдыха у реки Зелёнки."
     },
     "se": {
-        "street": "Промзона",
-        "description": ""
+        "street": "",
+        "description": "Зона отдыха у реки Зелёнки."
     },
     "s": {
         "street": "Улица ???",
