@@ -1,0 +1,38 @@
+{
+    "name": "Улица Нахимова",
+    "n": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "ne": {
+        "street": "Улица Антенная",
+        "description": "Узкая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Техникум. Высотные жилые дома."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Улица Нахимова",
+        "description": "Широкая улица с подвесной линией."
+    },
+    "s": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "sw": {
+        "street": "Улица Антенная",
+        "description": "Узкая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Управление Автоматизации."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица Нахимова",
+        "description": "Широкая улица с подвесной линией."
+    },
+    "description": ""
+}
