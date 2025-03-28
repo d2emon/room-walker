@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 250/250",
+    "n": {
+        "walkable": true,
+        "street": "Улица Семисот",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": ["k"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Мост через Ольховку",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокий мост."
+    },
+    "se": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Семисот",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["k"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

@@ -1,0 +1,45 @@
+{
+    "name": "Квартал Грэсовский",
+    "n": {
+        "street": "Улица Семисот",
+        "description": "Широкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "e": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "se": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Семисот",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

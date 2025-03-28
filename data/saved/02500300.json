@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 250/300",
+    "n": {
+        "walkable": true,
+        "street": "Улица Семисот",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["k"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "e": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "se": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Семисот",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["k"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

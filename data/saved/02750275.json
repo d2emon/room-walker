@@ -1,0 +1,36 @@
+{
+    "name": "Река Ольховка",
+    "n": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "ne": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "e": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "se": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "s": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "sw": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "w": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "nw": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "description": ""
+}

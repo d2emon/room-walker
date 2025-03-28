@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 250/25",
+    "n": {
+        "street": "Улица Семисот",
+        "description": "Широкая улица."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "Улица Семисот",
+        "description": "Широкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "description": ""
+}

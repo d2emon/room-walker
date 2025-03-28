@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 275/125",
+    "n": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "ne": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "e": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "se": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "s": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "sw": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "w": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "nw": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "description": ""
+}

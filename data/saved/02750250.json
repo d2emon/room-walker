@@ -1,0 +1,54 @@
+{
+    "name": "Мост через Ольховку",
+    "n": {
+        "street": "",
+        "description": "Высотные жилые дома на берегу реки."
+    },
+    "ne": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Мост через Ольховку",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокий мост."
+    },
+    "se": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "s": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "sw": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Мост через Ольховку",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокий мост."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высотные жилые дома на берегу реки."
+   },
+    "description": ""
+}

@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 275/200",
+    "n": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "ne": {
+        "walkable": true,
+        "street": "Улица Ольховская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["k"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица Ольховская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["k"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}
