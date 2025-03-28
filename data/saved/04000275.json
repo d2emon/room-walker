@@ -2,7 +2,7 @@
     "name": "Перекрёсток 400/275",
     "n": {
         "street": "Улица ???",
-        "description": "Узкая тропа."
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
@@ -10,7 +10,7 @@
     },
     "e": {
         "street": "Улица ???",
-        "description": "Узкая тропа."
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
@@ -18,7 +18,7 @@
     },
     "s": {
         "street": "Улица ???",
-        "description": "Узкая тропа."
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
@@ -26,7 +26,7 @@
     },
     "w": {
         "street": "Улица ???",
-        "description": "Узкая тропа."
+        "description": "Узкая улица."
     },
     "nw": {
         "street": "",

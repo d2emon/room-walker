@@ -1,24 +1,24 @@
 {
     "name": "Перекрёсток 400/175",
     "n": {
-        "street": "",
-        "description": "Лесополоса у реки."
-    },
-    "ne": {
         "street": "Улица ???",
         "description": "Узкая улица вдоль лесополосы."
     },
-    "e": {
+    "ne": {
         "street": "",
         "description": "Промзона."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
-    },
-    "s": {
         "street": "",
         "description": "Промзона."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "Улица ???",

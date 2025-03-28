@@ -1,36 +1,36 @@
 {
-    "name": "Река Ольховка",
+    "name": "Перекрёсток 400/150",
     "n": {
-        "street": "",
-        "description": "Берег реки."
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль лесополосы."
     },
     "ne": {
         "street": "",
-        "description": "Узкая тропа вдоль реки."
+        "description": "Промзона."
     },
     "e": {
-        "street": "",
-        "description": "Лесополоса у реки."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Лесополоса у реки."
+        "description": "Промзона."
     },
     "s": {
-        "street": "",
-        "description": "Лесополоса у реки."
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль лесополосы."
     },
     "sw": {
         "street": "",
-        "description": "Узкая тропа вдоль реки."
+        "description": "Лесополоса у реки."
     },
     "w": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Лесополоса у реки."
     },
     "nw": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Лесополоса у реки."
     },
     "description": ""
 }

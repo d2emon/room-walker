@@ -1,40 +1,36 @@
 {
     "name": "Перекрёсток 400/100",
     "n": {
-        "walkable": true,
-        "street": "Улица Эпическая",
-        "description": "Неширокая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль реки."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "e": {
-        "walkable": true,
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица Эпическая",
-        "description": "Неширокая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль реки."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Небольшая река."
     },
     "w": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Небольшая река."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Небольшая река."
     },
     "description": ""
 }

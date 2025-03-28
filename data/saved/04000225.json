@@ -1,16 +1,16 @@
 {
     "name": "Перекрёсток 400/225",
     "n": {
-        "street": "",
-        "description": "Промзона."
-    },
-    "ne": {
         "street": "Улица ???",
         "description": "Узкая улица."
     },
-    "e": {
+    "ne": {
         "street": "",
         "description": "Промзона."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",

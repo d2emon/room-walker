@@ -1,24 +1,24 @@
 {
     "name": "Перекрёсток 400/200",
     "n": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
         "description": "Промзона."
     },
     "e": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Вертолётная",
+        "description": "Неширокая улица рабочего поселка."
     },
     "se": {
         "street": "",
         "description": "Промзона."
     },
     "s": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",

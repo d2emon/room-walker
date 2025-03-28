@@ -1,36 +1,36 @@
 {
     "name": "Перекрёсток 400/50",
     "n": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль реки."
     },
     "ne": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Промзона."
     },
     "e": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Промзона."
     },
     "s": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль реки."
     },
     "sw": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Небольшая река."
     },
     "w": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Небольшая река."
     },
     "nw": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Небольшая река."
     },
     "description": ""
 }

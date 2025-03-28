@@ -1,36 +1,36 @@
 {
     "name": "Перекрёсток 400/25",
     "n": {
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль реки."
+    },
+    "ne": {
         "street": "",
         "description": "Промзона."
     },
-    "ne": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
-    },
     "e": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Промзона."
     },
     "s": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль реки."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Небольшая река."
     },
     "w": {
         "street": "",
-        "description": "Промзона."
+        "description": "Небольшая река."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Небольшая река."
     },
     "description": ""
 }
