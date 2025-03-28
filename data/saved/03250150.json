@@ -19,15 +19,15 @@
     },
     "e": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "se": {
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "description": "Неширокая улица идущая к реке."
     },
     "s": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "sw": {
         "walkable": true,

@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 375/125",
+    "name": "Река Ольховка",
     "n": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "ne": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Зона отдыха у реки."
     },
     "e": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Берег реки."
     },
     "se": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Берег реки."
     },
     "s": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Берег реки."
     },
     "sw": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Зона отдыха у реки."
     },
     "w": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "nw": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "description": ""
 }

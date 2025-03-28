@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 350/150",
+    "name": "Река Ольховка",
     "n": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "ne": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "e": {
         "street": "",
@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "w": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "nw": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "description": ""
 }

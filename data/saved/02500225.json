@@ -27,13 +27,12 @@
         "description": "Широкая улица."
     },
     "e": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Зона отдыха у реки."
     },
     "se": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "s": {
         "walkable": true,
