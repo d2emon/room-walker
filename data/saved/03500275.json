@@ -1,0 +1,38 @@
+{
+    "name": "Перекрёсток 350/275",
+    "n": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Перулок Разбойничий",
+        "description": "Неширокий переулок."
+    },
+    "description": ""
+}

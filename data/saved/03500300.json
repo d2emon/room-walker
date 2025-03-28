@@ -1,0 +1,38 @@
+{
+    "name": "Перекрёсток 350/300",
+    "n": {
+        "walkable": true,
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

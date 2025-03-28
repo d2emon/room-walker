@@ -1,0 +1,36 @@
+{
+    "name": "Река Ольховка",
+    "n": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "ne": {
+        "street": "",
+        "description": "Узкая тропа вдоль реки."
+    },
+    "e": {
+        "street": "",
+        "description": "Лесополоса у реки."
+    },
+    "se": {
+        "street": "",
+        "description": "Узкая тропа через лес."
+    },
+    "s": {
+        "street": "",
+        "description": "Лесополоса у реки."
+    },
+    "sw": {
+        "street": "",
+        "description": "Узкая тропа вдоль реки."
+    },
+    "w": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "nw": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "description": ""
+}

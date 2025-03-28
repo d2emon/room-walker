@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 400/250",
+    "n": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "ne": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "se": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "sw": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "nw": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "description": ""
+}

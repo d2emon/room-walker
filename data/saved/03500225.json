@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 350/225",
+    "n": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль реки."
+    },
+    "e": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль реки."
+    },
+    "w": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "nw": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "description": ""
+}

@@ -1,0 +1,38 @@
+{
+    "name": "Мост через Ольховку",
+    "n": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "ne": {
+        "street": "",
+        "description": "Узкая тропа вдоль реки под мостом."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Мост через Ольховку",
+        "description": "Неширокий мост."
+    },
+    "se": {
+        "street": "",
+        "description": "Лесополоса у реки."
+    },
+    "s": {
+        "street": "",
+        "description": "Узкая тропа вдоль реки под мостом."
+    },
+    "sw": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Мост через Ольховку",
+        "description": "Неширокий мост."
+    },
+    "nw": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "description": ""
+}

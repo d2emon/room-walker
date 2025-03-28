@@ -1,0 +1,36 @@
+{
+    "name": "Река Ольховка",
+    "n": {
+        "street": "",
+        "description": "Мост через реку Ольховую."
+    },
+    "ne": {
+        "street": "",
+        "description": "Лесополоса у реки."
+    },
+    "e": {
+        "street": "",
+        "description": "Узкая тропа через лес."
+    },
+    "se": {
+        "street": "",
+        "description": "Лесополоса у реки."
+    },
+    "s": {
+        "street": "",
+        "description": "Узкая тропа вдоль реки."
+    },
+    "sw": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "w": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "nw": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "description": ""
+}
