@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 350/25",
+    "n": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}

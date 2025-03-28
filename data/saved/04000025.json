@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 400/25",
+    "n": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}
