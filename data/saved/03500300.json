@@ -3,6 +3,14 @@
     "n": {
         "walkable": true,
         "street": "Улица Разбойничья",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "ne": {
@@ -20,6 +28,14 @@
     "s": {
         "walkable": true,
         "street": "Улица Разбойничья",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "sw": {

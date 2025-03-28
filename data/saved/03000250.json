@@ -11,6 +11,14 @@
     "e": {
         "walkable": true,
         "street": "Мост через Ольховку",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Неширокий мост."
     },
     "se": {
@@ -28,6 +36,14 @@
     "w": {
         "walkable": true,
         "street": "Мост через Ольховку",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Неширокий мост."
     },
     "nw": {

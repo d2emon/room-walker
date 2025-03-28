@@ -15,6 +15,14 @@
     "se": {
         "walkable": true,
         "street": "Перулок Разбойничий",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Неширокий переулок."
     },
     "s": {
@@ -28,6 +36,14 @@
     "w": {
         "walkable": true,
         "street": "Мост через Ольховку",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Неширокий мост."
     },
     "nw": {
