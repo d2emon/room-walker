@@ -5,16 +5,16 @@
         "description": "Высотные жилые дома."
     },
     "ne": {
-        "street": "Улица Ольховская",
-        "description": "Широкая улица."
+        "street": "",
+        "description": "Небольшая река."
     },
     "e": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Небольшая река."
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Небольшая река."
     },
     "s": {
         "street": "",

@@ -6,7 +6,7 @@
     },
     "ne": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Неширокая улица."
     },
     "e": {
         "street": "",
