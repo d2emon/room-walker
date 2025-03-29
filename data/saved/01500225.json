@@ -1,25 +1,25 @@
 {
-    "name": "Перекрёсток 175/250",
+    "name": "Перекрёсток 150/225",
     "n": {
         "street": "",
         "description": "Низкоэтажные дома посёлка."
     },
     "ne": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Неширокая улица."
     },
     "e": {
         "street": "",
         "description": "Низкоэтажные дома посёлка."
     },
     "se": {
-        "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "walkable": true,
+        "street": "Улица Камышная",
+        "description": "Широкая улица."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица Швейка",
-        "description": "Широкая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",

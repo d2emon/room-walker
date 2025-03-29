@@ -1,13 +1,12 @@
 {
-    "name": "Перекрёсток 175/300",
+    "name": "Перекрёсток 150/300",
     "n": {
-        "walkable": true,
-        "street": "Улица Швейка",
-        "description": "Широкая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Коттеджи."
     },
     "e": {
         "street": "Улица ???",
@@ -15,12 +14,11 @@
     },
     "se": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Коттеджи."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица Швейка",
-        "description": "Широкая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
