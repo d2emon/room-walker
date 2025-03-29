@@ -1,0 +1,38 @@
+{
+    "name": "Перекрёсток 175/275",
+    "n": {
+        "walkable": true,
+        "street": "Улица Швейка",
+        "description": "Широкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Низкоэтажные дома посёлка."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Низкоэтажные дома посёлка."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Швейка",
+        "description": "Широкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Низкоэтажные дома посёлка."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Низкоэтажные дома посёлка."
+    },
+    "description": ""
+}
