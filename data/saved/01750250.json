@@ -1,5 +1,5 @@
 {
-    "name": "Перекрёсток 175/250",
+    "name": "Просека",
     "n": {
         "street": "",
         "description": "Лесополоса."
@@ -19,7 +19,15 @@
     "s": {
         "walkable": true,
         "street": "Улица Швейка",
-        "description": "Широкая улица."
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
@@ -32,7 +40,15 @@
     "nw": {
         "walkable": true,
         "street": "Улица Камышная",
-        "description": "Широкая улица."
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
     },
     "description": ""
 }

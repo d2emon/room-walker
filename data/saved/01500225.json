@@ -1,5 +1,5 @@
 {
-    "name": "Перекрёсток 150/225",
+    "name": "Улица Камышная",
     "n": {
         "street": "Посёлок Колесо",
         "description": "Невысокие дома рабочего посёлка."
@@ -15,6 +15,14 @@
     "se": {
         "walkable": true,
         "street": "Улица Камышная",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "s": {
@@ -32,6 +40,14 @@
     "nw": {
         "walkable": true,
         "street": "Улица Камышная",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "description": ""

@@ -1,13 +1,21 @@
 {
-    "name": "Перекрёсток 175/300",
+    "name": "Ближние дачи",
     "n": {
         "walkable": true,
         "street": "Улица Швейка",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Широкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Невысокие дома рабочего посёлка."
     },
     "e": {
         "street": "Улица ???",
@@ -15,11 +23,19 @@
     },
     "se": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Невысокие дома рабочего посёлка."
     },
     "s": {
         "walkable": true,
         "street": "Улица Швейка",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Широкая улица."
     },
     "sw": {
