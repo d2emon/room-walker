@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 150/150",
+    "n": {
+        "street": "Улица ???",
+        "description": "Узкая тропа в лесу."
+    },
+    "ne": {
+        "street": "",
+        "description": "Лес."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая тропа в лесу."
+    },
+    "se": {
+        "street": "",
+        "description": "Лес."
+    },
+    "s": {
+        "street": "",
+        "description": "Пешеходный мост."
+    },
+    "sw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа в лесу."
+    },
+    "nw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "description": ""
+}

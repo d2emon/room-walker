@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 175/175",
+    "n": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "ne": {
+        "street": "",
+        "description": "Лес."
+    },
+    "e": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "se": {
+        "street": "",
+        "description": "Лесополоса."
+    },
+    "s": {
+        "street": "",
+        "description": "Лесополоса."
+    },
+    "sw": {
+        "street": "",
+        "description": "Лесополоса."
+    },
+    "w": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "nw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "description": ""
+}

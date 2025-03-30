@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 100/175",
+    "n": {
+        "street": "",
+        "description": "Берег реки."
+    },
+    "ne": {
+        "street": "",
+        "description": "Лес."
+    },
+    "e": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Узкая улица на окраине посёлка."
+    },
+    "s": {
+        "street": "Посёлок Колесо",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Узкая улица на окраине посёлка."
+    },
+    "w": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "nw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "description": ""
+}
