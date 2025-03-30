@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Невысокие дома рабочего посёлка."
     },
     "w": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Узкая улица вдоль леса."
     },
     "nw": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "description": ""
 }

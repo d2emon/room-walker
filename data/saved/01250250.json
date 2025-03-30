@@ -1,20 +1,20 @@
 {
-    "name": "Перекрёсток 125/250",
+    "name": "Колодец нв окраине посёлка",
     "n": {
-        "street": "Улица Светлая",
-        "description": "Широкая улица."
+        "street": "Посёлок Колесо",
+        "description": "Невысокие дома рабочего посёлка."
     },
     "ne": {
-        "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "street": "Улица ???",
+        "description": "Узкая улица на окраине посёлка."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Лесополоса."
     },
     "se": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Лесополоса."
     },
     "s": {
         "street": "Улица Светлая",
@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Лесополоса."
     },
     "w": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Узкая тропа через лес."
     },
     "nw": {
-        "street": "",
-        "description": "Коттеджи."
+        "street": "Улица ???",
+        "description": "Узкая улица на окраине посёлка."
     },
     "description": ""
 }

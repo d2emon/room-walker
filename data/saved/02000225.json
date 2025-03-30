@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Узкая тропа через лес."
     },
     "w": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "nw": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Узкая тропа через лес."
     },
     "description": ""
 }

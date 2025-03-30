@@ -1,16 +1,16 @@
 {
     "name": "Перекрёсток 150/275",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Лесополоса."
     },
     "ne": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "e": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Узкая улица вдоль леса."
     },
     "se": {
         "street": "",
@@ -26,11 +26,11 @@
     },
     "w": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Узкая улица вдоль леса."
     },
     "nw": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Лесополоса."
     },
     "description": ""
 }

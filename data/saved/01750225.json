@@ -2,35 +2,35 @@
     "name": "Перекрёсток 175/225",
     "n": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "ne": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "e": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "se": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "s": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "sw": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "w": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "nw": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "description": ""
 }

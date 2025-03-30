@@ -7,15 +7,15 @@
     },
     "ne": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "e": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Узкая улица вдоль леса."
     },
     "se": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Невысокие дома рабочего посёлка."
     },
     "s": {
         "walkable": true,
@@ -28,11 +28,11 @@
     },
     "w": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Узкая улица вдоль леса."
     },
     "nw": {
         "street": "",
-        "description": "Низкоэтажные дома посёлка."
+        "description": "Лесополоса."
     },
     "description": ""
 }
