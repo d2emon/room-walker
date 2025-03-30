@@ -1,0 +1,54 @@
+{
+    "name": "Холм Охта",
+    "n": {
+        "street": "Улица Эпическая",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Зеркальная",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a", "l", "m"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с подвесной линией."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Эпическая",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a", "l", "m"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Улица Зеркальная",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "description": ""
+}

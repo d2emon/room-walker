@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 325/375",
+    "n": {
+        "walkable": true,
+        "street": "Улица Театральная",
+        "transport": {
+            "k3": {
+                "tram": ["XVII", "XVIII", "XIX"],
+                "hover": [],
+                "bus": ["16"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Улица Зеркальная",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Театральная",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII", "XIX"],
+                "hover": [],
+                "bus": ["15", "16"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Загонная 2-я",
+        "transport": {
+            "k3": {
+                "tram": ["XVII"],
+                "hover": [],
+                "bus": ["15"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица вдоль клумбы."
+    },
+    "nw": {
+        "street": "",
+        "description": "Клумба."
+    },
+    "description": ""
+}

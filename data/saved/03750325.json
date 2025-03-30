@@ -1,7 +1,7 @@
 {
-    "name": "Перекрёсток 400/225",
+    "name": "Перекрёсток 375/325",
     "n": {
-        "street": "Улица Эпическая",
+        "street": "Улица ???",
         "description": "Узкая улица."
     },
     "ne": {
@@ -14,23 +14,23 @@
     },
     "se": {
         "street": "",
-        "description": "Промзона."
+        "description": "Высотные жилые дома."
     },
     "s": {
-        "street": "Улица Эпическая",
+        "street": "Улица ???",
         "description": "Узкая улица."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "",
-        "description": "Промзона."
-    },
-    "nw": {
         "street": "Улица ???",
         "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "description": ""
 }

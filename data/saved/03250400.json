@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 325/400",
+    "n": {
+        "walkable": true,
+        "street": "Улица Театральная",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII", "XIX"],
+                "hover": [],
+                "bus": ["15", "16"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Театральная",
+        "transport": {
+            "k3": {
+                "tram": ["XVIII", "XIX"],
+                "hover": [],
+                "bus": ["15", "16"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

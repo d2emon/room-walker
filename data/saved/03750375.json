@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 375/375",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["XII<", "XIV"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса в центре."
+    },
+    "ne": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "e": {
+        "street": "Улица Зеркальная",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["XII>", "XIV"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса в центре."
+    },
+    "w": {
+        "street": "Улица Зеркальная",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "description": ""
+}

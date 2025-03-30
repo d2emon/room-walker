@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 350/400",
+    "n": {
+        "street": "Улица Разбойничья",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["XII<", "XIV"],
+                "hover": [],
+                "bus": ["6", "16"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса в центре."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "Улица Разбойничья",
+        "description": "Узкая улица."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["XII>", "XIV"],
+                "hover": [],
+                "bus": ["6", "16"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса в центре."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

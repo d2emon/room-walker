@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 325/350",
+    "n": {
+        "street": "Улица Театральная",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Подвальная",
+        "transport": {
+            "k3": {
+                "tram": ["XVII", "XVIII", "XIX"],
+                "hover": [],
+                "bus": ["6", "16"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса в центре."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Театральная",
+        "transport": {
+            "k3": {
+                "tram": ["XVII", "XVIII", "XIX"],
+                "hover": [],
+                "bus": ["16"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица Загонная 1-я",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["6"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица вдоль клумбы."
+    },
+    "w": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}
