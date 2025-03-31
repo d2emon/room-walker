@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 200/425",
+    "n": {
+        "walkable": true,
+        "street": "Улица Боткина",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["4", "25"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "Завод \"Рембыттехника\"",
+        "description": "Корпуса завода."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Первомайская",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII", "XIV", "XV", "XVIII", "XIX"],
+                "hover": ["j", "n"],
+                "bus": ["2", "4", "6", "10<", "24", "25", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса и подвесной линией."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "Улица Боткина",
+        "description": "Узкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Первомайская",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII", "XIV", "XV", "XVIII", "XIX"],
+                "hover": ["j", "n"],
+                "bus": ["2", "6", "10>", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса и подвесной линией."
+    },
+    "nw": {
+        "street": "",
+        "description": "Швейная фабрика."
+    },
+    "description": ""
+}

@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 175/450",
+    "n": {
+        "walkable": true,
+        "street": "Улица Швейка",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": [],
+                "bus": ["7", "10<", "13"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Швейка",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": [],
+                "bus": ["7", "10>", "13"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты у реки."
+    },
+    "w": {
+        "street": "",
+        "description": "Жилые дома средней высоты у реки."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты у реки."
+    },
+    "description": ""
+}

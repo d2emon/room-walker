@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 125/450",
+    "n": {
+        "walkable": true,
+        "street": "Улица Светлая",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": [],
+                "bus": ["2", "6", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты у реки."
+    },
+    "e": {
+        "street": "",
+        "description": "Жилые дома средней высоты у реки."
+    },
+    "se": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Мост Светлый",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": [],
+                "bus": ["2", "6", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкий мост с линией монорельса."
+    },
+    "sw": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль реки."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

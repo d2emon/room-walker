@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 175/475",
+    "n": {
+        "walkable": true,
+        "street": "Улица Швейка",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": [],
+                "bus": ["7", "10<", "13"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": ["j", "p", "q"],
+                "bus": ["7", "10>", "13"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль реки с подвечной линией и линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "s": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Мост Мудрого",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["j", "p", "q"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкий мост с подвесной линией."
+    },
+    "w": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты у реки."
+    },
+    "description": ""
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 200/500",
+    "n": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "ne": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "e": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "se": {
+        "street": "",
+        "description": "Лес."
+    },
+    "s": {
+        "street": "",
+        "description": "Лес."
+    },
+    "sw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "w": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "nw": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "description": ""
+}

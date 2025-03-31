@@ -1,0 +1,54 @@
+{
+    "name": "Технорынок",
+    "n": {
+        "street": "Улица Боткина",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Технорынок."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": ["j", "p", "q"],
+                "bus": ["7", "10>", "13"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль реки с подвечной линией и линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "s": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "sw": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": ["j", "p", "q"],
+                "bus": ["7", "10<", "13"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль реки с подвечной линией и линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}
