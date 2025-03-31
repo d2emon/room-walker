@@ -1,13 +1,13 @@
 {
-    "name": "Перекрёсток 325/400",
+    "name": "Площадь Арканская",
     "n": {
         "walkable": true,
-        "street": "Улица Театральная",
+        "street": "Улица Арканская",
         "transport": {
             "k3": {
-                "tram": ["XVIII", "XIX"],
+                "tram": [],
                 "hover": [],
-                "bus": ["15", "16"],
+                "bus": ["6", "15"],
                 "metro": []
             }
         },
@@ -26,16 +26,7 @@
         "description": "Жилые дома средней высоты."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица Театральная",
-        "transport": {
-            "k3": {
-                "tram": ["XVIII", "XIX"],
-                "hover": [],
-                "bus": ["15", "16"],
-                "metro": []
-            }
-        },
+        "street": "Улица Арканская",
         "description": "Неширокая улица."
     },
     "sw": {
@@ -43,12 +34,21 @@
         "description": "Жилые дома средней высоты."
     },
     "w": {
+        "walkable": true,
         "street": "Улица Кузнецова",
-        "description": "Узкая улица."
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["6", "43", "55", "56", "58", "72"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
     },
     "nw": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Площадь Арканская",
+        "description": "Площадь с автостанцией."
     },
     "description": ""
 }

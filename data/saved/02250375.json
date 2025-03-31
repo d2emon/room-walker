@@ -1,29 +1,29 @@
 {
-    "name": "Мост через Ольховку",
+    "name": "Перекрёсток 225/375",
     "n": {
         "street": "",
         "description": "Небольшая река."
     },
     "ne": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Зона отдыха у реки."
     },
     "e": {
         "walkable": true,
-        "street": "Мост через Ольховку",
+        "street": "Петров Мост",
         "transport": {
             "k3": {
-                "tram": ["XVIII"],
+                "tram": ["XVII"],
                 "hover": [],
                 "bus": [],
                 "metro": []
             }
         },
-        "description": "Неширокий мост."
+        "description": "Неширокий мост с линией монорельса."
     },
     "se": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Жилые дома средней высоты у реки."
     },
     "s": {
         "street": "",
@@ -31,24 +31,24 @@
     },
     "sw": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Небольшая река."
     },
     "w": {
         "walkable": true,
-        "street": "Мост через Ольховку",
+        "street": "Петров Мост",
         "transport": {
             "k3": {
-                "tram": ["XVIII"],
+                "tram": ["XVII"],
                 "hover": [],
                 "bus": [],
                 "metro": []
             }
         },
-        "description": "Неширокий мост."
+        "description": "Неширокий мост с линией монорельса."
     },
     "nw": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Жилые дома средней высоты у реки."
     },
     "description": ""
 }

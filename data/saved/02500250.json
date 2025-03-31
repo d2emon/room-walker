@@ -15,7 +15,7 @@
     },
     "ne": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Зона отдыха у реки."
     },
     "e": {
         "walkable": true,
@@ -32,7 +32,7 @@
     },
     "se": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Зона отдыха у реки."
     },
     "s": {
         "walkable": true,

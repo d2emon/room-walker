@@ -1,17 +1,8 @@
 {
-    "name": "Перекрёсток 325/400",
+    "name": "Перекрёсток 300/400",
     "n": {
-        "walkable": true,
-        "street": "Улица Театральная",
-        "transport": {
-            "k3": {
-                "tram": ["XVIII", "XIX"],
-                "hover": [],
-                "bus": ["15", "16"],
-                "metro": []
-            }
-        },
-        "description": "Неширокая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
@@ -26,17 +17,8 @@
         "description": "Жилые дома средней высоты."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица Театральная",
-        "transport": {
-            "k3": {
-                "tram": ["XVIII", "XIX"],
-                "hover": [],
-                "bus": ["15", "16"],
-                "metro": []
-            }
-        },
-        "description": "Неширокая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",

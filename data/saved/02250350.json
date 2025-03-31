@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 225/300",
+    "name": "Перекрёсток 225/350",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Небольшая река."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Зона отдыха у реки."
     },
     "e": {
         "street": "Улица ???",
@@ -17,12 +17,12 @@
         "description": "Зона отдыха у реки."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Небольшая река."
     },
     "sw": {
         "street": "",
-        "description": "Колхозные поля."
+        "description": "Жилые дома средней высоты у реки."
     },
     "w": {
         "street": "Улица ???",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Колхозные поля."
+        "description": "Заливные луга."
     },
     "description": ""
 }

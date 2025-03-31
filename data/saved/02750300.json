@@ -14,23 +14,23 @@
     },
     "se": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Зона отдыха у реки."
     },
     "s": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Зона отдыха у реки."
     },
     "sw": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Небольшая река."
     },
     "w": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Зона отдыха у реки."
     },
     "nw": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Зона отдыха у реки."
     },
     "description": ""
 }

@@ -15,15 +15,15 @@
     },
     "ne": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Зона отдыха у реки."
     },
     "e": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Зона отдыха у реки."
     },
     "se": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Зона отдыха у реки."
     },
     "s": {
         "walkable": true,
@@ -40,7 +40,7 @@
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Зона отдыха у реки."
     },
     "w": {
         "street": "Улица ???",

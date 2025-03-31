@@ -1,5 +1,5 @@
 {
-    "name": "Перекрёсток 250/275",
+    "name": "Гостиница \"Интурист\"",
     "n": {
         "walkable": true,
         "street": "Улица Семисот",
@@ -15,15 +15,15 @@
     },
     "ne": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Гостиница \"Интурист\""
     },
     "e": {
-        "street": "",
-        "description": "Зона отдыха у реки."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Сквер под мостом."
     },
     "s": {
         "walkable": true,
@@ -40,7 +40,7 @@
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Зона отдыха у реки."
     },
     "w": {
         "street": "Улица ???",
@@ -48,7 +48,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Зона отдыха у реки."
     },
     "description": ""
 }

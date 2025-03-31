@@ -17,12 +17,12 @@
         "description": "Лесополоса у реки."
     },
     "s": {
-        "street": "",
-        "description": "Узкая тропа вдоль реки."
+        "street": "Улица ???",
+        "description": "Узкая тропа."
     },
     "sw": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Зона отдыха у реки."
     },
     "w": {
         "street": "",

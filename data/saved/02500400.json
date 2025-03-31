@@ -1,50 +1,41 @@
 {
-    "name": "Перекрёсток 400/400",
+    "name": "Улица Семисот",
     "n": {
         "walkable": true,
-        "street": "Улица Эпическая",
+        "street": "Улица Семисот",
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": ["a", "l", "m"],
+                "hover": ["k"],
                 "bus": [],
                 "metro": []
             }
         },
-        "description": "Неширокая улица."
+        "description": "Широкая улица."
     },
     "ne": {
+        "street": "Площадь Арканская",
+        "description": "Площадь с автостанцией."
+    },
+    "e": {
         "walkable": true,
-        "street": "Улица Охтинская",
+        "street": "Улица Кузнецова",
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": ["a", "l", "m"],
-                "bus": [],
+                "hover": [],
+                "bus": ["6", "43", "55", "56", "58", "72"],
                 "metro": []
             }
         },
         "description": "Неширокая улица."
-    },
-    "e": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
     },
     "se": {
         "street": "",
         "description": "Жилые дома средней высоты."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица Эпическая",
-        "transport": {
-            "k3": {
-                "tram": [],
-                "hover": ["a", "l", "m"],
-                "bus": [],
-                "metro": []
-            }
-        },
+        "street": "Улица Семисот",
         "description": "Неширокая улица."
     },
     "sw": {
@@ -52,12 +43,21 @@
         "description": "Жилые дома средней высоты."
     },
     "w": {
+        "walkable": true,
         "street": "Улица Кузнецова",
-        "description": "Узкая улица."
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["k"],
+                "bus": ["6"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Жилые дома средней высоты у реки."
     },
     "description": ""
 }

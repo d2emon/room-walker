@@ -1,0 +1,72 @@
+{
+    "name": "Петров Мост",
+    "n": {
+        "walkable": true,
+        "street": "Улица Семисот",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["k"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица идущая под мостом."
+    },
+    "ne": {
+        "street": "",
+        "description": "Сквер под мостом."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Петров Мост",
+        "transport": {
+            "k3": {
+                "tram": ["XVII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокий мост с линией монорельса."
+    },
+    "se": {
+        "street": "Площадь Арканская",
+        "description": "Площадь с автостанцией."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Семисот",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["k"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица идущая под мостом."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты у реки."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Петров Мост",
+        "transport": {
+            "k3": {
+                "tram": ["XVII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокий мост с линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}
