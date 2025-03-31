@@ -1,13 +1,13 @@
 {
-    "name": "Перекрёсток 175/450",
+    "name": "Перекрёсток 225/450",
     "n": {
         "walkable": true,
-        "street": "Улица Швейка",
+        "street": "Улица Мирная",
         "transport": {
             "k3": {
-                "tram": ["III"],
+                "tram": ["IV", "XII", "XIV", "XV"],
                 "hover": [],
-                "bus": ["7", "10<", "13"],
+                "bus": ["10>", "24", "28"],
                 "metro": []
             }
         },
@@ -18,8 +18,17 @@
         "description": "Жилые дома средней высоты."
     },
     "e": {
+        "walkable": true,
         "street": "Улица Коперника",
-        "description": "Узкая улица."
+        "transport": {
+            "k3": {
+                "tram": ["XII<", "XVI"],
+                "hover": [],
+                "bus": ["16"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
     },
     "se": {
         "street": "",
@@ -27,12 +36,12 @@
     },
     "s": {
         "walkable": true,
-        "street": "Улица Швейка",
+        "street": "Улица Мирная",
         "transport": {
             "k3": {
-                "tram": ["III"],
+                "tram": ["IV", "XII>", "XIV", "XV", "XVI"],
                 "hover": [],
-                "bus": ["7", "10>", "13"],
+                "bus": ["10<", "16", "24", "28"],
                 "metro": []
             }
         },
@@ -40,15 +49,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Технорынок."
     },
     "w": {
-        "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "street": "Улица Коперника",
+        "description": "Узкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Жилые дома средней высоты."
     },
     "description": ""
 }

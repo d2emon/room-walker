@@ -1,0 +1,72 @@
+{
+    "name": "Перекрёсток 225/475",
+    "n": {
+        "walkable": true,
+        "street": "Улица Мирная",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII<", "XIV", "XV", "XVI"],
+                "hover": [],
+                "bus": ["10>", "16", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": ["j", "p", "q"],
+                "bus": ["7", "10>", "13"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с подвечной линией и линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Мирная",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII>", "XIV", "XV", "XVI"],
+                "hover": [],
+                "bus": ["10<", "16", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль реки с линией монорельса."
+    },
+    "sw": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": ["j", "p", "q"],
+                "bus": ["7", "10<", "13"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль реки с подвечной линией и линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Технорынок."
+    },
+    "description": ""
+}

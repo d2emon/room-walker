@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 250/450",
+    "n": {
+        "street": "Улица Семисот",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Коперника",
+        "transport": {
+            "k3": {
+                "tram": ["XII<", "XVI"],
+                "hover": [],
+                "bus": ["16"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "Улица Семисот",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Коперника",
+        "transport": {
+            "k3": {
+                "tram": ["XII>", "XVI"],
+                "hover": [],
+                "bus": ["16"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}
