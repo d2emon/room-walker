@@ -6,23 +6,23 @@
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Магазины."
     },
     "e": {
         "street": "",
-        "description": "Большая река."
+        "description": "Поселок Терновка. Лесополоса у города Заозерска."
     },
     "se": {
         "street": "",
-        "description": "Большая река."
+        "description": "Поселок Терновка. Лесополоса у города Заозерска."
     },
     "s": {
-        "street": "",
-        "description": "Большая река."
+        "street": "Улица Санаторная",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Большая река."
+        "description": "Лес."
     },
     "w": {
         "street": "Улица ???",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Лес."
+        "description": "Озеро. Дом отдыха."
     },
     "description": ""
 }

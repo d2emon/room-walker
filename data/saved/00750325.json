@@ -1,0 +1,36 @@
+{
+    "name": "Коттеджное товарищество \"Руль\"",
+    "n": {
+        "street": "Улица Рулёжная",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Коттеджи."
+    },
+    "e": {
+        "street": "Улица Чёрной Сотни",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Лес."
+    },
+    "s": {
+        "street": "",
+        "description": "Тропа через лес."
+    },
+    "sw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "w": {
+        "street": "Улица Чёрной Сотни",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Лес."
+   },
+    "description": ""
+}

@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 50/400",
+    "name": "Улица Северо-Западная",
     "n": {
-        "street": "Улица Санаторная",
-        "description": "Узкая улица."
+        "street": "Улица Северо-Западная",
+        "description": "Широкая улица."
     },
     "ne": {
-        "street": "",
-        "description": "Невысокие дома рабочего посёлка."
+        "street": "Завод \"Пищепром\"",
+        "description": "Корпуса завода."
     },
     "e": {
         "walkable": true,
@@ -23,32 +23,23 @@
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Спортклуб."
     },
     "s": {
         "street": "Улица Санаторная",
-        "description": "Узкая улица."
+        "description": "Узкая улица уходящая в лесопарк."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Лесопарк."
     },
     "w": {
-        "walkable": true,
         "street": "Улица Кузнецова",
-        "transport": {
-            "k3": {
-                "tram": [],
-                "hover": ["k"],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Неширокая улица с подвесной линией."
+        "description": "Неширокая улица."
     },
     "nw": {
         "street": "",
-        "description": "Невысокие дома рабочего посёлка."
+        "description": "Фермы."
     },
     "description": ""
 }

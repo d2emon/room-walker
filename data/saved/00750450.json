@@ -1,8 +1,8 @@
 {
-    "name": "Перекрёсток 75/450",
+    "name": "Улица Фёдорова",
     "n": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Трубная",
         "transport": {
             "k3": {
                 "tram": [],
@@ -11,15 +11,15 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица с подвесной линией."
+        "description": "Широкая улица с подвесной линией."
     },
     "ne": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Жилой комплекс \"Озёрный\". Высотные жилые дома."
     },
     "e": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Фёдорова",
         "transport": {
             "k3": {
                 "tram": [],
@@ -28,15 +28,15 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица с подвесной линией."
+        "description": "Широкая улица с подвесной линией."
     },
     "se": {
         "street": "",
-        "description": "Большая река."
+        "description": "Высотные жилые дома у реки."
     },
     "s": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Кировой",
         "transport": {
             "k3": {
                 "tram": [],
@@ -45,19 +45,19 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица с подвесной линией."
+        "description": "Широкая улица с подвесной линией."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Магазины."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "Тропа вдоль магазинов.",
+        "description": ""
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Магазины у озера."
     },
     "description": ""
 }

@@ -1,28 +1,28 @@
 {
     "name": "Перекрёсток 50/500",
     "n": {
-        "street": "",
-        "description": "Большая река."
+        "street": "Улица Санаторная",
+        "description": "Узкая улица."
     },
     "ne": {
-        "street": "",
-        "description": "Большая река."
+        "street": "Дорога в город Заозёрск",
+        "description": ""
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая тропа."
+        "street": "Река Глубоководная",
+        "description": "Большая река."
     },
     "se": {
-        "street": "",
-        "description": "Лес."
+        "street": "Река Глубоководная",
+        "description": "Большая река."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая тропа."
+        "street": "Река Глубоководная",
+        "description": "Большая река."
     },
     "sw": {
-        "street": "",
-        "description": "Лес."
+        "street": "Дорога в город Заозёрск",
+        "description": ""
     },
     "w": {
         "street": "Улица ???",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Большая река."
+        "description": "Лес."
     },
     "description": ""
 }
