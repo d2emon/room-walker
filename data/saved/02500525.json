@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 250/525",
+    "n": {
+        "street": "Улица Семисот",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII>", "XIV", "XV"],
+                "hover": [],
+                "bus": ["6", "10<", "16", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль реки с линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "s": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "sw": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII<", "XIV", "XV"],
+                "hover": [],
+                "bus": ["6", "10>", "16", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль реки с линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

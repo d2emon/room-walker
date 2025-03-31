@@ -1,8 +1,8 @@
 {
-    "name": "Перекрёсток 200/500",
+    "name": "Перекрёсток 200/525",
     "n": {
-        "street": "",
-        "description": "Большая река."
+        "street": "Улица ???",
+        "description": "Узкая тропа вдоль реки."
     },
     "ne": {
         "street": "",
@@ -25,12 +25,12 @@
         "description": "Лес."
     },
     "w": {
-        "street": "",
-        "description": "Большая река."
+        "street": "Улица ???",
+        "description": "Узкая тропа."
     },
     "nw": {
         "street": "",
-        "description": "Большая река."
+        "description": "Лес."
     },
     "description": ""
 }

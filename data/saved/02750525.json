@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 275/525",
+    "n": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII>", "XIV", "XV"],
+                "hover": [],
+                "bus": ["6", "10<", "16", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль реки с линией монорельса."
+    },
+    "sw": {
+        "street": "",
+        "description": "Большая река."
+     },
+    "w": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII<", "XIV", "XV"],
+                "hover": [],
+                "bus": ["6", "10>", "16", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль реки с линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

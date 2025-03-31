@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 150/550",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["p", "q"],
+                "bus": ["24"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с подвесной линией."
+    },
+    "ne": {
+        "street": "",
+        "description": "Лес."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["p", "q"],
+                "bus": ["24"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с подвесной линией."
+    },
+    "s": {
+        "street": "",
+        "description": "Лес."
+    },
+    "sw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "nw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "description": ""
+}

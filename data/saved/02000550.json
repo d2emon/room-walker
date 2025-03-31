@@ -1,16 +1,16 @@
 {
-    "name": "Перекрёсток 175/500",
+    "name": "Перекрёсток 200/550",
     "n": {
-        "street": "",
-        "description": "Большая река."
+        "street": "Улица ???",
+        "description": "Узкая тропа вдоль реки."
     },
     "ne": {
         "street": "",
         "description": "Большая река."
     },
     "e": {
-        "street": "",
-        "description": "Большая река."
+        "street": "Улица ???",
+        "description": "Узкая тропа вдоль реки."
     },
     "se": {
         "street": "",
@@ -25,12 +25,12 @@
         "description": "Лес."
     },
     "w": {
-        "street": "",
-        "description": "Большая река."
+        "street": "Улица ???",
+        "description": "Узкая тропа."
     },
     "nw": {
         "street": "",
-        "description": "Большая река."
+        "description": "Лес."
     },
     "description": ""
 }
