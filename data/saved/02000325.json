@@ -1,20 +1,20 @@
 {
-    "name": "Перекрёсток 100/300",
+    "name": "Перекрёсток 200/325",
     "n": {
         "street": "Улица ???",
         "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Лес."
+        "description": "Колхозные поля."
     },
     "e": {
-        "street": "Улица ???",
+        "street": "Улица Новоросская",
         "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Лес."
+        "description": "Заливные луга."
     },
     "s": {
         "street": "Улица ???",
@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Лес."
+        "description": "Невысокие дома рабочего посёлка."
     },
     "w": {
-        "street": "Улица ???",
+        "street": "Улица Новоросская",
         "description": "Узкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Лес."
+        "description": "Невысокие дома рабочего посёлка."
     },
     "description": ""
 }

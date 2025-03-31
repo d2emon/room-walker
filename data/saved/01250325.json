@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 125/325",
+    "n": {
+        "street": "Улица Светлая",
+        "description": "Широкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Коттеджи."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Новоросская",
+        "transport": {
+            "k3": {
+                "tram": ["IV<", "XIV<", "XV<"],
+                "hover": [],
+                "bus": ["7<", "10<", "13<"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Светлая",
+        "transport": {
+            "k3": {
+                "tram": ["IV>", "XIV>", "XV>"],
+                "hover": [],
+                "bus": ["7>", "10>", "13>"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "sw": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "w": {
+        "street": "Улица Новоросская",
+        "description": "Неширокая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "description": ""
+}

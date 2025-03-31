@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 175/350",
+    "n": {
+        "walkable": true,
+        "street": "Улица Швейка",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Швейка",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XIV", "XV", "XIX"],
+                "hover": [],
+                "bus": ["10<"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Парк за рекой."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XIV", "XV"],
+                "hover": [],
+                "bus": ["10>"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "description": ""
+}

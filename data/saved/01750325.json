@@ -1,0 +1,54 @@
+{
+    "name": "Улица Новоросская",
+    "n": {
+        "walkable": true,
+        "street": "Улица Швейка",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "e": {
+        "street": "Улица Новоросская",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Швейка",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "w": {
+        "street": "Улица Новоросская",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Коттеджи."
+    },
+    "description": ""
+}

@@ -1,0 +1,54 @@
+{
+    "name": "Переулок Лесной",
+    "n": {
+        "street": "Переулок Лесной",
+        "description": "Узкий переулок."
+    },
+    "ne": {
+        "street": "",
+        "description": "Коттеджи."
+    },
+    "e": {
+        "street": "Улица Новоросская",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Переулок Лесной",
+        "transport": {
+            "k3": {
+                "tram": ["IV<", "XIV<", "XV<"],
+                "hover": [],
+                "bus": ["7<", "10<", "13<"],
+                "metro": []
+            }
+        },
+        "description": "Широкий переулок с линией монорельса."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Новоросская",
+        "transport": {
+            "k3": {
+                "tram": ["IV>", "XIV>", "XV>"],
+                "hover": [],
+                "bus": ["7>", "10>", "13>"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Коттеджи."
+   },
+    "description": ""
+}

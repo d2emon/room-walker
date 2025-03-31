@@ -1,0 +1,63 @@
+{
+    "name": "Лесничество",
+    "n": {
+        "walkable": true,
+        "street": "Переулок Лесной",
+        "transport": {
+            "k3": {
+                "tram": ["IV>", "XIV>", "XV>"],
+                "hover": [],
+                "bus": ["7>", "10>", "13>"],
+                "metro": []
+            }
+        },
+        "description": "Широкий переулок с линией монорельса."
+    },
+    "ne": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XIV", "XV"],
+                "hover": [],
+                "bus": ["10<"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Парк за рекой."
+    },
+    "s": {
+        "street": "",
+        "description": "Парк за рекой."
+    },
+    "sw": {
+        "street": "",
+        "description": "Парк за рекой."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["IV<", "XIV<", "XV<"],
+                "hover": [],
+                "bus": ["7<", "13<"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

@@ -1,0 +1,54 @@
+{
+    "name": "Автобаза",
+    "n": {
+        "street": "",
+        "description": "Парк."
+    },
+    "ne": {
+        "street": "",
+        "description": "Парк."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Кирова",
+        "transport": {
+            "k3": {
+                "tram": ["XVII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Мост. Неширокая улица с линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "s": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "sw": {
+        "street": "",
+        "description": "Автобаза."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Кирова",
+        "transport": {
+            "k3": {
+                "tram": ["XVII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Парк."
+    },
+    "description": ""
+}

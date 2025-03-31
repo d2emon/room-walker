@@ -22,7 +22,7 @@
     },
     "sw": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Лес."
     },
     "w": {
         "street": "Улица ???",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Лес."
     },
     "description": ""
 }

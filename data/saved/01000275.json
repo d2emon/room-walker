@@ -9,12 +9,12 @@
         "description": "Лесополоса."
     },
     "e": {
-        "street": "Улица ???",
+        "street": "Улица Камнетёсов",
         "description": "Узкая улица вдоль леса."
     },
     "se": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Лес."
     },
     "s": {
         "street": "Улица ???",
@@ -22,10 +22,10 @@
     },
     "sw": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Лес."
     },
     "w": {
-        "street": "Улица ???",
+        "street": "Улица Камнетёсов",
         "description": "Узкая улица вдоль леса."
     },
     "nw": {

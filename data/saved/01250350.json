@@ -1,0 +1,64 @@
+{
+    "name": "Улица Заречная",
+    "n": {
+        "walkable": true,
+        "street": "Улица Светлая",
+        "transport": {
+            "k3": {
+                "tram": ["IV<", "XIV<", "XV<"],
+                "hover": [],
+                "bus": ["7<", "10<", "13<"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["IV>", "XIV>", "XV>"],
+                "hover": [],
+                "bus": ["7>", "13>"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Парк за рекой."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Светлая",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["t"],
+                "bus": ["7", "10>", "13"],
+                "metro": []
+            }
+        },
+        "description": "Мост. Широкая улица с подвесной линией."
+    },
+    "sw": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка на берегу реки."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Заречная",
+        "description": "Узкая улица вдоль реки."
+    },
+    "nw": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "description": ""
+}

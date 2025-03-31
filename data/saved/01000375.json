@@ -1,0 +1,54 @@
+{
+    "name": "Школа",
+    "n": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка на берегу реки."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Кирова",
+        "transport": {
+            "k3": {
+                "tram": ["XVII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Невысокие дома рабочего посёлка."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Кирова",
+        "transport": {
+            "k3": {
+                "tram": ["XVII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Школа на берегу реки."
+    },
+    "description": ""
+}
