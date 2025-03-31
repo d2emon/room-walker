@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 50/425",
+    "n": {
+        "street": "Улица Санаторная",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Первомайская",
+        "transport": {
+            "k3": {
+                "tram": ["XII", "XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Санаторная",
+        "transport": {
+            "k3": {
+                "tram": ["XII", "XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "sw": {
+        "street": "",
+        "description": "Озеро."
+    },
+    "w": {
+        "street": "Улица Первомайская",
+        "description": "Широкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

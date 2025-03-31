@@ -1,0 +1,45 @@
+{
+    "name": "Перекрёсток 50/450",
+    "n": {
+        "walkable": true,
+        "street": "Улица Санаторная",
+        "transport": {
+            "k3": {
+                "tram": ["XII", "XVIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "Улица Санаторная",
+        "description": "Узкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "nw": {
+        "street": "",
+        "description": "Озеро."
+    },
+    "description": ""
+}

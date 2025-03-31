@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 75/475",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["t"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с подвесной линией."
+    },
+    "ne": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "e": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Юрский Мост",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["t"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкий мост с подвесной линией."
+    },
+    "s": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "sw": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "w": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

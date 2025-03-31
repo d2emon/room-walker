@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 75/500",
+    "n": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "ne": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "se": {
+        "street": "",
+        "description": "Лес."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "sw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "nw": {
+        "street": "",
+        "description": "Большая река."
+   },
+    "description": ""
+}

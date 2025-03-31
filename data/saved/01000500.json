@@ -43,8 +43,8 @@
         "description": "Лес."
     },
     "w": {
-        "street": "",
-        "description": "Большая река."
+        "street": "Улица ???",
+        "description": "Узкая тропа."
     },
     "nw": {
         "walkable": true,

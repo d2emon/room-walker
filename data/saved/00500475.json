@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 50/475",
+    "n": {
+        "street": "Улица Санаторная",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "se": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "s": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "sw": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "nw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "description": ""
+}

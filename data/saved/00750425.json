@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 100/425",
+    "name": "Перекрёсток 75/425",
     "n": {
         "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": ["j>", "n>", "t>"],
+                "hover": ["j<", "n<", "t<"],
                 "bus": [],
                 "metro": []
             }
@@ -23,16 +23,16 @@
         "transport": {
             "k3": {
                 "tram": ["XII", "XVIII"],
-                "hover": ["j", "n", "t"],
+                "hover": [],
                 "bus": [],
                 "metro": []
             }
         },
-        "description": "Широкая улица с линией монорельса и подвесной линией."
+        "description": "Широкая улица с линией монорельса."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "s": {
         "walkable": true,
@@ -40,16 +40,16 @@
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": ["j<", "n<", "t<"],
+                "hover": ["j>", "n>", "t>"],
                 "bus": [],
                 "metro": []
             }
         },
-        "description": "Широкая улица с подвесной линией."
+        "description": "Неширокая улица с подвесной линией."
     },
     "sw": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Жилые дома средней высоты."
     },
     "w": {
         "walkable": true,
