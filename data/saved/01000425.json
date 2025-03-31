@@ -1,55 +1,55 @@
 {
-    "name": "Перекрёсток 125/425",
+    "name": "Перекрёсток 100/425",
     "n": {
         "walkable": true,
-        "street": "Улица Светлая",
+        "street": "Улица ???",
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": ["t"],
-                "bus": ["7", "10<", "13"],
+                "hover": ["j>", "n>", "t>"],
+                "bus": [],
                 "metro": []
             }
         },
-        "description": "Широкая улица с подвесной линией."
+        "description": "Неширокая улица с подвесной линией."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Жилые дома средней высоты."
     },
     "e": {
         "walkable": true,
         "street": "Улица Первомайская",
         "transport": {
             "k3": {
-                "tram": ["III", "XII", "XVIII"],
-                "hover": ["j", "n"],
-                "bus": ["2", "6", "7", "10>", "13", "24", "28"],
+                "tram": ["XII", "XVIII"],
+                "hover": ["j", "n", "t"],
+                "bus": [],
                 "metro": []
             }
         },
-        "description": "Мост. Широкая улица с линией монорельса и подвесной линией."
+        "description": "Широкая улица с линией монорельса и подвесной линией."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Жилые дома средней высоты."
     },
     "s": {
         "walkable": true,
-        "street": "Улица Светлая",
+        "street": "Улица ???",
         "transport": {
             "k3": {
-                "tram": ["III"],
-                "hover": [],
-                "bus": ["2", "6", "24", "28"],
+                "tram": [],
+                "hover": ["j<", "n<", "t<"],
+                "bus": [],
                 "metro": []
             }
         },
-        "description": "Широкая улица с линией монорельса."
+        "description": "Широкая улица с подвесной линией."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "w": {
         "walkable": true,
@@ -57,7 +57,7 @@
         "transport": {
             "k3": {
                 "tram": ["XII", "XVIII"],
-                "hover": ["j", "n", "t"],
+                "hover": [],
                 "bus": [],
                 "metro": []
             }

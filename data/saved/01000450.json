@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 100/450",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["j>", "n>", "t>"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с подвесной линией."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль реки."
+    },
+    "se": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "s": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "sw": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["j<", "n<", "t<"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с подвесной линией."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "description": ""
+}

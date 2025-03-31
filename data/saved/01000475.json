@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 100/475",
+    "n": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "ne": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "e": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "se": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "s": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "sw": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "w": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "nw": {
+        "street": "",
+        "description": "Большая река."
+    },
+    "description": ""
+}
