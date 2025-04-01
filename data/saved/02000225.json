@@ -6,15 +6,15 @@
     },
     "ne": {
         "street": "",
-        "description": "Колхозные поля."
+        "description": "Таунхаусы."
     },
     "e": {
-        "street": "Улица ???",
+        "street": "Улица Тополевая",
         "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Колхозные поля."
+        "description": "Таунхаусы."
     },
     "s": {
         "street": "Улица ???",

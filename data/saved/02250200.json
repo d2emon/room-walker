@@ -1,7 +1,7 @@
 {
-    "name": "Перекрёсток 225/200",
+    "name": "Улица Герасимова",
     "n": {
-        "street": "Улица ???",
+        "street": "Улица Привольная",
         "description": "Узкая улица."
     },
     "ne": {
@@ -9,21 +9,20 @@
         "description": "Промзона."
     },
     "e": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Промзона."
     },
     "se": {
         "street": "Улица Герасимова",
         "description": "Узкая улица."
     },
     "s": {
-        "street": "Улица ???",
+        "street": "Улица Привольная",
         "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Колхозные поля."
+        "description": "Промзона."
     },
     "w": {
         "street": "Улица ???",
@@ -31,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Заливные луга."
+        "description": "Промзона."
     },
     "description": ""
 }

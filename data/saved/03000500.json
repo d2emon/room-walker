@@ -5,8 +5,8 @@
         "description": "Узкая улица."
     },
     "ne": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица Нефритовая",
+        "description": "Узкая улица."
     },
     "e": {
         "walkable": true,
@@ -39,8 +39,8 @@
         "description": "Узкая улица."
     },
     "sw": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица Нефритовая",
+        "description": "Узкая улица."
     },
     "w": {
         "street": "Улица Дзержинская",
