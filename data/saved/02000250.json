@@ -5,8 +5,8 @@
         "description": "Таунхаусы."
     },
     "ne": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "e": {
         "street": "Улица Хмелева",
@@ -17,20 +17,20 @@
         "description": "Таунхаусы."
     },
     "s": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Химическая",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
         "description": "Таунхаусы."
     },
     "w": {
-        "street": "Улица Хмелева",
-        "description": "Широкая улица."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "nw": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица Камышная",
+        "description": "Узкая улица."
     },
     "description": ""
 }

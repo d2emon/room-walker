@@ -1,8 +1,8 @@
 {
-    "name": "Перекрёсток 175/225",
+    "name": "Улица Каретная",
     "n": {
-        "street": "Улица Швейка",
-        "description": "Неширокая улица."
+        "street": "Посёлок Колесо",
+        "description": "Невысокие таунхаусы рабочего посёлка."
     },
     "ne": {
         "street": "Улица Каретная",
@@ -13,12 +13,21 @@
         "description": "Таунхаусы."
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Узкая улица вдоль леса."
+        "street": "Улица Камышная",
+        "description": "Узкая улица."
     },
     "s": {
-        "street": "Улица Швейка",
-        "description": "Неширокая улица."
+        "walkable": true,
+        "street": "Улица Валуйская",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса в центре."
     },
     "sw": {
         "street": "",
@@ -29,8 +38,17 @@
         "description": "Лесополоса."
     },
     "nw": {
-        "street": "",
-        "description": "Лесополоса."
+        "walkable": true,
+        "street": "Улица Камышная",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Узкая улица."
     },
     "description": ""
 }

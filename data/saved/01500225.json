@@ -1,54 +1,36 @@
 {
-    "name": "Улица Камышная",
+    "name": "Перекрёсток 150/225",
     "n": {
-        "street": "Посёлок Колесо",
-        "description": "Невысокие дома рабочего посёлка."
+        "street": "",
+        "description": "Лесополоса."
     },
     "ne": {
-        "street": "Улица ???",
-        "description": "Узкая улица на окраине посёлка."
+        "street": "",
+        "description": "Лесополоса."
     },
     "e": {
         "street": "",
         "description": "Лесополоса."
     },
     "se": {
-        "walkable": true,
-        "street": "Улица Камышная",
-        "transport": {
-            "k3": {
-                "tram": ["XIX"],
-                "hover": [],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Лесополоса."
     },
     "s": {
         "street": "",
         "description": "Лесополоса."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Узкая улица на окраине посёлка."
+        "street": "",
+        "description": "Лесополоса."
     },
     "w": {
-        "street": "Посёлок Колесо",
-        "description": "Невысокие дома рабочего посёлка."
+        "street": "",
+        "description": "Лесополоса."
     },
     "nw": {
-        "walkable": true,
-        "street": "Улица Камышная",
-        "transport": {
-            "k3": {
-                "tram": ["XIX"],
-                "hover": [],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Лесополоса."
     },
     "description": ""
 }

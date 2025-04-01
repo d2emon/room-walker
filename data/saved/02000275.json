@@ -1,24 +1,24 @@
 {
     "name": "Перекрёсток 200/275",
     "n": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Химическая",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
         "description": "Таунхаусы."
     },
     "e": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
         "description": "Таунхаусы."
     },
     "s": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Химическая",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",

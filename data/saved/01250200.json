@@ -14,7 +14,7 @@
     },
     "se": {
         "walkable": true,
-        "street": "Улица Камышная",
+        "street": "Улица Рогозина",
         "transport": {
             "k3": {
                 "tram": ["XIX"],
@@ -38,7 +38,7 @@
         "description": "Невысокие дома рабочего посёлка."
     },
     "nw": {
-        "street": "Улица Камышная",
+        "street": "Улица Рогозина",
         "description": "Неширокая улица."
     },
     "description": ""

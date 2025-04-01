@@ -22,8 +22,8 @@
         "description": "Таунхаусы."
     },
     "se": {
-        "street": "Улица Камышная",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "s": {
         "walkable": true,
