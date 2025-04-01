@@ -2,7 +2,7 @@
     "name": "Перекрёсток 400/500",
     "n": {
         "walkable": true,
-        "street": "Улица Эпическая",
+        "street": "Улица Охтинская",
         "transport": {
             "k3": {
                 "tram": [],
@@ -11,11 +11,11 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "e": {
         "walkable": true,
@@ -32,11 +32,11 @@
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "s": {
         "walkable": true,
-        "street": "Улица Эпическая",
+        "street": "Улица Охтинская",
         "transport": {
             "k3": {
                 "tram": [],
@@ -45,7 +45,7 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",

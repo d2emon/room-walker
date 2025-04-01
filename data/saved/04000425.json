@@ -2,7 +2,7 @@
     "name": "Перекрёсток 400/425",
     "n": {
         "walkable": true,
-        "street": "Улица Эпическая",
+        "street": "Улица Охтинская",
         "transport": {
             "k3": {
                 "tram": [],
@@ -11,7 +11,7 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
@@ -19,7 +19,7 @@
     },
     "e": {
         "walkable": true,
-        "street": "Улица Первомайская",
+        "street": "Улица Нижняя",
         "transport": {
             "k3": {
                 "tram": [],
@@ -28,15 +28,15 @@
                 "metro": []
             }
         },
-        "description": "Широкая улица с подвесной линией."
+        "description": "Широкая улица с подвесной линией. Уходит под мост."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "s": {
         "walkable": true,
-        "street": "Улица Эпическая",
+        "street": "Улица Охтинская",
         "transport": {
             "k3": {
                 "tram": [],
@@ -45,7 +45,7 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",

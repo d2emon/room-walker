@@ -6,7 +6,7 @@
     },
     "ne": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Русская",
         "transport": {
             "k3": {
                 "tram": ["XII<", "XVI"],
@@ -15,7 +15,7 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица с линией монорельса."
+        "description": "Узкая улица с линией монорельса."
     },
     "e": {
         "street": "",

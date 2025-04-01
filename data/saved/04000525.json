@@ -1,6 +1,27 @@
 {
-    "name": "Перекрёсток 400/525",
+    "name": "Улица Охтинская",
     "n": {
+        "walkable": true,
+        "street": "Улица Охтинская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a", "l", "m"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "se": {
         "walkable": true,
         "street": "Улица Эпическая",
         "transport": {
@@ -11,40 +32,19 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица."
-    },
-    "ne": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
-    },
-    "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
-    },
-    "se": {
-        "walkable": true,
-        "street": "Улица ???",
-        "transport": {
-            "k3": {
-                "tram": [],
-                "hover": ["a", "l", "m"],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Неширокая улица."
+        "description": "Тенистые аллеи вдоль берегов реки Зеленки."
     },
     "s": {
         "street": "",
         "description": "Жилые дома средней высоты."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "w": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Неширокая улица."
     },
     "nw": {
         "street": "",
