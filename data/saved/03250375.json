@@ -1,8 +1,8 @@
 {
-    "name": "Перекрёсток 325/375",
+    "name": "Переулок Загонный 2-й",
     "n": {
         "walkable": true,
-        "street": "Улица Театральная",
+        "street": "Улица Торговая",
         "transport": {
             "k3": {
                 "tram": ["XVII", "XVIII", "XIX"],
@@ -18,16 +18,16 @@
         "description": "Охтинский холм."
     },
     "e": {
-        "street": "Улица Зеркальная",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Охтинский холм."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Охтинский холм. Жилые дома средней высоты."
     },
     "s": {
         "walkable": true,
-        "street": "Улица Театральная",
+        "street": "Улица Торговая",
         "transport": {
             "k3": {
                 "tram": ["XVIII", "XIX"],
@@ -44,7 +44,7 @@
     },
     "w": {
         "walkable": true,
-        "street": "Улица Загонная 2-я",
+        "street": "Переулок Загонный 2-й",
         "transport": {
             "k3": {
                 "tram": ["XVII"],
@@ -53,7 +53,7 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица вдоль клумбы."
+        "description": "Неширокий переулок вдоль клумбы."
     },
     "nw": {
         "street": "",

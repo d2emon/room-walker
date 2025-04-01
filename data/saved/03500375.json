@@ -17,16 +17,16 @@
         "description": "Охтинский холм."
     },
     "s": {
-        "street": "Улица Разбойничья",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Охтинский холм."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Охтинский холм. Жилые дома средней высоты."
     },
     "w": {
-        "street": "Улица Зеркальная",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Охтинский холм."
     },
     "nw": {
         "street": "",
