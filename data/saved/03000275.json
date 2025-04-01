@@ -1,36 +1,36 @@
 {
-    "name": "Река Ольховка",
+    "name": "Улица Разбойничья",
     "n": {
-        "street": "",
-        "description": "Мост через реку Ольховую."
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
     },
     "ne": {
         "street": "",
-        "description": "Лесополоса у реки."
+        "description": "Высотные жилые дома."
     },
     "e": {
         "street": "",
-        "description": "Узкая тропа через лес."
+        "description": "Высотные жилые дома."
     },
     "se": {
         "street": "",
-        "description": "Лесополоса у реки."
+        "description": "Высотные жилые дома."
     },
     "s": {
-        "street": "",
-        "description": "Узкая тропа вдоль реки."
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома у реки."
     },
     "w": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома у реки."
     },
     "nw": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома у реки."
     },
     "description": ""
 }

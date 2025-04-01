@@ -6,19 +6,19 @@
     },
     "ne": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома у реки."
     },
     "e": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома у реки."
     },
     "se": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома у реки."
     },
     "s": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Зона отдыха у реки."
     },
     "sw": {
         "street": "",
@@ -26,7 +26,7 @@
     },
     "w": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Небольшая река."
     },
     "nw": {
         "street": "",

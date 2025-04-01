@@ -2,27 +2,27 @@
     "name": "Река Ольховка",
     "n": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Зона отдыха у реки."
     },
     "ne": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома у реки."
     },
     "e": {
-        "street": "",
-        "description": "Берег реки."
+        "street": "Улица Промышленная",
+        "description": "Широкая улица."
     },
     "se": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Жилые дома средней высоты."
     },
     "s": {
-        "street": "",
-        "description": "Зона отдыха у реки."
+        "street": "Улица Городищева",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Жилые дома средней высоты у реки."
     },
     "w": {
         "street": "",

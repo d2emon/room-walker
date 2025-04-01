@@ -22,8 +22,8 @@
         "description": "Узкая улица."
     },
     "se": {
-        "street": "",
-        "description": "Сквер под мостом."
+        "street": "Улица Гостинная",
+        "description": "Неширокая улица."
     },
     "s": {
         "walkable": true,

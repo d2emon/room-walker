@@ -31,11 +31,11 @@
     },
     "sw": {
         "street": "",
-        "description": "Лесополоса у реки."
+        "description": "Высотные жилые дома."
     },
     "w": {
         "walkable": true,
-        "street": "Мост через Ольховку",
+        "street": "Мост Хмельной",
         "transport": {
             "k3": {
                 "tram": ["XVIII"],
@@ -44,11 +44,11 @@
                 "metro": []
             }
         },
-        "description": "Неширокий мост."
+        "description": "Неширокий мост через реку Ольховку."
     },
     "nw": {
         "street": "",
-        "description": "Лесополоса у реки."
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }

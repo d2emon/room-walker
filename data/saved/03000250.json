@@ -1,16 +1,16 @@
 {
-    "name": "Мост через Ольховку",
+    "name": "Мост Хмельной",
     "n": {
-        "street": "",
-        "description": "Небольшая река."
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
     },
     "ne": {
         "street": "",
-        "description": "Узкая тропа вдоль реки под мостом."
+        "description": "Высотные жилые дома."
     },
     "e": {
         "walkable": true,
-        "street": "Мост через Ольховку",
+        "street": "Мост Хмельной",
         "transport": {
             "k3": {
                 "tram": ["XVIII"],
@@ -19,19 +19,19 @@
                 "metro": []
             }
         },
-        "description": "Неширокий мост."
+        "description": "Неширокий мост через реку Ольховку с линией монорельса."
     },
     "se": {
         "street": "",
-        "description": "Лесополоса у реки."
+        "description": "Высотные жилые дома."
     },
     "s": {
-        "street": "",
-        "description": "Узкая тропа вдоль реки под мостом."
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Высотные жилые дома у реки."
     },
     "w": {
         "walkable": true,
@@ -48,7 +48,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Высотные жилые дома у реки."
     },
     "description": ""
 }

@@ -15,19 +15,19 @@
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Рынок."
     },
     "e": {
-        "street": "Улица Кузнецова",
-        "description": "Узкая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица вдоль рынка."
     },
     "se": {
         "street": "",
         "description": "Жилые дома средней высоты."
     },
     "s": {
-        "street": "Улица Арканская",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "sw": {
         "street": "",

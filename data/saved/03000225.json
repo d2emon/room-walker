@@ -14,15 +14,15 @@
     },
     "se": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома."
     },
     "s": {
-        "street": "",
-        "description": "Берег реки."
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Высотные жилые дома у реки."
     },
     "w": {
         "street": "",
