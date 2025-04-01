@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 200/325",
+    "name": "Улица Химическая",
     "n": {
-        "street": "Улица ???",
+        "street": "Улица Химическая",
         "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Колхозные поля."
+        "description": "Таунхаусы."
     },
     "e": {
         "street": "Улица Новоросская",
-        "description": "Узкая улица."
+        "description": "Широкая улица."
     },
     "se": {
         "street": "",
-        "description": "Заливные луга."
+        "description": "Жилые дома средней высоты."
     },
     "s": {
-        "street": "Улица ???",
+        "street": "Улица Химическая",
         "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Невысокие дома рабочего посёлка."
+        "description": "Жилые дома средней высоты."
     },
     "w": {
         "street": "Улица Новоросская",
-        "description": "Узкая улица."
+        "description": "Широкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Невысокие дома рабочего посёлка."
+        "description": "Таунхаусы."
     },
     "description": ""
 }

@@ -14,15 +14,15 @@
     },
     "se": {
         "street": "",
-        "description": "Заливные луга."
+        "description": "Промзона."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Промзона."
     },
     "sw": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Промзона."
     },
     "w": {
         "street": "",

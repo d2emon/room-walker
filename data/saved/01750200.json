@@ -1,24 +1,24 @@
 {
     "name": "Перекрёсток 175/200",
     "n": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица Швейка",
+        "description": "Неширокая улица."
     },
     "ne": {
-        "street": "Улица ???",
-        "description": "Узкая тропа через лес."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "e": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Таунхаусы."
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Узкая тропа через лес."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "s": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица Швейка",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "Улица ???",

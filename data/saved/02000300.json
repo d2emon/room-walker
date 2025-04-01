@@ -1,36 +1,36 @@
 {
     "name": "Перекрёсток 200/300",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "ne": {
-        "street": "",
-        "description": "Колхозные поля."
-    },
-    "e": {
         "street": "Улица ???",
         "description": "Узкая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Таунхаусы."
     },
     "se": {
         "street": "",
-        "description": "Колхозные поля."
+        "description": "Таунхаусы."
     },
     "s": {
-        "street": "Улица ???",
+        "street": "Улица Химическая",
         "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Невысокие дома рабочего посёлка."
+        "description": "Таунхаусы."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "nw": {
-        "street": "",
-        "description": "Невысокие дома рабочего посёлка."
-    },
+        "street": "Улица Камышная",
+        "description": "Узкая улица."
+   },
     "description": ""
 }

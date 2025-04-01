@@ -21,12 +21,12 @@
         "description": "Узкая улица."
     },
     "sw": {
-        "street": "",
-        "description": "Таунхаусы."
-    },
-    "w": {
         "street": "Улица ???",
         "description": "Узкая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Таунхаусы."
     },
     "nw": {
         "street": "",

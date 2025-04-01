@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 200/200",
+    "name": "Улица Тополевая",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Промзона."
     },
     "ne": {
-        "street": "",
-        "description": "Заливные луга."
+        "street": "Улица Каретная",
+        "description": "Узкая улица."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Промзона."
     },
     "se": {
-        "street": "",
-        "description": "Колхозные поля."
-    },
-    "s": {
-        "street": "Улица ???",
+        "street": "Улица Тополевая",
         "description": "Узкая улица."
     },
-    "sw": {
+    "s": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Таунхаусы."
+    },
+    "sw": {
+        "street": "Улица Каретная",
+        "description": "Узкая улица."
     },
     "w": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Таунхаусы."
     },
     "nw": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица Тополевая",
+        "description": "Узкая улица."
     },
     "description": ""
 }

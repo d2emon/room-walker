@@ -9,7 +9,7 @@
         "description": "Торговый центр \"Сникерс\"."
     },
     "e": {
-        "street": "Улица Тополевая",
+        "street": "Улица Пионерская",
         "description": "Узкая улица."
     },
     "se": {
@@ -25,12 +25,12 @@
         "description": "Таунхаусы."
     },
     "w": {
-        "street": "Улица Тополевая",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "nw": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Тополевая",
+        "description": "Узкая улица."
     },
     "description": ""
 }

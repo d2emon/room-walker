@@ -1,8 +1,8 @@
 {
     "name": "Перекрёсток 200/250",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "ne": {
         "street": "",
@@ -17,16 +17,16 @@
         "description": "Таунхаусы."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "sw": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Таунхаусы."
     },
     "w": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица Хмелева",
+        "description": "Широкая улица."
     },
     "nw": {
         "street": "",

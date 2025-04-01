@@ -13,12 +13,12 @@
         "description": "Небольшая река."
     },
     "se": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица Тополевая",
+        "description": "Узкая улица."
     },
     "s": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица Швейка",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",

@@ -15,15 +15,15 @@
     },
     "ne": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Таунхаусы."
     },
     "e": {
-        "street": "Улица Камнетёсов",
-        "description": "Узкая улица вдоль леса."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "se": {
-        "street": "",
-        "description": "Невысокие дома рабочего посёлка."
+        "street": "Улица Камышная",
+        "description": "Узкая улица."
     },
     "s": {
         "walkable": true,

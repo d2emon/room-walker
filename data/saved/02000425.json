@@ -36,11 +36,11 @@
     },
     "s": {
         "street": "Улица Боткина",
-        "description": "Узкая улица."
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "w": {
         "walkable": true,

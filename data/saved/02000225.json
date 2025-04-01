@@ -1,36 +1,36 @@
 {
     "name": "Перекрёсток 200/225",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "ne": {
         "street": "",
         "description": "Таунхаусы."
     },
     "e": {
-        "street": "Улица Тополевая",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "se": {
         "street": "",
         "description": "Таунхаусы."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Узкая тропа через лес."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "w": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Таунхаусы."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Узкая тропа через лес."
+        "street": "",
+        "description": "Таунхаусы."
     },
     "description": ""
 }

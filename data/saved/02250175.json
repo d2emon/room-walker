@@ -17,12 +17,12 @@
         "description": "Промзона."
     },
     "s": {
-        "street": "Улица ???",
+        "street": "Улица Привольная",
         "description": "Узкая улица."
     },
     "sw": {
-        "street": "",
-        "description": "Заливные луга."
+        "street": "Улица Каретная",
+        "description": "Узкая улица."
     },
     "w": {
         "street": "",
