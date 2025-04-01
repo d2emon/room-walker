@@ -9,8 +9,8 @@
         "description": "Промзона."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Улица Хмельная",
+        "description": "Широкая улица."
     },
     "se": {
         "street": "",
@@ -25,8 +25,8 @@
         "description": "Промзона."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Улица Хмельная",
+        "description": "Широкая улица."
     },
     "nw": {
         "street": "",

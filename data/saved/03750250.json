@@ -1,8 +1,8 @@
 {
-    "name": "Перекрёсток 375/250",
+    "name": "Улица Ботаническая",
     "n": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Володарского",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "Улица ???",
@@ -21,16 +21,16 @@
         "description": "Узкая улица."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Энергетиков",
+        "description": "Неширокая улица."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }

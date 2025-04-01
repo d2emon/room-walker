@@ -1,8 +1,8 @@
 {
     "name": "Перекрёсток 350/375",
     "n": {
-        "street": "Улица Разбойничья",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Охтинский холм."
     },
     "ne": {
         "street": "",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Охтинский холм."
     },
     "description": ""
 }

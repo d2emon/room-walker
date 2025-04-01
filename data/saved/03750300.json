@@ -9,8 +9,8 @@
         "description": "Промзона."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Улица Промышленная",
+        "description": "Широкая улица."
     },
     "se": {
         "street": "",
@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Улица Промышленная",
+        "description": "Широкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }

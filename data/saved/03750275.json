@@ -6,15 +6,15 @@
     },
     "ne": {
         "street": "",
-        "description": "Промзона."
+        "description": "Парк."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Улица Хмельная",
+        "description": "Широкая улица."
     },
     "se": {
         "street": "",
-        "description": "Промзона."
+        "description": "Парк."
     },
     "s": {
         "street": "Улица Володарского",
@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица Хмельная",
+        "description": "Широкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }

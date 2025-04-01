@@ -17,16 +17,16 @@
         "description": "Промзона."
     },
     "s": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Володарского",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Промзона."
+        "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица ???",
+        "description": "Неширокая улица."
     },
     "nw": {
         "street": "",

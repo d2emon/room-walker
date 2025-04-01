@@ -9,12 +9,12 @@
         "description": "Узкая улица вдоль лесополосы."
     },
     "e": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Энергетиков",
+        "description": "Неширокая улица."
     },
     "se": {
         "walkable": true,
-        "street": "Перулок Разбойничий",
+        "street": "Переулок Хмельной",
         "transport": {
             "k3": {
                 "tram": ["XVIII"],

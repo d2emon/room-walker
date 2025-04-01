@@ -1,36 +1,34 @@
 {
-    "name": "Перекрёсток 350/250",
+    "name": "Северный выезд",
     "n": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
     },
     "ne": {
         "street": "",
-        "description": "Промзона."
+        "description": "Высотные жилые дома."
     },
     "e": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Энергетиков",
+        "description": "Неширокая улица."
     },
     "se": {
         "street": "",
-        "description": "Промзона."
+        "description": "Высотные жилые дома."
     },
     "s": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
-        "description": "Промзона."
+        "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Энергетиков",
+        "description": "Неширокая улица."
     },
     "nw": {
-        "street": "",
-        "description": "Промзона."
     },
     "description": ""
 }

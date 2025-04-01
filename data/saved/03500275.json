@@ -1,20 +1,20 @@
 {
-    "name": "Перекрёсток 350/275",
+    "name": "Гресовка",
     "n": {
-        "street": "",
-        "description": "Промзона."
-    },
-    "ne": {
-        "street": "Улица ???",
+        "street": "Улица Разбойничья",
         "description": "Неширокая улица."
     },
-    "e": {
+    "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
+    },
+    "e": {
+        "street": "Улица Хмельная",
+        "description": "Широкая улица."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "s": {
         "walkable": true,
@@ -31,15 +31,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "w": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "nw": {
         "walkable": true,
-        "street": "Перулок Разбойничий",
+        "street": "Переулок Хмельной",
         "transport": {
             "k3": {
                 "tram": ["XVIII"],
