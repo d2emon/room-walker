@@ -1,8 +1,8 @@
 {
     "name": "Перекрёсток 275/150",
     "n": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица ???",
+        "description": "Неширокая улица."
     },
     "ne": {
         "street": "Улица ???",
@@ -17,20 +17,20 @@
         "description": "Неширокая улица."
     },
     "s": {
-        "street": "",
-        "description": "Высотные жилые дома."
-    },
-    "sw": {
         "street": "Улица ???",
         "description": "Неширокая улица."
     },
-    "w": {
+    "sw": {
         "street": "",
         "description": "Промзона."
     },
-    "nw": {
+    "w": {
         "street": "Улица ???",
         "description": "Неширокая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Промзона."
     },
     "description": ""
 }

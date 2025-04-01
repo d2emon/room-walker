@@ -1,24 +1,24 @@
 {
     "name": "Перекрёсток 225/125",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая тропа в лесу."
+        "street": "",
+        "description": "Небольшая река."
     },
     "ne": {
         "street": "",
-        "description": "Лес."
+        "description": "Промзона."
     },
     "e": {
         "street": "Улица ???",
-        "description": "Узкая тропа в лесу."
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Лес."
+        "description": "Промзона."
     },
     "s": {
         "street": "",
-        "description": "Пешеходный мост."
+        "description": "Небольшая река."
     },
     "sw": {
         "street": "",

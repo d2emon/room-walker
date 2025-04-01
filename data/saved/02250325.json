@@ -6,15 +6,15 @@
     },
     "ne": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Жилые дома средней высоты за рекой."
     },
     "e": {
-        "street": "",
-        "description": "Небольшая река."
+        "street": "Улица Казачья",
+        "description": "Мост. Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Столовая за рекой."
     },
     "s": {
         "street": "",

@@ -1,16 +1,16 @@
 {
-    "name": "Мост через Ольховку",
+    "name": "Гресовский мост",
     "n": {
         "street": "",
         "description": "Небольшая река."
     },
     "ne": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Высотные жилые дома."
     },
     "e": {
         "walkable": true,
-        "street": "Мост через Ольховку",
+        "street": "Улица Пивоварова",
         "transport": {
             "k3": {
                 "tram": ["XVIII"],
@@ -19,11 +19,11 @@
                 "metro": []
             }
         },
-        "description": "Неширокий мост."
+        "description": "Широкая улица с линией монорельса."
     },
     "se": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома."
     },
     "s": {
         "street": "",
@@ -31,11 +31,11 @@
     },
     "sw": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Высотные жилые дома у реки."
     },
     "w": {
         "walkable": true,
-        "street": "Мост через Ольховку",
+        "street": "Гресовский мост",
         "transport": {
             "k3": {
                 "tram": ["XVIII"],
@@ -44,11 +44,11 @@
                 "metro": []
             }
         },
-        "description": "Неширокий мост."
+        "description": "Широкий мост с линией монорельса."
     },
     "nw": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Высотные жилые дома у реки."
     },
     "description": ""
 }

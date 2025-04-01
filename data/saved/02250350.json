@@ -6,15 +6,15 @@
     },
     "ne": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Столовая за рекой."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Улица Гостинная",
+        "description": "Неширокая улица."
     },
     "se": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Промзона у реки."
     },
     "s": {
         "street": "",
@@ -25,8 +25,8 @@
         "description": "Жилые дома средней высоты у реки."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Улица Гостинная",
+        "description": "Неширокая улица."
     },
     "nw": {
         "street": "",

@@ -17,20 +17,20 @@
         "description": "Неширокая улица."
     },
     "s": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица ???",
+        "description": "Неширокая улица."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Квартал Гресовский. Высотные жилые дома."
     },
     "w": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Гресовская",
+        "description": "Неширокая улица."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Невысокие таунхаусы."
     },
     "description": ""
 }

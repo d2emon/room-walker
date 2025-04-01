@@ -11,15 +11,15 @@
                 "metro": []
             }
         },
-        "description": "Широкая улица."
+        "description": "Широкая улица с линией монорельса в центре."
     },
     "ne": {
         "street": "",
         "description": "Промзона."
     },
     "e": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица ???",
+        "description": "Неширокая улица."
     },
     "se": {
         "street": "",
@@ -36,11 +36,11 @@
                 "metro": []
             }
         },
-        "description": "Широкая улица."
+        "description": "Широкая улица с линией монорельса в центре."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "w": {
         "street": "Улица ???",
@@ -48,7 +48,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "description": ""
 }

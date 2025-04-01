@@ -9,12 +9,12 @@
         "description": "Жилые дома средней высоты."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Зона отдыха у реки."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Зона отдыха у реки."
     },
     "s": {
         "street": "Улица ???",

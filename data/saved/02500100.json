@@ -6,15 +6,15 @@
     },
     "ne": {
         "street": "",
-        "description": "Промзона."
+        "description": "Невысокие таунхаусы."
     },
     "e": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Гресовская",
+        "description": "Неширокая улица."
     },
     "se": {
         "street": "",
-        "description": "Промзона."
+        "description": "Квартал Гресовский. Высотные жилые дома."
     },
     "s": {
         "walkable": true,
@@ -27,19 +27,19 @@
                 "metro": []
             }
         },
-        "description": "Широкая улица."
+        "description": "Широкая улица с линией монорельса в центре."
     },
     "sw": {
         "street": "",
-        "description": "Квартал Гресовский. Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "w": {
         "street": "Улица Гресовская",
-        "description": "Узкая улица."
+        "description": "Неширокая улица."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "description": ""
 }

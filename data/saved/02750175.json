@@ -1,8 +1,8 @@
 {
     "name": "Перекрёсток 275/175",
     "n": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Неширокая улица."
     },
     "ne": {
         "street": "",
@@ -17,20 +17,20 @@
         "description": "Высотные жилые дома."
     },
     "s": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
         "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Неширокая улица."
     },
     "nw": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Промзона."
     },
     "description": ""
 }

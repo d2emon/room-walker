@@ -6,11 +6,11 @@
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Зона отдыха у реки."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Мост Промышленный",
+        "description": "Широкий мост."
     },
     "se": {
         "street": "",

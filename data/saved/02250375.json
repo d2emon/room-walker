@@ -6,11 +6,11 @@
     },
     "ne": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Промзона у реки."
     },
     "e": {
         "walkable": true,
-        "street": "Петров Мост",
+        "street": "Арканский Мост",
         "transport": {
             "k3": {
                 "tram": ["XVII"],
@@ -23,7 +23,7 @@
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Жилые дома средней высоты за рекой."
     },
     "s": {
         "street": "",
@@ -35,7 +35,7 @@
     },
     "w": {
         "walkable": true,
-        "street": "Петров Мост",
+        "street": "Улица Счастливая",
         "transport": {
             "k3": {
                 "tram": ["XVII"],
@@ -44,7 +44,7 @@
                 "metro": []
             }
         },
-        "description": "Неширокий мост с линией монорельса."
+        "description": "Неширокая улица с линией монорельса в центре."
     },
     "nw": {
         "street": "",

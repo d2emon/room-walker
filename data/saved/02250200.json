@@ -6,7 +6,7 @@
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "e": {
         "walkable": true,
@@ -14,8 +14,8 @@
         "description": "Неширокая улица."
     },
     "se": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица Герасимова",
+        "description": "Узкая улица."
     },
     "s": {
         "street": "Улица ???",

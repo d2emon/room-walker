@@ -1,5 +1,5 @@
 {
-    "name": "Мост Семисот",
+    "name": "Улица Станичная",
     "n": {
         "walkable": true,
         "street": "Улица Семисот",
@@ -11,15 +11,15 @@
                 "metro": []
             }
         },
-        "description": "Широкая улица."
+        "description": "Широкая улица с подвесной линией."
     },
     "ne": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Жилые дома средней высоты."
     },
     "e": {
-        "street": "",
-        "description": "Зона отдыха у реки."
+        "street": "Улица Станичная",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
@@ -36,19 +36,19 @@
                 "metro": []
             }
         },
-        "description": "Широкая улица."
+        "description": "Широкая улица с подвесной линией."
     },
     "sw": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Столовая у реки."
     },
     "w": {
-        "street": "",
-        "description": "Небольшая река."
+        "street": "Улица Казачья",
+        "description": "Мост. Узкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Жилые дома средней высоты у реки."
     },
     "description": ""
 }
