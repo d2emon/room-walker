@@ -2,7 +2,7 @@
     "name": "Перекрёсток 125/475",
     "n": {
         "walkable": true,
-        "street": "Мост Светлый",
+        "street": "Терешковский Мост",
         "transport": {
             "k3": {
                 "tram": ["III"],

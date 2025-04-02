@@ -15,19 +15,19 @@
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Высотные жилые дома у реки."
     },
     "e": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Высотные жилые дома у реки."
     },
     "se": {
         "street": "",
-        "description": "Большая река."
+        "description": "Слияние Ковчежки и Глубоководной."
     },
     "s": {
         "walkable": true,
-        "street": "Мост Светлый",
+        "street": "Терешковский Мост",
         "transport": {
             "k3": {
                 "tram": ["III"],
@@ -40,15 +40,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Большая река."
+        "description": "Высотные жилые дома у реки."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Узкая улица вдоль реки."
+        "street": "Улица Фёдорова",
+        "description": "Узкая улица со сквером."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }

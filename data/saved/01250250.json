@@ -1,8 +1,8 @@
 {
     "name": "Колодец нв окраине посёлка",
     "n": {
-        "street": "Улица Светлая",
-        "description": "Широкая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "Улица ???",
@@ -14,19 +14,19 @@
     },
     "se": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "s": {
-        "street": "Улица Светлая",
-        "description": "Широкая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Магазин."
     },
     "w": {
         "street": "Улица ???",
-        "description": "Узкая тропа через лес."
+        "description": "Узкая улица."
     },
     "nw": {
         "street": "Улица ???",

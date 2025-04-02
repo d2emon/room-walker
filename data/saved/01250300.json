@@ -1,36 +1,36 @@
 {
     "name": "Перекрёсток 125/300",
     "n": {
-        "street": "Улица Светлая",
-        "description": "Широкая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Лес."
     },
     "e": {
-        "street": "Улица ???",
+        "street": "Улица Беловодская",
         "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Коттеджный посёлок."
     },
     "s": {
-        "street": "Улица Светлая",
-        "description": "Широкая улица."
+        "street": "",
+        "description": "Коттеджный посёлок."
     },
     "sw": {
         "street": "",
-        "description": "Лес."
+        "description": "Коттеджный посёлок."
     },
     "w": {
-        "street": "Улица ???",
+        "street": "Улица Беловодская",
         "description": "Узкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Лес."
+        "description": "Коттеджный посёлок."
     },
     "description": ""
 }

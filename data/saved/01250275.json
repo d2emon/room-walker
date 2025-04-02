@@ -1,36 +1,36 @@
 {
     "name": "Перекрёсток 125/275",
     "n": {
-        "street": "Улица Светлая",
-        "description": "Широкая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "e": {
-        "street": "Улица Камнетёсов",
-        "description": "Узкая улица вдоль леса."
+        "street": "Улица Коттеджная",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Лес."
     },
     "s": {
-        "street": "Улица Светлая",
-        "description": "Широкая улица."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Лес."
+        "description": "Коттеджный посёлок."
     },
     "w": {
-        "street": "Улица Камнетёсов",
-        "description": "Узкая улица вдоль леса."
+        "street": "Улица Коттеджная",
+        "description": "Узкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Магазин."
     },
     "description": ""
 }
