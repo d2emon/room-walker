@@ -13,16 +13,16 @@
         "description": "Узкая тропа в лесу."
     },
     "se": {
-        "street": "",
-        "description": "Лес."
+        "street": "Улица Камышная",
+        "description": "Узкая улица на окраине посёлка."
     },
     "s": {
-        "street": "",
-        "description": "Берег реки."
+        "street": "Посёлок Колесо",
+        "description": "Невысокие таунхаусы посёлка."
     },
     "sw": {
-        "street": "",
-        "description": "Лес."
+        "street": "Улица ???",
+        "description": "Узкая улица на окраине посёлка."
     },
     "w": {
         "street": "Улица ???",

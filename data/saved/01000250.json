@@ -1,12 +1,12 @@
 {
     "name": "Перекрёсток 100/250",
     "n": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица Огородная",
+        "description": "Узкая тропа через лес."
     },
     "ne": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "e": {
         "street": "Улица ???",

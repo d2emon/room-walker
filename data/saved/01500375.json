@@ -1,12 +1,12 @@
 {
-    "name": "Автобаза",
+    "name": "Петровский Парк",
     "n": {
         "street": "",
-        "description": "Парк."
+        "description": "Петровский Парк."
     },
     "ne": {
         "street": "",
-        "description": "Парк."
+        "description": "Петровский Парк. Река Ковчежка."
     },
     "e": {
         "walkable": true,
@@ -23,11 +23,11 @@
     },
     "se": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Автобаза."
     },
     "s": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Автобаза. Река Ковчежка."
     },
     "sw": {
         "street": "",
@@ -44,11 +44,11 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица с линией монорельса."
+        "description": "Мост. Неширокая улица с линией монорельса по краю."
     },
     "nw": {
         "street": "",
-        "description": "Парк."
+        "description": "Петровский Парк."
     },
     "description": ""
 }

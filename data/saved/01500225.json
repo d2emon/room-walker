@@ -1,36 +1,54 @@
 {
     "name": "Перекрёсток 150/225",
     "n": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Посёлок Колесо",
+        "description": "Невысокие таунхаусы посёлка."
     },
     "ne": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица ???",
+        "description": "Узкая улица на окраине посёлка."
     },
     "e": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "se": {
-        "street": "",
-        "description": "Лесополоса."
+        "walkable": true,
+        "street": "Улица Рогозина",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
     },
     "s": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "sw": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица ???",
+        "description": "Узкая улица на окраине посёлка."
     },
     "w": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Посёлок Колесо",
+        "description": "Невысокие таунхаусы посёлка."
     },
     "nw": {
-        "street": "",
-        "description": "Лесополоса."
+        "walkable": true,
+        "street": "Улица Рогозина",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
     },
     "description": ""
 }

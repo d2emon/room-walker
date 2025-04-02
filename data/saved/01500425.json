@@ -2,11 +2,11 @@
     "name": "Перекрёсток 150/425",
     "n": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Хранилище SCP. Река Ковчежка."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Хранилище SCP."
     },
     "e": {
         "walkable": true,
@@ -27,11 +27,11 @@
     },
     "s": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Река Ковчежка."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Высотные жилые дома у реки."
     },
     "w": {
         "walkable": true,
@@ -48,7 +48,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Хранилище SCP."
     },
     "description": ""
 }

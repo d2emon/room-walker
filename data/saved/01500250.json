@@ -2,35 +2,35 @@
     "name": "Перекрёсток 150/250",
     "n": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "ne": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Лес."
     },
     "se": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "s": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "sw": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Лес."
     },
     "nw": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "description": ""
 }

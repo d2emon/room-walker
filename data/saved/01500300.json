@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 150/300",
+    "name": "Ближние дачи",
     "n": {
-        "street": "Переулок Лесной",
+        "street": "Переулок Швейка",
         "description": "Узкий переулок."
     },
     "ne": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Невысокие таунхаусы."
     },
     "e": {
-        "street": "Улица ???",
+        "street": "Улица Беловодская",
         "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Невысокие таунхаусы."
     },
     "s": {
-        "street": "Переулок Лесной",
+        "street": "Переулок Швейка",
         "description": "Узкий переулок."
     },
     "sw": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Коттеджный посёлок."
     },
     "w": {
-        "street": "Улица ???",
+        "street": "Улица Беловодская",
         "description": "Узкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Коттеджи."
+        "description": "Лес."
     },
     "description": ""
 }

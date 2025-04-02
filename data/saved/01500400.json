@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 150/400",
+    "name": "Хранилище SCP",
     "n": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Автобаза. Река Ковчежка."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Автобаза."
     },
     "e": {
         "walkable": true,
@@ -23,15 +23,15 @@
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Хранилище SCP."
     },
     "s": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Хранилище SCP. Река Ковчежка."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Хранилище SCP."
     },
     "w": {
         "walkable": true,
