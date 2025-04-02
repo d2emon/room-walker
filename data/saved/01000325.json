@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 100/325",
+    "name": "Завод \"Синтер\"",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Улица Дубравная",
+        "description": "Неширокая улица."
     },
     "ne": {
         "street": "",
-        "description": "Лес."
+        "description": "Невысокие таунхаусы."
     },
     "e": {
         "street": "Улица Новоросская",
-        "description": "Неширокая улица."
+        "description": "Широкая улица."
     },
     "se": {
         "street": "",
-        "description": "Невысокие дома рабочего посёлка."
+        "description": "Завод \"Синтер\"."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Улица Дубравная",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
-        "description": "Невысокие дома рабочего посёлка."
+        "description": "Лес."
     },
     "w": {
-        "street": "Улица Новоросская",
-        "description": "Неширокая улица."
+        "street": "Улица Чёрной Сотни",
+        "description": "Узкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Лес."
+        "description": "Коттеджный посёлок."
     },
     "description": ""
 }

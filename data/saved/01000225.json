@@ -21,16 +21,16 @@
         "description": "Лесополоса."
     },
     "sw": {
-        "street": "Улица Ильина",
-        "description": "Узкая тропа идущая через лес."
+        "street": "",
+        "description": "Лес."
     },
     "w": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица ???",
+        "description": "Узкая тропа через лес."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Узкая улица на окраине посёлка."
+        "street": "",
+        "description": "Лес."
     },
     "description": ""
 }

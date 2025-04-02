@@ -9,9 +9,8 @@
         "description": "Нейроцентр."
     },
     "e": {
-        "walkable": true,
         "street": "Улица Кузнецова",
-        "description": "Неширокая улица с подвесной линией."
+        "description": "Неширокая улица."
     },
     "se": {
         "street": "",
@@ -26,9 +25,8 @@
         "description": "Спортклуб."
     },
     "w": {
-        "walkable": true,
         "street": "Улица Кузнецова",
-        "description": "Неширокая улица с подвесной линией."
+        "description": "Неширокая улица."
     },
     "nw": {
         "street": "",

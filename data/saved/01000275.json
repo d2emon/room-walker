@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 100/275",
+    "name": "Улица Огородная",
     "n": {
-        "street": "Улица ???",
+        "street": "Улица Огородная",
         "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Магазин."
     },
     "e": {
-        "street": "Улица Камнетёсов",
-        "description": "Узкая улица вдоль леса."
+        "street": "Улица Коттеджная",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Лес."
+        "description": "Коттеджный посёлок."
     },
     "s": {
-        "street": "Улица ???",
+        "street": "Улица Огородная",
         "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Лес."
+        "description": "Коттеджный посёлок."
     },
     "w": {
-        "street": "Улица Камнетёсов",
-        "description": "Узкая улица вдоль леса."
+        "street": "Улица Коттеджная",
+        "description": "Узкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Коттеджный посёлок."
     },
     "description": ""
 }

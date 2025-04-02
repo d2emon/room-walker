@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 75/325",
+    "name": "Коттеджный посёлок \"Руль\"",
     "n": {
         "street": "Улица Рулёжная",
-        "description": "Узкая тропа через лес."
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Лес."
+        "description": "Коттеджный посёлок."
     },
     "e": {
-        "street": "Улица Богдановская",
+        "street": "Улица Чёрной Сотни",
         "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Невысокие таунхаусы рабочего посёлка."
+        "description": "Лес."
     },
     "s": {
         "street": "Улица ???",
-        "description": "Узкая улица."
+        "description": "Узкая тропа через лес."
     },
     "sw": {
         "street": "",
-        "description": "Невысокие таунхаусы рабочего посёлка."
+        "description": "Лес."
     },
     "w": {
-        "street": "Улица Богдановская",
-        "description": "Узкая улица."
+        "street": "Улица Чёрной Сотни",
+        "description": "Узкая тропа через лес."
     },
     "nw": {
         "street": "",
         "description": "Лес."
-   },
+    },
     "description": ""
 }

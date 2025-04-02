@@ -1,28 +1,28 @@
 {
-    "name": "Перекрёсток 100/300",
+    "name": "Улица Беловодская",
     "n": {
-        "street": "Улица ???",
+        "street": "Улица Огородная",
         "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Лес."
+        "description": "Коттеджный посёлок."
     },
     "e": {
-        "street": "Улица ???",
+        "street": "Улица Беловодская",
         "description": "Узкая улица."
     },
     "se": {
-        "street": "",
-        "description": "Лес."
+        "street": "Улица Низинная",
+        "description": "Узкая улица."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "Улица Дубравная",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
-        "description": "Лес."
+        "description": "Коттеджный посёлок."
     },
     "w": {
         "street": "Улица ???",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Лес."
+        "description": "Коттеджный посёлок."
     },
     "description": ""
 }

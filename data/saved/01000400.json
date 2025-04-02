@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 100/400",
+    "name": "Магазин",
     "n": {
-        "street": "Улица ???",
+        "street": "Улица Крапивина",
         "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Невысокие дома рабочего посёлка."
+        "description": "Магазин."
     },
     "e": {
         "walkable": true,
@@ -23,10 +23,10 @@
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Школа искусств."
     },
     "s": {
-        "street": "Улица ???",
+        "street": "Улица Крапивина",
         "description": "Узкая улица."
     },
     "sw": {
@@ -34,21 +34,12 @@
         "description": "Жилые дома средней высоты."
     },
     "w": {
-        "walkable": true,
         "street": "Улица Кузнецова",
-        "transport": {
-            "k3": {
-                "tram": [],
-                "hover": ["k"],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Неширокая улица с подвесной линией."
+        "description": "Неширокая улица."
     },
     "nw": {
         "street": "",
-        "description": "Невысокие дома рабочего посёлка."
+        "description": "Магазин."
     },
     "description": ""
 }

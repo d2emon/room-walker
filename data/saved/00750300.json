@@ -1,28 +1,28 @@
 {
-    "name": "Перекрёсток 100/250",
+    "name": "Перекрёсток 75/300",
     "n": {
-        "street": "",
-        "description": "Лесополоса."
+        "street": "Улица Рулёжная",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Коттеджный посёлок."
     },
     "e": {
         "street": "Улица ???",
-        "description": "Узкая тропа через лес."
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Магазин."
+        "description": "Коттеджный посёлок."
     },
     "s": {
-        "street": "Улица Огородная",
+        "street": "Улица Рулёжная",
         "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Коттеджный посёлок."
+        "description": "Лес."
     },
     "w": {
         "street": "Улица ???",
@@ -31,6 +31,6 @@
     "nw": {
         "street": "",
         "description": "Лес."
-    },
+   },
     "description": ""
 }
