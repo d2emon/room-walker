@@ -17,8 +17,8 @@
         "description": "Лес."
     },
     "s": {
-        "street": "",
-        "description": "Берег реки."
+        "street": "Улица ???",
+        "description": "Узкая тропа в лесу."
     },
     "sw": {
         "street": "",

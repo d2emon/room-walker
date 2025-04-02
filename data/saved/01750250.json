@@ -1,29 +1,20 @@
 {
-    "name": "Просека",
+    "name": "Улица Каретная",
     "n": {
-        "walkable": true,
-        "street": "Улица Валуйская",
-        "transport": {
-            "k3": {
-                "tram": ["XIX"],
-                "hover": [],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Широкая улица с линией монорельса в центре."
+        "street": "",
+        "description": "Лес."
     },
     "ne": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Каретная",
+        "description": "Узкая улица."
     },
     "e": {
-        "street": "Улица Хмелева",
-        "description": "Широкая улица."
+        "street": "",
+        "description": "Невысокие таунхаусы."
     },
     "se": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Невысокие таунхаусы."
     },
     "s": {
         "walkable": true,
@@ -40,15 +31,24 @@
     },
     "sw": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Невысокие таунхаусы."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Невысокие таунхаусы."
     },
     "nw": {
-        "street": "",
-        "description": "Лесополоса."
-   },
+        "walkable": true,
+        "street": "Улица Рогозина",
+        "transport": {
+            "k3": {
+                "tram": ["XIX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
     "description": ""
 }

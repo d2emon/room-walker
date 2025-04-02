@@ -1,54 +1,36 @@
 {
     "name": "Улица Каретная",
     "n": {
-        "street": "Посёлок Колесо",
-        "description": "Невысокие таунхаусы рабочего посёлка."
+        "street": "",
+        "description": "Лес."
     },
     "ne": {
-        "street": "Улица Каретная",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Лес."
     },
     "e": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Лес."
     },
     "se": {
-        "street": "Улица Камышная",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Лес."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица Валуйская",
-        "transport": {
-            "k3": {
-                "tram": ["XIX"],
-                "hover": [],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Широкая улица с линией монорельса в центре."
+        "street": "",
+        "description": "Лес."
     },
     "sw": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "w": {
         "street": "",
-        "description": "Лесополоса."
+        "description": "Лес."
     },
     "nw": {
-        "walkable": true,
-        "street": "Улица Камышная",
-        "transport": {
-            "k3": {
-                "tram": ["XIX"],
-                "hover": [],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Лес."
     },
     "description": ""
 }

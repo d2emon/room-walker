@@ -1,32 +1,32 @@
 {
     "name": "Перекрёсток 175/175",
     "n": {
-        "street": "",
-        "description": "Берег реки."
+        "street": "Улица ???",
+        "description": "Узкая тропа в лесу."
     },
     "ne": {
         "street": "",
         "description": "Лес."
     },
     "e": {
-        "street": "",
-        "description": "Небольшая река."
+        "street": "Улица ???",
+        "description": "Узкая тропа в лесу."
     },
     "se": {
-        "street": "Улица Тополевая",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Лес."
     },
     "s": {
-        "street": "Посёлок Колесо",
-        "description": "Невысокие таунхаусы рабочего посёлка."
+        "street": "Улица ???",
+        "description": "Узкая тропа в лесу."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Узкая улица на окраине посёлка."
+        "street": "",
+        "description": "Лес."
     },
     "w": {
-        "street": "",
-        "description": "Небольшая река."
+        "street": "Улица ???",
+        "description": "Узкая тропа в лесу."
     },
     "nw": {
         "street": "",

@@ -2,11 +2,11 @@
     "name": "Хранилище SCP",
     "n": {
         "street": "",
-        "description": "Автобаза. Река Ковчежка."
+        "description": "Река Ковчежка."
     },
     "ne": {
         "street": "",
-        "description": "Автобаза."
+        "description": "Зона отдыха у реки."
     },
     "e": {
         "walkable": true,
@@ -23,11 +23,11 @@
     },
     "se": {
         "street": "",
-        "description": "Хранилище SCP."
+        "description": "Жилые дома средней высоты у реки."
     },
     "s": {
         "street": "",
-        "description": "Хранилище SCP. Река Ковчежка."
+        "description": "Река Ковчежка."
     },
     "sw": {
         "street": "",
