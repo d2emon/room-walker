@@ -1,36 +1,36 @@
 {
-    "name": "Улица Герасимова",
+    "name": "Торговый центр \"Сникерс\"",
     "n": {
         "street": "Улица Привольная",
         "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Промзона."
+        "description": "Торговый центр \"Сникерс\"."
     },
     "e": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Пионерская",
+        "description": "Узкая улица."
     },
     "se": {
-        "street": "Улица Герасимова",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "s": {
         "street": "Улица Привольная",
         "description": "Узкая улица."
     },
     "sw": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Каретная",
+        "description": "Узкая улица."
     },
     "w": {
         "street": "",
-        "description": "Промзона."
+        "description": "Невысокие таунхаусы."
     },
     "nw": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Тополевая",
+        "description": "Узкая улица."
     },
     "description": ""
 }

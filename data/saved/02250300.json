@@ -22,7 +22,7 @@
     },
     "sw": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Невысокие таунхаусы."
     },
     "w": {
         "street": "Улица Беловодская",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Невысокие таунхаусы."
     },
     "description": ""
 }

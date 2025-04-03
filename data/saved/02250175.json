@@ -1,8 +1,8 @@
 {
     "name": "Перекрёсток 225/175",
     "n": {
-        "street": "",
-        "description": "Небольшая река."
+        "street": "Улица Привольная",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
@@ -14,23 +14,23 @@
     },
     "se": {
         "street": "",
-        "description": "Промзона."
+        "description": "Торговый центр \"Сникерс\"."
     },
     "s": {
         "street": "Улица Привольная",
         "description": "Узкая улица."
     },
     "sw": {
-        "street": "Улица Каретная",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Промзона."
     },
     "w": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Промзона."
     },
     "nw": {
         "street": "",
-        "description": "Лес."
+        "description": "Промзона."
     },
     "description": ""
 }

@@ -1,12 +1,12 @@
 {
     "name": "Завод \"Рембыттехника\"",
     "n": {
-        "street": "Пешеходный мост",
-        "description": ""
+        "street": "Мост Пастухова",
+        "description": "Узкий мост"
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Промзона у реки."
     },
     "e": {
         "walkable": true,
@@ -48,7 +48,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты у реки."
+        "description": "Промзона у реки."
     },
     "description": ""
 }

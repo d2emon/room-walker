@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Невысокие таунхаусы."
     },
     "w": {
         "street": "Улица Хмелева",
         "description": "Широкая улица."
     },
     "nw": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Камышная",
+        "description": "Узкая улица."
     },
     "description": ""
 }
