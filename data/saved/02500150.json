@@ -43,8 +43,8 @@
         "description": "Промзона."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Промзона."
     },
     "nw": {
         "street": "",

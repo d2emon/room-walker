@@ -9,8 +9,8 @@
         "description": "Промзона."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Промзона."
     },
     "se": {
         "street": "",

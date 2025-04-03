@@ -13,8 +13,8 @@
         "description": "Промзона."
     },
     "se": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "s": {
         "street": "Улица Привольная",

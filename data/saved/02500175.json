@@ -40,15 +40,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Промзона."
+        "description": "Торговый центр \"Сникерс\"."
     },
     "w": {
         "street": "Улица ???",
         "description": "Узкая улица."
     },
     "nw": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "description": ""
 }
