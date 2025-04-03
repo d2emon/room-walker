@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 400/275",
+    "name": "Северный парк",
     "n": {
-        "street": "Улица Эпическая",
-        "description": "Узкая улица."
+        "street": "Улица Зоопарковая",
+        "description": "Неширокая улица."
     },
     "ne": {
         "street": "",
-        "description": "Промзона."
+        "description": "Парк."
     },
     "e": {
         "street": "Улица Хмельная",
@@ -14,15 +14,15 @@
     },
     "se": {
         "street": "",
-        "description": "Промзона."
+        "description": "Парк."
     },
     "s": {
-        "street": "Улица Эпическая",
-        "description": "Узкая улица."
+        "street": "Улица Зоопарковая",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
-        "description": "Промзона."
+        "description": "Парк."
     },
     "w": {
         "street": "Улица Хмельная",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Промзона."
+        "description": "Парк."
     },
     "description": ""
 }

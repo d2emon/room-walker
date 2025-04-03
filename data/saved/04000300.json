@@ -1,12 +1,12 @@
 {
     "name": "Перекрёсток 400/300",
     "n": {
-        "street": "Улица Эпическая",
-        "description": "Узкая улица."
+        "street": "Улица Зоопарковая",
+        "description": "Неширокая улица."
     },
     "ne": {
         "street": "",
-        "description": "Промзона."
+        "description": "Парк."
     },
     "e": {
         "street": "Улица Промышленная",
@@ -17,8 +17,8 @@
         "description": "Промзона."
     },
     "s": {
-        "street": "Улица Эпическая",
-        "description": "Узкая улица."
+        "street": "Улица Зоопарковая",
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Промзона."
+        "description": "Парк."
     },
     "description": ""
 }

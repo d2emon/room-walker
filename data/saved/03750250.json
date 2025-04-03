@@ -9,12 +9,12 @@
         "description": "Неширокая улица."
     },
     "e": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Промзона."
+        "description": "Парк."
     },
     "s": {
         "street": "Улица Ботаническая",
