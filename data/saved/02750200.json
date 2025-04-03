@@ -47,8 +47,8 @@
         "description": "Высотные жилые дома."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }

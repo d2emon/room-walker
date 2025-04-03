@@ -25,8 +25,8 @@
         "description": "Парк."
     },
     "w": {
-        "street": "Улица Гостинная",
-        "description": "Тропа в парке."
+        "street": "",
+        "description": "Парк."
     },
     "nw": {
         "street": "",

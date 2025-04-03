@@ -29,8 +29,8 @@
         "description": "Неширокая улица."
     },
     "nw": {
-        "street": "",
-        "description": "Невысокие таунхаусы."
+        "street": "Улица ???",
+        "description": "Неширокая улица."
     },
     "description": ""
 }

@@ -6,27 +6,27 @@
     },
     "ne": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Небольшая река."
     },
     "e": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Зона отдыха у реки."
     },
     "se": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома."
     },
     "s": {
-        "street": "",
-        "description": "Берег реки."
+        "street": "Улица Городищева",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Небольшая река."
     },
     "w": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Высотные жилые дома у реки."
     },
     "nw": {
         "street": "",

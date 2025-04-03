@@ -1,8 +1,8 @@
 {
     "name": "Река Ольховка",
     "n": {
-        "street": "",
-        "description": "Небольшая река."
+        "street": "Улица Городищева",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
@@ -17,8 +17,8 @@
         "description": "Высотные жилые дома."
     },
     "s": {
-        "street": "",
-        "description": "Зона отдыха у реки."
+        "street": "Улица Городищева",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
@@ -26,7 +26,7 @@
     },
     "w": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Зона отдыха у реки."
     },
     "nw": {
         "street": "",

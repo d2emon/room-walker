@@ -18,12 +18,12 @@
         "description": "Гостиница \"Интурист\""
     },
     "e": {
-        "street": "Улица Гостинная",
-        "description": "Неширокая улица в парке."
+        "street": "",
+        "description": "Парк."
     },
     "se": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица Гостинная",
+        "description": "Неширокая улица в парке."
     },
     "s": {
         "walkable": true,
