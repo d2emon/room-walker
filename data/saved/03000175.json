@@ -22,13 +22,13 @@
         "description": "Зона отдыха у реки."
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Неширокая улица идущая к реке."
+        "street": "",
+        "description": "Зона отдыха у реки."
     },
     "s": {
         "street": "",
         "description": "Зона отдыха у реки."
-    },
+   },
     "sw": {
         "walkable": true,
         "street": "Улица Ольховская",

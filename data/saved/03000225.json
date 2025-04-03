@@ -1,16 +1,16 @@
 {
     "name": "Река Ольховка",
     "n": {
-        "street": "",
-        "description": "Высотные жилые дома на берегу реки."
+        "street": "Улица Разбойничья",
+        "description": "Неширокая улица."
     },
     "ne": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Зона отдыха у реки."
     },
     "e": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома."
     },
     "se": {
         "street": "",
@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Высотные жилые дома у реки."
+        "description": "Высотные жилые дома."
     },
     "w": {
         "street": "",
-        "description": "Высотные жилые дома на берегу реки."
+        "description": "Высотные жилые дома."
     },
     "nw": {
         "street": "",
-        "description": "Высотные жилые дома на берегу реки."
+        "description": "Зона отдыха у реки."
     },
     "description": ""
 }
