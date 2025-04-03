@@ -10,7 +10,7 @@
     },
     "e": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Набережная ???",
         "transport": {
             "k3": {
                 "tram": ["III"],
@@ -35,7 +35,7 @@
     },
     "w": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Набережная ???",
         "transport": {
             "k3": {
                 "tram": ["III"],

@@ -10,15 +10,15 @@
     },
     "e": {
         "street": "Улица ???",
-        "description": "Узкая тропа в лесу."
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Лес."
+        "description": "Невысокие таунхаусы."
     },
     "s": {
         "street": "Улица ???",
-        "description": "Узкая тропа в лесу."
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",

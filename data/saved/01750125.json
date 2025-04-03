@@ -17,8 +17,8 @@
         "description": "Лес."
     },
     "s": {
-        "street": "",
-        "description": "Пешеходный мост."
+        "street": "Улица ???",
+        "description": "Узкая тропа в лесу."
     },
     "sw": {
         "street": "",

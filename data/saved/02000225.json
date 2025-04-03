@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 200/225",
+    "name": "Улица Химическая",
     "n": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Невысокие таунхаусы."
     },
     "ne": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Каретная",
+        "description": "Узкая улица."
     },
     "e": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Невысокие таунхаусы."
     },
     "se": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Камышная",
+        "description": "Узкая улица."
     },
     "s": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Химическая",
+        "description": "Узкая улица."
     },
     "sw": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Каретная",
+        "description": "Узкая улица."
     },
     "w": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Лес."
     },
     "nw": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Камышная",
+        "description": "Узкая улица."
     },
     "description": ""
 }

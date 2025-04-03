@@ -2,15 +2,15 @@
     "name": "Перекрёсток 175/200",
     "n": {
         "street": "Улица ???",
-        "description": "Узкая тропа в лесу."
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Лес."
+        "description": "Невысокие таунхаусы."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая тропа в лесу."
+        "street": "",
+        "description": "Невысокие таунхаусы."
     },
     "se": {
         "street": "Улица Камышная",

@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 200/175",
+    "name": "Улица Тополевая",
     "n": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Промзона."
     },
     "ne": {
-        "street": "",
-        "description": "Лес."
+        "street": "Улица Герасимова",
+        "description": "Узкая улица."
     },
     "e": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Промзона."
     },
     "se": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Тополевая",
+        "description": "Узкая улица."
     },
     "s": {
         "street": "",
-        "description": "Промзона."
+        "description": "Невысокие таунхаусы."
     },
     "sw": {
         "street": "",
-        "description": "Промзона."
+        "description": "Невысокие таунхаусы."
     },
     "w": {
-        "street": "",
-        "description": "Небольшая река."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "nw": {
-        "street": "",
-        "description": "Лес."
+        "street": "Улица Тополевая",
+        "description": "Узкая тропа в лесу."
     },
     "description": ""
 }

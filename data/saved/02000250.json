@@ -1,8 +1,8 @@
 {
     "name": "Перекрёсток 200/250",
     "n": {
-        "street": "",
-        "description": "Таунхаусы."
+        "street": "Улица Химическая",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "Улица ???",
@@ -14,7 +14,7 @@
     },
     "se": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Невысокие таунхаусы."
     },
     "s": {
         "street": "Улица Химическая",
@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Невысокие таунхаусы."
     },
     "w": {
         "street": "",
-        "description": "Таунхаусы."
+        "description": "Невысокие таунхаусы."
     },
     "nw": {
-        "street": "Улица Камышная",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Невысокие таунхаусы."
     },
     "description": ""
 }
