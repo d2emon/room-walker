@@ -5,12 +5,12 @@
         "description": "Высотные жилые дома."
     },
     "ne": {
-        "street": "Улица Пивоварова",
-        "description": "Узкая улица вдоль лесополосы."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "e": {
-        "street": "Улица Энергетиков",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "se": {
         "walkable": true,

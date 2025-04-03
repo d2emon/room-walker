@@ -1,8 +1,8 @@
 {
     "name": "Перекрёсток 375/200",
     "n": {
-        "street": "",
-        "description": "Лесополоса у реки."
+        "street": "Улица Ботаническая",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "Улица ???",
@@ -13,24 +13,24 @@
         "description": "Промзона."
     },
     "se": {
-        "street": "Улица ???",
+        "street": "Улица Энергетиков",
         "description": "Узкая улица."
     },
     "s": {
-        "street": "",
-        "description": "Промзона."
+        "street": "Улица Ботаническая",
+        "description": "Узкая улица."
     },
     "sw": {
-        "street": "Улица ???",
-        "description": "Узкая улица вдоль лесополосы."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "w": {
         "street": "",
-        "description": "Лесополоса у реки."
+        "description": "Высотные жилые дома."
     },
     "nw": {
-        "street": "",
-        "description": "Лесополоса у реки."
+        "street": "Улица Энергетиков",
+        "description": "Неширокая улица."
     },
     "description": ""
 }

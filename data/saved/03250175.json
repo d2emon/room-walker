@@ -6,11 +6,11 @@
     },
     "ne": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Высотные жилые дома."
     },
     "e": {
-        "street": "",
-        "description": "Зона отдыха у реки."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",

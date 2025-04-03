@@ -1,16 +1,16 @@
 {
     "name": "Река Ольховка",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "ne": {
         "street": "",
         "description": "Высотные жилые дома."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "se": {
         "street": "",
@@ -25,8 +25,8 @@
         "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "nw": {
         "street": "",

@@ -1,12 +1,12 @@
 {
     "name": "Перекрёсток 350/225",
     "n": {
-        "street": "",
-        "description": "Лесополоса у реки."
+        "street": "Улица Пивоварова",
+        "description": "Узкая улица."
     },
     "ne": {
-        "street": "Улица ???",
-        "description": "Узкая улица вдоль лесополосы."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "e": {
         "street": "Улица ???",
@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "Улица ???",
-        "description": "Узкая улица вдоль лесополосы."
+        "description": "Узкая улица."
     },
     "w": {
         "street": "",
-        "description": "Лесополоса у реки."
+        "description": "Высотные жилые дома."
     },
     "nw": {
-        "street": "",
-        "description": "Лесополоса у реки."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "description": ""
 }

@@ -6,19 +6,19 @@
     },
     "ne": {
         "street": "",
-        "description": "Небольшая река."
+        "description": "Высотные жилые дома."
     },
     "e": {
         "street": "Улица ???",
         "description": "Узкая улица."
     },
     "se": {
-        "street": "",
-        "description": "Высотные жилые дома."
-    },
-    "s": {
         "street": "Улица ???",
         "description": "Узкая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "sw": {
         "street": "",
