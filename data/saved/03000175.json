@@ -28,7 +28,7 @@
     "s": {
         "street": "",
         "description": "Зона отдыха у реки."
-   },
+    },
     "sw": {
         "walkable": true,
         "street": "Улица Ольховская",

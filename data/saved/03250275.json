@@ -2,15 +2,15 @@
     "name": "Перекрёсток 325/275",
     "n": {
         "street": "Улица Торговая",
-        "description": "Узкая улица вдоль лесополосы."
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
         "description": "Высотные жилые дома."
     },
     "e": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
@@ -18,15 +18,15 @@
     },
     "s": {
         "street": "Улица Торговая",
-        "description": "Узкая улица вдоль лесополосы."
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
         "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "nw": {
         "street": "",

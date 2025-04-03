@@ -1,36 +1,36 @@
 {
     "name": "Река Ольховка",
     "n": {
-        "street": "",
-        "description": "Берег реки."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Узкая тропа вдоль реки."
+        "description": "Высотные жилые дома."
     },
     "e": {
-        "street": "",
-        "description": "Лесополоса у реки."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Лесополоса у реки."
+        "description": "Высотные жилые дома."
     },
     "s": {
         "street": "",
-        "description": "Лесополоса у реки."
+        "description": "Высотные жилые дома."
     },
     "sw": {
         "street": "",
         "description": "Высотные жилые дома."
     },
     "w": {
-        "street": "",
-        "description": "Берег реки."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "nw": {
         "street": "",
-        "description": "Берег реки."
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }

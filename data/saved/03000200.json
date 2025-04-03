@@ -9,12 +9,12 @@
         "description": "Небольшая река."
     },
     "e": {
-        "street": "",
-        "description": "Зона отдыха у реки."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
-        "description": "Зона отдыха у реки."
+        "description": "Высотные жилые дома."
     },
     "s": {
         "street": "Улица Разбойничья",
