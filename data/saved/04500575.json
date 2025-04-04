@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 450/575",
+    "n": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Улица Парадная",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a", "l", "m"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Тенистые аллеи вдоль берегов реки Зелёнки."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица Эпическая",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a", "l", "m"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Тенистые аллеи вдоль берегов реки Зелёнки."
+    },
+    "description": ""
+}

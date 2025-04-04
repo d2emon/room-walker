@@ -1,0 +1,72 @@
+{
+    "name": "Перекрёсток 450/625",
+    "n": {
+        "walkable": true,
+        "street": "Мост Зелёный",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a", "l", "m"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокий мост с подвесной линией."
+    },
+    "ne": {
+        "street": "Запруда",
+        "description": ""
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Южнобережная",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII>", "XIV", "XV"],
+                "hover": ["j"],
+                "bus": ["5", "6", "10<", "16", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль берега реки с линией монорельса в центре."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a", "l", "m"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Южнобережная",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII<", "XIV", "XV"],
+                "hover": ["j"],
+                "bus": ["5", "6", "10>", "16", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль берега реки с линией монорельса в центре."
+    },
+    "nw": {
+        "street": "Река Глубоководная.",
+        "description": "Большая река."
+    },
+    "description": ""
+}
