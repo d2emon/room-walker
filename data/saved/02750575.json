@@ -3,16 +3,23 @@
     "n": {
         "walkable": true,
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII<", "XIV", "XV"],
+                "hover": [],
+                "bus": ["6", "10>", "16", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
     },
     "ne": {
         "street": "",
         "description": "Жилые дома средней высоты."
     },
     "e": {
-        "walkable": true,
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
@@ -21,19 +28,27 @@
     "s": {
         "walkable": true,
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XII>", "XIV", "XV"],
+                "hover": [],
+                "bus": ["6", "10<", "16", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с линией монорельса."
     },
     "sw": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "w": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "nw": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "description": ""
 }

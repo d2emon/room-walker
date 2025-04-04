@@ -1,36 +1,36 @@
 {
-    "name": "Перекрёсток 300/575",
+    "name": "Перекрёсток 400/675",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "ne": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "se": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "sw": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
-    },
-    "w": {
         "street": "Улица ???",
         "description": "Узкая улица."
     },
-    "nw": {
+    "w": {
         "street": "",
         "description": "Жилые дома средней высоты."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "description": ""
 }

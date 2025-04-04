@@ -1,0 +1,53 @@
+{
+    "name": "Перекрёсток 375/650",
+    "n": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["j"],
+                "bus": ["5"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с подвесной линией."
+    },
+    "e": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["j"],
+                "bus": ["5"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с подвесной линией."
+    },
+    "w": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "description": ""
+}

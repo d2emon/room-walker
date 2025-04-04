@@ -1,37 +1,33 @@
 {
     "name": "Перекрёсток 300/600",
     "n": {
-        "walkable": true,
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
         "description": "Жилые дома средней высоты."
     },
     "e": {
-        "walkable": true,
-        "street": "Улица Парадная",
-        "description": "Широкая улица на берегу реки с линией монорельса в центре."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
         "description": "Жилые дома средней высоты."
     },
     "s": {
-        "walkable": true,
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
         "description": "Жилые дома средней высоты."
     },
     "w": {
-        "walkable": true,
-        "street": "Улица Парадная",
-        "description": "Широкая улица на берегу реки с линией монорельса в центре."
-    },
+        "street": "Улица ???",
+        "description": "Узкая улица."
+   },
     "nw": {
         "street": "",
         "description": "Жилые дома средней высоты."
