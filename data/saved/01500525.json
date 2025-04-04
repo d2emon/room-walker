@@ -11,32 +11,32 @@
                 "metro": []
             }
         },
-        "description": "Неширокая улица вдоль реки с подвесной линией и линией монорельса."
+        "description": "Неширокая улица с подвесной линией и линией монорельса."
     },
     "ne": {
         "street": "",
-        "description": "Лес."
+        "description": "Лес у реки."
     },
     "e": {
         "street": "Улица ???",
         "description": "Узкая тропа."
     },
     "se": {
-        "street": "",
-        "description": "Лес."
-    },
-    "s": {
         "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": ["p", "q"],
+                "hover": ["p", "q", "t"],
                 "bus": ["24"],
                 "metro": []
             }
         },
         "description": "Неширокая улица с подвесной линией."
+    },
+    "s": {
+        "street": "",
+        "description": "Небольшие таунхаусы."
     },
     "sw": {
         "walkable": true,

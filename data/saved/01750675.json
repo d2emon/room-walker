@@ -1,22 +1,6 @@
 {
-    "name": "Перекрёсток 250/550",
+    "name": "Перекрёсток 175/675",
     "n": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
-    },
-    "ne": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
-    },
-    "e": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
-    },
-    "se": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
-    },
-    "s": {
         "walkable": true,
         "street": "Улица ???",
         "transport": {
@@ -29,11 +13,15 @@
         },
         "description": "Неширокая улица с линией монорельса."
     },
-    "sw": {
+    "ne": {
         "street": "",
         "description": "Небольшие таунхаусы."
     },
-    "w": {
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "se": {
         "walkable": true,
         "street": "Улица ???",
         "transport": {
@@ -46,9 +34,21 @@
         },
         "description": "Неширокая улица с линией монорельса."
     },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
+    "sw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа."
+    },
     "nw": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
+        "street": "",
+        "description": "Лес."
     },
     "description": ""
 }

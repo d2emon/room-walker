@@ -1,20 +1,20 @@
 {
     "name": "Перекрёсток 175/500",
     "n": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
     },
     "ne": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
     },
     "e": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
     },
     "se": {
         "street": "",
-        "description": "Лес."
+        "description": "Лес у реки."
     },
     "s": {
         "street": "Улица ???",
@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Лес."
+        "description": "Лес у реки."
     },
     "w": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
     },
     "nw": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
-    },
+   },
     "description": ""
 }

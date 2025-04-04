@@ -1,23 +1,10 @@
 {
-    "name": "Перекрёсток 225/550",
+    "name": "Перекрёсток 200/625",
     "n": {
-        "walkable": true,
-        "street": "Мост Гидротехников",
-        "transport": {
-            "k3": {
-                "tram": ["XVI"],
-                "hover": [],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Неширокий мост с линией монорельса."
+        "street": "",
+        "description": "Небольшие таунхаусы."
     },
     "ne": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
-    },
-    "e": {
         "walkable": true,
         "street": "Улица ???",
         "transport": {
@@ -30,25 +17,38 @@
         },
         "description": "Неширокая улица с линией монорельса."
     },
+    "e": {
+        "street": "",
+        "description": "Небольшие таунхаусы."
+    },
     "se": {
-        "street": "",
-        "description": "Небольшие таунхаусы."
-    },
-    "s": {
-        "street": "",
-        "description": "Небольшие таунхаусы."
-    },
-    "sw": {
         "street": "Улица ???",
         "description": "Узкая улица."
     },
-    "w": {
+    "s": {
         "street": "Улица ???",
-        "description": "Узкая тропа вдоль реки."
+        "description": "Узкая улица."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["XVI"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "w": {
+        "street": "",
+        "description": "Небольшие таунхаусы."
     },
     "nw": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "description": ""
 }

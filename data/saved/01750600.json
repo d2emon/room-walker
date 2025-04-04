@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 175/600",
+    "n": {
+        "street": "",
+        "description": "Небольшие таунхаусы."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Небольшие таунхаусы."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Небольшие таунхаусы."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Лес."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+   },
+    "description": ""
+}

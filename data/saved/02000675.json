@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 200/675",
+    "n": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Небольшие таунхаусы."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Шахтоуправление."
+    },
+    "s": {
+        "street": "",
+        "description": "Шахтоуправление."
+    },
+    "sw": {
+        "street": "",
+        "description": "Шахтоуправление."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Небольшие таунхаусы."
+    },
+    "description": ""
+}

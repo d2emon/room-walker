@@ -5,15 +5,15 @@
         "description": "Узкая тропа вдоль реки."
     },
     "ne": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
     },
     "e": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
     },
     "se": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
     },
     "s": {
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Лес."
+        "description": "Лес у реки."
     },
     "description": ""
 }

@@ -9,11 +9,11 @@
         "description": "Большая река."
     },
     "e": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
     },
     "se": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
     },
     "s": {
@@ -22,10 +22,10 @@
     },
     "sw": {
         "street": "",
-        "description": "Лес."
+        "description": "Лес у реки."
     },
     "w": {
-        "street": "",
+        "street": "Река Глубоководная",
         "description": "Большая река."
     },
     "nw": {

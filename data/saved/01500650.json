@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 175/525",
+    "name": "Перекрёсток 150/650",
     "n": {
         "street": "Улица ???",
         "description": "Узкая тропа."
     },
     "ne": {
         "street": "",
-        "description": "Лес у реки."
+        "description": "Лес."
     },
     "e": {
         "street": "Улица ???",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Лес у реки."
+        "description": "Лес."
     },
     "description": ""
 }

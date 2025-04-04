@@ -1,32 +1,32 @@
 {
-    "name": "Перекрёсток 150/550",
+    "name": "Перекрёсток 200/650",
     "n": {
-        "street": "",
-        "description": "Небольшие таунхаусы."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
         "description": "Небольшие таунхаусы."
     },
     "e": {
-        "street": "",
-        "description": "Небольшие таунхаусы."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "se": {
         "street": "",
         "description": "Небольшие таунхаусы."
     },
     "s": {
-        "street": "",
-        "description": "Небольшие таунхаусы."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
         "description": "Небольшие таунхаусы."
     },
     "w": {
-        "street": "",
-        "description": "Небольшие таунхаусы."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "nw": {
         "street": "",

@@ -1,23 +1,6 @@
 {
-    "name": "Перекрёсток 225/550",
+    "name": "Перекрёсток 250/575",
     "n": {
-        "walkable": true,
-        "street": "Мост Гидротехников",
-        "transport": {
-            "k3": {
-                "tram": ["XVI"],
-                "hover": [],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Неширокий мост с линией монорельса."
-    },
-    "ne": {
-        "street": "Река Глубоководная.",
-        "description": "Большая река."
-    },
-    "e": {
         "walkable": true,
         "street": "Улица ???",
         "transport": {
@@ -30,25 +13,42 @@
         },
         "description": "Неширокая улица с линией монорельса."
     },
-    "se": {
-        "street": "",
-        "description": "Небольшие таунхаусы."
-    },
-    "s": {
-        "street": "",
-        "description": "Небольшие таунхаусы."
-    },
-    "sw": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
-    },
-    "w": {
-        "street": "Улица ???",
-        "description": "Узкая тропа вдоль реки."
-    },
-    "nw": {
+    "ne": {
         "street": "Река Глубоководная.",
         "description": "Большая река."
+    },
+    "e": {
+        "street": "Река Глубоководная.",
+        "description": "Большая река."
+    },
+    "se": {
+        "street": "Река Глубоководная.",
+        "description": "Большая река."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["XVI"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с линией монорельса."
+    },
+    "w": {
+        "street": "",
+        "description": "Небольшие таунхаусы."
+    },
+    "nw": {
+        "street": "",
+        "description": "Небольшие таунхаусы."
     },
     "description": ""
 }

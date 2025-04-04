@@ -1,16 +1,16 @@
 {
-    "name": "Перекрёсток 175/550",
+    "name": "Перекрёсток 200/575",
     "n": {
         "street": "Улица ???",
         "description": "Узкая тропа."
     },
     "ne": {
-        "street": "",
-        "description": "Лес."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая тропа."
+        "street": "",
+        "description": "Небольшие таунхаусы."
     },
     "se": {
         "walkable": true,
@@ -31,7 +31,7 @@
     },
     "sw": {
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "w": {
         "street": "",
