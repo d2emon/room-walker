@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 400/725",
+    "n": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "description": ""
+}

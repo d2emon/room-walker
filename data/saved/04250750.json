@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 425/750",
+    "n": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "ne": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "e": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "se": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "s": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "sw": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "w": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "nw": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "description": ""
+}

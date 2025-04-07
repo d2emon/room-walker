@@ -2,11 +2,11 @@
     "name": "Перекрёсток 350/700",
     "n": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Линия  монорельса."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Линия  монорельса."
     },
     "e": {
         "street": "",
@@ -22,15 +22,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Линия  монорельса."
     },
     "w": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Линия  монорельса."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Линия  монорельса."
     },
     "description": ""
 }

@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 325/750",
+    "n": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "sw": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "w": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "nw": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "description": ""
+}

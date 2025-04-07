@@ -1,0 +1,52 @@
+{
+    "name": "Серая бухта",
+    "n": {
+        "street": "",
+        "description": "Небольшая река."
+    },
+    "ne": {
+        "street": "Бухтинский мост",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["i", "l"],
+                "bus": ["1"],
+                "metro": []
+            }
+        },
+        "description": "Широкий мост с подвесной линией."
+    },
+    "e": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "se": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "s": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["i", "l"],
+                "bus": ["1"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с подвесной линией."
+    },
+    "w": {
+        "street": "",
+        "description": "Небольшая площадь."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "description": ""
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 400/775",
+    "n": {
+        "street": "",
+        "description": "Небольшая площадь."
+    },
+    "ne": {
+        "street": "",
+        "description": "Небольшая площадь."
+    },
+    "e": {
+        "street": "",
+        "description": "Небольшая площадь."
+    },
+    "se": {
+        "street": "",
+        "description": "Небольшая площадь."
+    },
+    "s": {
+        "street": "",
+        "description": "Небольшая площадь."
+    },
+    "sw": {
+        "street": "",
+        "description": "Небольшая площадь."
+    },
+    "w": {
+        "street": "",
+        "description": "Небольшая площадь."
+    },
+    "nw": {
+        "street": "",
+        "description": "Небольшая площадь."
+    },
+    "description": ""
+}

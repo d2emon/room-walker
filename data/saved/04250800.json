@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 425/800",
+    "n": {
+        "street": "",
+        "description": "Море."
+    },
+    "ne": {
+        "street": "",
+        "description": "Море."
+    },
+    "e": {
+        "street": "",
+        "description": "Море."
+    },
+    "se": {
+        "street": "",
+        "description": "Море."
+    },
+    "s": {
+        "street": "",
+        "description": "Море."
+    },
+    "sw": {
+        "street": "",
+        "description": "Море."
+    },
+    "w": {
+        "street": "",
+        "description": "Море."
+    },
+    "nw": {
+        "street": "",
+        "description": "Море."
+    },
+    "description": ""
+}

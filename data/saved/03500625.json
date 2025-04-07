@@ -22,12 +22,12 @@
         "description": "Широкая улица с линией монорельса в центре."
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Аэродром."
     },
     "s": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "sw": {
         "street": "Улица ???",

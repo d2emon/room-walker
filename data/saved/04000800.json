@@ -1,0 +1,60 @@
+{
+    "name": "Перекрёсток 400/800",
+    "n": {
+        "street": "",
+        "description": "Небольшая площадь."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["i", "l"],
+                "bus": ["1"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица с подвесной линией."
+    },
+    "e": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "se": {
+        "street": "Улица Серомысская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["i", "j"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с подвесной линией."
+    },
+    "s": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["j", "l"],
+                "bus": ["1"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с подвесной линией."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "description": ""
+}

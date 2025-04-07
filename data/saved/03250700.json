@@ -18,15 +18,15 @@
     },
     "e": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Линия  монорельса."
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Линия  монорельса."
     },
     "s": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Линия  монорельса."
     },
     "sw": {
         "street": "Улица ???",

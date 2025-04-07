@@ -29,8 +29,8 @@
         "description": "Жилые дома средней высоты."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Линия  монорельса."
     },
     "description": ""
 }

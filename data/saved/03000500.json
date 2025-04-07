@@ -27,7 +27,7 @@
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": ["j", "p", "q"],
+                "hover": ["h", "p", "q"],
                 "bus": ["7", "10>", "13"],
                 "metro": []
             }
@@ -52,7 +52,7 @@
         "transport": {
             "k3": {
                 "tram": ["III"],
-                "hover": ["j", "p", "q"],
+                "hover": ["h", "p", "q"],
                 "bus": ["7", "10<", "13"],
                 "metro": []
             }

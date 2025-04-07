@@ -1,8 +1,8 @@
 {
-    "name": "Перекрёсток 375/650",
+    "name": "Аэродром",
     "n": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "ne": {
         "street": "Улица ???",
@@ -18,16 +18,15 @@
     },
     "e": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Линия  монорельса."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Линия  монорельса."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Линия  монорельса."
     },
     "sw": {
         "street": "Улица ???",
@@ -43,11 +42,11 @@
     },
     "w": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Аэродром."
     },
     "description": ""
 }

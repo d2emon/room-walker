@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 350/775",
+    "n": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "description": ""
+}

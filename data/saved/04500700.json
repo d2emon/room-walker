@@ -1,9 +1,8 @@
 {
     "name": "Перекрёсток 450/700",
     "n": {
-        "walkable": true,
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
@@ -14,17 +13,16 @@
         "description": "Узкая улица идущая южнее линии монорельса."
     },
     "se": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
-    },
-    "sw": {
         "street": "",
         "description": "Жилые дома средней высоты."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "w": {
         "street": "Улица Столичная",

@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 325/725",
+    "n": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "ne": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "e": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "sw": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "w": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "description": ""
+}

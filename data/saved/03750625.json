@@ -1,5 +1,5 @@
 {
-    "name": "Перекрёсток 375/625",
+    "name": "Аэродром",
     "n": {
         "street": "Улица ???",
         "description": "Узкая улица."
@@ -23,15 +23,15 @@
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "s": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "w": {
         "walkable": true,

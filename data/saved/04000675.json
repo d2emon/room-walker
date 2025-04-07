@@ -1,8 +1,8 @@
 {
     "name": "Перекрёсток 400/675",
     "n": {
-        "street": "",
-        "description": "Линия монорельса."
+        "street": "Улица ???",
+        "description": "Узкая улица."
      },
     "ne": {
         "street": "",
@@ -17,8 +17,8 @@
         "description": "Жилые дома средней высоты."
     },
     "s": {
-        "street": "",
-        "description": "Линия монорельса."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "Улица ???",
@@ -29,8 +29,8 @@
         "description": "Жилые дома средней высоты."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Линия  монорельса."
     },
     "description": ""
 }

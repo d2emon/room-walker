@@ -1,9 +1,8 @@
 {
     "name": "Перекрёсток 425/700",
     "n": {
-        "walkable": true,
         "street": "Улица ???",
-        "description": "Неширокая улица."
+        "description": "Узкая улица."
     },
     "ne": {
         "street": "",
@@ -18,13 +17,12 @@
         "description": "Жилые дома средней высоты."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица ???",
-        "description": "Неширокая улица."
-    },
-    "sw": {
         "street": "",
         "description": "Жилые дома средней высоты."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "w": {
         "street": "",

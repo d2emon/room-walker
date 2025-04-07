@@ -2,35 +2,35 @@
     "name": "Перекрёсток 350/650",
     "n": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "e": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "s": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "w": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Аэродром."
     },
     "description": ""
 }

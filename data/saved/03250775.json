@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 325/775",
+    "n": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "ne": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "e": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "se": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "s": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "sw": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "w": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "nw": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "description": ""
+}

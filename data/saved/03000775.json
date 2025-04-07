@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 300/775",
+    "n": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "ne": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "e": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "se": {
+        "street": "",
+        "description": "Озеро Утиное."
+    },
+    "s": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "sw": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "w": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "nw": {
+        "street": "",
+        "description": "Линия  монорельса."
+    },
+    "description": ""
+}
