@@ -2,11 +2,11 @@
     "name": "Перекрёсток 425/425",
     "n": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "e": {
         "walkable": true,
@@ -48,7 +48,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "description": ""
 }

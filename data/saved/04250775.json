@@ -5,6 +5,7 @@
         "description": "Небольшая река."
     },
     "ne": {
+        "walkable": true,
         "street": "Бухтинский мост",
         "transport": {
             "k3": {
@@ -29,6 +30,7 @@
         "description": "Берег моря."
     },
     "sw": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {

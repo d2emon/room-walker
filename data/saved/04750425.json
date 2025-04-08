@@ -1,8 +1,8 @@
 {
     "name": "Перекрёсток 475/425",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Стекольный завод."
     },
     "ne": {
         "street": "",
@@ -48,7 +48,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Стекольный завод."
     },
     "description": ""
 }

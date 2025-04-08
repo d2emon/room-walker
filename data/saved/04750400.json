@@ -17,12 +17,12 @@
         "description": "Стекольный завод."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Стекольный завод."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Стекольный завод."
     },
     "w": {
         "street": "Улица ???",

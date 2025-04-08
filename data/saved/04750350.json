@@ -1,17 +1,12 @@
 {
     "name": "Перекрёсток 475/350",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "ne": {
         "walkable": true,
         "street": "Улица Комсомольская",
-        "description": "Широкий проспект с линией монорельса посередине."
-    },
-    "e": {
-        "walkable": true,
-        "street": "Улица Подвальная",
         "transport": {
             "k3": {
                 "tram": ["XII<", "XVI", "XVII", "XIX"],
@@ -20,15 +15,28 @@
                 "metro": []
             }
         },
-        "description": "Широкая улица с линией монорельса в центре."
+        "description": "Широкий проспект с линией монорельса посередине."
+    },
+    "e": {
+        "street": "",
+        "description": "Площадь Хикстона."
     },
     "se": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["XII<", "XVI", "XVII", "XIX"],
+                "hover": [],
+                "bus": ["6", "16"],
+                "metro": []
+            }
+        },
+        "description": "Узкая улица вдоль площади."
     },
     "s": {
-        "street": "Улица ???",
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Высотные жилые дома."
     },
     "sw": {
         "street": "",
@@ -48,8 +56,8 @@
         "description": "Широкая улица с линией монорельса в центре."
     },
     "nw": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "description": ""
 }

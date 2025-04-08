@@ -28,11 +28,11 @@
     },
     "e": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "s": {
         "walkable": true,

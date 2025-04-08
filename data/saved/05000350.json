@@ -23,24 +23,15 @@
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Площадь Хикстона."
     },
     "w": {
-        "walkable": true,
-        "street": "Улица Подвальная",
-        "transport": {
-            "k3": {
-                "tram": ["XII>", "XVI", "XVII", "XIX"],
-                "hover": [],
-                "bus": ["6", "16"],
-                "metro": []
-            }
-        },
-        "description": "Широкая улица с линией монорельса в центре."
+        "street": "",
+        "description": "Площадь Хикстона."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Площадь Хикстона."
     },
     "description": ""
 }

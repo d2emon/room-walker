@@ -1,7 +1,7 @@
 {
     "name": "Перекрёсток 450/400",
     "n": {
-        "street": "Улица ???",
+        "street": "Улица Меловая",
         "description": "Узкая улица."
     },
     "ne": {
@@ -14,23 +14,23 @@
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Стекольный завод."
     },
     "s": {
-        "street": "Улица ???",
+        "street": "Улица Меловая",
         "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "w": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "description": ""
 }
