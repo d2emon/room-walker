@@ -30,6 +30,7 @@
         "description": "Линия монорельса."
     },
     "sw": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {

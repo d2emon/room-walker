@@ -1,6 +1,7 @@
 {
     "name": "Станция \"Болотная\"",
     "n": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {
@@ -17,6 +18,7 @@
         "description": "Линия  монорельса."
     },
     "e": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {

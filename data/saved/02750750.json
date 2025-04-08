@@ -5,6 +5,7 @@
         "description": "Узкая улица."
     },
     "ne": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {
@@ -25,6 +26,7 @@
         "description": "Линия  монорельса."
     },
     "s": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {

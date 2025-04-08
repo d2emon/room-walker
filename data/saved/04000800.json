@@ -5,6 +5,7 @@
         "description": "Небольшая площадь."
     },
     "ne": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {
@@ -21,6 +22,7 @@
         "description": "Берег моря."
     },
     "se": {
+        "walkable": true,
         "street": "Улица Серомысская",
         "transport": {
             "k3": {
@@ -41,6 +43,7 @@
         "description": "Жилые дома средней высоты."
     },
     "w": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {

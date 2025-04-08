@@ -9,6 +9,7 @@
         "description": "Узкая улица."
     },
     "e": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {
@@ -33,6 +34,7 @@
         "description": "Жилые дома средней высоты."
     },
     "w": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {

@@ -5,6 +5,7 @@
         "description": "Жилые дома средней высоты."
     },
     "ne": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {
@@ -29,6 +30,7 @@
         "description": "Линия  монорельса."
     },
     "sw": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {

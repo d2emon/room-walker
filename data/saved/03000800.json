@@ -9,6 +9,7 @@
         "description": "Озеро Утиное."
     },
     "e": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {
@@ -33,6 +34,7 @@
         "description": "Станция \"Болотная\"."
     },
     "w": {
+        "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {
