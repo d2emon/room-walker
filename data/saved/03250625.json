@@ -10,7 +10,7 @@
     },
     "e": {
         "walkable": true,
-        "street": "Улица Артёма",
+        "street": "Улица Ягодная",
         "transport": {
             "k3": {
                 "tram": ["IV", "XII>", "XIV", "XV"],
@@ -23,19 +23,19 @@
     },
     "se": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "s": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "w": {
         "walkable": true,
-        "street": "Улица Артёма",
+        "street": "Улица Ягодная",
         "transport": {
             "k3": {
                 "tram": ["IV", "XII<", "XIV", "XV"],

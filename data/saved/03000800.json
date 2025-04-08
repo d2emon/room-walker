@@ -5,12 +5,12 @@
         "description": "Линия  монорельса."
     },
     "ne": {
-        "street": "",
-        "description": "Озеро Утиное."
+        "street": "Река Быстрая",
+        "description": ""
     },
     "e": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Артёма",
         "transport": {
             "k3": {
                 "tram": [],
@@ -22,8 +22,8 @@
         "description": "Неширокая улица с подвесной линией."
     },
     "se": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "street": "Река Быстрая",
+        "description": ""
     },
     "s": {
         "street": "",
@@ -35,7 +35,7 @@
     },
     "w": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Артёма",
         "transport": {
             "k3": {
                 "tram": [],

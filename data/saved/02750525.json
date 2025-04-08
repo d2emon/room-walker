@@ -9,7 +9,7 @@
         "description": "Узкая улица."
     },
     "e": {
-        "street": "Улица ???",
+        "street": "Улица Щорса",
         "description": "Узкая аллея вдоль берега реки."
     },
     "se": {
@@ -18,7 +18,7 @@
     },
     "s": {
         "walkable": true,
-        "street": "Мост ???",
+        "street": "Гвардейский Мост",
         "transport": {
             "k3": {
                 "tram": ["IV", "XII>", "XIV", "XV"],
@@ -35,7 +35,7 @@
      },
     "w": {
         "walkable": true,
-        "street": "Улица Набережная",
+        "street": "Улица Щорса",
         "transport": {
             "k3": {
                 "tram": ["IV", "XII<", "XIV", "XV"],

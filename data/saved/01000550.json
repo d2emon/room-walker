@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 100/550",
+    "name": "Ущелье Котлы",
     "n": {
-        "street": "Улица ???",
+        "street": "Улица Невского",
         "description": "Узкая тропа."
     },
     "ne": {
         "street": "",
-        "description": "Лес."
+        "description": "Небольшие таунхаусы."
     },
     "e": {
         "street": "Улица ???",
@@ -14,15 +14,15 @@
     },
     "se": {
         "street": "",
-        "description": "Лес."
+        "description": "Горы."
     },
     "s": {
-        "street": "Улица ???",
+        "street": "Улица Невского",
         "description": "Узкая тропа."
     },
     "sw": {
         "street": "",
-        "description": "Лес."
+        "description": "Горы."
     },
     "w": {
         "street": "Улица ???",
@@ -30,7 +30,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Лес."
+        "description": "Горы."
     },
     "description": ""
 }

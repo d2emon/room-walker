@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 275/750",
+    "name": "Улица Суворова",
     "n": {
         "street": "Улица ???",
         "description": "Узкая улица."
     },
     "ne": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Суворова",
         "transport": {
             "k3": {
                 "tram": [],
@@ -40,7 +40,7 @@
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Гидротехникум."
     },
     "w": {
         "street": "Улица ???",
@@ -48,7 +48,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "description": ""
 }

@@ -2,11 +2,11 @@
     "name": "Перекрёсток 325/700",
     "n": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "ne": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Суворова",
         "transport": {
             "k3": {
                 "tram": [],
@@ -31,7 +31,7 @@
     },
     "sw": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Суворова",
         "transport": {
             "k3": {
                 "tram": [],

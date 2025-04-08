@@ -2,7 +2,7 @@
     "name": "Перекрёсток 150/575",
     "n": {
         "street": "",
-        "description": "Небольшие таунхаусы."
+        "description": "Горы."
     },
     "ne": {
         "street": "Улица ???",
@@ -29,8 +29,8 @@
         "description": "Узкая тропа."
     },
     "nw": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "",
+        "description": "Горы."
     },
     "description": ""
 }

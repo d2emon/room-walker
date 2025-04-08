@@ -9,12 +9,12 @@
         "description": "Большая река."
     },
     "e": {
-        "street": "Улица ???",
-        "description": "Узкая тропа."
+        "street": "Река Глубоководная",
+        "description": "Большая река."
     },
     "se": {
         "street": "",
-        "description": "Лес."
+        "description": "Рынок."
     },
     "s": {
         "street": "Улица ???",
@@ -25,8 +25,8 @@
         "description": "Лес."
     },
     "w": {
-        "street": "Улица ???",
-        "description": "Узкая тропа."
+        "street": "Река Глубоководная",
+        "description": "Большая река."
     },
     "nw": {
         "street": "Река Глубоководная",

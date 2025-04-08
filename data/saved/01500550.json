@@ -2,35 +2,35 @@
     "name": "Перекрёсток 150/550",
     "n": {
         "street": "",
-        "description": "Небольшие таунхаусы."
+        "description": "Горы."
     },
     "ne": {
         "street": "",
-        "description": "Небольшие таунхаусы."
+        "description": "Горы."
     },
     "e": {
         "street": "",
-        "description": "Небольшие таунхаусы."
+        "description": "Горы."
     },
     "se": {
         "street": "",
-        "description": "Небольшие таунхаусы."
+        "description": "Горы."
     },
     "s": {
         "street": "",
-        "description": "Небольшие таунхаусы."
+        "description": "Горы."
     },
     "sw": {
         "street": "",
-        "description": "Небольшие таунхаусы."
+        "description": "Горы."
     },
     "w": {
         "street": "",
-        "description": "Небольшие таунхаусы."
+        "description": "Горы."
     },
     "nw": {
         "street": "",
-        "description": "Небольшие таунхаусы."
+        "description": "Горы."
     },
     "description": ""
 }

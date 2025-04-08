@@ -1,5 +1,5 @@
 {
-    "name": "Перекрёсток 250/525",
+    "name": "Улица Щорса",
     "n": {
         "street": "Улица ???",
         "description": "Неширокая улица."
@@ -10,7 +10,7 @@
     },
     "e": {
         "walkable": true,
-        "street": "Улица Набережная",
+        "street": "Улица Щорса",
         "transport": {
             "k3": {
                 "tram": ["IV", "XII>", "XIV", "XV"],
@@ -35,7 +35,7 @@
     },
     "w": {
         "walkable": true,
-        "street": "Улица Набережная",
+        "street": "Улица Щорса",
         "transport": {
             "k3": {
                 "tram": ["IV", "XII<", "XIV", "XV"],

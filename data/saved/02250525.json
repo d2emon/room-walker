@@ -19,7 +19,7 @@
     },
     "e": {
         "walkable": true,
-        "street": "Улица Набережная",
+        "street": "Улица Щорса",
         "transport": {
             "k3": {
                 "tram": ["IV", "XII>", "XIV", "XV"],

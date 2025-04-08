@@ -9,12 +9,12 @@
         "description": "Линия  монорельса."
     },
     "e": {
-        "street": "",
-        "description": "Озеро Утиное."
+        "street": "Река Быстрая",
+        "description": ""
     },
     "se": {
-        "street": "",
-        "description": "Озеро Утиное."
+        "street": "Река Быстрая",
+        "description": ""
     },
     "s": {
         "street": "",

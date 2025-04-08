@@ -31,7 +31,7 @@
     },
     "sw": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Суворова",
         "transport": {
             "k3": {
                 "tram": [],
@@ -44,7 +44,7 @@
     },
     "w": {
         "walkable": true,
-        "street": "Улица Артёма",
+        "street": "Улица Ягодная",
         "transport": {
             "k3": {
                 "tram": ["IV", "XII<", "XIV", "XV"],

@@ -19,7 +19,7 @@
     },
     "e": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Артёма",
         "transport": {
             "k3": {
                 "tram": [],

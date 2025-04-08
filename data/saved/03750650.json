@@ -6,7 +6,7 @@
     },
     "ne": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Суворова",
         "transport": {
             "k3": {
                 "tram": [],
@@ -31,7 +31,7 @@
     },
     "sw": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Улица Суворова",
         "transport": {
             "k3": {
                 "tram": [],
