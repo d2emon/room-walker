@@ -30,6 +30,14 @@
     "w": {
         "walkable": true,
         "street": "Улица Зеркальная",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица с подвесной линией."
     },
     "nw": {

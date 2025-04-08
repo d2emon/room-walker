@@ -1,29 +1,29 @@
 {
-    "name": "Перекрёсток 425/350",
+    "name": "Перекрёсток 425/500",
     "n": {
         "street": "Улица ???",
         "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Жилые дома средней высоты."
     },
     "e": {
         "walkable": true,
-        "street": "Улица Подвальная",
+        "street": "Проспект Леннона",
         "transport": {
             "k3": {
-                "tram": ["XII<", "XVI", "XVII", "XIX"],
+                "tram": ["III"],
                 "hover": [],
-                "bus": ["6", "16"],
+                "bus": [],
                 "metro": []
             }
         },
-        "description": "Широкая улица с линией монорельса в центре."
+        "description": "Широкий проспект с линией монорельса в центре."
     },
     "se": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Жилые дома средней высоты."
     },
     "s": {
         "street": "Улица ???",
@@ -35,20 +35,20 @@
     },
     "w": {
         "walkable": true,
-        "street": "Улица Подвальная",
+        "street": "Проспект Леннона",
         "transport": {
             "k3": {
-                "tram": ["XII>", "XVI", "XVII", "XIX"],
+                "tram": ["III"],
                 "hover": [],
-                "bus": ["6", "16"],
+                "bus": [],
                 "metro": []
             }
         },
-        "description": "Широкая улица с линией монорельса в центре."
+        "description": "Широкий проспект с линией монорельса в центре."
     },
     "nw": {
-        "street": "",
-        "description": "Высотные жилые дома."
+        "street": "Площадь Ленина",
+        "description": ""
     },
     "description": ""
 }

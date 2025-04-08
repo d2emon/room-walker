@@ -1,17 +1,8 @@
 {
-    "name": "Улица Нижняя",
+    "name": "Перекрёсток 425/425",
     "n": {
-        "walkable": true,
-        "street": "Улица Охтинская",
-        "transport": {
-            "k3": {
-                "tram": [],
-                "hover": ["a", "l", "m"],
-                "bus": [],
-                "metro": []
-            }
-        },
-        "description": "Узкая улица."
+        "street": "",
+        "description": "Жилые дома средней высоты."
     },
     "ne": {
         "street": "",
@@ -35,25 +26,16 @@
         "description": "Промзона."
     },
     "s": {
-        "walkable": true,
-        "street": "Улица Охтинская",
-        "transport": {
-            "k3": {
-                "tram": [],
-                "hover": ["a", "l", "m"],
-                "bus": [],
-                "metro": []
-            }
-        },
+        "street": "Улица ???",
         "description": "Узкая улица."
     },
     "sw": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Промзона."
     },
     "w": {
         "walkable": true,
-        "street": "Улица Первомайская",
+        "street": "Улица Нижняя",
         "transport": {
             "k3": {
                 "tram": [],

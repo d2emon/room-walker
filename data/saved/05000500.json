@@ -30,6 +30,14 @@
     "w": {
         "walkable": true,
         "street": "Проспект Ленина",
+        "transport": {
+            "k3": {
+                "tram": ["III"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": "Широкий проспект с линией монорельса в центре."
     },
     "nw": {

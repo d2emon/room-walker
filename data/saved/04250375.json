@@ -1,12 +1,12 @@
 {
-    "name": "Магазин \"Турист\"",
+    "name": "Перекрёсток 425/375",
     "n": {
-        "street": "Улица Охтинская",
+        "street": "Улица ???",
         "description": "Узкая улица."
     },
     "ne": {
         "street": "",
-        "description": "Жилые дома средней высоты."
+        "description": "Высотные жилые дома."
     },
     "e": {
         "walkable": true,
@@ -14,7 +14,7 @@
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": ["a<", "l<", "m<"],
+                "hover": [],
                 "bus": [],
                 "metro": []
             }
@@ -26,8 +26,25 @@
         "description": "Жилые дома средней высоты."
     },
     "s": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "sw": {
         "walkable": true,
-        "street": "Улица Охтинская",
+        "street": "Улица Серверная",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a<", "l<", "m<"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Узкая улица."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Зеркальная",
         "transport": {
             "k3": {
                 "tram": [],
@@ -36,19 +53,11 @@
                 "metro": []
             }
         },
-        "description": "Узкая улица."
-    },
-    "sw": {
-        "street": "",
-        "description": "Магазин \"Турист\". Жилые дома средней высоты."
-    },
-    "w": {
-        "street": "Улица Зеркальная",
-        "description": "Широкая улица с магазинами."
+        "description": "Неширокая улица с подвесной линией."
     },
     "nw": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Жилые дома средней высоты."
     },
     "description": ""
 }
