@@ -1,0 +1,38 @@
+{
+    "name": "Перекрёсток 475/175",
+    "n": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "Ботанический сад",
+        "description": ""
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Линнея",
+        "description": "Узкая улица."
+    },
+    "se": {
+        "street": "Улица Аэропортовская",
+        "description": "Широкая улица."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Линнея",
+        "description": "Узкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

@@ -28,6 +28,14 @@
     "w": {
         "walkable": true,
         "street": "Улица Подвальная",
+        "transport": {
+            "k3": {
+                "tram": ["XII>", "XVI", "XVII", "XIX"],
+                "hover": [],
+                "bus": ["6", "16"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с линией монорельса в центре."
     },
     "nw": {

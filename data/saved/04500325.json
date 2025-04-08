@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 450/325",
+    "n": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "e": {
+        "street": "Переулок Разбойничий",
+        "description": "Узкий переулок."
+    },
+    "se": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "w": {
+        "street": "Переулок Разбойничий",
+        "description": "Узкий переулок."
+    },
+    "nw": {
+        "street": "",
+        "description": "Промзона."
+    },
+    "description": ""
+}
