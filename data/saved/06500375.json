@@ -3,6 +3,14 @@
     "n": {
         "walkable": true,
         "street": "Улица Дружбы",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["5"],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица с клумбой посередине."
     },
     "ne": {
@@ -12,6 +20,14 @@
     "e": {
         "walkable": true,
         "street": "",
+        "transport": {
+            "k3": {
+                "tram": ["I", "II", "VII", "VIII", "IX"],
+                "hover": ["n", "o", "q", "r"],
+                "bus": ["7"],
+                "metro": []
+            }
+        },
         "description": "Мост через реку Зелёнку с линией монорельса в центре."
     },
     "se": {
@@ -29,6 +45,14 @@
     "w": {
         "walkable": true,
         "street": "Улица Зеркальная",
+        "transport": {
+            "k3": {
+                "tram": ["I", "II", "VII", "VIII", "IX"],
+                "hover": ["n", "o", "q", "r"],
+                "bus": ["5", "7"],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица с линией монорельса в центре."
     },
     "nw": {
