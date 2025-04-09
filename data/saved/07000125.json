@@ -11,6 +11,14 @@
     "e": {
         "walkable": true,
         "street": "Улица Каменская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["12"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица."
     },
     "se": {
@@ -24,6 +32,14 @@
     "sw": {
         "walkable": true,
         "street": "Широкий мост через реку Каменку",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["12"],
+                "metro": []
+            }
+        },
         "description": ""
     },
     "w": {
