@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 650/725",
+    "n": {
+        "walkable": true,
+        "street": "Мост ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["8", "23>"],
+                "metro": []
+            }
+        },
+        "description": "Широкий мост."
+    },
+    "ne": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "e": {
+        "street": "",
+        "description": "Море."
+    },
+    "se": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Мост ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["8", "23<"],
+                "metro": []
+            }
+        },
+        "description": "Широкий мост."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "w": {
+        "street": "",
+        "description": "Море."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "description": ""
+}

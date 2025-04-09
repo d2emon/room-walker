@@ -1,12 +1,12 @@
 {
-    "name": "Перекрёсток 500/775",
+    "name": "Перекрёсток 700/775",
     "n": {
         "street": "Улица ???",
-        "description": "Узкая улица"
+        "description": "Неширокая улица."
     },
     "ne": {
         "street": "",
-        "description": "Исторические здания."
+        "description": "Лес."
     },
     "e": {
         "street": "Улица ???",
@@ -14,23 +14,23 @@
     },
     "se": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Лес."
     },
     "s": {
         "street": "Улица ???",
-        "description": "Узкая улица"
+        "description": "Неширокая улица."
     },
     "sw": {
         "street": "",
-        "description": "Высотные жилые дома."
+        "description": "Лес."
     },
     "w": {
         "street": "Улица ???",
-        "description": "Узкая улица"
+        "description": "Неширокая улица."
     },
     "nw": {
         "street": "",
-        "description": "Исторические здания."
+        "description": "Лес."
     },
     "description": ""
 }

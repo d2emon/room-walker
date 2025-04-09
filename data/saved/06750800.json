@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 675/800",
+    "n": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Лес."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["11"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "s": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "sw": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["11"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "description": ""
+}

@@ -1,0 +1,55 @@
+{
+    "name": "Перекрёсток 575/775",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["II", "V", "IX", "XIV"],
+                "hover": ["a>", "b>", "i>", "l>"],
+                "bus": ["9", "11", "24"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["II", "V", "IX", "XIV"],
+                "hover": ["a<", "b<", "i<", "l<"],
+                "bus": ["9", "11", "24"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "w": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "description": ""
+}

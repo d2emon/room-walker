@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 650/775",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["8", "19", "22", "23>"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Лес."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Лес."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["8", "19", "22", "23<"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "w": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "description": ""
+}

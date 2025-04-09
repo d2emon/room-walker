@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 700/750",
+    "n": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "ne": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["II"],
+                "hover": [],
+                "bus": ["19", "22"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Лес."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Лес."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["II"],
+                "hover": [],
+                "bus": ["19", "22"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "description": ""
+}

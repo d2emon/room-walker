@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 625/750",
+    "n": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "ne": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Мост ???",
+        "transport": {
+            "k3": {
+                "tram": ["II"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a>", "b>", "i>", "l>"],
+                "bus": ["8", "9", "24"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Ясная",
+        "transport": {
+            "k3": {
+                "tram": ["II"],
+                "hover": ["a<", "b<", "i<", "l<"],
+                "bus": ["8", "9", "24"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "description": ""
+}

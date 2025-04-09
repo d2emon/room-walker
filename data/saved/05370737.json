@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 537/737",
+    "n": {
+        "street": "",
+        "description": "Парк."
+    },
+    "ne": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["h", "l"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a"],
+                "bus": ["26", "30", "47"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}

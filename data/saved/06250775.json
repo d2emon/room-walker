@@ -1,7 +1,16 @@
 {
-    "name": "Перекрёсток 525/775",
+    "name": "Перекрёсток 625/775",
     "n": {
+        "walkable": true,
         "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a<", "b<", "i<", "l<"],
+                "bus": ["8", "9", "24"],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "ne": {
@@ -17,7 +26,16 @@
         "description": "Высотные жилые дома у моря."
     },
     "s": {
+        "walkable": true,
         "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a>", "b>", "i>", "l>"],
+                "bus": ["8", "9", "24"],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "sw": {
@@ -30,7 +48,7 @@
     },
     "nw": {
         "street": "",
-        "description": "Исторические здания."
+        "description": "Высотные жилые дома."
     },
     "description": ""
 }

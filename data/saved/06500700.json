@@ -36,7 +36,7 @@
     },
     "s": {
         "walkable": true,
-        "street": "Улица ???",
+        "street": "Мост ???",
         "transport": {
             "k3": {
                 "tram": [],

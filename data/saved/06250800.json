@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 625/800",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a<", "b<", "i<", "l<"],
+                "bus": ["8", "9", "24"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Мост ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["8", "11", "19", "22", "23>"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "s": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Галича",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a>", "b>", "i>", "l>"],
+                "bus": ["9", "11", "19", "22", "23<", "24"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высотные жилые дома."
+    },
+    "description": ""
+}

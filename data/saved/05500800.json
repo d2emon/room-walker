@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 550/800",
+    "n": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "ne": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Мост ???",
+        "transport": {
+            "k3": {
+                "tram": ["II", "V", "IX", "XIV"],
+                "hover": ["i", "m"],
+                "bus": ["19", "22", "23>"],
+                "metro": []
+            }
+        },
+        "description": "Широкий мост с линией монорельса и подвесной линией."
+    },
+    "se": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "s": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "sw": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Мост ???",
+        "transport": {
+            "k3": {
+                "tram": ["II", "V", "IX", "XIV"],
+                "hover": ["i", "m"],
+                "bus": ["19", "22", "23<"],
+                "metro": []
+            }
+        },
+        "description": "Широкий мост с линией монорельса и подвесной линией."
+    },
+    "nw": {
+        "street": "",
+        "description": "Берег моря."
+    },
+    "description": ""
+}

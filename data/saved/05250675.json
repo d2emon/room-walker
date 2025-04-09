@@ -19,15 +19,15 @@
     },
     "e": {
         "street": "",
-        "description": "Парк."
+        "description": "Склон холма."
     },
     "se": {
-        "street": "Улица ???",
-        "description": "Неширокая улица."
+        "street": "Лестница на холм",
+        "description": ""
     },
     "s": {
         "street": "",
-        "description": "Парк."
+        "description": "Склон холма."
     },
     "sw": {
         "walkable": true,

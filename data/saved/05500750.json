@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 550/750",
+    "n": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a"],
+                "bus": ["26", "30", "47"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "s": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "w": {
+        "street": "Улица Спортивная",
+        "description": "Узкая тропа идущая по берегу."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a"],
+                "bus": ["26", "30", "47"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}

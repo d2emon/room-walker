@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 525/725",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Парк."
+    },
+    "e": {
+        "street": "",
+        "description": "Парк."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа среди исторических зданий."
+    },
+    "nw": {
+        "street": "Улица Здоровья",
+        "description": "Узкая улица с подвесной линией в старом городе."
+    },
+    "description": ""
+}
