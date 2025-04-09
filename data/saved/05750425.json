@@ -3,6 +3,14 @@
     "n": {
         "walkable": true,
         "street": "Улица Сазонова",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["n", "q"],
+                "bus": ["4", "5", "27"],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "ne": {
@@ -12,6 +20,14 @@
     "e": {
         "walkable": true,
         "street": "Улица Нижняя",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["s"],
+                "bus": ["15", "25", "27"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с подвесной линией."
     },
     "se": {
@@ -19,7 +35,6 @@
         "description": "Жилые дома средней высоты у старого парка."
     },
     "s": {
-        "walkable": true,
         "street": "Улица Сазонова",
         "description": "Неширокая улица."
     },
@@ -30,6 +45,14 @@
     "w": {
         "walkable": true,
         "street": "Улица Нижняя",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["n", "q", "s"],
+                "bus": ["4", "5", "15", "25"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с подвесной линией."
     },
     "nw": {

@@ -3,6 +3,14 @@
     "n": {
         "walkable": true,
         "street": "Улица Сазонова",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["n", "q"],
+                "bus": ["4", "5", "27"],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "ne": {
@@ -20,6 +28,14 @@
     "s": {
         "walkable": true,
         "street": "Улица Сазонова",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["n", "q"],
+                "bus": ["4", "5", "27"],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "sw": {
