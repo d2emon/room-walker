@@ -6,7 +6,7 @@
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": ["a<", "l<", "m<"],
+                "hover": ["a<", "l<", "m<", "o<", "r<"],
                 "bus": [],
                 "metro": []
             }
@@ -19,7 +19,7 @@
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": ["a>", "l>", "m>"],
+                "hover": ["a>", "l>", "m>", "o>", "r>"],
                 "bus": [],
                 "metro": []
             }

@@ -9,30 +9,30 @@
         "street": "Улица Комсомольская",
         "transport": {
             "k3": {
-                "tram": ["XII<", "XVI", "XVII", "XIX"],
+                "tram": ["XVI", "XIX"],
                 "hover": [],
-                "bus": ["6", "16"],
+                "bus": ["16"],
                 "metro": []
             }
         },
         "description": "Широкий проспект с линией монорельса посередине."
     },
     "e": {
-        "street": "",
-        "description": "Площадь Хикстона."
-    },
-    "se": {
         "walkable": true,
         "street": "Улица ???",
         "transport": {
             "k3": {
-                "tram": ["XII<", "XVI", "XVII", "XIX"],
+                "tram": ["XII<", "XVII"],
                 "hover": [],
-                "bus": ["6", "16"],
+                "bus": ["6"],
                 "metro": []
             }
         },
-        "description": "Узкая улица вдоль площади."
+        "description": "Неширокая улица вдоль площади."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
     },
     "s": {
         "street": "",
