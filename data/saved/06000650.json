@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 600/650",
+    "n": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Транспортный центр."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["IV", "XIII"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}

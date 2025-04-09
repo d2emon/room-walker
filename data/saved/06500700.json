@@ -1,0 +1,72 @@
+{
+    "name": "Перекрёсток 650/700",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["2", "10<", "11", "46"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Водная",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["b", "c", "e", "g"],
+                "bus": ["9", "23>", "26", "28", "30"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица в старом городе."
+    },
+    "se": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["8", "23<"],
+                "metro": []
+            }
+        },
+        "description": "Широкий мост."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Водная",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["b", "c", "e", "g"],
+                "bus": ["2", "8", "9", "10>", "11", "26", "28", "30"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица в старом городе."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

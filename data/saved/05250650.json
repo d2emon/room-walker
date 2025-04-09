@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 525/650",
+    "n": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "ne": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "e": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "se": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "s": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "sw": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "w": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "nw": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "description": ""
+}

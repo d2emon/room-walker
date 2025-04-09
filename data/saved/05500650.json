@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 550/650",
+    "n": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "ne": {
+        "walkable": true,
+        "street": "Улица Якорная",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["1", "3", "18"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Парк."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица Якорная",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["1", "3", "18"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}

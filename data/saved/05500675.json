@@ -1,0 +1,36 @@
+{
+    "name": "Перекрёсток 550/675",
+    "n": {
+        "street": "",
+        "description": "Парк."
+    },
+    "ne": {
+        "street": "",
+        "description": "Парк."
+    },
+    "e": {
+        "street": "",
+        "description": "Парк."
+    },
+    "se": {
+        "street": "",
+        "description": "Парк."
+    },
+    "s": {
+        "street": "",
+        "description": "Парк."
+    },
+    "sw": {
+        "street": "",
+        "description": "Парк."
+    },
+    "w": {
+        "street": "",
+        "description": "Парк."
+    },
+    "nw": {
+        "street": "",
+        "description": "Парк."
+    },
+    "description": ""
+}

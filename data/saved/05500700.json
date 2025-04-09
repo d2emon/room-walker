@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 550/700",
+    "n": {
+        "street": "",
+        "description": "Парк."
+    },
+    "ne": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["c", "e"],
+                "bus": ["23<", "24", "34", "45"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая аллея."
+    },
+    "e": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Парк."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Судейская",
+        "transport": {
+            "k3": {
+                "tram": ["XVII"],
+                "hover": [],
+                "bus": ["23>", "24", "34", "45"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая аллея."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}

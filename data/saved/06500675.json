@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 650/675",
+    "n": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["2", "10>", "11", "46"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["2", "10<", "11", "46"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}

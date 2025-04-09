@@ -1,0 +1,72 @@
+{
+    "name": "Перекрёсток 650/625",
+    "n": {
+        "walkable": true,
+        "street": "Высокий мост",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["g", "h", "i"],
+                "bus": ["8", "10<", "20", "23<", "29"],
+                "metro": []
+            }
+        },
+        "description": "Широкий мост."
+    },
+    "ne": {
+        "street": "Река Глубоководная",
+        "description": ""
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Южнобережная",
+        "transport": {
+            "k3": {
+                "tram": ["V", "VII", "IX", "XIII", "XV"],
+                "hover": [],
+                "bus": ["1", "3", "18"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль берега реки с линией монорельса в центре."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["g", "h", "i"],
+                "bus": ["8", "10>", "20", "23>", "29"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица идущая по эстакаде."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Южнобережная",
+        "transport": {
+            "k3": {
+                "tram": ["V", "VII", "IX", "XIII", "XV"],
+                "hover": [],
+                "bus": ["1", "3", "18"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица вдоль берега реки с линией монорельса в центре."
+    },
+    "nw": {
+        "street": "Река Глубоководная",
+        "description": ""
+    },
+    "description": ""
+}

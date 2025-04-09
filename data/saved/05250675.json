@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 525/675",
+    "n": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "ne": {
+        "walkable": true,
+        "street": "Улица Якорная",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["1", "3", "18"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Парк."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "street": "",
+        "description": "Парк."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица Якорная",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["1", "3", "18"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица."
+    },
+    "w": {
+        "street": "Улица ???",
+        "description": "Узкая тропа среди исторических зданий."
+    },
+    "nw": {
+        "street": "",
+        "description": "Исторические здания."
+    },
+    "description": ""
+}

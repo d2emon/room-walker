@@ -1,0 +1,72 @@
+{
+    "name": "Перекрёсток 575/700",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["V", "IX", "XIV"],
+                "hover": ["c", "e"],
+                "bus": ["2", "10>", "23>", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Водная",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["b", "c", "e", "h", "i"],
+                "bus": ["2", "9", "10<", "11", "23<", "26", "28", "30"],
+                "metro": []
+            }
+        },
+        "description": "Широкая улица в старом городе."
+    },
+    "se": {
+        "street": "",
+        "description": "Высотные жилые дома у моря."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["V", "IX", "XIV"],
+                "hover": ["b", "i"],
+                "bus": ["9", "11", "24", "26", "30"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["h"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "w": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

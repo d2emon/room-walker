@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 575/675",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["V", "IX", "XIV"],
+                "hover": [],
+                "bus": ["2", "10>", "28"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["V", "IX", "XIV"],
+                "hover": ["c", "e"],
+                "bus": ["2", "10<", "23<", "24", "28"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["c", "e"],
+                "bus": ["23>", "24", "34", "45"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая аллея."
+    },
+    "w": {
+        "street": "",
+        "description": "Парк."
+    },
+    "nw": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}

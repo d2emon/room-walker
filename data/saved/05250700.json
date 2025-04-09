@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 525/700",
+    "n": {
+        "street": "",
+        "description": "Парк."
+    },
+    "ne": {
+        "street": "",
+        "description": "Парк."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Судейская",
+        "transport": {
+            "k3": {
+                "tram": ["XVII"],
+                "hover": [],
+                "bus": ["23<", "24", "34", "45"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая аллея."
+    },
+    "se": {
+        "street": "",
+        "description": "Парк."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["a"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Парк."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Судейская",
+        "transport": {
+            "k3": {
+                "tram": ["XVII"],
+                "hover": ["a"],
+                "bus": ["23>", "24", "34", "45"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая аллея с линией монорельса уходящая в парк."
+    },
+    "nw": {
+        "street": "",
+        "description": "Парк."
+    },
+    "description": ""
+}
