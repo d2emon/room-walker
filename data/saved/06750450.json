@@ -1,7 +1,16 @@
 {
     "name": "Перекрёсток 675/450",
     "n": {
+        "walkable": true,
         "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["17"],
+                "metro": []
+            }
+        },
         "description": "Узкая тропа идущая через старый парк."
     },
     "ne": {
@@ -25,7 +34,16 @@
         "description": ""
     },
     "w": {
+        "walkable": true,
         "street": "Аллея Победы",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["17"],
+                "metro": []
+            }
+        },
         "description": "Узкая тропа идущая через старый парк."
     },
     "nw": {

@@ -9,16 +9,34 @@
         "description": "Низкоэтажная застройка поселка."
     },
     "e": {
+        "walkable": true,
         "street": "Улица ???",
-        "description": "Пешеходная аллея засаженная кипарисами."
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["17"],
+                "metro": []
+            }
+        },
+        "description": "Аллея засаженная кипарисами."
     },
     "se": {
         "street": "Улица ???",
         "description": "Узкая тропа в рабочем посёлке."
     },
     "s": {
+        "walkable": true,
         "street": "Улица Карпова",
-        "description": "Узкая тропа вдоль реки."
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["17"],
+                "metro": []
+            }
+        },
+        "description": "Узкая тропа идущая вдоль реки."
     },
     "sw": {
         "street": "",

@@ -1,17 +1,33 @@
 {
     "name": "Улица Ореховая",
     "n": {
+        "walkable": true,
         "street": "Улица Карпова",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["17"],
+                "metro": []
+            }
+        },
         "description": "Узкая тропа идущая вдоль реки."
     },
     "ne": {
-        "walkable": true,
         "street": "Улица Ореховая",
         "description": "Узкая улица."
     },
     "e": {
         "walkable": true,
         "street": "Улица Тихая",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["s"],
+                "bus": ["15", "25", "27"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с подвесной линией."
     },
     "se": {
@@ -19,17 +35,33 @@
         "description": ""
     },
     "s": {
+        "walkable": true,
         "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["17"],
+                "metro": []
+            }
+        },
         "description": "Узкая тропа идущая через старый парк."
     },
     "sw": {
-        "walkable": true,
         "street": "Улица Ореховая",
         "description": "Узкая улица идущая вдоль парка."
     },
     "w": {
         "walkable": true,
         "street": "Улица Тихая",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["s"],
+                "bus": ["15", "25", "27"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с подвесной линией."
     },
     "nw": {
