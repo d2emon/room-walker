@@ -15,6 +15,14 @@
     "se": {
         "walkable": true,
         "street": "Улица Клематиса",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["c", "f", "g"],
+                "bus": ["3", "7", "20", "26", "30"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с подвесной линией."
     },
     "s": {
@@ -24,6 +32,14 @@
     "sw": {
         "walkable": true,
         "street": "Переулок Тихий",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["17"],
+                "metro": []
+            }
+        },
         "description": "Жилые дома средней высоты."
     },
     "w": {
@@ -33,6 +49,14 @@
     "nw": {
         "walkable": true,
         "street": "Улица Клематиса",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["c", "f", "g"],
+                "bus": ["3", "7", "17", "20", "26", "30"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с подвесной линией."
     },
     "description": ""

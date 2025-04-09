@@ -3,6 +3,14 @@
     "n": {
         "walkable": true,
         "street": "Улица Жданова",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["r"],
+                "bus": ["3", "17", "30"],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "ne": {
@@ -12,11 +20,27 @@
     "e": {
         "walkable": true,
         "street": "Тоннель под высокой горой",
+        "transport": {
+            "k3": {
+                "tram": ["I", "II", "VII", "VIII", "IX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": ""
     },
     "se": {
         "walkable": true,
         "street": "Улица Клематиса",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["c", "f", "g"],
+                "bus": ["3", "7", "17", "20", "26", "30"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с подвесной линией."
     },
     "s": {
@@ -30,6 +54,14 @@
     "w": {
         "walkable": true,
         "street": "Улица Молодёжная",
+        "transport": {
+            "k3": {
+                "tram": ["I", "II", "VII", "VIII", "IX"],
+                "hover": ["c", "f", "g", "r"],
+                "bus": ["7", "20", "26"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с линией монорельса в центре и подвесной линией."
     },
     "nw": {

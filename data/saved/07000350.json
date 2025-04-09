@@ -19,6 +19,14 @@
     "s": {
         "walkable": true,
         "street": "Улица Жданова",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["r"],
+                "bus": ["3", "17", "30", "51"],
+                "metro": []
+            }
+        },
         "description": "Неширокая улица."
     },
     "sw": {
@@ -28,6 +36,14 @@
     "w": {
         "walkable": true,
         "street": "Улица Комбайнёров",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["3", "30"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица."
     },
     "nw": {

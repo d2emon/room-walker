@@ -7,6 +7,14 @@
     "ne": {
         "walkable": true,
         "street": "Переулок Тихий",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["17"],
+                "metro": []
+            }
+        },
         "description": "Жилые дома средней высоты."
     },
     "e": {
@@ -22,13 +30,21 @@
         "description": "Небольшая площадь с клумбой."
     },
     "sw": {
-        "walkable": true,
         "street": "Улица Троицкая",
         "description": "Узкая улица."
     },
     "w": {
+        "walkable": true,
         "street": "Улица ???",
-        "description": "Пешеходная аллея засаженная кипарисами."
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["17"],
+                "metro": []
+            }
+        },
+        "description": "Аллея засаженная кипарисами."
     },
     "nw": {
         "street": "",
