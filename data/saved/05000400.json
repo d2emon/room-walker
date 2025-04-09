@@ -3,6 +3,14 @@
     "n": {
         "walkable": true,
         "street": "Улица Верхняя",
+        "transport": {
+            "k3": {
+                "tram": ["XII>", "XVII"],
+                "hover": [],
+                "bus": ["6"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с линией монорельса в центре."
     },
     "ne": {
@@ -20,6 +28,14 @@
     "s": {
         "walkable": true,
         "street": "Первомайский мост",
+        "transport": {
+            "k3": {
+                "tram": ["XII<", "XVII"],
+                "hover": [],
+                "bus": ["6"],
+                "metro": []
+            }
+        },
         "description": "Широкий мост с линией монорельса в центре."
     },
     "sw": {

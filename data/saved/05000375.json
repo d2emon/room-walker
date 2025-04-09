@@ -3,14 +3,30 @@
     "n": {
         "walkable": true,
         "street": "Улица Верхняя",
+        "transport": {
+            "k3": {
+                "tram": ["XII>", "XVII"],
+                "hover": [],
+                "bus": ["6"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с линией монорельса в центре."
     },
     "ne": {
-        "street": "",
-        "description": "Жилые дома средней высоты."
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["o", "r"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица с подвесной линией."
     },
     "e": {
-        "walkable": true,
         "street": "Улица Зеркальная",
         "description": "Неширокая улица с подвесной линией."
     },
@@ -21,6 +37,14 @@
     "s": {
         "walkable": true,
         "street": "Улица Верхняя",
+        "transport": {
+            "k3": {
+                "tram": ["XII<", "XVII"],
+                "hover": [],
+                "bus": ["6"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с линией монорельса в центре."
     },
     "sw": {
@@ -33,7 +57,7 @@
         "transport": {
             "k3": {
                 "tram": [],
-                "hover": [],
+                "hover": ["o", "r"],
                 "bus": [],
                 "metro": []
             }
@@ -42,7 +66,7 @@
     },
     "nw": {
         "street": "Улица ???",
-        "description": "Узкая улица вдоль площади."
+        "description": "Узкая улица."
     },
     "description": ""
 }

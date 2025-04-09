@@ -7,6 +7,14 @@
     "ne": {
         "walkable": true,
         "street": "Улица Комсомольская",
+        "transport": {
+            "k3": {
+                "tram": ["XVI", "XIX"],
+                "hover": [],
+                "bus": ["16"],
+                "metro": []
+            }
+        },
         "description": "Широкий проспект с линией монорельса посередине."
     },
     "e": {
@@ -26,9 +34,9 @@
         "street": "Улица Комсомольская",
         "transport": {
             "k3": {
-                "tram": ["XII<", "XVI", "XVII", "XIX"],
+                "tram": ["XVI", "XIX"],
                 "hover": [],
-                "bus": ["6", "16"],
+                "bus": ["16"],
                 "metro": []
             }
         },

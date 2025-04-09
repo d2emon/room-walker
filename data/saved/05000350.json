@@ -19,6 +19,14 @@
     "s": {
         "walkable": true,
         "street": "Улица Верхняя",
+        "transport": {
+            "k3": {
+                "tram": ["XII<", "XVII"],
+                "hover": [],
+                "bus": ["6"],
+                "metro": []
+            }
+        },
         "description": "Широкая улица с линией монорельса в центре."
     },
     "sw": {
@@ -26,8 +34,17 @@
         "description": "Площадь Хикстона."
     },
     "w": {
-        "street": "",
-        "description": "Площадь Хикстона."
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["XII>", "XVII"],
+                "hover": [],
+                "bus": ["6"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица вдоль площади."
     },
     "nw": {
         "street": "",
