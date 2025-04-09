@@ -1,7 +1,16 @@
 {
     "name": "Перекрёсток 525/450",
     "n": {
+        "walkable": true,
         "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["j", "q"],
+                "bus": ["2", "5"],
+                "metro": []
+            }
+        },
         "description": "Спуск на улицу Нижнюю. Жилые дома средней высоты."
     },
     "ne": {
@@ -25,8 +34,17 @@
         "description": "Жилые дома средней высоты."
     },
     "w": {
+        "walkable": true,
         "street": "Улица ???",
-        "description": "Узкая тропа."
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["j", "q"],
+                "bus": ["2", "5"],
+                "metro": []
+            }
+        },
+        "description": "Узкая улица."
     },
     "nw": {
         "street": "",

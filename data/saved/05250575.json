@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 525/575",
+    "n": {
+        "street": "Улица Гагрина",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Улица Парадная",
+        "description": "Широкая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица Гагрина",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["q"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Лестница к Набережной."
+    },
+    "w": {
+        "street": "Улица Парадная",
+        "description": "Широкая улица."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["q"],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Узкий спуск идущая между административных зданий."
+    },
+    "description": ""
+}
