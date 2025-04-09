@@ -1,0 +1,63 @@
+{
+    "name": "Перекрёсток 775/450",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["I", "VII", "IX", "X<", "XI"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Переулок Садовый",
+        "description": "Неширокий переулок с бульваром."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["I", "VII", "IX", "X>", "XI"],
+                "hover": [],
+                "bus": ["7"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "street": "Переулок Садовый",
+        "description": "Неширокий переулок с бульваром."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица Седова",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["7"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}

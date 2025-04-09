@@ -1,0 +1,72 @@
+{
+    "name": "Перекрёсток 775/375",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["VIII", "X<", "XI"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["II"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["I", "VII", "IX", "X>", "XI"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высокая гора."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Тоннель под высокой горой",
+        "transport": {
+            "k3": {
+                "tram": ["I", "II", "VII", "VIII", "IX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": ""
+    },
+    "nw": {
+        "street": "",
+        "description": "Лестница ведущая с горы вниз."
+    },
+    "description": ""
+}

@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 800/425",
+    "n": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Советская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["c", "f", "g"],
+                "bus": ["20", "26", "30"],
+                "metro": []
+            }
+        },
+        "description": "Широкий переулок."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Улица Советская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["c", "f", "g"],
+                "bus": ["20", "26", "30"],
+                "metro": []
+            }
+        },
+        "description": "Широкий переулок."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

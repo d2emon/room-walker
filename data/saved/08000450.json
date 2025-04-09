@@ -1,0 +1,72 @@
+{
+    "name": "Перекрёсток 800/450",
+    "n": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "ne": {
+        "walkable": true,
+        "street": "Улица Каменногорская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["14", "20", "29"],
+                "metro": []
+            }
+        },
+        "description": "Узкая улица."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["3"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица Каменногорская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["14", "20", "27", "29"],
+                "metro": []
+            }
+        },
+        "description": "Узкая улица."
+    },
+    "w": {
+        "street": "Переулок Садовый",
+        "description": "Неширокий переулок с бульваром."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["s"],
+                "bus": ["3", "27"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "description": ""
+}

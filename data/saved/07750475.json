@@ -1,0 +1,72 @@
+{
+    "name": "Перекрёсток 775/475",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["I", "VII", "IX", "X<", "XI"],
+                "hover": [],
+                "bus": ["7"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "walkable": true,
+        "street": "Улица Каменногорская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["14", "20", "27", "29"],
+                "metro": []
+            }
+        },
+        "description": "Узкая улица."
+    },
+    "e": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "se": {
+        "street": "Улица ???",
+        "description": "Узкая улица."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["I", "VII", "IX", "X>", "XI"],
+                "hover": [],
+                "bus": ["7", "8<", "9<", "14<", "15<", "23<", "25<", "27<"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "walkable": true,
+        "street": "Улица Каменногорская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["8>", "9>", "14>", "15>", "20", "23>", "25>", "27>", "29"],
+                "metro": []
+            }
+        },
+        "description": "Узкая улица."
+    },
+    "w": {
+        "street": "Улица Суходольская",
+        "description": "Узкая тропа идущая между жилых домов."
+    },
+    "nw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "description": ""
+}

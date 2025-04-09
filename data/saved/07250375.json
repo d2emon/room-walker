@@ -11,6 +11,14 @@
     "e": {
         "walkable": true,
         "street": "Тоннель под высокой горой",
+        "transport": {
+            "k3": {
+                "tram": ["I", "II", "VII", "VIII", "IX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": ""
     },
     "se": {
@@ -28,6 +36,14 @@
     "w": {
         "walkable": true,
         "street": "Выезд из тоннеля под высокой горой",
+        "transport": {
+            "k3": {
+                "tram": ["I", "II", "VII", "VIII", "IX"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
         "description": ""
     },
     "nw": {

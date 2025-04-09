@@ -1,0 +1,54 @@
+{
+    "name": "Перекрёсток 775/400",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["I", "VII", "IX", "X<", "XI"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "street": "Улица ???",
+        "description": "Неширокая улица."
+    },
+    "se": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["I", "VII", "IX", "X>", "XI"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Высокая гора."
+    },
+    "w": {
+        "street": "",
+        "description": "Высокая гора."
+    },
+    "nw": {
+        "street": "",
+        "description": "Высокая гора."
+    },
+    "description": ""
+}

@@ -1,0 +1,90 @@
+{
+    "name": "Перекрёсток 775/425",
+    "n": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["I", "VII", "IX", "X<", "XI"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "ne": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "e": {
+        "walkable": true,
+        "street": "Улица Советская",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["c", "f", "g"],
+                "bus": ["20", "26", "30"],
+                "metro": []
+            }
+        },
+        "description": "Широкий переулок."
+    },
+    "se": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["s"],
+                "bus": ["3", "27"],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "s": {
+        "walkable": true,
+        "street": "Улица ???",
+        "transport": {
+            "k3": {
+                "tram": ["I", "VII", "IX", "X>", "XI"],
+                "hover": [],
+                "bus": [],
+                "metro": []
+            }
+        },
+        "description": "Неширокая улица."
+    },
+    "sw": {
+        "street": "",
+        "description": "Жилые дома средней высоты."
+    },
+    "w": {
+        "walkable": true,
+        "street": "Переулок Советский",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": [],
+                "bus": ["20", "26", "30"],
+                "metro": []
+            }
+        },
+        "description": "Широкий переулок."
+    },
+    "nw": {
+        "walkable": true,
+        "street": "Переулок Барбоса",
+        "transport": {
+            "k3": {
+                "tram": [],
+                "hover": ["c", "f", "g", "s"],
+                "bus": ["3", "27"],
+                "metro": []
+            }
+        },
+        "description": "Широкий переулок с подвесной линией."
+    },
+    "description": ""
+}
