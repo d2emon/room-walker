@@ -3,6 +3,14 @@
     "n": {
         "walkable": true,
         "street": "Площадь Вокзальная",
+        "transport": {
+            "k3": {
+                "tram": ["VII"],
+                "hover": [],
+                "bus": ["3", "18", "34", "45"],
+                "metro": []
+            }
+        },
         "description": "Небольшая площадь перед зданием вокзала."
     },
     "ne": {
@@ -15,15 +23,15 @@
     },
     "se": {
         "street": "",
-        "description": "Склон холма."
+        "description": "Исторические здания."
     },
     "s": {
-        "street": "Лестница в парк",
-        "description": ""
+        "street": "Улица ???",
+        "description": "Узкая улица"
     },
     "sw": {
         "street": "",
-        "description": "Склон холма."
+        "description": "Исторические здания."
     },
     "w": {
         "street": "Улица Железнодорожная",

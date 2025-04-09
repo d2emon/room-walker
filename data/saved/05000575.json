@@ -3,6 +3,14 @@
     "n": {
         "walkable": true,
         "street": "Переулок Белый",
+        "transport": {
+            "k3": {
+                "tram": ["XII>", "XVII"],
+                "hover": ["j"],
+                "bus": ["2", "5", "6"],
+                "metro": []
+            }
+        },
         "description": "Широкий переулок между административными зданиями с линией монорельса в центре."
     },
     "ne": {
@@ -20,6 +28,14 @@
     "s": {
         "walkable": true,
         "street": "Мост к дамбе",
+        "transport": {
+            "k3": {
+                "tram": ["XII<", "XVII"],
+                "hover": ["j"],
+                "bus": ["2", "5", "6"],
+                "metro": []
+            }
+        },
         "description": ""
     },
     "sw": {

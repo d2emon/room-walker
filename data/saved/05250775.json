@@ -1,8 +1,8 @@
 {
-    "name": "Перекрёсток 500/775",
+    "name": "Парковая лестница",
     "n": {
-        "street": "Улица ???",
-        "description": "Узкая улица"
+        "street": "Лестница на холм",
+        "description": ""
     },
     "ne": {
         "street": "",
@@ -18,7 +18,7 @@
     },
     "s": {
         "street": "Улица ???",
-        "description": "Узкая улица"
+        "description": "Узкая улица."
     },
     "sw": {
         "street": "",
@@ -26,11 +26,11 @@
     },
     "w": {
         "street": "Улица ???",
-        "description": "Узкая улица"
+        "description": "Узкая тропа идущая вдоль холма."
     },
     "nw": {
         "street": "",
-        "description": "Исторические здания."
+        "description": "Склон холма."
     },
     "description": ""
 }

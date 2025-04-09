@@ -3,6 +3,14 @@
     "n": {
         "walkable": true,
         "street": "Мост",
+        "transport": {
+            "k3": {
+                "tram": ["XII>", "XVII"],
+                "hover": ["j"],
+                "bus": ["2", "5", "6"],
+                "metro": []
+            }
+        },
         "description": "Съезд с дамбы через реку Глубоководную."
     },
     "ne": {
@@ -20,6 +28,14 @@
     "s": {
         "walkable": true,
         "street": "Мост",
+        "transport": {
+            "k3": {
+                "tram": ["XII<", "XVII"],
+                "hover": ["j"],
+                "bus": ["2", "5", "6"],
+                "metro": []
+            }
+        },
         "description": "Съезд с дамбы через реку Глубоководную."
     },
     "sw": {
